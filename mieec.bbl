@@ -1,0 +1,166 @@
+\begin{thebibliography}{10}
+
+\bibitem{Bramer2007}
+Max Bramer.
+\newblock {\em {Principles of Data Mining}}.
+\newblock 2007.
+
+\bibitem{Wu2001}
+Peng Wu, YM~Ro, CS~Won, e Yanglim Choi.
+\newblock {Texture descriptors in MPEG-7}.
+\newblock {\em Comput. Anal. Images \ldots}, p\'{a}ginas 21--28, 2001.
+
+\bibitem{Bober2001}
+M.~Bober.
+\newblock {MPEG-7 visual shape descriptors}.
+\newblock {\em IEEE Trans. Circuits Syst. Video Technol.}, 11(6):716--719,
+  Junho 2001.
+\newblock doi:10.1109/76.927426.
+
+\bibitem{Sivic2006}
+Josef Sivic e Andrew Zisserman.
+\newblock {Video Google: Efficient visual search of videos}.
+\newblock {\em Towar. Categ. Object Recognit.}, 4170:127--144, 2006.
+\newblock doi:10.1007/11957959\_7.
+
+\bibitem{Russell2011}
+Matthew~A Russell.
+\newblock {\em {Mining the Social Web}}, volume~54.
+\newblock 2011.
+\newblock doi:10.1081/E-ELIS3-120043522.
+
+\bibitem{Cunha2013}
+TDS Cunha.
+\newblock {\em {TweeProfiles: detection of spatio-temporal patterns on
+  Twitter}}.
+\newblock Tese de doutoramento, Faculdade de Engeneharia da Universidade do
+  Porto, 2013.
+\newblock URL: \url{http://paginas.fe.up.pt/~ei08142/files/mieic\_en.pdf}.
+
+\bibitem{Boanjak2012}
+M~Boanjak e Eduardo Oliveira.
+\newblock {TwitterEcho: a distributed focused crawler to support open research
+  with twitter data}.
+\newblock {\em Proc. 21st \ldots}, 2012.
+
+\bibitem{Han2006}
+Jiawei Han, Micheline Kamber, e Jian Pei.
+\newblock {\em {Data Mining, Second Edition: Concepts and Techniques}}.
+\newblock 2006.
+
+\bibitem{North2012}
+Dr. Matthew~A North.
+\newblock {\em {Data Mining for the Masses}}.
+\newblock Global Text Project, 2012.
+
+\bibitem{Fayyad1996}
+Usama Fayyad, Gregory Piatetsky-shapiro, e Padhraic Smyth.
+\newblock {From Data Mining to Knowledge Discovery in Databases}.
+\newblock p\'{a}ginas 37--54, 1996.
+
+\bibitem{Liu2011}
+Bing Liu.
+\newblock {\em {Web Data Mining: Exploring Hyperlinks, Contents, and Usage
+  Data}}.
+\newblock Springer, 2011.
+
+\bibitem{Wang1997}
+Wei Wang, Jiong Yang, e Richard~R. Muntz.
+\newblock {STING: A Statistical Information Grid Approach to Spatial Data
+  Mining}.
+\newblock p\'{a}ginas 186--195, Agosto 1997.
+
+\bibitem{Agrawal1998}
+Rakesh Agrawal, Johannes Gehrke, Dimitrios Gunopulos, e Prabhakar Raghavan.
+\newblock {Automatic subspace clustering of high dimensional data for data
+  mining applications}.
+\newblock {\em ACM SIGMOD Rec.}, 27(2):94--105, Junho 1998.
+\newblock doi:10.1145/276305.276314.
+
+\bibitem{Forsyth2011}
+David~A. Forsyth e Jean Ponce.
+\newblock {\em {Computer Vision: A Modern Approach}}.
+\newblock Pearson Education, Limited, 2011.
+
+\bibitem{Nixon2002}
+Mark~S. Nixon e Alberto~S. Aguado.
+\newblock {\em {Feature Extraction and Image Processing}}.
+\newblock 2002.
+
+\bibitem{Manjunath2001}
+BS~Manjunath e JR~Ohm.
+\newblock {Color and texture descriptors}.
+\newblock {\em Circuits Syst. \ldots}, 11(6):703--715, 2001.
+
+\bibitem{Christopoulos2000}
+Charilaos Christopoulos, Daniel Berg, e Athanassios Skodras.
+\newblock {The colour in the upcoming MPEG-7 standard}.
+\newblock {\em Invit. Pap. Eur. \ldots}, p\'{a}ginas 1--4, 2000.
+
+\bibitem{Cieplinski2001}
+Leszek Cieplinski.
+\newblock {MPEG-7 Color Descriptors and Their Applications}.
+\newblock 7:11--20, 2001.
+
+\bibitem{Ite-vil}
+Leszek Cieplinski (mitsubishi~Electric Ite-vil.
+\newblock {The MPEG-7 Color Descriptors Jens-Rainer Ohm (RWTH Aachen, Institute
+  of Communications Engineering)}.
+
+\bibitem{Modi2008}
+Vinay Modi.
+\newblock {Color descriptors from compressed images}.
+\newblock 2008.
+
+\bibitem{Shao2009}
+H~Shao, J~Ji, Y~Kang, e H~Zhao.
+\newblock {Application Research of Homogeneous Texture Descriptor in
+  Content-Based Image Retrieval}.
+\newblock {\em Inf. Eng. \ldots}, (2008515):2--5, 2009.
+
+\bibitem{Lowe1999}
+D.G. Lowe.
+\newblock {Object recognition from local scale-invariant features}.
+\newblock {\em Proc. Seventh IEEE Int. Conf. Comput. Vis.}, p\'{a}ginas
+  1150--1157 vol.2, 1999.
+\newblock doi:10.1109/ICCV.1999.790410.
+
+\bibitem{Baeza-Yates1999}
+R~Baeza-Yates e B~Ribeiro-Neto.
+\newblock {\em {Modern information retrieval}}.
+\newblock 1999.
+
+\bibitem{Sivic2003}
+Josef Sivic e Andrew Zisserman.
+\newblock {Video Google: A text retrieval approach to object matching in
+  videos}.
+\newblock {\em Comput. Vision, 2003. Proceedings. \ldots}, (Iccv):2--9, 2003.
+
+\bibitem{Cai2004}
+Deng Cai, Xiaofei He, Zhiwei Li, Wei-Ying Ma, e Ji-Rong Wen.
+\newblock {Hierarchical clustering of WWW image search results using visual,
+  textual and link information}.
+\newblock {\em Proc. 12th Annu. ACM Int. Conf. Multimed. - Multimed. '04},
+  2004.
+\newblock doi:10.1145/1027527.1027747.
+
+\bibitem{Gao2005}
+Bin Gao, Tie-Yan Liu, Tao Qin, Xin Zheng, Qian-Sheng Cheng, e Wei-Ying Ma.
+\newblock {Web image clustering by consistent utilization of visual features
+  and surrounding texts}.
+\newblock Em {\em Proc. 13th Annu. ACM Int. Conf. Multimed. - Multimed. '05},
+  p\'{a}gina 112, New York, New York, USA, Novembro 2005. ACM Press.
+\newblock doi:10.1145/1101149.1101167.
+
+\bibitem{Nister2006}
+D.~Nister e H.~Stewenius.
+\newblock {Scalable recognition with a vocabulary tree}.
+\newblock {\em \ldots Vis. Pattern Recognition, 2006 \ldots}, 2, 2006.
+
+\bibitem{Lin2014}
+Chuen-Horng Lin, Chun-Chieh Chen, Hsin-Lun Lee, e Jan-Ray Liao.
+\newblock {Fast K-means algorithm based on a level histogram for image
+  retrieval}.
+\newblock {\em Expert Syst. Appl.}, 41(7):3276--3283, 2014.
+
+\end{thebibliography}

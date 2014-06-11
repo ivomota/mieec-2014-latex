@@ -1,0 +1,55 @@
+\chapter{Introdução} \label{chap:intro}
+
+
+As redes sociais são uma excelente fonte de informação sempre em atualização, que fornece aos investigadores vasta quantidade e variedade de dados. Este dados apresentam-se de diferentes formas como textos, imagens e vídeos. 
+
+
+O Twitter é um serviço de microblogging, que permite aos utilizadores partilharem mensagens, designadas por \textit{tweets}, até um máximo de 140 caracteres. O Twitter, ao contrário de outras redes sociais como o Facebook e Linkedin que utilizam uma rede de comunicação bi-direcional, esta utiliza uma infraestrutura assimétrica onde existem os \textit{"friends"} e os \textit{"followers"}. Supondo que é um utilizador do Twitter, os \textit{"friends"} corresponde às contas das pessoas que o utilizador segue e os \textit{"followers"} corresponde às contas das pessoas que o seguem~\citet{Russell2011}.
+
+O TweeProfiles~\citet{Cunha2013}, é uma ferramenta que recorre à rede social Twitter com o objetivo de identificar padrões em mensagens escritas em português partilhadas nesta rede social. Esta ferramenta utiliza processos de \textit{Data Mining}, mais precisamente de \textit{Text Mining}. A principal característica do TweeProfiles é o facto de utilizar a tarefa de \textit{clustering} para identificar padrões, isto é, não se limita a apresentar \textit{clusters} pelo conteúdo das mensagens (o texto), mas associando também as dimensões temporais e espaciais das mensagens. 
+
+\section{Motivação} \label{sec:motiv}
+
+Para além do Twitter ser uma rede social que permite a partilha de \textit{tweets}, este permite a partilha de imagens a partir do próprio serviço, ou através de outros serviços como Twitpic ou Flickr. Também, a partilha da ligação a uma imagem, é possível através do serviço Instagram, sendo que neste caso o acesso à imagem é redirecionado para o serviço Instagram. Devido ao grande número de utilizadores e de informação partilhada a todo o instante no Twitter, este torna-se um excelente serviço de pesquisa e análise, proporcionando aos investigadores e empresas uma quantidade e variedade de dados necessários para o desenvolvimento de ferramentas de extração de conhecimento e identificação de padrões. 
+
+%Como referido anteriormente, o Twitter é uma rede social que permite a partilha de mensagens texto até 140 caracteres, mas para além disto, esta permite partilha de imagens a partir do próprio serviço, ou através de outros serviços como Twitpic ou Flickr. Também é possível através do serviço Instagram, partilhar a ligação a uma imagem, sendo que neste caso o acesso à imagem não é direto, sendo redirecionado para o serviço Instagram. Tudo isto, faz do Twitter um excelente serviço de pesquisa e análise, devido precisamente ao grande número de utilizadores e de informação partilhada a todo o instante, proporcionando aos investigadores e empresas, variedade e quantidade de dados necessários para desenvolvimento de ferramentas de extração de conhecimento e identificação de padrões. 
+
+\section{Objetivos} \label{sec:object}
+
+Esta dissertação tem como principal objetivo a criação de uma extensão para o TweeProfiles através de técnicas de processamento de imagem e \textit{Data Mining}, que permita a identificação de padrões em imagens partilhadas no serviço de microblogging Twitter, com representação de \textit{clusters}.
+
+%Esta dissertação tem como principal objetivo a criação de uma extensão para o TweeProfiles que utilizando técnicas de processamento de imagem e \textit{Data Mining}, permita a identificação de padrões em imagens partilhadas no serviço de microblogging Twitter, através da representação de \textit{clusters}.
+
+Será assim necessário o desenvolvimento de um módulo responsável pela recolha das imagens através dos urls de tweets partilhados no Twitter. Para essa recolha será utilizada a plataforma TwitterEcho~\citet{Boanjak2012}, que consiste num projeto open source, responsável por extrair e armazenar tweets de uma determinada comunidade de utilizadores, tendo sido desenvolvido com o intuito de ajudar os investigadores a terem facilidade de acesso a uma base de dados de tweets, na sua maioria, escritos na língua portuguesa.
+Posteriormente, deverá ser desenvolvido um módulo que utilize ferramentas de processamento de imagem para extração e análise da informação das imagens, e através da tarefa de \textit{clustering}, seja capaz de apresentar \textit{clusters} de imagens.
+Por fim, deverá ser integrado na ferramenta TweeProfiles, com objetivo de visualizar os \textit{clusters} nas diferentes dimensões, como temporal, espacial e pelo conteúdo das imagens.
+
+%Será assim necessário o desenvolvimento de um módulo responsável pela recolha das imagens através dos urls de tweets partilhados no Twitter. Para recolha essa recolha será utilizada a plataforma TwitterEcho~\citet{Boanjak2012}, que consiste num projeto open source responsável por extrair e armazenar tweets de uma determinada comunidade utilizadores, tendo sido desenvolvido com o intuito ajudar os investigadores a terem acesso facilmente a uma base de dados de tweets, na sua maioria, escritos em português.
+%Posteriormente deverá ser desenvolvido um módulo que utilize ferramentas de processamento de imagem para extração e processamento da informação das imagens e através da tarefa de \textit{clustering} que seja capaz de apresentar \textit{clusters} das imagens.
+%Por fim, deverá ser integrado na ferramenta TweeProfiles, de maneira a ser possivel visualizar os \textit{clusters} em várias dimensões, como temporal, espacial e obviamente, o conteúdo das imagens.
+ 
+
+\section{Estrutura do documento} \label{sec:struct}
+
+O documento está organizado da seguinte forma: o capítulo~\ref{chap:estarte} reflete o estado da arte, onde é apresentado uma pesquisa sobre os vários domínios científicos relacionados com as necessidades para o desenvolvimento do projeto de dissertação. Na secção~\ref{sec:cluster} é descrito as características da tarefa de \textit{clustering} do estudo e na secção~\ref{sec:represent}, é referenciado as várias formas de representação computacional de imagens.
+Por fim, no capítulo~\ref{chap:chap3}, é referido o plano de trabalho para o desenvolvimento do projeto de dissertação, as ferramentas necessárias e as conclusões retiradas.
+
+%O restante documento está organizado da seguinte forma: o capítulo~\ref{chap:estarte} descreve o estado da arte, sendo apresentado a pesquisa realizada sobre os vários domínios científicos relacionados com as necessidades para o desenvolvimento do projeto de dissertação, onde é descrito na secção~\ref{sec:cluster} o estudo das características da tarefa de \textit{clustering} e na secção~\ref{sec:represent}, é descrito várias formas de representação de imagem computacionalmente através de descritores.
+%Por fim, no capítulo~\ref{chap:chap3}, é referido o plano de trabalho para o desenvolvimento do projeto de dissertação, as ferramentas necessárias e as conclusões retiradas após a pesquisa a revisão bibliográfica.
+ 
+%Para além da introdução, esta dissertação contém mais x capítulos.
+%No capítulo~\ref{chap:sota}, é descrito o estado da arte e são
+%apresentados trabalhos relacionados. 
+%No capítulo~\ref{chap:chap3}, ipsum dolor sit amet, consectetuer
+%adipiscing elit.
+%No capítulo~\ref{chap:chap4} praesent sit amet sem. 
+%No capítulo~\ref{chap:concl}  posuere, ante non tristique
+%consectetuer, dui elit scelerisque augue, eu vehicula nibh nisi ac
+%est. 
+
+%\begin{quote}
+%  ``Like the Abstract, the Introduction should be written to engage the
+%  interest of the reader. It should also give the reader an idea of
+%  how the dissertation is structured, and in doing so, define the
+%  thread of the contents.''%~\citep[chap.\ Introduction]{kn:Tha01} 
+%\end{quote}

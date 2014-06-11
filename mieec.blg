@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: mieec.aux
+A level-1 auxiliary file: abbrevs.aux
+A level-1 auxiliary file: chapter1.aux
+A level-1 auxiliary file: chapter2.aux
+A level-1 auxiliary file: chapter3.aux
+The style file: unsrt-pt.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: myrefs.bib
+Warning--empty publisher in Bramer2007
+Warning--empty publisher in Russell2011
+Warning--empty publisher in Han2006
+Warning--empty journal in Fayyad1996
+Warning--empty journal in Wang1997
+Warning--empty publisher in Nixon2002
+Warning--empty journal in Cieplinski2001
+Warning--empty journal in Ite-vil
+Warning--empty year in Ite-vil
+Warning--empty journal in Modi2008
+Warning--there's a number but no volume in Shao2009
+Warning--empty publisher in Baeza-Yates1999
+Warning--there's a number but no volume in Sivic2003
+You've used 28 entries,
+            2522 wiz_defined-function locations,
+            759 strings with 8838 characters,
+and the built_in function-call counts, 8984 in all, are:
+= -- 884
+> -- 287
+< -- 7
++ -- 93
+- -- 65
+* -- 373
+:= -- 1186
+add.period$ -- 92
+call.type$ -- 28
+change.case$ -- 19
+chr.to.int$ -- 0
+cite$ -- 41
+duplicate$ -- 304
+empty$ -- 975
+format.name$ -- 65
+if$ -- 2537
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 35
+newline$ -- 150
+num.names$ -- 28
+pop$ -- 275
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 693
+stack$ -- 0
+substring$ -- 333
+swap$ -- 70
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 13
+while$ -- 60
+width$ -- 30
+write$ -- 305
+(There were 13 warnings)

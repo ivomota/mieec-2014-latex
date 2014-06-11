@@ -1,0 +1,42 @@
+\select@language {portuges}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motiva\IeC {\c c}\IeC {\~a}o}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Estrutura do documento}{2}{section.1.3}
+\contentsline {chapter}{\numberline {2}Estado da arte}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Clustering}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Clustering por parti\IeC {\c c}\IeC {\~a}o}{4}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Algoritmo K-Means}{4}{subsubsection.2.1.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Clustering hier\IeC {\'a}rquico}{5}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Clustering baseado em densidade}{7}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Clustering baseado em grelhas}{7}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Fun\IeC {\c c}\IeC {\~o}es de dist\IeC {\^a}ncia}{8}{subsection.2.1.5}
+\contentsline {subsubsection}{\numberline {2.1.5.1}Atributos num\IeC {\'e}ricos}{8}{subsubsection.2.1.5.1}
+\contentsline {subsubsection}{\numberline {2.1.5.2}Atributos bin\IeC {\'a}rios e nominais}{9}{subsubsection.2.1.5.2}
+\contentsline {subsubsection}{\numberline {2.1.5.3}Dimens\IeC {\~a}o Temporal}{11}{subsubsection.2.1.5.3}
+\contentsline {section}{\numberline {2.2}Representa\IeC {\c c}\IeC {\~a}o de imagens}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Representa\IeC {\c c}\IeC {\~a}o matricial}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Histogramas}{12}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Descritores de cor}{12}{subsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3.1}Espa\IeC {\c c}os de cor}{12}{subsubsection.2.2.3.1}
+\contentsline {subsubsection}{\numberline {2.2.3.2}Cor dominante}{13}{subsubsection.2.2.3.2}
+\contentsline {subsubsection}{\numberline {2.2.3.3}Cor escal\IeC {\'a}vel}{14}{subsubsection.2.2.3.3}
+\contentsline {subsubsection}{\numberline {2.2.3.4}Grupo de \textit {Frames} / Grupo de Imagens}{14}{subsubsection.2.2.3.4}
+\contentsline {subsubsection}{\numberline {2.2.3.5}Estrutura de cor}{15}{subsubsection.2.2.3.5}
+\contentsline {subsubsection}{\numberline {2.2.3.6}Disposi\IeC {\c c}\IeC {\~a}o de cor}{15}{subsubsection.2.2.3.6}
+\contentsline {subsection}{\numberline {2.2.4}Descritores de textura}{15}{subsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.4.1}Descritor de textura homog\IeC {\'e}nea}{15}{subsubsection.2.2.4.1}
+\contentsline {subsubsection}{\numberline {2.2.4.2}Descritor de histograma de borda}{16}{subsubsection.2.2.4.2}
+\contentsline {subsubsection}{\numberline {2.2.4.3}Descritor de textura homog\IeC {\'e}nea}{16}{subsubsection.2.2.4.3}
+\contentsline {subsection}{\numberline {2.2.5}Descritores de forma}{16}{subsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.5.1}Descritor de forma baseado em regi\IeC {\~a}o}{17}{subsubsection.2.2.5.1}
+\contentsline {subsubsection}{\numberline {2.2.5.2}Descritor de forma baseado no contorno}{17}{subsubsection.2.2.5.2}
+\contentsline {subsection}{\numberline {2.2.6}Descritores local}{18}{subsection.2.2.6}
+\contentsline {subsubsection}{\numberline {2.2.6.1}SIFT}{18}{subsubsection.2.2.6.1}
+\contentsline {subsection}{\numberline {2.2.7}Descritores baseado em vocabul\IeC {\'a}rio visual}{18}{subsection.2.2.7}
+\contentsline {section}{\numberline {2.3}Trabalhos relacionados}{19}{section.2.3}
+\contentsline {chapter}{\numberline {3}Plano de trabalho e conclus\IeC {\~o}es}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}Plano de trabalho}{21}{section.3.1}
+\contentsline {section}{\numberline {3.2}Ferramentas de apoio}{22}{section.3.2}
+\contentsline {section}{\numberline {3.3}Conclus\IeC {\~a}o}{23}{section.3.3}
+\contentsline {chapter}{Refer\^{e}ncias}{25}{section*.10}
