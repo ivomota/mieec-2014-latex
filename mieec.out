@@ -4,24 +4,25 @@
 \BOOKMARK [1][-]{section.1.1}{1.1 Motiva\347\343o}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.2}{1.2 Objetivos}{chapter.1}% 5
 \BOOKMARK [1][-]{section.1.3}{1.3 Estrutura do documento}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter.2}{2 Estado da arte}{}% 7
+\BOOKMARK [0][-]{chapter.2}{2 Trabalhos relacionados}{}% 7
 \BOOKMARK [1][-]{section.2.1}{2.1 Clustering}{chapter.2}% 8
 \BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Clustering por parti\347\343o}{section.2.1}% 9
 \BOOKMARK [2][-]{subsection.2.1.2}{2.1.2 Clustering hier\341rquico}{section.2.1}% 10
 \BOOKMARK [2][-]{subsection.2.1.3}{2.1.3 Clustering baseado em densidade}{section.2.1}% 11
 \BOOKMARK [2][-]{subsection.2.1.4}{2.1.4 Clustering baseado em grelhas}{section.2.1}% 12
 \BOOKMARK [2][-]{subsection.2.1.5}{2.1.5 Fun\347\365es de dist\342ncia}{section.2.1}% 13
-\BOOKMARK [1][-]{section.2.2}{2.2 Representa\347\343o de imagens}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Representa\347\343o matricial}{section.2.2}% 15
-\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Histogramas}{section.2.2}% 16
-\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 Descritores de cor}{section.2.2}% 17
-\BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 Descritores de textura}{section.2.2}% 18
-\BOOKMARK [2][-]{subsection.2.2.5}{2.2.5 Descritores de forma}{section.2.2}% 19
-\BOOKMARK [2][-]{subsection.2.2.6}{2.2.6 Descritores local}{section.2.2}% 20
-\BOOKMARK [2][-]{subsection.2.2.7}{2.2.7 Descritores baseado em vocabul\341rio visual}{section.2.2}% 21
-\BOOKMARK [1][-]{section.2.3}{2.3 Trabalhos relacionados}{chapter.2}% 22
-\BOOKMARK [0][-]{chapter.3}{3 Plano de trabalho e conclus\365es}{}% 23
-\BOOKMARK [1][-]{section.3.1}{3.1 Plano de trabalho}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.2}{3.2 Ferramentas de apoio}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.3}{3.3 Conclus\343o}{chapter.3}% 26
-\BOOKMARK [0][-]{section*.10}{Refer\352ncias}{}% 27
+\BOOKMARK [1][-]{section.2.2}{2.2 TweeProfiles}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{2.3 Representa\347\343o de imagens}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Representa\347\343o matricial}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Histogramas}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 Descritores de cor}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.4}{2.3.4 Descritores de textura}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.5}{2.3.5 Descritores de forma}{section.2.3}% 20
+\BOOKMARK [2][-]{subsection.2.3.6}{2.3.6 Descritores local}{section.2.3}% 21
+\BOOKMARK [2][-]{subsection.2.3.7}{2.3.7 Descritores baseado em vocabul\341rio visual}{section.2.3}% 22
+\BOOKMARK [1][-]{section.2.4}{2.4 Trabalhos relacionados}{chapter.2}% 23
+\BOOKMARK [0][-]{chapter.3}{3 Plano de trabalho e conclus\365es}{}% 24
+\BOOKMARK [1][-]{section.3.1}{3.1 Plano de trabalho}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{3.2 Ferramentas de apoio}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.3}{3.3 Conclus\343o}{chapter.3}% 27
+\BOOKMARK [0][-]{section*.11}{Refer\352ncias}{}% 28

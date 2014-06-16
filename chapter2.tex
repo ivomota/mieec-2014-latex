@@ -1,7 +1,7 @@
-\chapter{Estado da arte} \label{chap:estarte}
+
+\chapter{Trabalhos relacionados} \label{chap:estarte}
 
 Neste capítulo é apresentado o estudo preliminar realizado, tendo em vista a aquisição de competências e conhecimentos necessários para o desenvolvimento do projeto, que se focam essencialmente em análise de métodos de \textit{data mining} e em técnicas aplicadas em visão por computador. Em primeiro ligar será exposto conteúdo relativamente a métodos de \textit{clustering} como uma tarefa de \textit{data mining}. Em seguida será apresentado formas de representação de imagens. Por fim, são referenciados alguns trabalhos relacionados com o projeto a desenvolver nesta dissertação.
-
 
 \section{Clustering} \label{sec:cluster}
 
@@ -100,7 +100,7 @@ Existem dois tipos principais de métodos de \textit{clustering} hierárquico, s
 \item[\textit{Clustering} por divisão:] O dendograma é construido do nível mais alto até ao nível mais baixo, onde o processo tem inicio com um único \textit{cluster} que possui todos os objetos, sendo dividido sucessivamente em \textit{clusters} mais pequenos, até que estes sejam constituídos apenas por um único objeto.
 \end{description}
 
-Ao contrário do algoritmo \textit{k-means}, que apenas calcula a distância entre os centroides de cada grupo ou \textit{cluster}, no \textit{clustering} hierárquico pode ser usado os vários métodos  apresentados em seguida para determinar a distância entre dois \textit{clusters}~\citet{Liu2011} : 
+Ao contrário do algoritmo \textit{k-means}, que apenas calcula a distância entre os centroides de cada grupo ou \textit{cluster}, no \textit{clustering} hierárquico pode ser usado os vários métodos  apresentados em seguida para determinar a distância entre dois \textit{clusters}~\citet{Liu2011}: 
 
 \begin{description}
 \item[Método \textit{Single-Link}:] Neste método, a distância entre dois \textit{clusters} é determinada pela distância entre os dois objetos mais próximos (vizinhos mais próximo) pertencentes a \textit{clusters} diferentes.
@@ -127,7 +127,7 @@ Os passos necessários para a implementação deste método são apresentados no
 		\If {o $ \varepsilon$-vizinhança de \textit{p} tem pelo menos \textit{MinPts} objetos}
 			\State {criar um novo \textit{cluster C} e adicionar objeto \textit{p} ao \textit{cluster C};}
 			\State {Seja N o conjunto de objetos na $\varepsilon$-vizinhança de \textit{p}; }
-			\For {cada ponto p' em N}
+			\For {cada ponto \textit{p'} em N}
 				\If {\textit{p'} não selecionado}
 					\State {Marcar \textit{p'} como selecionado}
 					\If {a $\varepsilon$-vizinhança de \textit{p'} tem pelo menos \textit{MinPts}}
@@ -139,36 +139,40 @@ Os passos necessários para a implementação deste método são apresentados no
 				\EndIf
 			\EndFor
 			\State {\textbf{output} C;}
-		\Else {marcar p como ruido}
+		\Else { marcar \textit{p} como ruido}
 		\EndIf
 	\Until{todos os objetos selecionados;} 
 \EndProcedure 
 \end{algorithmic}
 \end{algorithm}
 
-Uma das grandes vantagens do \textit{clustering} baseado em densidade é que não é necessário uma previa definição do número de \textit{clusters}, sendo que ele apresenta os que encontrar consoante os dados que possui e os parâmetros definidos. 
+Uma das grandes vantagens do \textit{clustering} baseado em densidade é que neste não é necessário uma previa definição do número de \textit{clusters}, sendo apresentos os que encontrar consoante os dados que possui e os parâmetros definidos. 
 
 % Notas: Falar talves do algoritmo OPTICS e DENCLUE
 
 \subsection{Clustering baseado em grelhas} %por completar
 
-Os métodos de \textit{clustering} discutidos até agora, apresentam algoritmos que se adaptam a distribuição dos dados no espaço. Em alternativa, o \textit{clustering} baseado em grelhas é orientado ao espaço, na medida em que divide o espaço em células independentemente da distribuição dos objetos de entrada. Este quantifica o espaço num numero finito de células, que formam uma estrutura de grelhas sobre a qual são executadas as operações de \textit{clustering}. Este método apresenta como principal vantagem, o tempo baixo de processamento, que normalmente é independentemente da quantidade de dados, no entanto, este depende do número de células em cada uma das dimensões no espaço quantizado~\cite{Han2006}.
+Os métodos de \textit{clustering} discutidos até agora, apresentam algoritmos que se adaptam a distribuição dos dados no espaço. Em alternativa, o \textit{clustering} baseado em grelhas é orientado ao espaço, na medida em que divide o espaço em células independentemente da distribuição dos objetos de entrada. Este quantifica o espaço num número finito de células, que formam uma estrutura de grelhas sobre a qual são executadas as operações de \textit{clustering}. Este método apresenta como principal vantagem, o tempo baixo de processamento, que normalmente é independentemente da quantidade de dados, no entanto, este depende do número de células em cada uma das dimensões no espaço quantizado~\cite{Han2006}.
 
-O algoritmo STING (\textit{STatistical INformation Grid})~\citet{Wang1997} é um dos algoritmos utilizados para \textit{clustering} baseado em grelhas. Este divide o espaço em células retangulares, correspondente a diferentes resoluções que forma uma estrutura hierárquica, sendo a base o nível 1, os filhos o nível 2, e assim sucessivamente. Cada célula pertencente a um nível superior é dividida para formar células de menor dimensão no nível inferior seguinte. Assim, sabe-se que o nível mais baixo apresenta uma maior resolução. Isto permite que os \textit{clusters} sejam encontrados recorrendo a uma pesquisa de cima para baixo (\textit{clustering} por divisão, como explicado na sub-secção~\ref{subsec:hierar}), passando por cada nível até atingir o mais baixo, retornando no fim as células mais relevantes para a consulta especificada. A informação estatística de cada célula é calculada e armazenada para o processamento de consultas futuras. Também é necessário ter em atenção que apenas é considerado para este algoritmo um espaço bi-dimensional. Outro algoritmo a considerar é o CLIQUE~\citet{Agrawal1998}, que "identifica \textit{clusters} densos em sub-espaços de máxima dimensão".
-
+O algoritmo STING (\textit{Statistical Information Grid})~\citet{Wang1997} é um dos algoritmos utilizados para \textit{clustering} baseado em grelhas. Este divide o espaço em células retangulares, correspondente a diferentes resoluções que forma uma estrutura hierárquica, sendo a base o nível 1, os filhos o nível 2, e assim sucessivamente. Cada célula pertencente a um nível superior é dividida para formar células de menor dimensão no nível inferior seguinte. Assim, sabe-se que o nível mais baixo apresenta uma maior resolução. Isto permite que os \textit{clusters} sejam encontrados recorrendo a uma pesquisa de cima para baixo (\textit{clustering} por divisão, como explicado na sub-secção~\ref{subsec:hierar}), passando por cada nível até atingir o mais baixo, retornando no fim as células mais relevantes para a consulta especificada. A informação estatística de cada célula é calculada e armazenada para o processamento de consultas futuras. Também é necessário ter em atenção que apenas é considerado para este algoritmo um espaço bidimensional. Um outro algoritmo com características semelhantes é o CLIQUE~\citet{Agrawal1998}, que "identifica \textit{clusters} densos em sub-espaços de máxima dimensão", isto é, são detetados todos os \textit{clusters} em todos sub-espaços existentes e em que um ponto pode pertencer a vários \textit{clusters} em sub-espaços diferentes.
 
 % Notas: Talvez falar mais do algoritmo CLIQUE
+
+%\subsection{Dados de entrada para clustering} \label{subsec:inputdata}
+%
+%Os algoritmos de \textit{clustering} geralmente utilizam métricas específicas para o cálculo de similaridade ou distâncias entre objetos. 
 
 \subsection{Funções de distância} \label{subsec:dist}
 
 As funções de distância ou similaridade têm um papel fulcral em todos os algoritmos de \textit{Clustering}. Existem enumeras funções de distância usadas para diferentes tipos de atributos (ou variáveis)~\citet{Liu2011}. Em seguida será apresentado diferentes funções distância para diferentes atributos como, numéricos, binários e nominal. Também será apresentado funções distância utilizados para as dimensões temporal e de conteúdo. 
 
-\subsubsection{Atributos numéricos}
+\subsubsection{Atributos numéricos} \label{subsubsec: attrnum}
 
 As funções de distância mais utilizadas para variáveis numéricas são a \textbf{Distância Euclidiana} e \textbf{Distância Manhattan}. É utilizado $ dist(x_{i}, x_{j}) $ para representar a distância entre duas instância de \textit{r} dimensões. Ambas funções referidas anteriormente são casos especiais da função mais geral chamada \textbf{Distância Minkowski}~\citet{Liu2011}:
 
 \begin{equation}
 dist(x_{i}, x_{j}) = (|x_{i1} - x_{j1}|^h + |x_{i2} - x_{j2}|^h +...+ |x_{ir} - x_{jr}|^h)^\frac{1}{h},
+\label{eq:mink}
 \end{equation}
 onde \textit{h} é um inteiro positivo.
 
@@ -181,6 +185,7 @@ dist(x_{i}, x_{j}) = \sqrt{(x_{i1} - x_{j1})^2 + (x_{i2} - x_{j2})^2 +...+ (x_{i
 Se \textit{h}=1, temos a \textbf{Distância City-block (Manhattan)},
 \begin{equation}
 dist(x_{i}, x_{j}) = |x_{i1} - x_{j1}| + |x_{i2} - x_{j2}| +...+ |x_{ir} - x_{jr}|.
+\label{eq: manhattan}
 \end{equation}
 
 Também, não menos importantes, são outras funções distância apresentadas em seguida:
@@ -202,6 +207,7 @@ dist(x_{i}, x_{j}) = (x_{i1} - x_{j1})^2 + (x_{i2} - x_{j2})^2 +...+ (x_{ir} - x
 
 \begin{equation}
 dist(x_{i}, x_{j}) = max(|x_{i1} - x_{j1}| + |x_{i2} - x_{j2}| +...+ |x_{ir} - x_{jr}|).
+\label{eq:cheby}
 \end{equation}
 
 \end{description}
@@ -250,18 +256,34 @@ No caso de atributos nominais com mais de dois estados ou valores, a função di
 O tempo é representado apenas por uma dimensão, sendo que para calcular a distância, por exemplo, entre dois tweets $ t_{i} $ e $ t_{j} $, apenas é necessário calcular a diferença dos tempos entre os mesmos. Supondo que os valores dos tempos são respetivamente $ \Delta_{i} $ e $ \Delta_{j} $, o intervalo de tempo pode ser definido pela seguinte equação:
 
 \begin{equation}
-%dist^{T}( t_{i}, t_{j}) = |\Delta_{i} - \Delta_{j}|  
+dist^{T}( t_{i}, t_{j}) = |\Delta_{i} - \Delta_{j}|  
 \end{equation}
 
 Sendo que, para a dimensão temporal, também é possível utilizar a função distância euclidiana (equação~\ref{eq: euclid}).
 
-%\subsubsection{Conteúdo}
-%
-%Nesta subsecção é apresentado funções distância aplicadas a conteúdo. No caso do projeto desta dissertação o conteúdo será as imagens. 
+\subsubsection{Dimensão Espacial}
+
+Ao contrário da dimensão temporal, a dimensão espacial apresenta mais do que uma dimensão, latitude e longitude. Estas apresentam-se sobre a forma numérica, sendo possível o cálculo da distância entre dois objetos através de funções de distância para atributos numéricos como referido anteriormente (\ref{subsubsec: attrnum}). Assim, para o cálculo entre pontos distribuídos num espaço poderá-se-á recorrer à função Minkowski (equação~\ref{eq:mink}), à função Euclidiana (equação\ref{eq: euclid}, à função Manhattan (equação~\ref{eq: manhattan}) ou mesmo à função de Chebychev (equação~\ref{eq:cheby}), sendo que no caso mais específico de uma distribuição espacial geográfica, em que os pontos possuem latitude e longitude, é considerada mais apropriada a utilização da função distância Haversine (equação~\ref{eq:hav}) pois esta toma em consideração a forma esférica da Terra.
+Obtendo um par de objetos $ x_{i} $ e $ x_{j} $ distanciados geograficamente, é considerado as latitudes $ \phi_{x_{i}} $ e $ \phi_{x_{j}} $ e longitudes $ \lambda_{x_{i}} $ e $ \lambda_{x_{j}} $ para determinar a distância através da seguinte equação,
+
+\begin{equation}
+dist^{Sp}( x_{i}, x_{j}) = 2R\sin^{-1}\left( \left[ \sin^{2}(\frac{\phi_{x_{i}}-\phi_{x_{j}}}{2})+\cos\phi_{x_{i}}\cos\phi_{x_{j}}\sin^{2}(\frac{\lambda_{x_{i}}-\lambda_{x_{j}}}{2})\right] ^{0.5}\right) 
+\label{eq:hav} 
+\end{equation}
+
+onde $ R $ representa o raio da Terra e que determina as unidades do resultado retornado pela função, sendo comum a utilização das unidades no sistema internacional (SI), o metro, podendo também ser representado em quilómetros devido ao fator de escala. 
+
+% clocar uma bibliografia para a formula
 
 
 % % escrever depois
 %\subsubsection{Avaliação de Clusters}
+
+
+% % % NOVA SECÇÃO % % %
+
+\section{TweeProfiles} \label{sec:tweep}
+
 
 
 % % % NOVA SECÇÃO % % %
@@ -275,13 +297,19 @@ Na secção~\ref{sec:cluster} foi apresentado o conceito e características da t
 
 Uma imagem pode ser vista como um objeto (ou instância), sendo computacionalmente representada como uma matriz (um vetor bi-dimensional) de pixels. A matriz de pixels descreve assim a imagem como N x M \textit{m}-bit pixels, onde N corresponde ao número de pontos ao longo do eixo horizontal, M o número de pontos ao longo do eixo vertical e \textit{m} o número de bits por pixel que controla os níveis de brilho. Com \textit{m} bits temos uma gama de valores para o brilho de $ 2^m $, que varia entre 0 e $ 2^m - 1 $. Assim se o valor de \textit{m} for 8, os valores de brilho de cada pixel de uma imagem podem variar entre 0 e 255, que normalmente correspondem ao preto e branco respetivamente, sendo que os valores intermédios correspondem ao tons de cinza~\citet{Nixon2002}.
 
-No caso de imagens a cores, o principio é idêntico, no entanto ao invés de se usar apenas um plano, as imagens a cores são representadas por 3 componentes de intensidade, designado por modelo \textit{RGB}, a que corresponde respetivamente às cores vermelho (Red), verde (Green) e azul (Blue). Para além deste esquema de cores, também existe outros como o CMYK composto pelas componentes de cor, azul turquesa, magenta, amarelo e preto. Usando qualquer esquema de cores, existem 2 métodos principais para representar a cor do pixel. O primeiro utilizada um valor inteiro para cada pixel, sendo esse valor como um índice para uma tabela, também conhecida como palete da imagem, com a correspondência à intensidade de cada componente de cor. Este método tem como vantagem o facto de ser eficiente na utilização da memória, pois apenas é guardado um plano da imagem (os índices) e a palete (tabela). Por outro lado, tem como desvantagem o facto de normalmente ser usado um conjunto reduzido de cores o que provoca uma redução da qualidade da imagem. Já segundo método consiste em utilizar vários planos de imagem para armazenar a componente de cor de cada pixel. Este representa a imagem com mais precisão pois considera muito mais cores.  Formato mais usual é 8 bits para cada uma das 3 componentes, no caso do RGB. Assim, são utilizados 24 bit para representar a cor de cada pixels, o que permite que uma imagem possa conter mais de 16 milhões de cores simultaneamente. Como era de esperar isto envolve um custo grande na utilização de memória, mas a constante redução do custo das memórias faz com que este seja uma boa alternativa a apresentada anteriormente~\citet{Nixon2002}.
+No caso de imagens a cores, o principio é idêntico, no entanto ao invés de se usar apenas um plano, as imagens a cores são representadas por 3 componentes de intensidade, designado por modelo \textit{RGB}, a que corresponde respetivamente às cores vermelho (Red), verde (Green) e azul (Blue). Para além deste esquema de cores, também existe outros como o CMYK composto pelas componentes de cor, azul turquesa, magenta, amarelo e preto. Usando qualquer esquema de cores, existem 2 métodos principais para representar a cor do pixel. No primeiro método é utilizado um valor inteiro para cada pixel, sendo esse valor como um índice para uma tabela, também conhecida como palete da imagem, com a correspondência à intensidade de cada componente de cor. Este método tem como vantagem o facto de ser eficiente na utilização da memória, pois apenas é guardado um plano da imagem (os índices) e a palete (tabela). Por outro lado, tem como desvantagem o facto de normalmente ser usado um conjunto reduzido de cores o que provoca uma redução da qualidade da imagem. Já o segundo método consiste na utilização de vários planos da imagem para armazenar a componente de cor de cada pixel. Este representa a imagem com mais precisão pois considera muito mais cores.  Formato mais usual é 8 bits para cada uma das 3 componentes, no caso do RGB. Assim, são utilizados 24 bit para representar a cor de cada pixels, o que permite que uma imagem possa conter mais de 16 milhões de cores simultaneamente. Como era de esperar, isto envolve um custo grande na utilização de memória, mas a constante redução do custo das memórias faz com que este seja uma boa alternativa à apresentada anteriormente~\citet{Nixon2002}.
 
 \subsection{Histogramas} \label{subsec:hist}
 
-Nesta secção será apresentado formas de representar uma imagem através de um histograma. Um histograma de uma imagem apresenta a frequência de ocorrência de níveis individuais de brilho, representado através um gráfico que mostra o número de pixels da imagens com um determinado nível de brilho. No caso de pixels representados por 8-bit, o brilho vai variar de 0 (preto) até 255 (branco)~\citet{Nixon2002}. Também pode ser apresentado informação de cor sobre uma imagem através de um histograma, sendo para isso necessário apresentar 3 histogramas diferenciados, um para cada componente de cor, no caso do esquema RGB.
+Outras das formas de representar a informação de uma imagem é através de um histograma. Um histograma de uma imagem apresenta a frequência de ocorrência de níveis individuais de brilho, representado através um gráfico que mostra o número de pixels da imagens com um determinado nível de brilho. No caso de pixels representados por 8-bit, o brilho vai variar de 0 (preto) até 255 (branco)~\citet{Nixon2002}. Também pode ser apresentado informação de cor sobre uma imagem através de um histograma, sendo para isso necessário apresentar 3 histogramas diferenciados, um para cada componente de cor, no caso do esquema RGB.
+A figura~\ref{fig:lenahist} apresenta um exemplo de um histograma de uma imagem com tons cinza, onde são representados o número de pixeis para cada nível diferente de cinzento.
 
-\textbf{Nota:} Adicionar figura com uma imagem e respetivo histograma
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/histlena}
+\caption{Imagem em tons cinza e respetivo histograma }
+\label{fig:lenahist}
+\end{figure}
 
 \subsection{Descritores de cor}
 
@@ -294,7 +322,7 @@ Nesta subsecção é apresentado os vários descritores de espaços de cor espec
 
 Em espaços de cor, as componentes de cor são definidas como entidades de valor continuo, sendo que podem ser representadas por valores discretos através de uma quantização uniforme, em que é especificado um número de níveis de quantização para cada componente de cor no espaço de cor. A única exceção é o espaço de cor HMMD.
 
-O espaço de cor RGB é um dos modelos referidos mais utilizados, que apresenta três componentes distintas, vermelho, verde e vermelho, tal como foi referido no subsecção~\ref{subsec:matrix}. Neste modelo é utilizado a combinação das 3 cores primárias para representar as diferentes cores. O modelo YCbCr provem do padrão MPEG-1/2/4~\cite{Ite-vil} e é definido pela transformação linear do espaço de cor RGB como demonstrado na equação~\ref{eq:ycbcr}:
+O espaço de cor RGB é um dos modelos referidos mais utilizados, que apresenta três componentes distintas, vermelho, verde e azul, tal como foi referido no subsecção~\ref{subsec:matrix}. Neste modelo é utilizado a combinação das 3 cores primárias para representar as diferentes cores. O modelo YCbCr provém do padrão MPEG-1/2/4~\cite{Ite-vil} e é definido pela transformação linear do espaço de cor RGB como demonstrado na equação~\ref{eq:ycbcr}:
 
 \begin{eqnarray}
 && Y = 0.299\times R + 0.587\times G + 0.114\times B\nonumber\\
@@ -302,9 +330,9 @@ O espaço de cor RGB é um dos modelos referidos mais utilizados, que apresenta 
 && Cr = 0.500\times R - 0.419\times G - 0.081\times B \label{eq:ycbcr}
 \end{eqnarray} 
 
-Para o espaço de cor Monocromáticas, é usado apenas a componente Y do modelo YCbCr. 
+Para o espaço de cor Monocromático, é usado apenas a componente Y do modelo YCbCr. 
 
-O espaço de cor HSV apresenta uma especificação mais complexa, tendo sido desenvolvido para fornecer uma representação mais intuitiva e para se aproximar mais do sistema visual humano. A transformação do modelo RGB para o HSV não é linear, mas é reversível~\cite{Manjunath2001}. Uma das componentes é a matiz (H - \textit{Hue}), que representa a componente de cor espectral dominante na sua forma mais pura, como o verde, amarelo, azul e vermelho. Ao ser adicionado branco a estas cores, muda-se a cor, sendo que, adicionando menos branco, mais saturada é a cor. A saturação (S - \textit{Saturation}) é precisamente outra das componentes deste modelo. Por fim, o valor (V - \textit{Value}) corresponde ao brilho de cor.
+O espaço de cor HSV apresenta uma especificação mais complexa, tendo sido desenvolvido para fornecer uma representação mais intuitiva e para se aproximar mais do sistema visual humano. A transformação do modelo RGB para o HSV não é linear, mas é reversível~\cite{Manjunath2001}. Uma das componentes é a matiz (H - \textit{Hue}), que representa a componente de cor espectral dominante na sua forma mais pura, como o verde, amarelo, azul e vermelho. Ao ser adicionado branco à cor, esta sofre uma alteração, sendo que, adicionando mais branco, menos saturada se torna a cor. A saturação (S - \textit{Saturation}) é precisamente outra das componentes deste modelo. Por fim, o valor (V - \textit{Value}) corresponde ao brilho de cor.
 
 O espaço de cor HMMD (\textit{Hue-Max-Min-Diff})~\cite{Manjunath2001, Ite-vil} é mais recente, que é caracterizado pela componente matiz, tal como o modelo HSV, pelo \textit{max} e \textit{min}, que são respetivamente o máximo e mínimo entre os valores R, G e B. Para descrever este modelo, também é utilizado a componente \textit{Diff}, que corresponde à diferença entre o \textit{max} e \textit{min}. Para representar este espaço de cor, apenas é necessário três dos quatro componentes referidos anteriormente, como por exemplo, {\textit{Hue, Max, Min}} ou {\textit{Hue, Diff, Sum}}, onde \textit{Sum} pode ser definida pela equação~\ref{eq:sum}.
 
