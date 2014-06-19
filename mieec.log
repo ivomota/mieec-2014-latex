@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.16)  17 JUN 2014 00:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.16)  19 JUN 2014 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -992,7 +992,7 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 \openout2 = `mymacros.aux'.
 
 (./mymacros.tex) (./mieec.aux (./abbrevs.aux) (./chapter1.aux) (./chapter2.aux)
-(./chapter3.aux))
+)
 \openout1 = `mieec.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
@@ -1105,7 +1105,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/sc' tried instead on input line 114.
 
-<figures/uporto-feup.pdf, id=119, 338.26375pt x 126.4725pt>
+<figures/uporto-feup.pdf, id=103, 338.26375pt x 126.4725pt>
 File: figures/uporto-feup.pdf Graphic file (type pdf)
 
 <use figures/uporto-feup.pdf>
@@ -1209,8 +1209,11 @@ Underfull \vbox (badness 3861) has occurred while \output is active []
  [1
 
 
-])
-[2]
+]
+
+LaTeX Warning: Reference `chap:chap3' on page 2 undefined on input line 35.
+
+) [2]
 \openout2 = `chapter2.aux'.
 
  (./chapter2.tex
@@ -1225,7 +1228,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
  [4]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 69.
- [5] <./figures/hierarquico.png, id=278, 820.06375pt x 613.29124pt>
+ [5] <./figures/hierarquico.png, id=262, 820.06375pt x 613.29124pt>
 File: ./figures/hierarquico.png Graphic file (type png)
 
 <use ./figures/hierarquico.png>
@@ -1237,7 +1240,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10.95> not available
 Underfull \vbox (badness 2521) has occurred while \output is active []
 
  [8]
-[9] <./figures/matriz_confusao.png, id=323, 963.6pt x 371.3875pt>
+[9] <./figures/matriz_confusao.png, id=307, 963.6pt x 371.3875pt>
 File: ./figures/matriz_confusao.png Graphic file (type png)
 
 <use ./figures/matriz_confusao.png>
@@ -1253,130 +1256,124 @@ Underfull \vbox (badness 5908) has occurred while \output is active []
 Underfull \vbox (badness 7326) has occurred while \output is active []
 
  [12]
-<./figures/histlena.png, id=363, 985.6825pt x 421.575pt>
+<./figures/histlena.png, id=347, 985.6825pt x 421.575pt>
 File: ./figures/histlena.png Graphic file (type png)
 
 <use ./figures/histlena.png>
 Package pdftex.def Info: ./figures/histlena.png used on input line 309.
 (pdftex.def)             Requested size: 341.43437pt x 146.0289pt.
  [13 <./figures/histlena.png>] [14] [15] [16]
-<./figures/ehd.png, id=422, 776.9025pt x 384.43625pt>
+<./figures/ehd.png, id=405, 776.9025pt x 384.43625pt>
 File: ./figures/ehd.png Graphic file (type png)
  <use ./figures/ehd.png>
 Package pdftex.def Info: ./figures/ehd.png used on input line 396.
 (pdftex.def)             Requested size: 298.75264pt x 147.83536pt.
 
 [17 <./figures/ehd.png>]
-<./figures/shape1.png, id=439, 582.175pt x 190.7125pt>
+<./figures/shape1.png, id=423, 582.175pt x 190.7125pt>
 File: ./figures/shape1.png Graphic file (type png)
 
 <use ./figures/shape1.png>
 Package pdftex.def Info: ./figures/shape1.png used on input line 414.
 (pdftex.def)             Requested size: 298.75264pt x 97.86736pt.
  [18 <./figures/shape1.png>] [19]
-<./figures/visual_word_1.png, id=463, 467.7475pt x 156.585pt>
-File: ./figures/visual_word_1.png Graphic file (type png)
+<./figures/sift_dog.jpg, id=447, 451.6875pt x 326.21875pt>
+File: ./figures/sift_dog.jpg Graphic file (type jpg)
 
-<use ./figures/visual_word_1.png>
-Package pdftex.def Info: ./figures/visual_word_1.png used on input line 468.
-(pdftex.def)             Requested size: 170.71393pt x 57.14946pt.
-
-<./figures/visual_word_2.png, id=464, 467.7475pt x 156.585pt>
-File: ./figures/visual_word_2.png Graphic file (type png)
-
-<use ./figures/visual_word_2.png>
-Package pdftex.def Info: ./figures/visual_word_2.png used on input line 473.
-(pdftex.def)             Requested size: 170.71393pt x 57.14946pt.
-
-<./figures/visual_word_3.png, id=465, 470.75874pt x 148.555pt>
-File: ./figures/visual_word_3.png Graphic file (type png)
-
-<use ./figures/visual_word_3.png>
-Package pdftex.def Info: ./figures/visual_word_3.png used on input line 478.
-(pdftex.def)             Requested size: 170.71393pt x 53.8719pt.
-
-<./figures/visual_word_4.png, id=466, 470.75874pt x 148.555pt>
-File: ./figures/visual_word_4.png Graphic file (type png)
-
-<use ./figures/visual_word_4.png>
-Package pdftex.def Info: ./figures/visual_word_4.png used on input line 483.
-(pdftex.def)             Requested size: 170.71393pt x 53.8719pt.
- [20 <./figures/visual_word_1.png> <./figures/visual_word_2.png> <./figures/vis
-ual_word_3.png> <./figures/visual_word_4.png>]) [21]
-\openout2 = `chapter3.aux'.
-
- (./chapter3.tex [22
+<use ./figures/sift_dog.jpg>
+Package pdftex.def Info: ./figures/sift_dog.jpg used on input line 493.
+(pdftex.def)             Requested size: 298.75264pt x 215.77791pt.
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-]
-Cap\'{\i }tulo 3.
-\ganttx=\count167
-\ganttheight=\count168
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+[20] <./figures/sift_dog2.png, id=461, 273.02pt x 234.8775pt>
+File: ./figures/sift_dog2.png Graphic file (type png)
 
-Overfull \hbox (37.62532pt too wide) in paragraph at lines 37--38
-[][] 
- []
+<use ./figures/sift_dog2.png>
+Package pdftex.def Info: ./figures/sift_dog2.png used on input line 508.
+(pdftex.def)             Requested size: 170.71393pt x 146.86617pt.
+ [21 <./figures/sift_dog.jpg> <./figures/sift_dog2.png>] [22] <./figures/surf.p
+ng, id=484, 472.76625pt x 289.08pt>
+File: ./figures/surf.png Graphic file (type png)
 
-[23] [24]) [25] [26
+<use ./figures/surf.png>
+Package pdftex.def Info: ./figures/surf.png used on input line 558.
+(pdftex.def)             Requested size: 298.75264pt x 182.68155pt.
+ [23 <./figures/surf.png>]
+
+Package caption Warning: \label without proper \caption on input line 578.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:visual_word' on page 24 undefined on input line 5
+73.
+
+
+Underfull \vbox (badness 4454) has occurred while \output is active []
+
+ [24])
+[25] [26
 
 
 ] (./mieec.bbl
-LaTeX Font Info:    Try loading font information for T1+pcrs on input line 38.
+LaTeX Font Info:    Try loading font information for T1+pcrs on input line 25.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/courier-scaled/t1pcrs.fd
 File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
 )
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 38.
+(Font)              scaled to size 10.40245pt on input line 25.
 
 [27
 
-])
+]
+Underfull \hbox (badness 2818) in paragraph at lines 142--149
+[]\T1/ptm/m/n/10.95 D.G. Lowe.  Ob-ject re-cog-ni-tion from lo-cal scale-invari
+ant fe-a-tu-res.  \T1/ptm/m/it/10.95 Proc. Se-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--149
+\T1/pcrs/m/n/10.95 / / ieeexplore . ieee . org / lpdocs / epic03 / wrapper . ht
+m ? arnumber = 790410$[][]\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 164--169
+[]\T1/ptm/m/n/10.95 R Baeza-Yates e B Ribeiro-Neto.  \T1/ptm/m/it/10.95 Mo-dern
+ in-for-ma-tion re-tri-e-val\T1/ptm/m/n/10.95 .  1999.  URL:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--169
+[][]$\T1/pcrs/m/n/10.95 ftp : / / mail . im . tku . edu . tw / seke / slide / b
+aeza-[]yates / chap10 _ user _
+ []
+
+[28])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 162.
- [28]
+ [29]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 162.
- (./mieec.aux (./abbrevs.aux) (./chapter1.aux) (./chapter2.aux)
-(./chapter3.aux))
+ (./mieec.aux (./abbrevs.aux) (./chapter1.aux) (./chapter2.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 162.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 162.
 Package rerunfilecheck Info: File `mieec.out' has not changed.
-(rerunfilecheck)             Checksum: 6C3253F9A315BDD02A130BA07A75D11A;2034.
+(rerunfilecheck)             Checksum: 1E9BBBA491E9FEE9ADB0989EDA583756;1762.
+
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 162.
  ) 
 Here is how much of TeX's memory you used:
- 18542 strings out of 493481
- 323808 string characters out of 3140965
- 424412 words of memory out of 3000000
- 21237 multiletter control sequences out of 15000+200000
- 78320 words of font info for 92 fonts, out of 3000000 for 9000
+ 18412 strings out of 493481
+ 320549 string characters out of 3140965
+ 412407 words of memory out of 3000000
+ 21099 multiletter control sequences out of 15000+200000
+ 76020 words of font info for 92 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,12n,75p,1782b,848s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,12n,75p,1783b,506s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -1389,10 +1386,10 @@ urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/
 utmbi8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
 cal/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mieec.pdf (36 pages, 1133743 bytes).
+Output written on mieec.pdf (37 pages, 946562 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 535 compressed objects within 6 object streams
- 144 named destinations out of 1000 (max. 500000)
- 291 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 645 PDF objects out of 1000 (max. 8388607)
+ 566 compressed objects within 6 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

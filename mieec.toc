@@ -29,16 +29,13 @@
 \contentsline {subsection}{\numberline {2.3.4}Descritores de textura}{16}{subsection.2.3.4}
 \contentsline {subsubsection}{\numberline {2.3.4.1}Descritor de textura homog\IeC {\'e}nea}{16}{subsubsection.2.3.4.1}
 \contentsline {subsubsection}{\numberline {2.3.4.2}Descritor de histograma de borda}{17}{subsubsection.2.3.4.2}
-\contentsline {subsubsection}{\numberline {2.3.4.3}Descritor de textura homog\IeC {\'e}nea}{17}{subsubsection.2.3.4.3}
+\contentsline {subsubsection}{\numberline {2.3.4.3}Descritor de navega\IeC {\c c}\IeC {\~a}o percetual}{17}{subsubsection.2.3.4.3}
 \contentsline {subsection}{\numberline {2.3.5}Descritores de forma}{18}{subsection.2.3.5}
 \contentsline {subsubsection}{\numberline {2.3.5.1}Descritor de forma baseado em regi\IeC {\~a}o}{18}{subsubsection.2.3.5.1}
 \contentsline {subsubsection}{\numberline {2.3.5.2}Descritor de forma baseado no contorno}{18}{subsubsection.2.3.5.2}
-\contentsline {subsection}{\numberline {2.3.6}Descritores local}{19}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.6}Descritores locais}{19}{subsection.2.3.6}
 \contentsline {subsubsection}{\numberline {2.3.6.1}SIFT}{19}{subsubsection.2.3.6.1}
-\contentsline {subsection}{\numberline {2.3.7}Descritores baseado em vocabul\IeC {\'a}rio visual}{20}{subsection.2.3.7}
-\contentsline {section}{\numberline {2.4}Trabalhos relacionados}{21}{section.2.4}
-\contentsline {chapter}{\numberline {3}Plano de trabalho e conclus\IeC {\~o}es}{23}{chapter.3}
-\contentsline {section}{\numberline {3.1}Plano de trabalho}{23}{section.3.1}
-\contentsline {section}{\numberline {3.2}Ferramentas de apoio}{24}{section.3.2}
-\contentsline {section}{\numberline {3.3}Conclus\IeC {\~a}o}{25}{section.3.3}
-\contentsline {chapter}{Refer\^{e}ncias}{27}{section*.11}
+\contentsline {subsubsection}{\numberline {2.3.6.2}SURF}{23}{subsubsection.2.3.6.2}
+\contentsline {subsection}{\numberline {2.3.7}Descritores baseado em vocabul\IeC {\'a}rio visual}{24}{subsection.2.3.7}
+\contentsline {section}{\numberline {2.4}Trabalhos relacionados}{25}{section.2.4}
+\contentsline {chapter}{Refer\^{e}ncias}{27}{section*.14}
