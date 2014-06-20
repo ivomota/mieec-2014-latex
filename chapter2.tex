@@ -284,9 +284,11 @@ onde $ R $ representa o raio da Terra e que determina as unidades do resultado r
 
 \section{TweeProfiles} \label{sec:tweep}
 
-Esta dissertação tem com
+Esta dissertação pretende dar continuidade e um trabalho designado por TweeProfiles. O TweetProfiles é uma ferramenta de análise e visualização espaço-temporal de dados recolhidos no Twitter. Esta secção faz um breve introdução e descrição sobre esta ferramenta.
 
 \subsection{Objetivos}
+
+
 
 \subsection{Descrição}
 
@@ -296,8 +298,7 @@ Esta dissertação tem com
 
 % % % NOVA SECÇÃO % % %
 
-\section{Representação de imagens} \label{sec:represent}
-
+\section{Representação de informação visual} \label{sec:represent}
 
 Na secção~\ref{sec:cluster} foi apresentado o conceito e características da tarefa de \textit{clustering} de uma forma geral. Nesta secção será exposto formas de representar imagens como dados. É importante salientar que a tarefa de \textit{clustering} em imagem é muitas vezes associada à técnica de segmentação de imagem~\citet{Forsyth2011}, não sendo este o objetivo deste projeto de dissertação, onde se pretende que para tarefa de \textit{clustering} cada objeto seja considerado a imagem no seu conjunto. 
 
@@ -559,7 +560,7 @@ O algoritmo SIFT é regularmente utilizado em reconhecimento de objetos ou cenas
 
 Outro algoritmo importante de extração de descritores locais é o SURF (\textit{Speeded Up Robust Features}). Este é baseado no SIFT apresentado na subsecção anterior~\ref{subsubsec:sift} e também é utilizado, por exemplo, em reconhecimento de objetos ou mesmo na reconstrução 3D. Segundo os autores~\cite{Bay2006} o SURF é mais rápido (cerca de dez vezes) e robusto do que o SIFT, sendo que, segundo a comparação realizada em~\cite{Juan2009} comprovou-se que o SIFT é mais lento e não muito bom a mudanças de iluminação, mas apresenta melhores resultados a variações de rotação, mudanças de escala e transformações na imagem.
 
-Este usa a técnica da imagem integral, onde cada pixel de uma imagem recebe um valor igual à soma dos pixeis da sua esquerda e acima, incluindo o próprio. Este também utiliza um filtro Haar em formato de caixa numa sub-região 4x4 em redor de um ponto de interesse, que torna computacionalmente eficiente sobre uma imagens integral. Isto é realizado calculando a soma das respostas dos filtros e a soma do modulo das respostas dos filtros nas direções horizontal e vertical, gerando assim 4 valores por cada sub-região. Logo, o SURF retorna um vetor de 64 dimensões, metade do retornado pelo algoritmo SIFT.
+Este usa a técnica da imagem integral, onde cada pixel de uma imagem recebe um valor igual à soma dos pixeis da sua esquerda e acima, incluindo o próprio. Este também utiliza um filtro Haar em formato de caixa numa sub-região 4x4 em redor de um ponto de interesse, como se pode ver na figura~\ref{fig:surf}, tornando o processo computacionalmente eficiente. Isto é realizado calculando a soma das respostas dos filtros e a soma do modulo das respostas dos filtros nas direções horizontal e vertical, gerando assim 4 valores por cada sub-região. Logo, o SURF retorna um vetor de 64 dimensões, metade do retornado pelo algoritmo SIFT.
 
 \begin{figure}[h]
 \centering
