@@ -31,12 +31,6 @@ Herbert Bay, Tinne Tuytelaars, e Luc~Van Gool.
 \newblock {\em Comput. Vision–ECCV 2006}, 2006.
 \newblock URL: \url{http://link.springer.com/chapter/10.1007/11744023\_32}.
 
-\bibitem{Sivic2006}
-Josef Sivic e Andrew Zisserman.
-\newblock {Video Google: Efficient visual search of videos}.
-\newblock {\em Towar. Categ. Object Recognit.}, 4170:127--144, 2006.
-\newblock doi:10.1007/11957959\_7.
-
 \bibitem{Russell2011}
 Matthew~A Russell.
 \newblock {\em {Mining the Social Web}}, volume~54.
@@ -153,6 +147,12 @@ Josef Sivic e Andrew Zisserman.
   videos}.
 \newblock {\em Comput. Vision, 2003. Proceedings. \ldots}, (Iccv):2--9, 2003.
 
+\bibitem{Sivic2006}
+Josef Sivic e Andrew Zisserman.
+\newblock {Video Google: Efficient visual search of videos}.
+\newblock {\em Towar. Categ. Object Recognit.}, 4170:127--144, 2006.
+\newblock doi:10.1007/11957959\_7.
+
 \bibitem{Juan2009}
 Luo Juan e O~Gwun.
 \newblock {A comparison of sift, pca-sift and surf}.
@@ -167,37 +167,11 @@ R~Baeza-Yates e B~Ribeiro-Neto.
 \newblock URL:
   \url{ftp://mail.im.tku.edu.tw/seke/slide/baeza-yates/chap10\_user\_interfaces\_and\_visualization-modern\_ir.pdf}.
 
-\bibitem{Cai2004}
-Deng Cai, Xiaofei He, Zhiwei Li, Wei-Ying Ma, e Ji-Rong Wen.
-\newblock {Hierarchical clustering of WWW image search results using visual,
-  textual and link information}.
-\newblock {\em Proc. 12th Annu. ACM Int. Conf. Multimed. - Multimed. '04},
-  2004.
-\newblock URL: \url{http://portal.acm.org/citation.cfm?doid=1027527.1027747},
-  doi:10.1145/1027527.1027747.
-
-\bibitem{Gao2005}
-Bin Gao, Tie-Yan Liu, Tao Qin, Xin Zheng, Qian-Sheng Cheng, e Wei-Ying Ma.
-\newblock {Web image clustering by consistent utilization of visual features
-  and surrounding texts}.
-\newblock Em {\em Proc. 13th Annu. ACM Int. Conf. Multimed. - Multimed. '05},
-  p\'{a}gina 112, New York, New York, USA, Novembro 2005. ACM Press.
-\newblock URL: \url{http://dl.acm.org/citation.cfm?id=1101149.1101167},
-  doi:10.1145/1101149.1101167.
-
 \bibitem{Nister2006}
 D.~Nister e H.~Stewenius.
 \newblock {Scalable recognition with a vocabulary tree}.
 \newblock {\em \ldots Vis. Pattern Recognition, 2006 \ldots}, 2, 2006.
 \newblock URL:
   \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=1641018}.
-
-\bibitem{Lin2014}
-Chuen-Horng Lin, Chun-Chieh Chen, Hsin-Lun Lee, e Jan-Ray Liao.
-\newblock {Fast K-means algorithm based on a level histogram for image
-  retrieval}.
-\newblock {\em Expert Syst. Appl.}, 41(7):3276--3283, 2014.
-\newblock URL:
-  \url{http://www.sciencedirect.com/science/article/pii/S0957417413009299}.
 
 \end{thebibliography}

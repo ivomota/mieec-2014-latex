@@ -579,12 +579,12 @@ No reconhecimento de documentos de texto é utilizado o conceito de vocabulário
 
 Recentemente esta técnica foi adotada em aplicações de extração de informação visual, como por exemplo é nos mostrado em~\cite{Sivic2003, Sivic2006}. Esta recorre a descritores locais invariantes a escala e rotação, para criar um vocabulário visual. A utilização de descritores locais como o SIFT, referido na secção anterior anterior~\ref{subsubsec:sift}, permite a extração de pontos de interesse nas imagens, invariantes a rotação e mudanças de escalas.
 
-Quando efetuado este processo repetidamente com um grande conjunto de imagens, é possível criar \textit{clusters} de regiões de imagens muito semelhantes entre si, como se pode ver na figura~\ref{fig:visual_word}. Todas estas regiões são candidatas a palavras visuais, sendo selecionada a que representa melhor esse \textit{cluster}, isto é, é selecionado o centroide desse conjunto de regiões semelhantes entre si, recorrendo ao algoritmo \textit{k-means} referido na secção~\ref{subsec:parti}. Esse centroide passa então a ser considerado uma palavra visual e é adicionado a um vocabulário com outras palavras visuais.
+Quando efetuado este processo repetidamente com um grande conjunto de imagens, é possível criar \textit{clusters} de regiões de imagens muito semelhantes entre si, como se pode ver na figura~\ref{fig:visualword}. Todas estas regiões são candidatas a palavras visuais, sendo selecionada a que representa melhor esse \textit{cluster}, isto é, é selecionado o centroide desse conjunto de regiões semelhantes entre si, recorrendo ao algoritmo \textit{k-means} referido na secção~\ref{subsec:parti}. Esse centroide passa então a ser considerado uma palavra visual e é adicionado a um vocabulário com outras palavras visuais.
 
 \begin{figure}[h]
 \centering
-Será adicionada aqui uma imagem ...
-\label{fig:visual_word}
+\includegraphics[width=0.4\linewidth]{./figures/visual_word_1}
+\label{fig:visualword}
 \end{figure}
 
 %\begin{figure}[h]

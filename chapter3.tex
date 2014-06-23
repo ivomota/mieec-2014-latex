@@ -1,166 +1,79 @@
-\chapter{Plano de trabalho e conclusões}\label{chap:chap3}
+\chapter{Módulo da informação visual} \label{chap:chap3}
 
-Neste capítulo apresenta-se o plano de trabalho a ser realizado durante o desenvolvimento do projeto de dissertação através do diagrama de Gantt, com os períodos de tempo previstos para a sua execução, de acordo com os objetivos propostos no~\ref{chap:intro}, secção~\ref{sec:object}. São também referenciadas as ferramentas e tecnologias necessárias para o desenvolvimento deste projeto e uma pequena conclusão.
+Neste capítulo será introduzido o módulo da informação visual desenvolvido, sendo apresentado a estrutura e organização deste sistema. Como referido no capítulo~\ref{chap:intro}, este projeto pretende estender a ferramenta TweeProfiles descrita na secção~\ref{sec:tweep}, dando-lhe uma dimensão de conteúdo diferente à que possuí, em que a informação tido em conta, em conjunto com a espacial e temporal, passa a ser imagens partilhadas em \textit{tweets} e não o texto. Para que isto seja realizável, foi necessário o desenvolvimento de um módulo que efetue a recolha os dados com a devida filtragem, extraia e processe a informação visual e armazene essa informação de modo a que fosse possível a sua integração com o TweeProfiles.
 
-\section{Plano de trabalho}
+\section{Recolha dos dados}
 
-Nesta secção é apresentado na figura~\ref{fig:gantt} o diagrama de Gantt com as tarefas previstas e com a respetiva distribuição das mesmas ao longo do tempo definido para o desenvolvimento do projeto de dissertação.  
+\subsection{Descrição dos dados}
 
-\begin{figure}[h]
-\scalebox{1}{
-\begin{gantt}[xunitlength=0.5cm,fontsize=\small,titlefontsize=\small]{10}{18}
-%\begin{gantt}{10}{18}
-	\begin{ganttitle}
-	    \titleelement{Feb}{3}
-	    \titleelement{Mar}{4}
-	    \titleelement{Apr}{5}
-	    \titleelement{May}{4}
-	    \titleelement{Jun}{2}
-	\end{ganttitle}
-	\begin{ganttitle}
-	      \numtitle{2}{1}{4}{1}
-	      \numtitle{1}{1}{4}{1}
-	      \numtitle{1}{1}{5}{1}
-	      \numtitle{1}{1}{4}{1}
-	      \numtitle{1}{1}{2}{1}
-	    \end{ganttitle}
-	\ganttbar[color=red]{Implemetação sistemas acesso às imagens}{0}{2}
-	\ganttbar[color=red]{Familiarização com ferramentas de trabalho }{1}{2}
-	\ganttbar[color=red]{Especificação do sistema a implementar}{2}{2}
-	\ganttbar[color=orange]{Desenvolvimento da primeira versão do modelo}{4}{3}
-	\ganttbarcon[color=orange]{Desenvolvimento da segunda versão do modelo}{7}{4}
-	\ganttbar[color=yellow]{Extensão do TweeProfiles}{11}{4}
-	\ganttbar[color=green]{Escrita da Dissertação}{14}{4}
-	\ganttbar[color=cyan]{Criação e actualização do website}{0}{18}
+O primeiro passo para a realização deste projeto de dissertação foi a recolha dos dados necessários. Estes dados foram recolhidos através de uma base de dados mongodb previamente criada usando a plataforma Socialbus, anteriormente designada por TwitterEcho~\cite{Boanjak2012}. Este dados vêm sobre a forma de objetos JSON e possuem informação relativa a cada tweet como pode ser visto no anexo~\ref{ap1}. Estes objetos encontram-se todos num só documento mongodb que se caracteriza pelas características apresentadas na tabela~\ref{tab:nbrtweets}
 
-\end{gantt}
-}
-\caption{Diagarama de Gantt com plano de trabalho}
-\label{fig:gantt}
-\end{figure}
+\vspace{5 mm}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|l|l|l|}
+\hline
+          & Total                        & Com imagem & Twitter                  & TwitPic                   & Instagram                  \\ \hline
+Nº Tweets & \multicolumn{1}{r|}{1704273} & 86349      & \multicolumn{1}{c|}{202} & \multicolumn{1}{c|}{6100} & \multicolumn{1}{c|}{79210} \\ \hline
+\end{tabular}
+\caption{Descrição em números do total de tweets com indicação, nos que contém URL para imagem, do número de tweets por serviço de partilha de imagem}
+\label{tab:nbrtweets}
+\end{table}
+\vspace{5 mm}
+
+Estes tweets foram recolhidos entre o dia 17 e 19 de Junho de 2013 com conteúdo partilhado somente contendo texto escrito em português do Brasil, tendo sido isto foi possível graças á capacidade de filtragem da ferramenta Socialbus~\cite{Boanjak2012} já referida anteriormente. Estas datas coincidiram com um evento ocorrido no Brasil, mais especificamente, as manifestações do ano passado do povo brasileiro contra o seu governo. Este foi um dos motivos da escolha desta base de dados, pois apresentava tweets que poderiam ser interessante para encontrar padrões ou eventos através das imagens partilhadas pelos brasileiros nas ruas, aliadas sempre às dimensões espaço-temporais. 
+
+\subsection{Filtragem dos dados}
+
+Após estar definido o conjunto de dados a utilizar, foi necessário realizar uma filtragem dos dados de modo a apresentem a informação necessária para a realização deste projeto. O primeiro passo desta filtragem foi recolher todos os tweets que contivessem no seu objeto um URL para uma imagem, sendo que esse URl teria de pertencer a um dos seguintes serviços: 
+
+\begin{itemize}
+\item Twitter
+\item TwitPic
+\item Instagram
+\end{itemize}
+
+e teria que esse URl ser válio, isto é, foi feita uma prévia verificação se a imagem estaria ainda disponível através do endereço existente.
+
+Para ser mais fácil posteriormente uma seleção mais cuidadosa dos tweets foi criada uma base de dados local (SQLite) com a seguinte tabela:
+
+\begin{lstlisting}[language=SQL]
+create table if not exists IMAGENS ( 
+	id integer PRIMARY KEY AUTOINCREMENT, 
+	id_tweet text, 
+	servico text, 
+	url text, 
+	tipo text, 
+	retweet text 
+); 
+\end{lstlisting}
+
+Em que se descreve cada coluna da seguinte forma:
 
 \begin{description}
-\item[Implementação sistemas acesso ás imagens:] Para a realização deste projeto será necessário realizar a recolha dos \textit{urls} das imagens partilhadas através do serviço Twitter e o armazenamento das respetivas imagens para que possam posteriormente ser utilizadas para o objetivo desta dissertação referido no capítulo~\ref{chap:intro}, secção~\ref{sec:object}.A duração prevista para esta etapa é de \textbf{duas semanas}.
-
-\item[Familiarização com ferramentas de trabalho:] Nesta fase inicial, é necessário fazer uma avaliação e o estudo das ferramentas e do ambiente de desenvolvimento para as fases seguinte. A duração prevista para esta etapa é de \textbf{duas semana}.
-
-\item[Especificação do sistema a implementar: ] Em paralelo com a etapa anterior, dá-se início à especificação do sistema que irá analisar as imagens e ser capaz de apresentar \textit{clusters} das mesmas. Será também definida a estratégia de ataque ao problema. A duração prevista para esta etapa é de cerca de \textbf{duas semanas}.
-
-\item[Desenvolvimento do sistema :] Esta etapa encontra-se dividida em duas sub-etapas para a implementação do sistema a desenvolver. Enquanto que a segunda  Esta etapa terá uma duração total prevista de \textbf{sete semanas}
-
-\begin{enumerate}
-\item \textbf{Primeira versão: } Que seja capaz de realizar a tarefa de \textit{clustering} recorrendo a apenas algumas imagens. Esta Sub-tarefa terá uma duração prevista de \textbf{três semanas}
-\item \textbf{Segunda versão: } Que seja capaz de realizar a tarefa de \textit{clustering} recorrendo a uma base de dados maior. Esta Sub-tarefa terá uma duração prevista de \textbf{quatro semanas}
-\end{enumerate}
-
-\item[Extensão do TweeProfiles: ] Esta etapa refere-se ao processo de implementação do sistema desenvolvido na etapa anterior, em que se procederá à extensão da ferramenta TweeProfiles~\citet{Cunha2013} com teste. Esta etapa tem uma duração prevista de cerca de \textbf{quatro semanas}.  
-
-\item[Escrita da Dissertação: ] Após todos os testes realizados e feita a análise dos resultados obtidos, será realizado a última etapa, que corresponde à escrita do documento final. que deverá descrever todo o trabalho desenvolvido ao longo do semestre e as conclusões retiradas. Esta etapa tem uma duração prevista de cerca de \textbf{quatro semanas}.
-
-\item[Criação e atualização da página web: ] Esta será uma tarefa continua ao longo do desenvolvimento da dissertação, em que será criada uma pagina web com informação relativa ao projeto, e que será constantemente atualizada com os respetivos desenvolvimentos.
+\item[id] - id da linha da tabela;
+\item[id\_tweet] - id do tweet na base de dados Mongodb;
+\item[servico] - nome do serviço de alojamento da imagem;
+\item[url] - endereço url para a imagem fonte;
+\item[tipo] - este atributo identifica se a imagem pertence a um tweet ou retweet;
+\item[retweet] - caso a imagem pertença a um retweet, este atributo pode assumir o valor "primeiro" no caso de ser o primeiro retweet, do tweet original, na base de dados mongodb, ou caso contrário, assume o valor NULL.
 \end{description}
 
+Isto permitiu realizar de uma forma rápida alguns teste no download de algumas imagens pelos diferentes serviços, para além de permitir fazer uma seleção fácil e rápida de tweets, retweets ou por exemplo, do primeiro retweet no caso de existir vários retweets de um determinado tweet. 
 
-\section{Ferramentas de apoio}
+Após a criação desta base de dados, ficou decidido selecionar todos os objetos da base de dados Mongodb do tipo tweet em que o seu serviço fosse o Instagram. Esta decisão deveu-se ao facto do Instagram apresentar um número maior de imagens 
 
-Nesta secção faz-se referência às ferramentas e tecnologias utilizadas para o desenvolvimento do trabalho.
+\subsection{Conjunto de dados final}
 
-Todos os tweets estão alojados numa base de dados Mongodb. Para acesso à informação será utilizada a linguagem Python, mais especificamente, através da utilização da biblioteca Pymongo. Será também necessário recorrer a uma base de dados relacional PostgreSQL para o armazenamento dos endereços de acesso à fonte das fotografias e de outras informações pertinentes que permita uma pesquisa facilmente filtrada. 
+Por fim armazenou-se um ficheiro JSON com todos os dados a ser utilizados e foi realizado o download de todas as imagens relativas a cada tweet e armazenadas localmente em formato JPEG, que se apresentava como formato de origem das imagens descarregadas. 
 
-%Todos os tweets estão alojados numa base de dados Mongodb, sendo possível recorrer à informação armazenada recorrendo à linguagem Python, mais precisamente com a biblioteca Pymongo. Será também necessário a utilização de uma base de dados relacional PostgreSQL para o armazenamento dos endereços à fonte das fotografias e de outras informações pertinentes que facilite a filtragem das mesmas. 
+Relativamente aos objetos de cada tweet presentes no ficheiro JSON, optou-se por não armazenar todas as instâncias para reduzir o tamanho do ficheiro, tendo sido apenas incluídas as representadas no seguinte exemplo de um objeto de um tweet:
 
-Para o desenvolvimento do sistema de processamento das imagens será utilizado a ferramenta livre OpenCV.
-
-
-\section{Conclusão}
-
-Este relatório foi realizado com o intuito de preparar a realização do projeto de dissertação. Assim, primeiramente é apresentada uma introdução com a descrição do tema, das motivações e objetivos deste trabalho. De seguida, o capítulo~\ref{chap:estarte} apresenta o estado da arte, onde foi realizada a revisão bibliográfica, recorrendo a pesquisa de livros e artigos científicos, informação esta que se revelou importante para a compreensão das tarefas necessárias a realizar, bem como dos conteúdos a dominar. Para além disto, este capitulo faz uma introdução teórica a alguns conteúdos que são necessários dominar. Por fim, foi apresentado o diagrama de Gantt que descreve as tarefas a realizar e a correspondente duração, e ainda, as ferramentas necessárias para o desenvolvimento do projeto.
-
-
-%Este relatório foi realizado com o intuito de preparar a realização do projeto de dissertação. Assim, o primeiro passo foi a apresentação de uma breve introdução com a descrição do tema, das motivações e objetivos deste trabalho. Já o capítulo~\ref{chap:estarte}, apresenta o estado da arte, onde foi realizada a revisão bibliográfica, recorrendo a pesquisa de livros e artigos científicos, informação esta que se revelou importante para a compreensão das tarefas necessárias a realizar, bem como dos conteúdos a dominar. Para além disto, este capitulo faz uma introdução teórica a alguns conteúdos que são necessários dominar.Por fim, foi apresentado o diagrama de Gantt que descreve as tarefas a realizar e a correspondente duração e as ferramentas que serão utilizadas para o desenvolvimento do projeto.
-
-Após a finalização deste relatório final, conclui-se que este projeto possui suporte cientifico e tecnológico para que seja concretizado. 
+\lstinputlisting[language=Python]{./code/tweets_instagram_exemple.json}
 
 
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-%Apresenta-se de seguida um exemplo de equação, completamente fora do contexto:
-%\begin{eqnarray}
-%CIF_1: \hspace*{5mm}F_0^j(a) &=& \frac{1}{2\pi \iota} \oint_{\gamma} \frac{F_0^j(z)}{z - a} dz\\
-%CIF_2: \hspace*{5mm}F_1^j(a) &=& \frac{1}{2\pi \iota} \oint_{\gamma} \frac{F_0^j(x)}{x - a} dx \label{eq:cif}
-%\end{eqnarray}
-%
-%Na Equação~\ref{eq:cif} lorem ipsum dolor sit amet, consectetuer
-%adipiscing elit. Suspendisse tincidunt viverra elit. Donec tempus
-%vulputate mauris. Donec arcu. Vestibulum condimentum porta
-%justo. Curabitur ornare tincidunt lacus. Curabitur ac massa vel ante
-%tincidunt placerat. Cras vehicula semper elit. Curabitur gravida, est
-%a elementum suscipit, est eros ullamcorper quam, sed cursus velit
-%velit tempor neque. Duis tempor condimentum ante. Nam
-%sollicitudin. Vestibulum adipiscing, orci eu tempor dapibus, risus
-%sapien porta metus, et cursus leo metus eget nibh. 
-%
-%\section{Secção Exemplo}
-%
-%A arquitectura do visualizador assenta sobre os seguintes conceitos
-%base~\citep{kn:ZPMD97}: 
-%
-%\begin{itemize}
-%\item \textbf{Componentes} --- Suspendisse auctor mattis augue \emph{push};
-%\item \textbf{Praesent} --- Sit amet sem maecenas eleifend facilisis leo;
-%\item \textbf{Pellentesque} --- Habitant morbi tristique senectus et netus.
-%\end{itemize}
-%
-%\subsection{Exemplo de Figura}
-%
-%É apresentado na Figura~\ref{fig:arch} da página~\pageref{fig:arch} um
-%exemplo de figura flutuante que deverá ficar no topo da página.
-%
-%\begin{figure}[t]
-%  \begin{center}
-%    \leavevmode
-%    \includegraphics[width=0.86\textwidth]{puzzle}
-%    \caption{Arquitectura da Solução Proposta}
-%    \label{fig:arch}
-%  \end{center}
-%\end{figure}
-%
-%Loren ipsum dolor sit amet, consectetuer adipiscing elit. 
-%Praesent sit amet sem. Maecenas eleifend facilisis leo. Vestibulum et
-%mi. Aliquam posuere, ante non tristique consectetuer, dui elit
-%scelerisque augue, eu vehicula nibh nisi ac est. Suspendisse elementum
-%sodales felis. Nullam laoreet fermentum urna. 
+%\section{Extração e processamento da informação visual}
 %
 %
-%\subsection{Exemplo de Tabela}
-%
-%É apresentado na Tabela~\ref{tab:exemplo} um exemplo de tabela
-%flutuante que deverá ficar no topo da página.
-%
-%\begin{table}[t]
-%  \centering
-%  \caption{Tabela Exemplo}
-%\begin{tabular}{|c|r@{.}lr@{.}lr@{.}l||r|}
-%	\hline
-%\multicolumn{8}{|c|}
-%	{\rule[-3mm]{0mm}{8mm}Iteração $k$ de $f(x_n)$} \\
-%\textbf{\em k}
-%	& \multicolumn{2}{c}{$x_1^k$}
-%	& \multicolumn{2}{c}{$x_2^k$}
-%	& \multicolumn{2}{c||}{$x_3^k$}
-%	& comentários \\ \hline \hline
-%0   & -0&3                 & 0&6                 &  0&7   & - \\
-%1   &  0&47102965 & 0&04883157 & -0&53345964  & $\delta<\epsilon$ \\
-%2   &  0&49988691 & 0&00228830 & -0&52246185  & $\delta < \varepsilon$ \\
-%3   &  0&49999976 & 0&00005380 & -0&523656   &   $N$ \\
-%4   &  0&5                 & 0&00000307 & -0&52359743  & \\
-%\vdots	& \multicolumn{2}{c}{\vdots}
-%	& \multicolumn{2}{c}{$\ddots$}
-%	& \multicolumn{2}{c||}{\vdots}  & \\
-%7   &  0&5   & 0&0    & \textbf{-0}&\textbf{52359878}
-%		 & $\delta<10^{-8}$ \\ \hline
-%\end{tabular}
-%  \label{tab:exemplo}
-%\end{table}
-%
-
+%\section{Armazenamento da informação visual}

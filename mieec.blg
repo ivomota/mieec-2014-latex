@@ -4,6 +4,7 @@ The top-level auxiliary file: mieec.aux
 A level-1 auxiliary file: abbrevs.aux
 A level-1 auxiliary file: chapter1.aux
 A level-1 auxiliary file: chapter2.aux
+A level-1 auxiliary file: chapter3.aux
 The style file: unsrt-pt.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
@@ -24,45 +25,45 @@ Warning--there's a number but no volume in Shao2009
 Warning--there's a number but no volume in Sivic2003
 Warning--there's a number but no volume in Juan2009
 Warning--empty publisher in Baeza-Yates1999
-You've used 32 entries,
+You've used 29 entries,
             2522 wiz_defined-function locations,
-            795 strings with 9983 characters,
-and the built_in function-call counts, 10573 in all, are:
-= -- 1071
-> -- 325
-< -- 7
-+ -- 105
-- -- 73
-* -- 460
-:= -- 1381
-add.period$ -- 111
-call.type$ -- 32
-change.case$ -- 22
+            769 strings with 9055 characters,
+and the built_in function-call counts, 9291 in all, are:
+= -- 936
+> -- 269
+< -- 6
++ -- 87
+- -- 58
+* -- 385
+:= -- 1210
+add.period$ -- 98
+call.type$ -- 29
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 360
-empty$ -- 1161
-format.name$ -- 73
-if$ -- 2996
+cite$ -- 43
+duplicate$ -- 318
+empty$ -- 1032
+format.name$ -- 58
+if$ -- 2639
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 40
-newline$ -- 177
-num.names$ -- 32
-pop$ -- 315
+int.to.str$ -- 29
+missing$ -- 37
+newline$ -- 159
+num.names$ -- 29
+pop$ -- 286
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 811
+skip$ -- 720
 stack$ -- 0
-substring$ -- 380
-swap$ -- 74
-text.length$ -- 7
+substring$ -- 343
+swap$ -- 64
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 14
-while$ -- 68
-width$ -- 34
-write$ -- 365
+while$ -- 62
+width$ -- 31
+write$ -- 323
 (There were 14 warnings)
