@@ -61,7 +61,7 @@ Em que se descreve cada coluna da seguinte forma:
 
 Isto permitiu realizar de uma forma rápida alguns teste no download de algumas imagens pelos diferentes serviços, para além de permitir fazer uma seleção fácil e rápida de tweets, retweets ou por exemplo, do primeiro retweet no caso de existir vários retweets de um determinado tweet. 
 
-Após a criação desta base de dados, ficou decidido selecionar todos os objetos da base de dados Mongodb do tipo tweet em que o seu serviço fosse o Instagram. Esta decisão deveu-se ao facto do Instagram apresentar um número maior de imagens 
+Após a criação desta base de dados, ficou decidido selecionar todos os objetos da base de dados Mongodb do tipo tweet em que o seu serviço fosse o Instagram. Esta decisão deveu-se ao facto da inclusão de retweets apenas introduzir imagens já existente ocorrendo apenas duplicação de dados, no caso da escolha do Instagram, deveu-se ao facto de este apresentar um número superior de imagens relativamente aos outros serviços, visto que ao se excluir os retweets o número de imagens dos restantes serviços passou a um valor pouco significativo.
 
 \subsection{Conjunto de dados final}
 
@@ -71,9 +71,42 @@ Relativamente aos objetos de cada tweet presentes no ficheiro JSON, optou-se por
 
 \lstinputlisting[language=Python]{./code/tweets_instagram_exemple.json}
 
+No caso das imagens armazenadas, de modo a que fosse associada cada uma das imagens ao seu respetivo tweet, foi atribuído o campo \textit{id\_str} presente no objeto JSON ao nome do ficheiro de imagem JPEG. Assim ao utilizar uma das imagens, para saber a que tweet pertence apenas é necessário procurar o objeto JSON que possua o atributo \textit{id\_str} igual ao nome do ficheiro da imagem.
 
+Recolhido todos os identificadores dos tweets pertencentes ao serviço Instagram e que apenas fossem do tipo tweet, foi realizado o \textit{download} de todas as imagens, tendo sido efetuado com sucesso o download de 5958 imagens em 7195 possíveis.
 
-%\section{Extração e processamento da informação visual}
-%
-%
-%\section{Armazenamento da informação visual}
+Em suma, o conjunto de dados final utilizado para o desenvolvimento deste projeto são 5958 objetos relativos aos tweets contidos num ficheiro JSON e as respetivas 5958 imagens associadas a cada tweet.
+
+\section{Extração, processamento e armazenamento da informação visual}
+
+O passo seguinte no desenvolvimento do módulo da informação visual foi a implementação de um sistema capaz de extrair, processar e armazenar a informação visual através das imagens armazenadas localmente. Para o desenvolvimento deste modulo foi utilizada a linguagem Python, pela sua capacidade de integração de diferentes bibliotecas desde manipulação de estruturas de dados, até mesmo a bibliotecas de manipulação e processamento de imagem. Para o a concretização modelo foi tido como linhas guia, o processo desenvolvimento de uma ferramenta de pesquisa de imagens apresentado em~\cite{Solem2012}. A arquitetura deste módulo desenvolvido é apresentada na figura~\ref{fig:infovisual}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{./figures/infovisual}
+\caption{Arquitetura do módulo de extração, processamento e armazenamento da informação visual. \textit{Adaptada de}~\cite{Bueno2011}}
+\label{fig:infovisual}
+\end{figure}
+
+Como se pode ver pela figura~\ref{fig:infovisual} foram desenvolvidos três sub-módulos diferentes. O primeiro é o responsável pela extração dos descritores locais, o segundo utiliza o primeiro da gerar um vocabulário visual, e o terceiro e último sub-módulo utiliza os dois anteriores para armazenar um histograma descritor de cada imagem numa base de dados indexada a sua respetiva imagem. 
+Em seguida é apresentada uma subsecção com a descrição para cada sub-módulo, como representado na figura~\ref{fig:infovisual}
+
+\subsection{Extração dos pontos de interesse e descritores locais}
+
+O primeiro passo no desenvolvimento deste módulo passou pela extração da informação visual. Esta informação visual deveria representar uma imagem eficientemente e de forma a possibilitar a criação de um vocabulário visual. Uma das formas possíveis e apresentadas na secção~\ref{sec:represent} é a utilização de um descritor local. Neste caso foi utilizado o descritor SIFT~\cite{Lowe1999, Lowe2004}, pois como referido na subsecção~\ref{subsubsec:surf}, apesar de ser mais lento e menos eficiente a mudanças de iluminação, este apresenta melhores resultados a variações de rotação, mudanças de escala e transformações na imagem. Para além disso, foi utilizada a ferramenta e biblioteca \textit{open source} VLFeat~\cite{vedaldi08vlfeat} que integra alguns dos algoritmos mais utilizados em visão computacional, e que inclui o algoritmo SIFT. Este, apesar de não possuir uma biblioteca para Python, permite a sua utilização através da linha de comandos.
+
+Para o conjunto de imagens existentes foi necessário criar uma copia de cada imagem em escalas de cinzento e em formato \textit{.pgm} para ser utilizada pelo VLFeat. Assim, para ser retornado os pontos de interesse e os descritores desses pontos, foi executado o seguinte comando em Python:
+
+\begin{lstlisting}[language=Python]
+import os
+cmmd = str("sift "+imagename+" --output="+resultname+"--edge-thresh 10 --peak-thresh 5")
+os.system(cmmd)
+\end{lstlisting}
+
+Tendo sido testados os valores de \textit{--edge-thresh} e \textit{--peak-tresh} sugeridos em~\cite{Solem2012}. Já relativamente aos parâmetros \textit{imagename} e \textit{resultname}, representam respetivamente, o nome do ficheiro de imagem em formato \textit{.pgm} e o nome do ficheiro a gravar com os pontos de interesse e os descritores no formato \textit{.sift}. Os resultado do comando é assim gravado no ficheiro \textit{.sift} em formato ASCII.
+
+\subsection{Criação do vocabulário visual}
+
+\subsection{Armazenamento da informação visual}
+
+\section{Matriz de distâncias entre imagens}

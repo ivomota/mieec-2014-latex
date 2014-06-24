@@ -548,7 +548,9 @@ Por fim, é possível a construção dos descritores para os pontos chave defini
 \item \textbf{Construção do descritor local}: este é o ultimo passo em que é criado o descritor local para cada ponto de interesse. Para esse processo, é considerado um bloco 16x16 em redor do ponto chave e posteriormente dividido em 16 sub-blocos de 4x4. Por cada sub-bloco é criado um histograma com 8 picos relativos à orientação. Isto faz que no fim seja extraído um vetor de 128 posições para cada ponto chave. Para além deste retorno, são também tomadas várias medidas de modo a que exista robustez suficiente para que esse ponto de interesse seja invariante a mudanças de iluminação e rotação. 
 
 \begin{figure}
-% %falta imagem
+\centering
+\caption{Imagem}
+% % falta imagem
 \end{figure}
  
 \end{enumerate}
@@ -586,31 +588,6 @@ Quando efetuado este processo repetidamente com um grande conjunto de imagens, �
 \includegraphics[width=0.4\linewidth]{./figures/visual_word_1}
 \label{fig:visualword}
 \end{figure}
-
-%\begin{figure}[h]
-%	\centering
-%	\begin{subfigure}[b]{0.4\textwidth}
-%		\includegraphics[width=\textwidth]{./figures/visual_word_1}
-%		\caption{ }
-%	\end{subfigure}
-%	\quad
-%	\begin{subfigure}[b]{0.4\textwidth}
-%		\includegraphics[width=\textwidth]{./figures/visual_word_2}
-%		\caption{ }
-%	\end{subfigure}
-%	
-%	\begin{subfigure}[b]{0.4\textwidth}
-%		\includegraphics[width=\textwidth]{./figures/visual_word_3}
-%		\caption{ }
-%	\end{subfigure}
-%	\quad
-%	\begin{subfigure}[b]{0.4\textwidth}
-%		\includegraphics[width=\textwidth]{./figures/visual_word_4}
-%		\caption{ }
-%	\end{subfigure} 
-%	\caption {Amostras de regiões com variância conjunta normalizadas de grupos que correspondem a uma única palavra visuais. \textit{Retirada de}~\cite{Sivic2006}}
-%	\label{fig:visual_word}
-%\end{figure}
 
 Por fim é necessária a realização de uma indexação de cada palavra visual às imagens, sendo utilizado um vetor para cada imagem que indica, o número de vezes em que uma determinada palavra visual se repete numa imagem. Neste caso o vetor funciona como em \textit{text mining}, em que existe a contagem da frequência de palavras que ocorrem num determinado documento.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.16)  23 JUN 2014 14:57
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.16)  24 JUN 2014 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1132,7 +1132,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/sc' tried instead on input line 144.
 
-<figures/uporto-feup.pdf, id=139, 338.26375pt x 126.4725pt>
+<figures/uporto-feup.pdf, id=159, 338.26375pt x 126.4725pt>
 File: figures/uporto-feup.pdf Graphic file (type pdf)
 
 <use figures/uporto-feup.pdf>
@@ -1195,22 +1195,21 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-)
-\tf@toc=\write5
-\openout5 = `mieec.toc'.
-
  [1
 
 
 
-] [2
+])
+\tf@toc=\write5
+\openout5 = `mieec.toc'.
 
-]
+ [2]
 (./mieec.lof)
 \tf@lof=\write6
 \openout6 = `mieec.lof'.
 
  [3
+
 
 ] [4
 
@@ -1252,7 +1251,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
  [4]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 69.
- [5] <./figures/hierarquico.png, id=308, 820.06375pt x 613.29124pt>
+ [5] <./figures/hierarquico.png, id=340, 820.06375pt x 613.29124pt>
 File: ./figures/hierarquico.png Graphic file (type png)
 
 <use ./figures/hierarquico.png>
@@ -1264,7 +1263,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10.95> not available
 Underfull \vbox (badness 2521) has occurred while \output is active []
 
  [8]
-[9] <./figures/matriz_confusao.png, id=353, 963.6pt x 371.3875pt>
+[9] <./figures/matriz_confusao.png, id=384, 963.6pt x 371.3875pt>
 File: ./figures/matriz_confusao.png Graphic file (type png)
 
 <use ./figures/matriz_confusao.png>
@@ -1277,35 +1276,35 @@ Underfull \vbox (badness 1960) has occurred while \output is active []
 Underfull \vbox (badness 5908) has occurred while \output is active []
 
  [11]
-[12] <./figures/histlena.png, id=393, 985.6825pt x 421.575pt>
+[12] <./figures/histlena.png, id=424, 985.6825pt x 421.575pt>
 File: ./figures/histlena.png Graphic file (type png)
 
 <use ./figures/histlena.png>
 Package pdftex.def Info: ./figures/histlena.png used on input line 318.
 (pdftex.def)             Requested size: 341.43437pt x 146.0289pt.
  [13 <./figures/histlena.png>] [14] [15] [16]
-<./figures/ehd.png, id=451, 776.9025pt x 384.43625pt>
+<./figures/ehd.png, id=482, 776.9025pt x 384.43625pt>
 File: ./figures/ehd.png Graphic file (type png)
  <use ./figures/ehd.png>
 Package pdftex.def Info: ./figures/ehd.png used on input line 405.
 (pdftex.def)             Requested size: 298.75264pt x 147.83536pt.
 
 [17 <./figures/ehd.png>]
-<./figures/shape1.png, id=469, 582.175pt x 190.7125pt>
+<./figures/shape1.png, id=500, 582.175pt x 190.7125pt>
 File: ./figures/shape1.png Graphic file (type png)
 
 <use ./figures/shape1.png>
 Package pdftex.def Info: ./figures/shape1.png used on input line 423.
 (pdftex.def)             Requested size: 298.75264pt x 97.86736pt.
  [18 <./figures/shape1.png>] [19]
-<./figures/sift_dog.jpg, id=491, 451.6875pt x 326.21875pt>
+<./figures/sift_dog.jpg, id=522, 451.6875pt x 326.21875pt>
 File: ./figures/sift_dog.jpg Graphic file (type jpg)
 
 <use ./figures/sift_dog.jpg>
 Package pdftex.def Info: ./figures/sift_dog.jpg used on input line 502.
 (pdftex.def)             Requested size: 298.75264pt x 215.77791pt.
  [20]
-<./figures/sift_dog2.png, id=507, 273.02pt x 234.8775pt>
+<./figures/sift_dog2.png, id=538, 273.02pt x 234.8775pt>
 File: ./figures/sift_dog2.png Graphic file (type png)
 
 <use ./figures/sift_dog2.png>
@@ -1316,10 +1315,10 @@ Package pdftex.def Info: ./figures/sift_dog2.png used on input line 517.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./figures/sift_dog.jpg>] [22 <./figures/sift_dog2.png>]
-<./figures/surf.png, id=530, 472.76625pt x 289.08pt>
+<./figures/surf.png, id=562, 472.76625pt x 289.08pt>
 File: ./figures/surf.png Graphic file (type png)
  <use ./figures/surf.png>
-Package pdftex.def Info: ./figures/surf.png used on input line 567.
+Package pdftex.def Info: ./figures/surf.png used on input line 569.
 (pdftex.def)             Requested size: 298.75264pt x 182.68155pt.
 
 
@@ -1327,18 +1326,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [23]
 
-Package caption Warning: \label without proper \caption on input line 587.
+Package caption Warning: \label without proper \caption on input line 589.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:visualword' on page 24 undefined on input line 58
-2.
+4.
 
-<./figures/visual_word_1.png, id=550, 467.7475pt x 156.585pt>
+<./figures/visual_word_1.png, id=581, 467.7475pt x 156.585pt>
 File: ./figures/visual_word_1.png Graphic file (type png)
 
 <use ./figures/visual_word_1.png>
-Package pdftex.def Info: ./figures/visual_word_1.png used on input line 586.
+Package pdftex.def Info: ./figures/visual_word_1.png used on input line 588.
 (pdftex.def)             Requested size: 170.71393pt x 57.14946pt.
  [24 <./figures/surf.png> <./figures/visual_word_1.png>]) [25]
 \openout2 = `chapter3.aux'.
@@ -1365,26 +1364,34 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
-)) [29]
+) [29]
+<./figures/infovisual.png, id=660, 746.79pt x 440.64626pt>
+File: ./figures/infovisual.png Graphic file (type png)
+
+<use ./figures/infovisual.png>
+Package pdftex.def Info: ./figures/infovisual.png used on input line 86.
+(pdftex.def)             Requested size: 405.45047pt x 239.23637pt.
+ [30 <./figures/infovisual.png>]) [31]
 \openout2 = `appendix1.aux'.
 
- (./appendix1.tex [30
+
+(./appendix1.tex [32
 
 
 
 ]
 Anexo A.
-(./code/tweet_example.json [31]
+(./code/tweet_example.json [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]
+ [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
+ [35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]))
-[35] [36
+ [36]))
+[37] [38
 
 
 ] (./mieec.bbl
@@ -1396,42 +1403,42 @@ File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
 (Font)              scaled to size 10.40245pt on input line 25.
 
-[37
+[39
 
 ]
-Underfull \hbox (badness 2818) in paragraph at lines 136--143
+Underfull \hbox (badness 2818) in paragraph at lines 144--151
 []\T1/ptm/m/n/10.95 D.G. Lowe.  Ob-ject re-cog-ni-tion from lo-cal scale-invari
 ant fe-a-tu-res.  \T1/ptm/m/it/10.95 Proc. Se-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--143
+Underfull \hbox (badness 10000) in paragraph at lines 144--151
 \T1/pcrs/m/n/10.95 / / ieeexplore . ieee . org / lpdocs / epic03 / wrapper . ht
 m ? arnumber = 790410$[][]\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 1609) in paragraph at lines 164--169
+Underfull \hbox (badness 1609) in paragraph at lines 172--177
 []\T1/ptm/m/n/10.95 R Baeza-Yates e B Ribeiro-Neto.  \T1/ptm/m/it/10.95 Mo-dern
  in-for-ma-tion re-tri-e-val\T1/ptm/m/n/10.95 .  1999.  URL:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--169
+Underfull \hbox (badness 10000) in paragraph at lines 172--177
 [][]$\T1/pcrs/m/n/10.95 ftp : / / mail . im . tku . edu . tw / seke / slide / b
 aeza-[]yates / chap10 _ user _
  []
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 192.
- [38]
+ [40]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 192.
  (./mieec.aux (./abbrevs.aux) (./chapter1.aux) (./chapter2.aux)
 (./chapter3.aux) (./appendix1.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 192.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 192.
 Package rerunfilecheck Info: File `mieec.out' has not changed.
-(rerunfilecheck)             Checksum: 27B3DB1E7339A8F19CF0A49D2E0F2BAD;2468.
+(rerunfilecheck)             Checksum: 4273BFF387445D0BA083A4F71436F908;2996.
 
 
 LaTeX Warning: There were undefined references.
@@ -1439,10 +1446,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 192.
  ) 
 Here is how much of TeX's memory you used:
- 20616 strings out of 493481
- 349818 string characters out of 3140965
- 662283 words of memory out of 3000000
- 23020 multiletter control sequences out of 15000+200000
+ 20651 strings out of 493481
+ 350352 string characters out of 3140965
+ 661797 words of memory out of 3000000
+ 23039 multiletter control sequences out of 15000+200000
  88190 words of font info for 115 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  63i,12n,76p,1783b,1928s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1458,10 +1465,10 @@ urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/
 utmbi8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
 cal/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mieec.pdf (46 pages, 1047015 bytes).
+Output written on mieec.pdf (48 pages, 1097618 bytes).
 PDF statistics:
- 1001 PDF objects out of 1200 (max. 8388607)
- 907 compressed objects within 10 object streams
- 397 named destinations out of 1000 (max. 500000)
- 327 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1064 PDF objects out of 1200 (max. 8388607)
+ 965 compressed objects within 10 object streams
+ 412 named destinations out of 1000 (max. 500000)
+ 372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

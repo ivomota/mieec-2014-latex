@@ -29,5 +29,10 @@
 \BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Descri\347\343o dos dados}{section.3.1}% 29
 \BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Filtragem dos dados}{section.3.1}% 30
 \BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Conjunto de dados final}{section.3.1}% 31
-\BOOKMARK [0][-]{appendix.A}{A Exemplo objeto JSON de um tweet}{}% 32
-\BOOKMARK [0][-]{section*.15}{Refer\352ncias}{}% 33
+\BOOKMARK [1][-]{section.3.2}{3.2 Extra\347\343o, processamento e armazenamento da informa\347\343o visual}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Extra\347\343o dos pontos de interesse e descritores locais}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Cria\347\343o do vocabul\341rio visual}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Armazenamento da informa\347\343o visual}{section.3.2}% 35
+\BOOKMARK [1][-]{section.3.3}{3.3 Matriz de dist\342ncias entre imagens}{chapter.3}% 36
+\BOOKMARK [0][-]{appendix.A}{A Exemplo objeto JSON de um tweet}{}% 37
+\BOOKMARK [0][-]{section*.16}{Refer\352ncias}{}% 38

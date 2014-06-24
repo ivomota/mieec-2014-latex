@@ -31,6 +31,14 @@ Herbert Bay, Tinne Tuytelaars, e Luc~Van Gool.
 \newblock {\em Comput. Vision–ECCV 2006}, 2006.
 \newblock URL: \url{http://link.springer.com/chapter/10.1007/11744023\_32}.
 
+\bibitem{Bueno2011}
+LM~Bueno.
+\newblock {An\'{a}lise de descritores locais de imagens no contexto de
+  detecc\~{a}o de semi-r\'{e}plicas}.
+\newblock 2011.
+\newblock URL:
+  \url{http://www.dca.fee.unicamp.br/~dovalle/recod/works/lucasBueno2001mscDissertation.pdf}.
+
 \bibitem{Russell2011}
 Matthew~A Russell.
 \newblock {\em {Mining the Social Web}}, volume~54.
@@ -173,5 +181,15 @@ D.~Nister e H.~Stewenius.
 \newblock {\em \ldots Vis. Pattern Recognition, 2006 \ldots}, 2, 2006.
 \newblock URL:
   \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=1641018}.
+
+\bibitem{Solem2012}
+Jan~Erik Solem.
+\newblock {Programming Computer Vision with Python}.
+\newblock 2012.
+
+\bibitem{vedaldi08vlfeat}
+A.~Vedaldi e B.~Fulkerson.
+\newblock {VLFeat}: An open and portable library of computer vision algorithms.
+\newblock \url{http://www.vlfeat.org/}, 2008.
 
 \end{thebibliography}
