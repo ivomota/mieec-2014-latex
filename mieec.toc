@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {1.1}Motiva\IeC {\c c}\IeC {\~a}o}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Estrutura do documento}{2}{section.1.3}
-\contentsline {chapter}{\numberline {2}Trabalhos relacionados}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}Conceitos e trabalhos relacionados}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Clustering}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Clustering por parti\IeC {\c c}\IeC {\~a}o}{4}{subsection.2.1.1}
 \contentsline {subsubsection}{\numberline {2.1.1.1}Algoritmo K-Means}{4}{subsubsection.2.1.1.1}
@@ -48,8 +48,8 @@
 \contentsline {subsection}{\numberline {3.1.3}Conjunto de dados final}{29}{subsection.3.1.3}
 \contentsline {section}{\numberline {3.2}Extra\IeC {\c c}\IeC {\~a}o, processamento e armazenamento da informa\IeC {\c c}\IeC {\~a}o visual}{30}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Extra\IeC {\c c}\IeC {\~a}o dos pontos de interesse e descritores locais}{31}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Cria\IeC {\c c}\IeC {\~a}o do vocabul\IeC {\'a}rio visual}{31}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Armazenamento da informa\IeC {\c c}\IeC {\~a}o visual}{31}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Matriz de dist\IeC {\^a}ncias entre imagens}{31}{section.3.3}
+\contentsline {subsection}{\numberline {3.2.2}Cria\IeC {\c c}\IeC {\~a}o do vocabul\IeC {\'a}rio visual}{32}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Armazenamento da informa\IeC {\c c}\IeC {\~a}o visual}{32}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Matriz de dist\IeC {\^a}ncias entre imagens}{32}{section.3.3}
 \contentsline {chapter}{\numberline {A}Exemplo objeto JSON de um tweet}{33}{appendix.A}
 \contentsline {chapter}{Refer\^{e}ncias}{39}{section*.16}

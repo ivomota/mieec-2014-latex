@@ -95,17 +95,34 @@ Em seguida é apresentada uma subsecção com a descrição para cada sub-módul
 
 O primeiro passo no desenvolvimento deste módulo passou pela extração da informação visual. Esta informação visual deveria representar uma imagem eficientemente e de forma a possibilitar a criação de um vocabulário visual. Uma das formas possíveis e apresentadas na secção~\ref{sec:represent} é a utilização de um descritor local. Neste caso foi utilizado o descritor SIFT~\cite{Lowe1999, Lowe2004}, pois como referido na subsecção~\ref{subsubsec:surf}, apesar de ser mais lento e menos eficiente a mudanças de iluminação, este apresenta melhores resultados a variações de rotação, mudanças de escala e transformações na imagem. Para além disso, foi utilizada a ferramenta e biblioteca \textit{open source} VLFeat~\cite{vedaldi08vlfeat} que integra alguns dos algoritmos mais utilizados em visão computacional, e que inclui o algoritmo SIFT. Este, apesar de não possuir uma biblioteca para Python, permite a sua utilização através da linha de comandos.
 
-Para o conjunto de imagens existentes foi necessário criar uma copia de cada imagem em escalas de cinzento e em formato \textit{.pgm} para ser utilizada pelo VLFeat. Assim, para ser retornado os pontos de interesse e os descritores desses pontos, foi executado o seguinte comando em Python:
+Para o conjunto de imagens existentes foi necessário criar uma copia de cada imagem em escalas de cinzento e em formato \textit{.pgm} para ser utilizada pelo VLFeat. Utilizando assim estas imagens, o VLFeat armazena num ficheiro com o formato \textit{.sift} os pontos de interesse e os descritores de uma imagem, sendo necessário criar um ficheiro para cada imagem. Nesses ficheiros os dados são armazenados em formato ASCII. 
+A informação armazenada apresenta-se da seguinte forma 
 
-\begin{lstlisting}[language=Python]
-import os
-cmmd = str("sift "+imagename+" --output="+resultname+"--edge-thresh 10 --peak-thresh 5")
-os.system(cmmd)
+\begin{lstlisting}
+318.861 7.48227 1.12001 1.68523 0 0 0 1 0 0 0 0 0 11 16 0 ...
+318.861 7.48227 1.12001 2.99965 11 2 0 0 1 0 0 0 173 67 0 0 ...
+54.2821 14.8586 0.895827 4.29821 60 46 0 0 0 0 0 0 99 42 0 0 ...
+155.714 23.0575 1.10741 1.54095 6 0 0 0 150 11 0 0 150 18 2 1 ...
+42.9729 24.2012 0.969313 4.68892 90 29 0 0 0 1 2 10 79 45 5 11 ...
+229.037 23.7603 0.921754 1.48754 3 0 0 0 141 31 0 0 141 45 0 0 ...
+232.362 24.0091 1.0578 1.65089 11 1 0 16 134 0 0 0 106 21 16 33 ...
+201.256 25.5857 1.04879 2.01664 10 4 1 8 14 2 1 9 88 13 0 0 ...
+... ...
 \end{lstlisting}
 
-Tendo sido testados os valores de \textit{--edge-thresh} e \textit{--peak-tresh} sugeridos em~\cite{Solem2012}. Já relativamente aos parâmetros \textit{imagename} e \textit{resultname}, representam respetivamente, o nome do ficheiro de imagem em formato \textit{.pgm} e o nome do ficheiro a gravar com os pontos de interesse e os descritores no formato \textit{.sift}. Os resultado do comando é assim gravado no ficheiro \textit{.sift} em formato ASCII.
+onde cada linha contêm as coordenadas, escala e ângulo de rotação para cada ponto de interesse, nos primeiros 4 valores respetivamente, correspondendo os restantes ao vetor descritor de tamanho 128 como referido no capítulo~\ref{chap:estarte} na subsecção~\ref{subsubsec:sift}. Como o objetivo era utilizar as imagens originais, foram eliminadas as imagens temporárias com o formato \textit{.pgm}. O passo seguinte passou pelo desenvolvimento do submodelo responsável pela criação do vocabulário visual, que é apresentado na subsecção seguinte.
 
 \subsection{Criação do vocabulário visual}
+
+Este módulo é o responsável pela criação do vocabulário visual. Para a sua concretização foi necessário utilizar os ficheiros de extensão \textit{.sift} reproduzidos através da ferramenta VLFeat~\cite{vedaldi08vlfeat} no módulo anterior. Os passos seguintes basearam-se nos descritos em~\cite{Solem2012}. 
+
+As palavras visuais não são nada mais do que um conjunto de vetores de características de imagens. Assim um vocabulário visual é o conjunto destas palavras visuais. Como todas as imagem possui muitos descritores locais, sendo que muitos podem ser semelhantes, é necessário agrupar todos os descritores de um conjunto de imagens e detetar aqueles que possam representar um conjunto de descritores semelhantes, e assim formar várias palavra visual, sendo uma palavra visual um centroide de um grupo.
+
+Para criar um vocabulário visual foi então necessário utilizar um algoritmo de \textit{clustering} por partição, tendo sido escolhido o \textit{k-means} por ser um dos mais utilizados e eficiente, como foi referido no capítulo~\ref{chap:estarte} na secção~\ref{subsec:parti}. O algoritmo foi aplicado aos descritores de um conjunto de imagens aleatoriamente selecionadas. Como este algoritmo implica a pré definição do numero de \textit{clusters} (valor de \textit{k}), foi atribuído o valor 1000. Isto significa que são gerados 1000 \textit{clusters}, logo serão retornados 1000 centroides, o que significa que o nosso vocabulário visual possuirá 1000 palavras visuais.
+
+% % talvez deva colocar aqui uma imagem
+
+Para utilizar este vocabulário visual é necessário armazena-lo e indexar cada palavra visual a cada imagem. Assim o módulo é o responsável por este processo e é descrito de seguida.
 
 \subsection{Armazenamento da informação visual}
 
