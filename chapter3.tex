@@ -118,12 +118,36 @@ Este módulo é o responsável pela criação do vocabulário visual. Para a sua
 
 As palavras visuais não são nada mais do que um conjunto de vetores de características de imagens. Assim um vocabulário visual é o conjunto destas palavras visuais. Como todas as imagem possui muitos descritores locais, sendo que muitos podem ser semelhantes, é necessário agrupar todos os descritores de um conjunto de imagens e detetar aqueles que possam representar um conjunto de descritores semelhantes, e assim formar várias palavra visual, sendo uma palavra visual um centroide de um grupo.
 
-Para criar um vocabulário visual foi então necessário utilizar um algoritmo de \textit{clustering} por partição, tendo sido escolhido o \textit{k-means} por ser um dos mais utilizados e eficiente, como foi referido no capítulo~\ref{chap:estarte} na secção~\ref{subsec:parti}. O algoritmo foi aplicado aos descritores de um conjunto de imagens aleatoriamente selecionadas. Como este algoritmo implica a pré definição do numero de \textit{clusters} (valor de \textit{k}), foi atribuído o valor 1000. Isto significa que são gerados 1000 \textit{clusters}, logo serão retornados 1000 centroides, o que significa que o nosso vocabulário visual possuirá 1000 palavras visuais.
+Para criar um vocabulário visual foi então necessário utilizar um algoritmo de \textit{clustering} por partição, tendo sido escolhido o \textit{k-means} por ser um dos mais utilizados e eficiente, como foi referido no capítulo~\ref{chap:estarte} na secção~\ref{subsec:parti}. O algoritmo foi aplicado aos descritores de um subconjunto de imagens aleatoriamente selecionadas do conjunto de imagens armazenadas localmente. Neste caso foi utilizado aproximadamente 8\% das imagens para não comprometer a nível de tempo de processamento. Como este algoritmo implica a pré definição do número de \textit{clusters}, foi atribuído a \textit{k} o valor 1000. Isto significa que são gerados cerca de 1000 \textit{clusters}, logo serão retornados aproximadamente 1000 centroides, o que significa que o nosso vocabulário visual possuirá cerca de 1000 palavras visuais.
 
-% % talvez deva colocar aqui uma imagem
+\begin{figure}
+\centering
+Imagem a colocar
+\end{figure}
 
-Para utilizar este vocabulário visual é necessário armazena-lo e indexar cada palavra visual a cada imagem. Assim o módulo é o responsável por este processo e é descrito de seguida.
+Para utilizar este vocabulário visual é necessário armazena-lo e indexar cada palavra visual a cada imagem. O sub-módulo responsável por este processo é descrito na secção a seguir.
 
 \subsection{Armazenamento da informação visual}
+
+Com o vocabulário visual criado foi necessário armazenar esta informação e indexar cada palavra visual as imagens, de modo a seja possível a comparação entre imagens diferentes. Para armazenar este vocabulário desenvolveu-se módulo que execute esta tarefa, sendo que, foi necessário seguir alguns passos tais como, a criação de uma base de dados e um histograma descritor do vocabulário visual de cada imagem. 
+
+Como todo este módulo foi operado em modo \textit{offline}, optou-se pela utilização de uma base de dados local SQLite. Esta funciona de modo semelhante a uma base de dados MySQL ou PostgreSQL, sendo que pode ser desenvolvida e acedida sem recurso a um servidor. Para a sua concretização foi criado um esquema muito simples apenas com três tabelas como ilustrado na tabela~\ref{tab:schemadb}. A tabela \textit{imlist} contém o nome de todas as imagens através do atributo \textit{filename}, a tabela \textit{imwords} contém índice das palavras visuais através do atributo \textit{wordid}, a identificação do vocabulário com o atributo \textit{vocname} e o índice das imagens em que as palavras visuais aparecem com o atributo \textit{wordid}. Por fim, a tabela \textit{imhistograms} contém o histograma de palavras visuais completo para cada imagem com o atributo \textit{histogram}.
+
+\vspace{1 mm}
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\multicolumn{5}{l}{} \\ \cline{1-1} \cline{3-3} \cline{5-5} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}\textbf{imlist}} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{imwords}} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}\textbf{imhistograms}} \\ \cline{1-1} \cline{3-3} \cline{5-5} 
+\multicolumn{1}{|c|}{rowid} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{imid} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{imid} \\ \cline{1-1} \cline{3-3} \cline{5-5} 
+\multicolumn{1}{|c|}{filename} & \multicolumn{1}{c|}{\multirow{-3}{*}{}} & \multicolumn{1}{c|}{wordid} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{histogram} \\ \cline{1-1} \cline{3-3} \cline{5-5} 
+ & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{vocname} & \multicolumn{1}{c|}{\multirow{-4}{*}{}} & \multicolumn{1}{c|}{vocname} \\ \cline{3-3} \cline{5-5} 
+\multicolumn{5}{l}{}
+\end{tabular}
+\caption{Esquema da base de dados SQLite}
+\label{tab:schemadb}
+\end{table}
+
+
 
 \section{Matriz de distâncias entre imagens}
