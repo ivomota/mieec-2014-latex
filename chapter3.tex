@@ -4,6 +4,8 @@ Neste capítulo será introduzido o módulo da informação visual desenvolvido,
 
 \section{Recolha dos dados}
 
+O desenvolvimento deste módulo apenas era realizável com um conjunto de imagens partilhadas no serviço de microblogging Twitter, sendo fundamental a recolha dos dados necessários para esse processo, neste caso, os Tweets. Esta secção é feita uma descrição do conjunto dos dados disponíveis, das filtragens que foram necessárias realizar e uma apresentação do conjunto de dados finais obtidos e utilizados no desenvolvimento deste projeto de dissertação.
+
 \subsection{Descrição dos dados}
 
 O primeiro passo para a realização deste projeto de dissertação foi a recolha dos dados necessários. Estes dados foram recolhidos através de uma base de dados mongodb previamente criada usando a plataforma Socialbus, anteriormente designada por TwitterEcho~\cite{Boanjak2012}. Este dados vêm sobre a forma de objetos JSON e possuem informação relativa a cada tweet como pode ser visto no anexo~\ref{ap1}. Estes objetos encontram-se todos num só documento mongodb que se caracteriza pelas características apresentadas na tabela~\ref{tab:nbrtweets}
@@ -77,7 +79,7 @@ Recolhido todos os identificadores dos tweets pertencentes ao serviço Instagram
 
 Em suma, o conjunto de dados final utilizado para o desenvolvimento deste projeto são 5958 objetos relativos aos tweets contidos num ficheiro JSON e as respetivas 5958 imagens associadas a cada tweet.
 
-\section{Extração, processamento e armazenamento da informação visual}
+\section{Extração, processamento e armazenamento da informação visual} \label{sec:extract}
 
 O passo seguinte no desenvolvimento do módulo da informação visual foi a implementação de um sistema capaz de extrair, processar e armazenar a informação visual através das imagens armazenadas localmente. Para o desenvolvimento deste modulo foi utilizada a linguagem Python, pela sua capacidade de integração de diferentes bibliotecas desde manipulação de estruturas de dados, até mesmo a bibliotecas de manipulação e processamento de imagem. Para o a concretização modelo foi tido como linhas guia, o processo desenvolvimento de uma ferramenta de pesquisa de imagens apresentado em~\cite{Solem2012}. A arquitetura deste módulo desenvolvido é apresentada na figura~\ref{fig:infovisual}.
 
@@ -122,18 +124,22 @@ Para criar um vocabulário visual foi então necessário utilizar um algoritmo d
 
 \begin{figure}
 \centering
-Imagem a colocar
+\includegraphics[width=0.6\linewidth]{./figures/centroides}
+\caption{Exemplo de projeção de centroides após tarefa de \textit{clustering} num espaço a duas dimensões.}
+\label{fig:centroides}
 \end{figure}
 
 Para utilizar este vocabulário visual é necessário armazena-lo e indexar cada palavra visual a cada imagem. O sub-módulo responsável por este processo é descrito na secção a seguir.
 
 \subsection{Armazenamento da informação visual}
 
-Com o vocabulário visual criado foi necessário armazenar esta informação e indexar cada palavra visual as imagens, de modo a seja possível a comparação entre imagens diferentes. Para armazenar este vocabulário desenvolveu-se módulo que execute esta tarefa, sendo que, foi necessário seguir alguns passos tais como, a criação de uma base de dados e um histograma descritor do vocabulário visual de cada imagem. 
+Com o vocabulário visual criado foi necessário armazenar esta informação e indexar cada palavra visual as imagens, de modo a seja possível a comparação entre imagens diferentes. Para armazenar este vocabulário desenvolveu-se módulo que execute esta tarefa, sendo que, foi necessário seguir alguns passos tais como, a criação de um histograma descritor do vocabulário visual de cada imagem e criação de uma base de dados com a informação necessária para a utilização do histograma descritor de cada imagem.
 
-Como todo este módulo foi operado em modo \textit{offline}, optou-se pela utilização de uma base de dados local SQLite. Esta funciona de modo semelhante a uma base de dados MySQL ou PostgreSQL, sendo que pode ser desenvolvida e acedida sem recurso a um servidor. Para a sua concretização foi criado um esquema muito simples apenas com três tabelas como ilustrado na tabela~\ref{tab:schemadb}. A tabela \textit{imlist} contém o nome de todas as imagens através do atributo \textit{filename}, a tabela \textit{imwords} contém índice das palavras visuais através do atributo \textit{wordid}, a identificação do vocabulário com o atributo \textit{vocname} e o índice das imagens em que as palavras visuais aparecem com o atributo \textit{wordid}. Por fim, a tabela \textit{imhistograms} contém o histograma de palavras visuais completo para cada imagem com o atributo \textit{histogram}.
+A criação do histograma foi o primeiro passo do desenvolvimento deste sub-módulo, em que foi utilizado o vocabulário disponibilizado através do sub-módulo apresentado anteriormente. Como o vocabulário é constituído por vetores descritores que representam cada uma das palavra visual, para a criação do histograma para cada imagem foi necessário utilizar novamente os ficheiros com os descritores locais SIFT de cada imagem e assim projetar num espaço utilizando novamente o algoritmo \textit{k-means} de modo a atribuir a cada ponto chave de uma imagem a sua palavra visual respetiva. Foi então possível após este processo criar um histograma com a contagem das palavras visuais em cada imagem.
 
-\vspace{1 mm}
+Assim o próximo passo passou pelo armazenamento dos histograma e a indexação a sua respetiva imagem. Como todo este módulo foi operado em modo \textit{offline}, optou-se pela utilização de uma base de dados local SQLite. Esta funciona de modo semelhante a uma base de dados MySQL ou PostgreSQL, sendo que pode ser desenvolvida e acedida sem recurso a um servidor. Para a sua concretização foi criado um esquema muito simples apenas com três tabelas como ilustrado na tabela~\ref{tab:schemadb}. A tabela \textit{imlist} contém o nome de todas as imagens através do atributo \textit{filename}, a tabela \textit{imwords} contém índice das palavras visuais através do atributo \textit{wordid}, a identificação do vocabulário com o atributo \textit{vocname} e o índice das imagens em que as palavras visuais aparecem com o atributo \textit{wordid}. Por fim, a tabela \textit{imhistograms} contém o histograma de palavras visuais completo para cada imagem com o atributo \textit{histogram}.
+
+%\vspace{2 mm}
 \begin{table}[h]
 \centering
 \begin{tabular}{lcccc}
@@ -148,6 +154,21 @@ Como todo este módulo foi operado em modo \textit{offline}, optou-se pela utili
 \label{tab:schemadb}
 \end{table}
 
-
-
 \section{Matriz de distâncias entre imagens}
+
+Com o módulo descrito na secção anterior~\ref{sec:extract}, a informação que descreve cada uma das imagens armazenadas localmente está alojada e é acessível através da base de dados local criada. Esta informação está no formato de um histograma que descreve a imagem através de um vocabulário visual. Este histograma é um vetor de tamanho único e igual para todas imagens, o que permite uma fácil comparação entre eles, o que é equivalente a dizer que estes permitem calcular a distância entre eles. Como cada histograma está associado a uma imagem, calcular a distância entre dois histogramas equivale a calcular a distância entre duas imagens.
+
+O TweeProfiles utiliza o algoritmo DBSCAN apresentado no Capitulo~\ref{chap:estarte} na secção~\ref{subsec:dbscan} para realizar a tarefa de \textit{clustering} ao conteúdo e às dimensões espacial e temporal. O \textit{clustering} baseado em densidades, neste caso mais concreto, com o recurso ao algoritmo DBSCAN, pode utilizar uma matriz distância entre objetos para realizar a tarefa de \textit{clustering}, sendo que retorna um número indefinido de \textit{clusters} dependentes dos dados. A matriz distância trata-se apenas de uma matriz NxN em que N é o número total de objetos. No nosso caso, os objetos são as imagens e o valor de N é igual a 5958. A figura~\ref{fig:matriz} apresenta a estrutura de uma matriz distância, em que 0 é a distância de um objeto a ele mesmo.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\linewidth]{./figures/matrizdist}
+\caption{Estrutura de uma matriz de distâncias. \textit{Retirada de}~\cite{Han2006}}
+\label{fig:matriz}
+\end{figure}
+
+Tendo existido algumas limitações a nível de \textit{hardware} para o calculo de uma matriz desta dimensões, optou-se por utilizar o mesmo procedimento utilizado no TweeProfiles~\cite{Cunha2013} e dividir os dados em três partes distintas. Esta divisão foi efetuada tendo em conta uma divisão temporal, isto é, foram em primeiro lugar ordenados os tweets por ordem cronológica e apenas posteriormente foi divido em três partes iguais de 1986 tweets cada conjunto. Após este processo foi então calculadas as três matrizes.
+ 
+Para calcular as matriz de distâncias utilizou-se o histograma descritor de cada imagem, calculando a distância entre histogramas através da função distância euclidiana apresentada no capítulo~\ref{chap:estarte} na secção~\ref{subsec:dist}.
+
+Com as matrizes distâncias calculadas, estavam as condições reunidas para a integração do modelo no TweeProfiles. O próximo capítulo irá introduzir a integração deste modelo com o TweeProfiles e o desenvolvimento da ferramenta Olhó-passarinho e os seus resultados ilustrativos.
