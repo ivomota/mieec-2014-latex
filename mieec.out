@@ -35,5 +35,11 @@
 \BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Cria\347\343o do vocabul\341rio visual}{section.3.2}% 35
 \BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Armazenamento da informa\347\343o visual}{section.3.2}% 36
 \BOOKMARK [1][-]{section.3.3}{3.3 Matriz de dist\342ncias entre imagens}{chapter.3}% 37
-\BOOKMARK [0][-]{appendix.A}{A Exemplo objeto JSON de um tweet}{}% 38
-\BOOKMARK [0][-]{section*.20}{Refer\352ncias}{}% 39
+\BOOKMARK [0][-]{chapter.4}{4 Olh\363-passarinho}{}% 38
+\BOOKMARK [1][-]{section.4.1}{4.1 Arquitetura do sistema}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.2}{4.2 Informa\347\343o espa\347o temporal}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.3}{4.3 Clustering da informa\347\343o visual, espacial e temporal}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.4}{4.4 Visualiza\347\343o}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.5}{4.5 Resultados ilustrativos}{chapter.4}% 43
+\BOOKMARK [0][-]{appendix.A}{A Exemplo objeto JSON de um tweet}{}% 44
+\BOOKMARK [0][-]{section*.21}{Refer\352ncias}{}% 45
