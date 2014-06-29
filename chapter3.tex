@@ -65,6 +65,8 @@ Isto permitiu realizar de uma forma rápida alguns teste no download de algumas 
 
 Após a criação desta base de dados, ficou decidido selecionar todos os objetos da base de dados Mongodb do tipo tweet em que o seu serviço fosse o Instagram. Esta decisão deveu-se ao facto da inclusão de retweets apenas introduzir imagens já existente ocorrendo apenas duplicação de dados, no caso da escolha do Instagram, deveu-se ao facto de este apresentar um número superior de imagens relativamente aos outros serviços, visto que ao se excluir os retweets o número de imagens dos restantes serviços passou a um valor pouco significativo.
 
+Para além destes critérios é importante salientar que foi necessário selecionar apenas os dados com georreferenciação. 
+
 \subsection{Conjunto de dados final}
 
 Por fim armazenou-se um ficheiro JSON com todos os dados a ser utilizados e foi realizado o download de todas as imagens relativas a cada tweet e armazenadas localmente em formato JPEG, que se apresentava como formato de origem das imagens descarregadas. 
@@ -75,7 +77,8 @@ Relativamente aos objetos de cada tweet presentes no ficheiro JSON, optou-se por
 
 No caso das imagens armazenadas, de modo a que fosse associada cada uma das imagens ao seu respetivo tweet, foi atribuído o campo \textit{id\_str} presente no objeto JSON ao nome do ficheiro de imagem JPEG. Assim ao utilizar uma das imagens, para saber a que tweet pertence apenas é necessário procurar o objeto JSON que possua o atributo \textit{id\_str} igual ao nome do ficheiro da imagem.
 
-Recolhido todos os identificadores dos tweets pertencentes ao serviço Instagram e que apenas fossem do tipo tweet, foi realizado o \textit{download} de todas as imagens, tendo sido efetuado com sucesso o download de 5958 imagens em 7195 possíveis.
+Recolhido todos os identificadores dos tweets pertencentes ao serviço Instagram que apenas fossem do tipo tweet e que os respetivos tweets apresentassem a informação de geolocalização no campo \textit{coordinates}, avançou-se com o processo de \textit{download} de todas as imagens, tendo sido efetuado com sucesso o download de 5958 imagens em 7195 possíveis.
+
 
 Em suma, o conjunto de dados final utilizado para o desenvolvimento deste projeto são 5958 objetos relativos aos tweets contidos num ficheiro JSON e as respetivas 5958 imagens associadas a cada tweet.
 

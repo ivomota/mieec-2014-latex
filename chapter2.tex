@@ -261,7 +261,7 @@ dist^{T}( t_{i}, t_{j}) = |\Delta_{i} - \Delta_{j}|
 
 Sendo que, para a dimensão temporal, também é possível utilizar a função distância euclidiana (equação~\ref{eq: euclid}).
 
-\subsubsection{Dimensão Espacial}
+\subsubsection{Dimensão Espacial} \label{subsubsec: space}
 
 Ao contrário da dimensão temporal, a dimensão espacial apresenta mais do que uma dimensão, latitude e longitude. Estas apresentam-se sobre a forma numérica, sendo possível o cálculo da distância entre dois objetos através de funções de distância para atributos numéricos como referido anteriormente (\ref{subsubsec: attrnum}). Assim, para o cálculo entre pontos distribuídos num espaço poderá-se-á recorrer à função Minkowski (equação~\ref{eq:mink}), à função Euclidiana (equação\ref{eq: euclid}, à função Manhattan (equação~\ref{eq: manhattan}) ou mesmo à função de Chebychev (equação~\ref{eq:cheby}), sendo que no caso mais específico de uma distribuição espacial geográfica, em que os pontos possuem latitude e longitude, é considerada mais apropriada a utilização da função distância Haversine (equação~\ref{eq:hav}) pois esta toma em consideração a forma esférica da Terra.
 Obtendo um par de objetos $ x_{i} $ e $ x_{j} $ distanciados geograficamente, é considerado as latitudes $ \phi_{x_{i}} $ e $ \phi_{x_{j}} $ e longitudes $ \lambda_{x_{i}} $ e $ \lambda_{x_{j}} $ para determinar a distância através da seguinte equação,
