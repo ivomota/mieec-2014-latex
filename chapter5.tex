@@ -1,73 +1,29 @@
 \chapter{Conclusões e Trabalho Futuro} \label{chap:concl}
 
-Proin sed justo eu sapien eleifend elementum. Pellentesque
-habitant morbi tristique senectus et netus et malesuada fames ac
-turpis egestas. Vivamus quam lacus, pharetra vel, aliquam vel,
-volutpat sed, nisl. 
+Neste capítulo são expostas algumas conclusões retiradas do desenvolvimento desta dissertação e são apresentadas sugestões para um trabalho futuro com indicação de melhorias a implementar e sugestões de 
 
-\section{Satisfação dos Objectivos}
+\section{Resumo do Trabalho Realizado}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam non
-felis sed odio rutrum ultrices. Donec tempor dolor. Vivamus justo
-neque, tempus id, ullamcorper in, pharetra non, tellus. Praesent eu
-orci eu dolor congue gravida. Sed eu est. Donec pulvinar, lectus et
-eleifend volutpat, diam sapien sollicitudin arcu, a sagittis libero
-neque et dolor. Nam ligula. Cras tincidunt lectus quis nunc. Cras
-tincidunt congue turpis. Nulla pede velit, sagittis a, faucibus vitae,
-porttitor nec, ante. Nulla ut arcu. Cras eu augue at ipsum feugiat
-hendrerit. Proin sed justo eu sapien eleifend elementum. Pellentesque
-habitant morbi tristique senectus et netus et malesuada fames ac
-turpis egestas. Vivamus quam lacus, pharetra vel, aliquam vel,
-volutpat sed, nisl. 
+Durante o período dedicado à realização do projeto de dissertação, foram seguidas uma sequência definida de etapas que culminou num sistema capaz de reproduzir a visualização no espaço, tempo de \textit{clusters} e visualizar e navegar por fotografias partilhadas no serviço de \textit{microblogging} Twitter contidas num determinado \textit{cluster}.
 
-Nullam erat est, vehicula id, tempor non, scelerisque at,
-tellus. Pellentesque tincidunt, ante vehicula bibendum adipiscing,
-lorem augue tempor felis, in dictum massa justo sed metus. Suspendisse
-placerat, mi eget molestie sodales, tortor ante interdum dui, ac
-sagittis est pede et lacus. Duis sapien. Nam ornare turpis et
-magna. Etiam adipiscing adipiscing ipsum. Fusce sodales nisl a
-arcu. Cras massa leo, vehicula facilisis, commodo a, molestie
-faucibus, metus. Suspendisse potenti. Duis sagittis. Donec porta. Sed
-urna. Maecenas eros. Vivamus erat ligula, pharetra sit amet, bibendum
-et, fermentum sed, dolor. Nullam eleifend condimentum nibh. Integer
-leo nibh, consequat eget, mollis et, sagittis ac, felis. Duis viverra
-pede in pede. Phasellus molestie placerat leo. Praesent at tellus a
-augue congue molestie. Proin sed justo eu sapien eleifend
-elementum. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. 
+Inicialmente foi feita uma recolha dos dados necessários ao desenvolvimento deste projeto de dissertação. Este dados foram recolhidos através de base de dados Mongodb e possuíam a informação relativa a tweets partilhados na rede social Twitter. Como o objetivo era a descoberta de padrões através de fotografias, foi deito o \textit{download} de todas  as imagens pertencentes a tweets e partilhadas no Twitter através do serviço Instagram. Os dados desses tweets também foram armazenados no formato JSON.
+
+O próximo passo foi o desenvolvimento de um módulo responsável pela extração, processamento e armazenamento da informação visual. Este foi desenvolvido para que representasse as imagens de uma forma mais eficiente e compacta, e que tornasse assim possível a comparação entre imagens para a criação de uma matriz distância para ser utilizada no processo de \textit{Data Mining}
+
+Prossegui-se com a produção das matrizes de distância entre tweets pelas dimensões temporais, de forma a combinar esta informação com a informação visual, as fotografias. Com esta integração concluída utilizou-se essa informação no processo de \textit{Data Mining} para a obtenção dos \textit{clusters}, com a atribuição de diferentes pesos às diferentes dimensões. 
+
+Após a obtenção dos diferentes \textit{clusters}, foi desenvolvida a aplicação web em Python, recorrendo a microframework Flask, para visualização dos resultados através do conteúdo dos tweets e das diferentes dimensões já referidas, resultando assim num sistema completo e funcional.
+
 
 \section{Trabalho Futuro}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam
-tempor tristique risus. Suspendisse potenti. Fusce id eros. In eu
-enim. Praesent commodo leo. Nullam augue. Pellentesque tellus. Integer
-pulvinar purus a dui convallis consectetuer. In adipiscing, orci vitae
-lacinia semper, sapien elit posuere sem, ac euismod ipsum elit tempus
-urna. Aliquam erat volutpat. Nullam suscipit augue sed
-felis. Phasellus faucibus accumsan est. 
+Após a finalização deste projeto de dissertação foi feita uma análise a todo o processo realizado, tendo sido concluído que os objetivos principais propostos foram atingidos. Apesar disso, alguns objetivos mais ambiciosos não foram possíveis ser atingidos devido a vários fatores, e que devem ser tidos em conta num trabalho futuro.
 
-Aliquam felis justo, facilisis sit amet, bibendum ut, tempus ac,
-dolor. Sed malesuada. Nunc non massa. In erat. Nulla
-facilisi. Phasellus blandit, est in accumsan cursus, libero augue
-elementum leo, vitae auctor mauris nisl ac tortor. Cras porttitor
-ornare elit. Fusce at lorem. Sed lectus tortor, vestibulum id, varius
-a, condimentum nec, lectus. Maecenas in nisi et magna pretium
-aliquam. Pellentesque justo elit, feugiat nec, tincidunt a, dignissim
-vel, ipsum. Sed nunc. Vestibulum ante ipsum primis in faucibus orci
-luctus et ultrices posuere cubilia Curae; Aliquam tempus rhoncus
-leo. Donec neque quam, cursus sit amet, ultricies varius, semper non,
-pede. Donec porttitor. Sed aliquet feugiat elit.  
+Um dos pontos de partida que num trabalho futuro deve ser tido em conta é a possibilidade de aceder a uma base de dados maior, pois apesar de existirem muitas imagens partilhadas no Twitter através de vários serviços, o número de tweets georeferenciados ainda é bastante reduzido. Para além disso, era interessante utilizar uma base de dados com uma extensão temporal superior e consequentemente, com conteúdos mais diversificados.
 
-\vspace*{12mm}
+O desenvolvimento do modelo responsável pelo tratamento da informação visual, mais concretamente, da criação de um vocabulário visual, apresentou-se como uma boa opção com resultados muito satisfatórios, mas num trabalho futuro também seria interessante a integração de outros descritores, como por exemplo, descritores de cor, adicionando assim a componente cor Isto iria permitir uma melhor descrição das imagens e possibilitaria identificar cenários mais específicos onde a cor é um fator determinante de distinção, como por exemplo, fotografias de praias, alimentos ou mesmo locais com vegetação, como jardins ou parques naturais onde predomina a cor verde. 
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
-tellus pede, auctor ut, tincidunt a, consectetuer in, felis. Mauris
-quis dolor et neque accumsan pellentesque. Donec dui magna,
-scelerisque mattis, sagittis nec, porta quis, nulla. Vivamus quis
-nisl. Etiam vitae nisl in diam vehicula viverra. Sed sollicitudin
-scelerisque est. Nunc dapibus. Sed urna. Nulla gravida. Praesent
-faucibus, risus ac lobortis dignissim, est tortor laoreet mauris,
-dictum pellentesque nunc orci tincidunt tellus. Nullam pulvinar, leo
-sed vestibulum euismod, ante ligula elementum pede, sit amet dapibus
-lacus tortor ac nisl. Morbi libero. Integer sed dolor ac lectus
-commodo iaculis. Donec ut odio.  
+Já na parte da aplicação, existe diferentes abordagens a poderem ser seguidas para diferenciarem a visualização dos resultados, e consequentemente melhorarem a capacidade do utilizador compreender melhor o que está a visualizar. Uma das possibilidades, seria a síntese de uma imagem que fosse representativa do \textit{cluster} a que pertence, isto é, um sistema que analisasse todas as imagens contidas num \textit{cluster}, e fosse capaz de reproduzir uma imagem modelo, através da informação de todas as imagens do \textit{cluster}, e até mesmo, através de informação existente numa base de dados de imagens exterior.
+
+Por fim, a utilização de uma ferramenta com este intuito tornar-se-ia mais interessante se, a informação disponível para visualização fosse constantemente atualizada. Para isso seria necessário a utilização de hardware com capacidade suficiente de analisar as imagens em tempo real e exportar a informação necessária ao processo de \textit{Data Mining}. A utilização do vocabulário visual iria permitir a utilização de um serviço assim, sendo que seria necessário realizar algumas alterações, como por exemplo utilizar um vocabulário visual disposto de forma hierárquica, o que permitiria uma mais rápida descrição de uma imagem. Para além disso, o processo de \textit{Data Mining} teria de estar constantemente em funcionamento de forma a atualizar os \textit{clusters} sempre que existissem alterações nos mesmos ou mesmo no aparecimento de novos.
+

@@ -2,7 +2,7 @@
 
 Neste capitulo será abordado a ferramenta desenvolvida com a descrição da arquitetura sistema implementado, do processamento da informação espaço-temporal e da sua integração com a informação visual de modo a aplicar a tarefa de \textit{clustering}. Por fim será apresentado a visualização dos resultados ilustrativos e consequentemente a sua discussão. 
 
-\section{Arquitetura do sistema}
+\section{Arquitetura do Sistema}
 
 A arquitetura do sistema desenvolvido é apresentado na figura~\ref{fig:archsys}. Este apresenta uma divisão entre os serviços externos e o modelo desenvolvido. Este modelo foi desenhado de modo a que existisse uma separação entre o tratamento de toda a parte de processamento dos dados e a visualização, existindo assim um \textit{back-end} com todos os ficheiros e módulos desenvolvidos e um \textit{front-end} que representa a aplicação web para visualização dos resultados. No \textit{back-end} existe também uma divisão entre dois módulos fundamentais, o módulo de processamento da informação visual, responsável por tratar a informação das imagens como descrito no Capítulo~\ref{chap:chap3}, de modo a que essa informação possa ser utilizada pelo módulo responsável pelo processo de \textit{Data Mining} já desenvolvido no TweeProfiles~\cite{Cunha2013}. 
 
@@ -16,7 +16,7 @@ Os serviços externos correspondem à base de dados Mongodb para a recolha dos t
 \end{figure}
 
 
-\section{Informação espaço-temporal} \label{sec:infoesptmp}
+\section{Informação Espaço-Temporal} \label{sec:infoesptmp}
 
 Uma das características principais tanto do TweeProfiles como do Olhó-paddarinho e é integração das dimensões espaço-temporais com o conteúdo. Tal como no foi efetuado no TweeProfiles, também aqui foi utilizado estas dimensões, tendo sido então recolhido a informação de tempo e espaço dos tweets para o cálculo das respetivas matrizes de distância entre tweets.
 
@@ -25,15 +25,14 @@ Em primeiro lugar foi recolhida a informação espacial. Neste caso os dados pos
 Posteriormente foi então recolhida a informação temporal dos tweets. Esta informação apresenta-se no seguinte formato:
 
 \vspace{2mm}
-%\centering 
 Tue Jun 18 17:02:09 +0000 2013
 \vspace{2mm}
 
 Para o cálculo da distância entre datas foi utilizada a função distância euclidiana, que se pode resumir ao módulo da diferença entre o tempo de dois tweets, como pode ser visto no capítulo~\ref{chap:estarte} na subsecção~\ref{subsubsec: time}. Utilizando as bibliotecas \textit{datetime} e \textit{dateutil} este cálculo é direto sem necessitar ser realizada uma conversão do formato da data.
 
-\textbf{Nota:} Devo colocar mais informação estatística sobre os dados?
+%\textbf{Nota:} Devo colocar mais informação estatística sobre os dados?
 
-\section{Clustering da informação visual, espacial e temporal} \label{sec:finalclustering}
+\section{Clustering da Informação Visual, Espacial e Temporal} \label{sec:finalclustering}
 
 A tarefa de \textit{clustering} é o passo final para a obtenção dos resultados finais. Este é o processo que engloba os dados resultantes de todo o processamento da informação tratada e discutida anteriormente.
 
@@ -43,6 +42,8 @@ Mas antes de fornecer os dados, neste caso as matrizes já calculadas com as dis
 %colocar formula de normalização e confirmar se foi esta a normalização utilizada
 
 Após a normalização, realizou-se a combinação entre as matrizes, com atribuição de vários pesos a cada matriz, de forma a que a soma dos diferentes pesos fosse igual a 1. Inicialmente, a distribuição dos pesos foi feita com passos de 0.25 pontos, isto é, os valores de cada matriz podiam assumir os pesos: 0, 0.25, 0.5, 0.75 e 1. Isto permitiu uma fácil divisão dos pesos, mas não permitia atribuir pesos iguais às três matrizes, pelo número de matrizes ser ímpar. Assim, optou-se por dividir os pesos em fator de 0.333, em que os valores de cada matriz podem assumir os pesos: 0, 0.333, 0.666, 1. Isto faz que a soma dos pesos posa não dar exatamente 1, mas sim 0.999. Por outro lado, isto possibilitou atribuir o mesmo peso às três matrizes diferentes de cada subconjunto.
+
+%A distribuição dos pesos foi feita com passos de 0.25 pontos, isto é, os valores de cada matriz podem assumir os pesos: 0, 0.25, 0.5, 0.75 e 1, sendo que, como referido, a soma dos pesos tem necessariamente de ser igual a 1
 
 A tabela~\ref{tab:pesos} apresenta as diferentes combinações possíveis de pesos para as diferentes dimensões
 
@@ -89,8 +90,59 @@ A segunda secção é responsável pela representação da distribuição dos \t
 \label{fig:timeex}
 \end{figure}
 
-Por último, a secção de visualização de imagens que pertencem a um \textit{cluster} 
+Por último, a secção de visualização de imagens que pertencem a um \textit{cluster}. Nesta é apresentado uma matriz com nove imagens presentes nos \textit{clusters} escolhidas aleatoriamente, havendo ainda a possibilidade de ir modificando as imagens visíveis. É possível também clicar numa das imagens e visualizar a imagem numa dimensão maior e ver a informação relativa à imagem como o utilizador que fez a partilha e o texto partilhado em conjunto. Para além disto, é possível aceder ao tweet original através de um botão com essa indicação. Esta secção também indica o nome do \textit{cluster} e a informação temporal em texto do mesmo.
 
-%\section{Resultados ilustrativos}
-%
-%...
+A aplicação apresenta também os controlos para escolher o subconjunto que se pretende visualizar, e controlos para definir o peso que se pretende atribuir a cada dimensão.
+
+\section{Resultados Ilustrativos}
+
+Nesta secção serão apresentados alguns resultados ilustrativos visíveis através ferramenta Olhó-passarinho. Neste relatório não é possível apresentar todos os resultados devido ao número de diferentes possíveis combinações. 
+
+A Figura~\ref{fig:map3} mostra um exemplo da visualização da distribuição dos \textit{clusters} no espaço geográfico. Este exemplo é relativo a uma divisão igual dos pesos entre as três dimensões, espacial, temporal e as fotografias, tendo cada uma um peso de 33.33\% nos resultados dos \textit{clusters}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\linewidth]{./figures/olhopassarinho/map3}
+\caption{Exemplo ilustrativo da visualização da distribui espacial dos \textit{clusters} para o caso em que a distribuição dos pesos entre as três dimensões é igual}
+\label{fig:map3}
+\end{figure}
+
+A dimensão dos círculos que representam os \textit{clusters} é proporcional ao número de tweets presentes nesse mesmo \textit{clusters} isto é, quanto maior o número de tweets maior é a respetiva circunferência.
+
+Já Figura~\ref{fig:time2} apresenta a distribuição dos cinco diferentes \textit{clusters} da mesma situação anterior, sendo possível visualizar a existência de \textit{clusters} com uma margem de maior duração, enquanto outros como o caso do \textit{Clusters 3} que apresenta uma duração de menos de 4 horas. A distribuição no tempo do conjunto de tweets utilizados para este exemplo, como podemos ver na Figura~\ref{fig:time2}, é de aproximadamente 24 horas, em que teve início no dia 17 de Junho de 2013 e terminou no dia 18 de Junho de 2013.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{./figures/olhopassarinho/time2}
+\caption{Exemplo ilustrativo da visualização da distribui temporal dos \textit{clusters} para o caso em que a distribuição dos pesos entre as três dimensões é igual}
+\label{fig:time2}
+\end{figure}
+
+A Figura~\ref{fig:exemplocomp} traz-nos uma perspetiva global da aplicação web, mostrando mais detalhe sobre um dos \textit{clusters}, neste caso o \textit{Cluster 2}. Na Figura~\ref{fig:exemplocomp} é possível a visualização de nove imagens aleatórias do \textit{Cluster 2}. Já no caso da Figura~\ref{fig:exemplocomp2}, é apresentado a visualização mais pormenorizada de uma das imagens, com a indicação do nome do autor do tweet e a mensagem associada à imagem partilhada pelo mesmo. Também é possível aceder ao tweet original.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/olhopassarinho/exemplo_comp}
+\caption{Exemplo ilustrativo da visualização completa da aplicação web com a visualização pelas várias dimensões}
+\label{fig:exemplocomp}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/olhopassarinho/exemplo_comp2}
+\caption{Exemplo ilustrativo da visualização completa da aplicação web com a visualização mais detalhada de uma das imagens}
+\label{fig:exemplocomp2}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/olhopassarinho/im1}
+\caption{Exemplo ilustrativo da visualização de um conjunto de imagens pertencentes a um \textit{Cluster} e em que foi atribuído o peso total apenas à dimensão do conteúdo visual}
+\label{fig:ims}
+\end{figure}
+
+É interessante salientar que no exemplo ilustrado na Figura~\ref{fig:exemplocomp} existe uma semelhança geral entre as nove imagens, sendo isto possível, devido a combinação das três dimensões, tendo sido agrupado tweets com semelhança nas imagens, mas também no espaço e tempo.
+
+
+Outro exemplo interessante, é quando a atribuição do peso de 100\% apenas para a dimensão do conteúdo visual. A Figura~\ref{fig:ims} demonstra um exemplo desses, e como é visível, o \textit{cluster} possuí pelo menos nove imagens muito semelhantes, que apesar de não fazerem parte de um evento que inclua pessoas, este permitiu encontrar a partilha de várias partilhas de um mesmo texto por várias pessoas através de uma imagem. Este resultado também vem demonstrar que o modelo responsável pela extração da informação visual apresentou um bom desempenho, tal como era o esperado.
+
