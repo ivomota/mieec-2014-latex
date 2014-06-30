@@ -5,6 +5,7 @@ A level-1 auxiliary file: abbrevs.aux
 A level-1 auxiliary file: chapter1.aux
 A level-1 auxiliary file: chapter2.aux
 A level-1 auxiliary file: chapter3.aux
+A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: appendix1.aux
 The style file: unsrt-pt.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
@@ -14,8 +15,8 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: myrefs.bib
 Warning--empty publisher in Bramer2007
 Warning--empty journal in Bueno2011
-Warning--empty publisher in Russell2011
 Warning--empty publisher in Han2006
+Warning--empty publisher in Russell2011
 Warning--empty journal in Fayyad1996
 Warning--empty journal in Wang1997
 Warning--empty publisher in Nixon2002
@@ -28,45 +29,45 @@ Warning--there's a number but no volume in Sivic2003
 Warning--there's a number but no volume in Juan2009
 Warning--empty publisher in Baeza-Yates1999
 Warning--empty journal in Solem2012
-You've used 32 entries,
+You've used 34 entries,
             2522 wiz_defined-function locations,
-            783 strings with 9486 characters,
-and the built_in function-call counts, 10002 in all, are:
-= -- 1001
-> -- 290
+            792 strings with 9731 characters,
+and the built_in function-call counts, 10444 in all, are:
+= -- 1043
+> -- 300
 < -- 6
-+ -- 94
-- -- 62
-* -- 397
-:= -- 1302
-add.period$ -- 108
-call.type$ -- 32
-change.case$ -- 22
++ -- 98
+- -- 64
+* -- 399
+:= -- 1356
+add.period$ -- 114
+call.type$ -- 34
+change.case$ -- 24
 chr.to.int$ -- 0
-cite$ -- 48
-duplicate$ -- 341
-empty$ -- 1120
-format.name$ -- 62
-if$ -- 2852
+cite$ -- 50
+duplicate$ -- 351
+empty$ -- 1182
+format.name$ -- 64
+if$ -- 2990
 int.to.chr$ -- 0
-int.to.str$ -- 32
+int.to.str$ -- 34
 missing$ -- 39
-newline$ -- 175
-num.names$ -- 32
-pop$ -- 319
+newline$ -- 185
+num.names$ -- 34
+pop$ -- 341
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 785
+skip$ -- 827
 stack$ -- 0
 substring$ -- 343
-swap$ -- 65
+swap$ -- 67
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 16
-while$ -- 65
-width$ -- 34
-write$ -- 353
+while$ -- 67
+width$ -- 36
+write$ -- 373
 (There were 16 warnings)

@@ -39,6 +39,11 @@ LM~Bueno.
 \newblock URL:
   \url{http://www.dca.fee.unicamp.br/~dovalle/recod/works/lucasBueno2001mscDissertation.pdf}.
 
+\bibitem{Han2006}
+Jiawei Han, Micheline Kamber, e Jian Pei.
+\newblock {\em {Data Mining, Second Edition: Concepts and Techniques}}.
+\newblock 2006.
+
 \bibitem{Russell2011}
 Matthew~A Russell.
 \newblock {\em {Mining the Social Web}}, volume~54.
@@ -58,11 +63,6 @@ M~Boanjak e Eduardo Oliveira.
 \newblock {TwitterEcho: a distributed focused crawler to support open research
   with twitter data}.
 \newblock {\em Proc. 21st \ldots}, 2012.
-
-\bibitem{Han2006}
-Jiawei Han, Micheline Kamber, e Jian Pei.
-\newblock {\em {Data Mining, Second Edition: Concepts and Techniques}}.
-\newblock 2006.
 
 \bibitem{North2012}
 Dr. Matthew~A North.
@@ -191,5 +191,18 @@ Jan~Erik Solem.
 A.~Vedaldi e B.~Fulkerson.
 \newblock {VLFeat}: An open and portable library of computer vision algorithms.
 \newblock \url{http://www.vlfeat.org/}, 2008.
+
+\bibitem{googlemapsapi}
+Google.
+\newblock Api javascript do google maps v3.
+\newblock \url{https://developers.google.com/maps/documentation/javascript/},
+  2013.
+
+\bibitem{googletimeline}
+Google.
+\newblock Google chart - timeline.
+\newblock
+  \url{https://developers.google.com/chart/interactive/docs/gallery/timeline},
+  2014.
 
 \end{thebibliography}

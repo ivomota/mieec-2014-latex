@@ -54,5 +54,7 @@
 \contentsline {chapter}{\numberline {4}Olh\IeC {\'o}-passarinho}{37}{chapter.4}
 \contentsline {section}{\numberline {4.1}Arquitetura do sistema}{37}{section.4.1}
 \contentsline {section}{\numberline {4.2}Informa\IeC {\c c}\IeC {\~a}o espa\IeC {\c c}o-temporal}{38}{section.4.2}
-\contentsline {chapter}{\numberline {A}Exemplo objeto JSON de um tweet}{39}{appendix.A}
-\contentsline {chapter}{Refer\^{e}ncias}{45}{section*.21}
+\contentsline {section}{\numberline {4.3}Clustering da informa\IeC {\c c}\IeC {\~a}o visual, espacial e temporal}{39}{section.4.3}
+\contentsline {section}{\numberline {4.4}Visualiza\IeC {\c c}\IeC {\~a}o}{40}{section.4.4}
+\contentsline {chapter}{\numberline {A}Exemplo objeto JSON de um tweet}{41}{appendix.A}
+\contentsline {chapter}{Refer\^{e}ncias}{47}{section*.24}
