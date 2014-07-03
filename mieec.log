@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.16)  30 JUN 2014 16:52
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.16)  3 JUL 2014 01:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1034,9 +1034,9 @@ Package: listings 2007/02/22 1.4 (Carsten Heinz)
 \@input{mymacros.aux}
 \openout2 = `mymacros.aux'.
 
-(./mymacros.tex) (./mieec.aux (./abstract.aux) (./acknows.aux) (./quote.aux)
-(./abbrevs.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
-(./chapter4.aux) (./chapter5.aux) (./appendix1.aux))
+(./mymacros.tex) (./mieec.aux (./abstract.aux) (./acknows.aux) (./abbrevs.aux)
+(./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
+(./chapter5.aux) (./appendix1.aux))
 \openout1 = `mieec.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
@@ -1195,7 +1195,15 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 
 
 
-]) [5] [6
+]) [5]
+\openout2 = `quote.aux'.
+
+ (./quote.tex [6
+
+
+
+]) [7]
+[8
 
 
 ] (./mieec.toc
@@ -1236,35 +1244,35 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
- [7
+ [9
 
 ])
 \tf@toc=\write5
 \openout5 = `mieec.toc'.
 
- [8]
+ [10]
 (./mieec.lof)
 \tf@lof=\write6
 \openout6 = `mieec.lof'.
 
- [9
+ [11
 
 
-] [10
+] [12
 
 ] (./mieec.lot)
 \tf@lot=\write7
 \openout7 = `mieec.lot'.
 
- [11
+ [13
 
 ]
 \openout2 = `abbrevs.aux'.
 
- (./abbrevs.tex [12
+ (./abbrevs.tex [14
 
 
-]) [13] [14
+]) [15] [16
 
 
 ]
@@ -1297,7 +1305,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
  [4]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 68.
- <./figures/hierarquico.png, id=419, 820.06375pt x 613.29124pt>
+ <./figures/hierarquico.png, id=427, 820.06375pt x 613.29124pt>
 File: ./figures/hierarquico.png Graphic file (type png)
 
 <use ./figures/hierarquico.png>
@@ -1310,14 +1318,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 97.
 [5] [6 <./figures/hierarquico.png>] [7] [8] [9]
-<./figures/matriz_confusao.png, id=479, 963.6pt x 371.3875pt>
+<./figures/matriz_confusao.png, id=487, 963.6pt x 371.3875pt>
 File: ./figures/matriz_confusao.png Graphic file (type png)
 
 <use ./figures/matriz_confusao.png>
 Package pdftex.def Info: ./figures/matriz_confusao.png used on input line 222.
 (pdftex.def)             Requested size: 341.43437pt x 131.5913pt.
  [10 <./figures/matriz_confusao.png>]
-[11] <./figures/histlena.png, id=512, 985.6825pt x 421.575pt>
+[11] <./figures/histlena.png, id=520, 985.6825pt x 421.575pt>
 File: ./figures/histlena.png Graphic file (type png)
 
 <use ./figures/histlena.png>
@@ -1328,35 +1336,35 @@ Package pdftex.def Info: ./figures/histlena.png used on input line 315.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12] [13 <./figures/histlena.png>] [14] [15]
-<./figures/ehd.png, id=568, 776.9025pt x 384.43625pt>
+<./figures/ehd.png, id=576, 776.9025pt x 384.43625pt>
 File: ./figures/ehd.png Graphic file (type png)
  <use ./figures/ehd.png>
 Package pdftex.def Info: ./figures/ehd.png used on input line 400.
 (pdftex.def)             Requested size: 298.75264pt x 147.83536pt.
 
 [16 <./figures/ehd.png>]
-<./figures/shape1.png, id=584, 582.175pt x 190.7125pt>
+<./figures/shape1.png, id=592, 582.175pt x 190.7125pt>
 File: ./figures/shape1.png Graphic file (type png)
 
 <use ./figures/shape1.png>
 Package pdftex.def Info: ./figures/shape1.png used on input line 418.
 (pdftex.def)             Requested size: 298.75264pt x 97.86736pt.
  [17 <./figures/shape1.png>] [18]
-<./figures/sift_dog.jpg, id=609, 451.6875pt x 326.21875pt>
+<./figures/sift_dog.jpg, id=617, 451.6875pt x 326.21875pt>
 File: ./figures/sift_dog.jpg Graphic file (type jpg)
 
 <use ./figures/sift_dog.jpg>
 Package pdftex.def Info: ./figures/sift_dog.jpg used on input line 499.
 (pdftex.def)             Requested size: 298.75264pt x 215.77791pt.
  [19 <./figures/sift_dog.jpg>]
-<./figures/sift_dog2.png, id=622, 273.02pt x 234.8775pt>
+<./figures/sift_dog2.png, id=631, 273.02pt x 234.8775pt>
 File: ./figures/sift_dog2.png Graphic file (type png)
 
 <use ./figures/sift_dog2.png>
 Package pdftex.def Info: ./figures/sift_dog2.png used on input line 514.
 (pdftex.def)             Requested size: 170.71393pt x 146.86617pt.
  [20 <./figures/sift_dog2.png>] [21]
-<./figures/surf.png, id=650, 472.76625pt x 289.08pt>
+<./figures/surf.png, id=658, 472.76625pt x 289.08pt>
 File: ./figures/surf.png Graphic file (type png)
  <use ./figures/surf.png>
 Package pdftex.def Info: ./figures/surf.png used on input line 566.
@@ -1371,7 +1379,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:visualword' on page 23 undefined on input line 58
 1.
 
-<./figures/visual_word_1.png, id=666, 467.7475pt x 156.585pt>
+<./figures/visual_word_1.png, id=674, 467.7475pt x 156.585pt>
 File: ./figures/visual_word_1.png Graphic file (type png)
 
 <use ./figures/visual_word_1.png>
@@ -1414,7 +1422,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
  [27])
-<./figures/infovisual.png, id=728, 746.79pt x 440.64626pt>
+<./figures/infovisual.png, id=736, 746.79pt x 440.64626pt>
 File: ./figures/infovisual.png Graphic file (type png)
 
 <use ./figures/infovisual.png>
@@ -1425,14 +1433,14 @@ Package pdftex.def Info: ./figures/infovisual.png used on input line 91.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [28] [29 <./figures/infovisual.png>]
-<./figures/centroides.png, id=768, 435.6275pt x 468.75125pt>
+<./figures/centroides.png, id=776, 435.6275pt x 468.75125pt>
 File: ./figures/centroides.png Graphic file (type png)
 
 <use ./figures/centroides.png>
 Package pdftex.def Info: ./figures/centroides.png used on input line 130.
 (pdftex.def)             Requested size: 256.07741pt x 275.54517pt.
  [30] [31 <./figures/centroides.png>]
-<./figures/matrizdist.png, id=790, 706.64pt x 386.44376pt>
+<./figures/matrizdist.png, id=799, 706.64pt x 386.44376pt>
 File: ./figures/matrizdist.png Graphic file (type png)
 
 <use ./figures/matrizdist.png>
@@ -1448,7 +1456,7 @@ Package pdftex.def Info: ./figures/matrizdist.png used on input line 168.
 
 ]
 Cap\'{\i }tulo 4.
-<./figures/arquitetura_sistema.png, id=816, 746.79pt x 525.965pt>
+<./figures/arquitetura_sistema.png, id=824, 746.79pt x 525.965pt>
 File: ./figures/arquitetura_sistema.png Graphic file (type png)
 
 <use ./figures/arquitetura_sistema.png>
@@ -1475,7 +1483,7 @@ Underfull \vbox (badness 1424) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
-<./figures/olhopassarinho/map1.png, id=840, 1058.95625pt x 644.4075pt>
+<./figures/olhopassarinho/map1.png, id=849, 1058.95625pt x 644.4075pt>
 File: ./figures/olhopassarinho/map1.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/map1.png>
@@ -1483,7 +1491,7 @@ Package pdftex.def Info: ./figures/olhopassarinho/map1.png used on input line 7
 9.
 (pdftex.def)             Requested size: 426.79135pt x 259.71516pt.
 
-<./figures/olhopassarinho/time_example.png, id=843, 912.40875pt x 158.5925pt>
+<./figures/olhopassarinho/time_example.png, id=852, 912.40875pt x 158.5925pt>
 File: ./figures/olhopassarinho/time_example.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/time_example.png>
@@ -1497,7 +1505,7 @@ Overfull \hbox (3.01794pt too wide) in paragraph at lines 99--100
 ilus-tra-ti-vos vi-sí-veis atra-vés fer-ra-menta Olhó-
  []
 
-<./figures/olhopassarinho/map3.png, id=854, 679.53876pt x 442.65375pt>
+<./figures/olhopassarinho/map3.png, id=863, 679.53876pt x 442.65375pt>
 File: ./figures/olhopassarinho/map3.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/map3.png>
@@ -1505,7 +1513,7 @@ Package pdftex.def Info: ./figures/olhopassarinho/map3.png used on input line 1
 05.
 (pdftex.def)             Requested size: 256.07741pt x 166.80525pt.
 
-<./figures/olhopassarinho/time2.png, id=857, 695.59875pt x 203.76125pt>
+<./figures/olhopassarinho/time2.png, id=866, 695.59875pt x 203.76125pt>
 File: ./figures/olhopassarinho/time2.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/time2.png>
@@ -1513,14 +1521,14 @@ Package pdftex.def Info: ./figures/olhopassarinho/time2.png used on input line
 116.
 (pdftex.def)             Requested size: 298.75264pt x 87.51302pt.
  [39 <./figures/olhopassarinho/map3.png>]
-<./figures/olhopassarinho/exemplo_comp.png, id=867, 1203.49625pt x 836.12375pt>
+<./figures/olhopassarinho/exemplo_comp.png, id=875, 1203.49625pt x 836.12375pt>
 File: ./figures/olhopassarinho/exemplo_comp.png Graphic file (type png)
 <use ./figures/olhopassarinho/exemplo_comp.png>
 Package pdftex.def Info: ./figures/olhopassarinho/exemplo_comp.png used on inpu
 t line 125.
 (pdftex.def)             Requested size: 341.43437pt x 237.21329pt.
 
-<./figures/olhopassarinho/exemplo_comp2.png, id=868, 1211.52625pt x 972.63374pt
+<./figures/olhopassarinho/exemplo_comp2.png, id=876, 1211.52625pt x 972.63374pt
 >
 File: ./figures/olhopassarinho/exemplo_comp2.png Graphic file (type png)
  <use ./figures/olhopassarinho/exemplo_comp2.png>
@@ -1531,7 +1539,7 @@ ut line 132.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figures/olhopassarinho/im1.png, id=869, 324.21124pt x 447.6725pt>
+<./figures/olhopassarinho/im1.png, id=877, 324.21124pt x 447.6725pt>
 File: ./figures/olhopassarinho/im1.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/im1.png>
@@ -1620,24 +1628,30 @@ aeza-[]yates / chap10 _ user _
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
  [53]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
- (./mieec.aux (./abstract.aux) (./acknows.aux) (./abbrevs.aux)
-(./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
-(./chapter5.aux) (./appendix1.aux))
+ (./mieec.aux (./abstract.aux) (./acknows.aux) (./quote.aux)
+(./abbrevs.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
+(./chapter4.aux) (./chapter5.aux) (./appendix1.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
-Package rerunfilecheck Info: File `mieec.out' has not changed.
-(rerunfilecheck)             Checksum: 538AE47B475942457CBCDC4A43413F21;3421.
 
+
+Package rerunfilecheck Warning: File `mieec.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `mieec.out':
+(rerunfilecheck)             Before: 538AE47B475942457CBCDC4A43413F21;3421
+(rerunfilecheck)             After:  3F0C7AB4AB38305D9AF997471DDEA65C;3472.
 
 LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 20915 strings out of 493481
- 354741 string characters out of 3140965
- 670543 words of memory out of 3000000
- 23202 multiletter control sequences out of 15000+200000
+ 20918 strings out of 493481
+ 354768 string characters out of 3140965
+ 668890 words of memory out of 3000000
+ 23201 multiletter control sequences out of 15000+200000
  88190 words of font info for 115 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  63i,13n,76p,1783b,1954s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1653,10 +1667,10 @@ urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/
 utmbi8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
 cal/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mieec.pdf (69 pages, 2929078 bytes).
+Output written on mieec.pdf (71 pages, 2930054 bytes).
 PDF statistics:
- 1289 PDF objects out of 1440 (max. 8388607)
- 1145 compressed objects within 12 object streams
- 460 named destinations out of 1000 (max. 500000)
+ 1297 PDF objects out of 1440 (max. 8388607)
+ 1151 compressed objects within 12 object streams
+ 462 named destinations out of 1000 (max. 500000)
  470 words of extra memory for PDF output out of 10000 (max. 10000000)
 
