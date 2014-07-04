@@ -1,27 +1,27 @@
 \select@language {portuges}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Dendrograma ilustrativo da divis\IeC {\~a}o entre n\IeC {\'o}s do conjunto completo ao objeto individual no fundo~\cite {Bramer2007}\relax }}{6}{figure.caption.8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Matriz confus\IeC {\~a}o de dois objetos com atributos bin\IeC {\'a}rios\relax }}{10}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Imagem em tons cinza e respetivo histograma \relax }}{13}{figure.caption.10}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Sub-imagem e bloco de imagem. \textit {Retirada de}~\cite {Wu2001}\relax }}{16}{figure.caption.11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Exemplo de formas de objetos que podem ser descritas eficazmente pelo descritor baseado em regi\IeC {\~a}o. \textit {Retirada de}~\cite {Bober2001} .\relax }}{17}{figure.caption.12}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Constru\IeC {\c c}\IeC {\~a}o das Diferen\IeC {\c c}as Gaussianas e forma\IeC {\c c}\IeC {\~a}o de oitavas \textit {Retirada de}~\cite {Lowe2004} .\relax }}{19}{figure.caption.13}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Ilustra\IeC {\c c}\IeC {\~a}o do processo de dete\IeC {\c c}\IeC {\~a}o de m\IeC {\'a}ximos e m\IeC {\'\i }nimos das imagens de Diferen\IeC {\c c}a Gaussiana. O pixel candidato est\IeC {\'a} marcado com X e os vizinhos com um circulo. \textit {Retirada de}~\cite {Lowe2004}\relax }}{20}{figure.caption.14}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Imagem\relax }}{21}{figure.caption.15}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces (a) Filtros Gaussianos de segunda ordem nas dire\IeC {\c c}\IeC {\~o}es yy e xy; (b) aproxima\IeC {\c c}\IeC {\~a}o por filtros de caixa; (c) filtros de Haar; As regi\IeC {\~o}es a cinzento t\IeC {\^e}m valor igual a zero. \textit {Retirada de}~\cite {Bay2006}.\relax }}{22}{figure.caption.16}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Dendrograma ilustrativo da divis\IeC {\~a}o entre n\IeC {\'o}s do conjunto completo ao objeto individual no fundo~\cite {Bramer2007}\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Matriz confus\IeC {\~a}o de dois objetos com atributos bin\IeC {\'a}rios\relax }}{12}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Imagem em tons cinza e respetivo histograma \relax }}{15}{figure.caption.10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Sub-imagem e bloco de imagem. \textit {Retirada de}~\cite {Wu2001}\relax }}{19}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Exemplo de formas de objetos que podem ser descritas eficazmente pelo descritor baseado em regi\IeC {\~a}o. \textit {Retirada de}~\cite {Bober2001} .\relax }}{20}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Constru\IeC {\c c}\IeC {\~a}o das Diferen\IeC {\c c}as Gaussianas e forma\IeC {\c c}\IeC {\~a}o de oitavas \textit {Retirada de}~\cite {Lowe2004} .\relax }}{22}{figure.caption.13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Ilustra\IeC {\c c}\IeC {\~a}o do processo de dete\IeC {\c c}\IeC {\~a}o de m\IeC {\'a}ximos e m\IeC {\'\i }nimos das imagens de Diferen\IeC {\c c}a Gaussiana. O pixel candidato est\IeC {\'a} marcado com X e os vizinhos com um circulo. \textit {Retirada de}~\cite {Lowe2004}\relax }}{23}{figure.caption.14}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Imagem\relax }}{24}{figure.caption.15}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces (a) Filtros Gaussianos de segunda ordem nas dire\IeC {\c c}\IeC {\~o}es yy e xy; (b) aproxima\IeC {\c c}\IeC {\~a}o por filtros de caixa; (c) filtros de Haar; As regi\IeC {\~o}es a cinzento t\IeC {\^e}m valor igual a zero. \textit {Retirada de}~\cite {Bay2006}.\relax }}{25}{figure.caption.16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Arquitetura do m\IeC {\'o}dulo de extra\IeC {\c c}\IeC {\~a}o, processamento e armazenamento da informa\IeC {\c c}\IeC {\~a}o visual. \textit {Adaptada de}~\cite {Bueno2011}\relax }}{29}{figure.caption.19}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Exemplo de proje\IeC {\c c}\IeC {\~a}o de centroides ap\IeC {\'o}s tarefa de \textit {clustering} num espa\IeC {\c c}o a duas dimens\IeC {\~o}es.\relax }}{31}{figure.caption.20}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Estrutura de uma matriz de dist\IeC {\^a}ncias. \textit {Retirada de}~\cite {Han2006}\relax }}{32}{figure.caption.22}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Arquitetura do m\IeC {\'o}dulo de extra\IeC {\c c}\IeC {\~a}o, processamento e armazenamento da informa\IeC {\c c}\IeC {\~a}o visual. \textit {Adaptada de}~\cite {Bueno2011}\relax }}{31}{figure.caption.19}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Exemplo de proje\IeC {\c c}\IeC {\~a}o de centroides ap\IeC {\'o}s tarefa de \textit {clustering} num espa\IeC {\c c}o a duas dimens\IeC {\~o}es.\relax }}{33}{figure.caption.20}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Estrutura de uma matriz de dist\IeC {\^a}ncias. \textit {Retirada de}~\cite {Han2006}\relax }}{34}{figure.caption.22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitetura do sistema completo\relax }}{36}{figure.caption.23}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de tweets na dimens\IeC {\~a}o espacial\relax }}{38}{figure.caption.25}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Exemplo ilustrativo da ferramenta Timeline. \textit {Retirada de}~\cite {googletimeline}\relax }}{38}{figure.caption.26}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o da distribui espacial dos \textit {clusters} para o caso em que a distribui\IeC {\c c}\IeC {\~a}o dos pesos entre as tr\IeC {\^e}s dimens\IeC {\~o}es \IeC {\'e} igual\relax }}{39}{figure.caption.27}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o da distribui temporal dos \textit {clusters} para o caso em que a distribui\IeC {\c c}\IeC {\~a}o dos pesos entre as tr\IeC {\^e}s dimens\IeC {\~o}es \IeC {\'e} igual\relax }}{40}{figure.caption.28}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o completa da aplica\IeC {\c c}\IeC {\~a}o web com a visualiza\IeC {\c c}\IeC {\~a}o pelas v\IeC {\'a}rias dimens\IeC {\~o}es\relax }}{40}{figure.caption.29}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o completa da aplica\IeC {\c c}\IeC {\~a}o web com a visualiza\IeC {\c c}\IeC {\~a}o mais detalhada de uma das imagens\relax }}{41}{figure.caption.30}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o de um conjunto de imagens pertencentes a um \textit {Cluster} e em que foi atribu\IeC {\'\i }do o peso total apenas \IeC {\`a} dimens\IeC {\~a}o do conte\IeC {\'u}do visual\relax }}{42}{figure.caption.31}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitetura do sistema completo\relax }}{38}{figure.caption.23}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de tweets na dimens\IeC {\~a}o espacial\relax }}{40}{figure.caption.25}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Exemplo ilustrativo da ferramenta Timeline. \textit {Retirada de}~\cite {googletimeline}\relax }}{40}{figure.caption.26}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o da distribui espacial dos \textit {clusters} para o caso em que a distribui\IeC {\c c}\IeC {\~a}o dos pesos entre as tr\IeC {\^e}s dimens\IeC {\~o}es \IeC {\'e} igual\relax }}{41}{figure.caption.27}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o da distribui temporal dos \textit {clusters} para o caso em que a distribui\IeC {\c c}\IeC {\~a}o dos pesos entre as tr\IeC {\^e}s dimens\IeC {\~o}es \IeC {\'e} igual\relax }}{42}{figure.caption.28}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o completa da aplica\IeC {\c c}\IeC {\~a}o web com a visualiza\IeC {\c c}\IeC {\~a}o pelas v\IeC {\'a}rias dimens\IeC {\~o}es\relax }}{42}{figure.caption.29}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o completa da aplica\IeC {\c c}\IeC {\~a}o web com a visualiza\IeC {\c c}\IeC {\~a}o mais detalhada de uma das imagens\relax }}{43}{figure.caption.30}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o de um conjunto de imagens pertencentes a um \textit {Cluster} e em que foi atribu\IeC {\'\i }do o peso total apenas \IeC {\`a} dimens\IeC {\~a}o do conte\IeC {\'u}do visual\relax }}{44}{figure.caption.31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

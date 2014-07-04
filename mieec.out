@@ -4,42 +4,47 @@
 \BOOKMARK [0][-]{figures.0}{Lista de Figuras}{}% 4
 \BOOKMARK [0][-]{tables.0}{Lista de Tabelas}{}% 5
 \BOOKMARK [0][-]{chapter.1}{1 Introdu\347\343o}{}% 6
-\BOOKMARK [1][-]{section.1.1}{1.1 Motiva\347\343o}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.2}{1.2 Objetivos}{chapter.1}% 8
-\BOOKMARK [1][-]{section.1.3}{1.3 Estrutura do documento}{chapter.1}% 9
-\BOOKMARK [0][-]{chapter.2}{2 Conceitos e Trabalhos Relacionados}{}% 10
-\BOOKMARK [1][-]{section.2.1}{2.1 Clustering}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Clustering por Parti\347\343o}{section.2.1}% 12
-\BOOKMARK [2][-]{subsection.2.1.2}{2.1.2 Clustering Hier\341rquico}{section.2.1}% 13
-\BOOKMARK [2][-]{subsection.2.1.3}{2.1.3 Clustering Baseado em Densidade}{section.2.1}% 14
-\BOOKMARK [2][-]{subsection.2.1.4}{2.1.4 Clustering Baseado em Grelhas}{section.2.1}% 15
-\BOOKMARK [2][-]{subsection.2.1.5}{2.1.5 Fun\347\365es de Dist\342ncia}{section.2.1}% 16
-\BOOKMARK [1][-]{section.2.2}{2.2 Representa\347\343o de Informa\347\343o Visual}{chapter.2}% 17
-\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Representa\347\343o Matricial}{section.2.2}% 18
-\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Histogramas}{section.2.2}% 19
-\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 Descritores de Cor}{section.2.2}% 20
-\BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 Descritores de Textura}{section.2.2}% 21
-\BOOKMARK [2][-]{subsection.2.2.5}{2.2.5 Descritores de Forma}{section.2.2}% 22
-\BOOKMARK [2][-]{subsection.2.2.6}{2.2.6 Descritores Locais}{section.2.2}% 23
-\BOOKMARK [2][-]{subsection.2.2.7}{2.2.7 Descritores Baseado em Vocabul\341rio Visual}{section.2.2}% 24
-\BOOKMARK [0][-]{chapter.3}{3 M\363dulo da Informa\347\343o Visual}{}% 25
-\BOOKMARK [1][-]{section.3.1}{3.1 Recolha dos Dados}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Descri\347\343o dos Dados}{section.3.1}% 27
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Filtragem dos Dados}{section.3.1}% 28
-\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Conjunto de Dados Final}{section.3.1}% 29
-\BOOKMARK [1][-]{section.3.2}{3.2 Extra\347\343o, Processamento e Armazenamento da Informa\347\343o Visual}{chapter.3}% 30
-\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Extra\347\343o dos Pontos de Interesse e Descritores Locais}{section.3.2}% 31
-\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Cria\347\343o do Vocabul\341rio Visual}{section.3.2}% 32
-\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Armazenamento da Informa\347\343o Visual}{section.3.2}% 33
-\BOOKMARK [1][-]{section.3.3}{3.3 Matriz de Dist\342ncias entre Imagens}{chapter.3}% 34
-\BOOKMARK [0][-]{chapter.4}{4 Olh\363-passarinho}{}% 35
-\BOOKMARK [1][-]{section.4.1}{4.1 Arquitetura do Sistema}{chapter.4}% 36
-\BOOKMARK [1][-]{section.4.2}{4.2 Informa\347\343o Espa\347o-Temporal}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.3}{4.3 Clustering da Informa\347\343o Visual, Espacial e Temporal}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.4}{4.4 Visualiza\347\343o}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.5}{4.5 Resultados Ilustrativos}{chapter.4}% 40
-\BOOKMARK [0][-]{chapter.5}{5 Conclus\365es e Trabalho Futuro}{}% 41
-\BOOKMARK [1][-]{section.5.1}{5.1 Resumo do Trabalho Realizado}{chapter.5}% 42
-\BOOKMARK [1][-]{section.5.2}{5.2 Trabalho Futuro}{chapter.5}% 43
-\BOOKMARK [0][-]{appendix.A}{A Exemplo objeto JSON de um tweet}{}% 44
-\BOOKMARK [0][-]{section*.32}{Refer\352ncias}{}% 45
+\BOOKMARK [1][-]{section.1.1}{1.1 Contexto}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.2}{1.2 Motiva\347\343o}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.3}{1.3 Objetivos}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.4}{1.4 Estrutura do documento}{chapter.1}% 10
+\BOOKMARK [0][-]{chapter.2}{2 Conceitos e Trabalhos Relacionados}{}% 11
+\BOOKMARK [1][-]{section.2.1}{2.1 Clustering}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Clustering por Parti\347\343o}{section.2.1}% 13
+\BOOKMARK [2][-]{subsection.2.1.2}{2.1.2 Clustering Hier\341rquico}{section.2.1}% 14
+\BOOKMARK [2][-]{subsection.2.1.3}{2.1.3 Clustering Baseado em Densidade}{section.2.1}% 15
+\BOOKMARK [2][-]{subsection.2.1.4}{2.1.4 Clustering Baseado em Grelhas}{section.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.1.5}{2.1.5 Fun\347\365es de Dist\342ncia}{section.2.1}% 17
+\BOOKMARK [1][-]{section.2.2}{2.2 TweeProfiles}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Descri\347\343o e objetivos}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Resultados ilustrativos}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 Pr\363s e contras}{section.2.2}% 21
+\BOOKMARK [1][-]{section.2.3}{2.3 Representa\347\343o de Informa\347\343o Visual}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Representa\347\343o Matricial}{section.2.3}% 23
+\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Histogramas}{section.2.3}% 24
+\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 Descritores de Cor}{section.2.3}% 25
+\BOOKMARK [2][-]{subsection.2.3.4}{2.3.4 Descritores de Textura}{section.2.3}% 26
+\BOOKMARK [2][-]{subsection.2.3.5}{2.3.5 Descritores de Forma}{section.2.3}% 27
+\BOOKMARK [2][-]{subsection.2.3.6}{2.3.6 Descritores Locais}{section.2.3}% 28
+\BOOKMARK [2][-]{subsection.2.3.7}{2.3.7 Descritores Baseado em Vocabul\341rio Visual}{section.2.3}% 29
+\BOOKMARK [0][-]{chapter.3}{3 M\363dulo da Informa\347\343o Visual}{}% 30
+\BOOKMARK [1][-]{section.3.1}{3.1 Recolha dos Dados}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Descri\347\343o dos Dados}{section.3.1}% 32
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Filtragem dos Dados}{section.3.1}% 33
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Conjunto de Dados Final}{section.3.1}% 34
+\BOOKMARK [1][-]{section.3.2}{3.2 Extra\347\343o, Processamento e Armazenamento da Informa\347\343o Visual}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Extra\347\343o dos Pontos de Interesse e Descritores Locais}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Cria\347\343o do Vocabul\341rio Visual}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Armazenamento da Informa\347\343o Visual}{section.3.2}% 38
+\BOOKMARK [1][-]{section.3.3}{3.3 Matriz de Dist\342ncias entre Imagens}{chapter.3}% 39
+\BOOKMARK [0][-]{chapter.4}{4 Olh\363-passarinho}{}% 40
+\BOOKMARK [1][-]{section.4.1}{4.1 Arquitetura do Sistema}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.2}{4.2 Informa\347\343o Espa\347o-Temporal}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.3}{4.3 Clustering da Informa\347\343o Visual, Espacial e Temporal}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.4}{4.4 Visualiza\347\343o}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.5}{4.5 Resultados Ilustrativos}{chapter.4}% 45
+\BOOKMARK [0][-]{chapter.5}{5 Conclus\365es e Trabalho Futuro}{}% 46
+\BOOKMARK [1][-]{section.5.1}{5.1 Resumo do Trabalho Realizado}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.2}{5.2 Trabalho Futuro}{chapter.5}% 48
+\BOOKMARK [0][-]{appendix.A}{A Exemplo objeto JSON de um tweet}{}% 49
+\BOOKMARK [0][-]{section*.32}{Refer\352ncias}{}% 50
