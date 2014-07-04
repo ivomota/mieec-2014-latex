@@ -23,7 +23,7 @@
 \contentsline {section}{\numberline {2.3}Representa\IeC {\c c}\IeC {\~a}o de Informa\IeC {\c c}\IeC {\~a}o Visual}{14}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Representa\IeC {\c c}\IeC {\~a}o Matricial}{14}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Histogramas}{15}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Descritores de Cor}{15}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}Descritores de Cor}{16}{subsection.2.3.3}
 \contentsline {subsubsection}{\numberline {2.3.3.1}Espa\IeC {\c c}os de Cor}{16}{subsubsection.2.3.3.1}
 \contentsline {subsubsection}{\numberline {2.3.3.2}Cor Dominante}{17}{subsubsection.2.3.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3.3}Cor Escal\IeC {\'a}vel}{17}{subsubsection.2.3.3.3}
@@ -33,7 +33,7 @@
 \contentsline {subsubsection}{\numberline {2.3.4.2}Descritor de Histograma de Borda}{18}{subsubsection.2.3.4.2}
 \contentsline {subsubsection}{\numberline {2.3.4.3}Descritor de Navega\IeC {\c c}\IeC {\~a}o Percetual}{19}{subsubsection.2.3.4.3}
 \contentsline {subsection}{\numberline {2.3.5}Descritores de Forma}{19}{subsection.2.3.5}
-\contentsline {subsubsection}{\numberline {2.3.5.1}Descritor de Forma Baseado em Regi\IeC {\~a}o}{19}{subsubsection.2.3.5.1}
+\contentsline {subsubsection}{\numberline {2.3.5.1}Descritor de Forma Baseado em Regi\IeC {\~a}o}{20}{subsubsection.2.3.5.1}
 \contentsline {subsubsection}{\numberline {2.3.5.2}Descritor de Forma Baseado no Contorno}{20}{subsubsection.2.3.5.2}
 \contentsline {subsection}{\numberline {2.3.6}Descritores Locais}{21}{subsection.2.3.6}
 \contentsline {subsubsection}{\numberline {2.3.6.1}SIFT}{21}{subsubsection.2.3.6.1}

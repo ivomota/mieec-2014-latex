@@ -44,6 +44,13 @@ Jiawei Han, Micheline Kamber, e Jian Pei.
 \newblock {\em {Data Mining, Second Edition: Concepts and Techniques}}.
 \newblock 2006.
 
+\bibitem{googletimeline}
+Google.
+\newblock Google chart - timeline.
+\newblock
+  \url{https://developers.google.com/chart/interactive/docs/gallery/timeline},
+  2014.
+
 \bibitem{Russell2011}
 Matthew~A Russell.
 \newblock {\em {Mining the Social Web}}, volume~54.
@@ -92,6 +99,15 @@ Rakesh Agrawal, Johannes Gehrke, Dimitrios Gunopulos, e Prabhakar Raghavan.
   mining applications}.
 \newblock {\em ACM SIGMOD Rec.}, 27(2):94--105, Junho 1998.
 \newblock doi:10.1145/276305.276314.
+
+\bibitem{Montavont2006}
+J.~Montavont e T.~Noel.
+\newblock {IEEE 802.11 Handovers Assisted by GPS Information}.
+\newblock Em {\em IEEE Int. Conf. Wirel. Mob. Comput. Netw. Commun. 2006.},
+  p\'{a}ginas 166--172. IEEE, 2006.
+\newblock URL:
+  \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=1696358},
+  doi:10.1109/WIMOB.2006.1696358.
 
 \bibitem{Forsyth2011}
 David~A. Forsyth e Jean Ponce.
@@ -197,12 +213,5 @@ Google.
 \newblock Api javascript do google maps v3.
 \newblock \url{https://developers.google.com/maps/documentation/javascript/},
   2013.
-
-\bibitem{googletimeline}
-Google.
-\newblock Google chart - timeline.
-\newblock
-  \url{https://developers.google.com/chart/interactive/docs/gallery/timeline},
-  2014.
 
 \end{thebibliography}

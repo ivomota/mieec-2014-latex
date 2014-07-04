@@ -47,6 +47,10 @@
 
 \makeatletter
 \def\BState{\State\hskip-\ALG@thistlm}
+\newcommand{\newalgname}[1]{%
+  \renewcommand{\ALG@name}{#1}%
+}
+\newalgname{Algoritmo}% All algorithms will be called "Algoritmo"
 \makeatother
 
 
@@ -116,7 +120,7 @@
 
 
 %% Uncomment next line for date of submission
-\thesisdate{30 de Junho de 2014}
+%\thesisdate{30 de Junho de 2014}
 
 %% Comment next line for copyright text if not used
 \copyrightnotice{Ivo Mota, 2014}

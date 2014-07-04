@@ -261,8 +261,7 @@ dist^{T}( t_{i}, t_{j}) = |\Delta_{i} - \Delta_{j}|
 
 \subsubsection{Dimensão Espacial} \label{subsubsec: space}
 
-Ao contrário da dimensão temporal, a dimensão espacial apresenta mais do que uma dimensão, latitude e longitude. Estas apresentam-se sobre a forma numérica, sendo possível o cálculo da distância entre dois objetos através de funções de distância para atributos numéricos como referido anteriormente (\ref{subsubsec: attrnum}). Assim, para o cálculo entre pontos distribuídos num espaço poder-se-á recorrer à função Minkowski (equação~\ref{eq:mink}), à função Euclidiana (equação\ref{eq: euclid}), à função Manhattan (equação~\ref{eq: manhattan}) ou mesmo à função de Chebychev (equação~\ref{eq:cheby}), sendo que no caso mais específico de uma distribuição espacial geográfica, em que os pontos possuem latitude e longitude, é considerada mais apropriada a utilização da função distância Haversine (equação~\ref{eq:hav}) pois esta toma em consideração a forma esférica da Terra.
-Obtendo um par de objetos $ x_{i} $ e $ x_{j} $ distanciados geograficamente, são consideradas as latitudes $ \phi_{x_{i}} $ e $ \phi_{x_{j}} $ e longitudes $ \lambda_{x_{i}} $ e $ \lambda_{x_{j}} $ para determinar a distância através da seguinte equação,
+Ao contrário da dimensão temporal, a dimensão espacial apresenta mais do que uma dimensão, latitude e longitude. Estas apresentam-se sobre a forma numérica, sendo possível o cálculo da distância entre dois objetos através de funções de distância para atributos numéricos como referido anteriormente (\ref{subsubsec: attrnum}). Assim, para o cálculo entre pontos distribuídos num espaço poder-se-á recorrer à função Minkowski (equação~\ref{eq:mink}), à função Euclidiana (equação\ref{eq: euclid}), à função Manhattan (equação~\ref{eq: manhattan}) ou mesmo à função de Chebychev (equação~\ref{eq:cheby}), sendo que no caso mais específico de uma distribuição espacial geográfica, em que os pontos possuem latitude e longitude, é considerada mais apropriada a utilização da função distância Haversine pois esta toma em consideração a forma esférica da Terra~\cite{Montavont2006}. Assim, obtendo um par de objetos $ x_{i} $ e $ x_{j} $ distanciados geograficamente, são consideradas a latitude $ \phi_{x_{i}} $ e $ \phi_{x_{j}} $ e a longitude $ \lambda_{x_{i}} $ e $ \lambda_{x_{j}} $ para determinar a distância entre os objetos através da equação~\ref{eq:hav}
 
 \begin{equation}
 dist^{Sp}( x_{i}, x_{j}) = 2R\sin^{-1}\left( \left[ \sin^{2}(\frac{\phi_{x_{i}}-\phi_{x_{j}}}{2})+\cos\phi_{x_{i}}\cos\phi_{x_{j}}\sin^{2}(\frac{\lambda_{x_{i}}-\lambda_{x_{j}}}{2})\right] ^{0.5}\right) 
@@ -270,9 +269,6 @@ dist^{Sp}( x_{i}, x_{j}) = 2R\sin^{-1}\left( \left[ \sin^{2}(\frac{\phi_{x_{i}}-
 \end{equation}
 
 onde $ R $ representa o raio da Terra e que determina as unidades do resultado retornado pela função, sendo comum a utilização das unidades no sistema internacional (SI), o metro, podendo também ser representado em quilómetros devido ao fator de escala. 
-
-% clocar uma bibliografia para a formula
-
 
 
 % % % NOVA SECÇÃO % % %
@@ -302,7 +298,9 @@ O caso de estudo que o TweeProfiles aborda dados georeferenciados do Socialbus (
 
 \section{Representação de Informação Visual} \label{sec:represent}
 
-Na secção~\ref{sec:cluster} foi apresentado o conceito e características da tarefa de \textit{clustering} de uma forma geral. Nesta secção serão expostas formas de representar imagens como dados. É importante salientar que a tarefa de \textit{clustering} em imagem é muitas vezes associada à técnica de segmentação de imagem~\citet{Forsyth2011}, não sendo este o objetivo deste projeto de dissertação. Pretende-se antes que para tarefa de \textit{clustering} cada objeto considere a imagem no seu conjunto. 
+Na secção~\ref{sec:cluster} foi apresentado o conceito e características da tarefa de \textit{clustering} de uma forma geral. Nesta secção serão expostas formas de representar imagens como dados. 
+
+Como o objetivo desta dissertação passa por a realização da tarefa de \textit{clusterng}, utilizando como dados as imagens partilhadas no serviço Twitter, é necessário utilizar formas eficientes para descrever cada imagem de uma forma compacta e de maneira a que seja descrito o conteúdo geral das imagens. É importante salientar que a tarefa de \textit{clustering} em imagem é muitas vezes associada à técnica de segmentação de imagem~\citet{Forsyth2011}, em que se pretende distinguir objetos individuais, não sendo este o objetivo deste projeto de dissertação. Pretende-se sim que para tarefa de \textit{clustering} o objeto representativo de uma imagem descreva esta pelo seu conjunto, tal como referido anteriormente. 
 
 \subsection{Representação Matricial} \label{subsec:matrix}
 
