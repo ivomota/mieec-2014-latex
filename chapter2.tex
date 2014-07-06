@@ -288,7 +288,67 @@ O caso de estudo que o TweeProfiles aborda dados georeferenciados do Socialbus (
 
 \subsection{Resultados ilustrativos}
 
+Através do TweeProfiles podemos visualizar \textit{clusters} nas suas diversas dimensões. Esta ferramenta apresenta três secções distintas para visualização e incluí ainda controlos para navegação e seleção de determinados parâmetros. Uma das secções é constituída por um mapa onde é possível visualizar geograficamente os \textit{clusters}, como podemos ver na Figura~\ref{fig:maptweep1}, em que são representados por círculo. Outra das secções é um gráfico que apresenta a distribuição temporal dos \textit{clusters}, onde é possível visualizar a data de início de fim de um determinado \textit{cluster}, como representado na Figura~\ref{fig:temptweep1}. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{./figures/tweeprofiles/maptweep1}
+\caption{Exemplo ilustrativo da distribuição espacial dos \textit{clusters} calculada apenas com a consideração da dimensão espacial. \textit{Retirada de}~\cite{Cunha2013}}
+\label{fig:maptweep1}
+\end{figure}
+Por fim, é nos apresentada uma secção onde é possível visualizar informação mais especifica sobre os \textit{clusters}, onde é incluído a informação relativa às dimensões de conteúdo e social com a representação das palavras mais utilizadas e as ligações entre utilizadores respetivamente nesse \textit{clusters}. No caso dos controlos, estes permitem selecionar um dos três intervalos de tempo existentes e o os pesos para cada uma das dimensões, que podem assumir valores entre 0\% e 100\% com incrementos de 25\%. Cada dimensão pode assumir como peso assim um dos seguintes valores percentuais: \{0, 25, 50, 75, 100\}, sendo que a soma dos pesos das diferentes dimensões deve ser igual a 1. 
 
+Em seguida são apresentados alguns resultados ilustrativos obtidos através da ferramenta TweeProfiles, e que demonstram o seu funcionamento global. Este resultados serão baseados apenas nos apresentados por Tiago Cunha~\cite{Cunha2013}, sendo ilustrados resultados de \textit{clusters} em Portugal para diferentes combinações possíveis. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{./figures/tweeprofiles/tempexample1}
+\caption{Exemplo ilustrativo da distribuição temporal de um \textit{cluster}. \textit{Retirada de}~\cite{Cunha2013}}
+\label{fig:temptweep1}
+\end{figure}
+
+Na Figura~\ref{fig:tweepex1} são apresentadas quatro combinações entre a dimensão do conteúdo e as restantes, exceto no primeiro caso~\ref{fig:sfig1} onde podemos ver um \textit{cluster} em Portugal apenas tendo em consideração a dimensão do conteúdo. Já no caso da Figura~\ref{fig:sfig2} o peso é distribuído da mesma forma entre o conteúdo e a dimensão espacial, resultando em dois \textit{clusters}. Na Figura~\ref{fig:sfig3}, tal como no caso anterior, é distribuído o peso de igual forma entre o conteúdo, e neste caso a dimensão temporal. O resultado obtidos no caso de Portugal, assemelha-se ao do primeiro caso da Figura~\ref{fig:sfig1}. Por fim, temos o caso da Figura~\ref{fig:sfig4} onde o peso é de 50\% para o conteúdo e 50\% para a dimensão social, tendo resultado para o caso de Portugal, dois \textit{cluster}. 
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{.2\textwidth}
+  \centering
+  \includegraphics[width=0.98\linewidth]{./figures/tweeprofiles/extp1}
+  \caption{\textit{Clusters} em Portugal: Conteúdo 100\%}
+  \label{fig:sfig1}
+\end{subfigure}%
+\quad
+\begin{subfigure}[b]{.2\textwidth}
+  \centering
+  \includegraphics[width=0.99\linewidth]{./figures/tweeprofiles/extp2}
+  \caption{\textit{Clusters} em Portugal: Conteúdo 50\% + Espacial 50\%}
+  \label{fig:sfig2}
+\end{subfigure}
+\quad
+\begin{subfigure}[b]{.2\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{./figures/tweeprofiles/extp3}
+  \caption{\textit{Clusters} em Portugal: Conteúdo 50\% + Temporal 50\%}
+  \label{fig:sfig3}
+\end{subfigure}
+\quad
+\begin{subfigure}[b]{.2\textwidth}
+  \centering
+  \includegraphics[width=0.99\linewidth]{./figures/tweeprofiles/extp4}
+  \caption{\textit{Clusters} em Portugal: Conteúdo 50\% + Social 50\%}
+  \label{fig:sfig4}
+\end{subfigure}
+\caption{Exemplos de resultados de \textit{clusters} com pesos diferentes para as diferentes dimensões.~\textit{Retiradas de}~\cite{Cunha2013}}
+\label{fig:tweepex1}
+\end{figure}
+
+Outra das combinações apresentadas, foi a distribuição igual por todas as dimensões. Este caso é apresentado na Figura~\ref{fig:tweepex2} onde todas as dimensões possuem o peso de 25\% cada. Neste caso foram obtidos três \textit{cluster} em Portugal.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.35\linewidth]{./figures/tweeprofiles/extp5.png}
+\caption{\textit{Clusters} em Portugal: Conteúdo 25\% + Espacial 25\% + Temporal 25\% + Social 25\%.~\textit{Retirada de}~\cite{Cunha2013}}
+\label{fig:tweepex2}
+\end{figure}
 
 \subsection{Prós e contras}
 
@@ -300,13 +360,16 @@ O caso de estudo que o TweeProfiles aborda dados georeferenciados do Socialbus (
 
 Na secção~\ref{sec:cluster} foi apresentado o conceito e características da tarefa de \textit{clustering} de uma forma geral. Nesta secção serão expostas formas de representar imagens como dados. 
 
-Como o objetivo desta dissertação passa por a realização da tarefa de \textit{clusterng}, utilizando como dados as imagens partilhadas no serviço Twitter, é necessário utilizar formas eficientes para descrever cada imagem de uma forma compacta e de maneira a que seja descrito o conteúdo geral das imagens. É importante salientar que a tarefa de \textit{clustering} em imagem é muitas vezes associada à técnica de segmentação de imagem~\citet{Forsyth2011}, em que se pretende distinguir objetos individuais, não sendo este o objetivo deste projeto de dissertação. Pretende-se sim que para tarefa de \textit{clustering} o objeto representativo de uma imagem descreva esta pelo seu conjunto, tal como referido anteriormente. 
+Como o objetivo desta dissertação passa por a realização da tarefa de \textit{clusterng}, utilizando como dados as imagens partilhadas no serviço Twitter, é necessário utilizar formas eficientes para descrever cada imagem de uma forma compacta e de forma a que seja descrito o conteúdo geral das imagens. É importante salientar que a tarefa de \textit{clustering} em imagem é muitas vezes associada à técnica de segmentação de imagem~\citet{Forsyth2011}, em que se pretende distinguir objetos individuais, não sendo este o objetivo deste projeto de dissertação. Pretende-se sim que para tarefa de \textit{clustering} o objeto representativo de uma imagem descreva esta pelo seu conjunto, tal como referido anteriormente. 
 
 \subsection{Representação Matricial} \label{subsec:matrix}
 
 Uma imagem pode ser vista como um objeto (ou instância), sendo computacionalmente representada como uma matriz (um vetor bi-dimensional) de pixels. A matriz de pixels descreve assim a imagem como N x M \textit{m}-bit pixels, onde N corresponde ao número de pontos ao longo do eixo horizontal, M o número de pontos ao longo do eixo vertical e \textit{m} o número de bits por pixel que controla os níveis de brilho. Com \textit{m} bits temos uma gama de valores para o brilho de $ 2^m $, que varia entre 0 e $ 2^m - 1 $. Assim se o valor de \textit{m} for 8, os valores de brilho de cada pixel de uma imagem podem variar entre 0 e 255, que normalmente correspondem ao preto e branco respetivamente, sendo que os valores intermédios correspondem ao tons de cinza~\citet{Nixon2002}.
 
-No caso de imagens a cores, o principio é idêntico, no entanto ao invés de se usar apenas um plano, as imagens a cores são representadas por 3 componentes de intensidade, designado por modelo \textit{RGB}, a que corresponde respetivamente às cores vermelho (Red), verde (Green) e azul (Blue). Para além deste esquema de cores, também existe outros como o CMYK composto pelas componentes de cor, azul turquesa, magenta, amarelo e preto. Usando qualquer esquema de cores, existem 2 métodos principais para representar a cor do pixel. No primeiro método é utilizado um valor inteiro para cada pixel, sendo esse valor como um índice para uma tabela, também conhecida como palete da imagem, com a correspondência à intensidade de cada componente de cor. Este método tem como vantagem o facto de ser eficiente na utilização da memória, pois apenas é guardado um plano da imagem (os índices) e a palete (tabela). Por outro lado, tem como desvantagem o facto de normalmente ser usado um conjunto reduzido de cores o que provoca uma redução da qualidade da imagem. Já o segundo método consiste na utilização de vários planos da imagem para armazenar a componente de cor de cada pixel. Este representa a imagem com mais precisão pois considera muito mais cores.  Formato mais usual é 8 bits para cada uma das 3 componentes, no caso do RGB. Assim, são utilizados 24 bit para representar a cor de cada pixels, o que permite que uma imagem possa conter mais de 16 milhões de cores simultaneamente. Como era de esperar, isto envolve um custo grande na utilização de memória, mas a constante redução do custo das memórias faz com que este seja uma boa alternativa à apresentada anteriormente~\citet{Nixon2002}.
+No caso de imagens a cores, o principio é idêntico, no entanto ao invés de se usar apenas um plano, as imagens a cores são representadas por 3 componentes de intensidade, designado por modelo \textit{RGB}, a que corresponde respetivamente às cores vermelho (Red), verde (Green) e azul (Blue). Para além deste esquema de cores, também existe outros como o CMYK composto pelas componentes de cor, azul turquesa, magenta, amarelo e preto. Usando qualquer esquema de cores, existem 2 métodos principais para representar a cor do pixel. No primeiro método é utilizado um valor inteiro para cada pixel, sendo esse valor como um índice para uma tabela, também conhecida como palete da imagem, com a correspondência à intensidade de cada componente de cor. Este método tem como vantagem o facto de ser eficiente na utilização da memória, pois apenas é guardado um plano da imagem (os índices) e a palete (tabela). Por outro lado, tem como desvantagem o facto de normalmente ser usado um conjunto reduzido de cores o que provoca uma redução da qualidade da imagem. Já o segundo método consiste na utilização de vários planos da imagem para armazenar a componente de cor de cada pixel. Este representa a imagem com mais precisão pois considera muito mais cores. O formato mais usual é 8 bits para cada uma das 3 componentes, no caso do RGB. Assim, são utilizados 24 bits para representar a cor de cada pixel, o que permite que uma imagem possa conter mais de 16 milhões de cores simultaneamente. Como era de esperar, isto envolve um custo grande na utilização de memória, que mesmo apresentando-se como uma desvantagem, com a constante redução do custo das memórias esta passou ser uma boa alternativa à apresentada anteriormente~\citet{Nixon2002}.
+
+%ver melhor esta conclusão
+Em suma, a representação matricial é uma forma fácil de representar uma imagem, mas ao contrário dos objetivos desta dissertação, não consegue fazê-lo de uma forma compacta, sendo necessária a existência de grandes quantidades de memória devido à sua dimensionalidade. Assim, esta não se apresenta como uma boa solução para o a extração da informação das imagens.
 
 \subsection{Histogramas} \label{subsec:hist}
 
