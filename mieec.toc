@@ -19,24 +19,24 @@
 \contentsline {section}{\numberline {2.2}TweeProfiles}{13}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Descri\IeC {\c c}\IeC {\~a}o e objetivos}{13}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Resultados ilustrativos}{14}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Pr\IeC {\'o}s e contras}{16}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Representa\IeC {\c c}\IeC {\~a}o de Informa\IeC {\c c}\IeC {\~a}o Visual}{16}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Representa\IeC {\c c}\IeC {\~a}o Matricial}{16}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Histogramas}{17}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.2.3}Pr\IeC {\'o}s e contras}{17}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Representa\IeC {\c c}\IeC {\~a}o de Informa\IeC {\c c}\IeC {\~a}o Visual}{17}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Representa\IeC {\c c}\IeC {\~a}o Matricial}{17}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Histogramas}{18}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Descritores de Cor}{18}{subsection.2.3.3}
-\contentsline {subsubsection}{\numberline {2.3.3.1}Espa\IeC {\c c}os de Cor}{18}{subsubsection.2.3.3.1}
-\contentsline {subsubsection}{\numberline {2.3.3.2}Cor Dominante}{19}{subsubsection.2.3.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3.1}Espa\IeC {\c c}os de Cor}{19}{subsubsection.2.3.3.1}
+\contentsline {subsubsection}{\numberline {2.3.3.2}Cor Dominante}{20}{subsubsection.2.3.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3.3}Cor Escal\IeC {\'a}vel}{20}{subsubsection.2.3.3.3}
 \contentsline {subsubsection}{\numberline {2.3.3.4}Estrutura de Cor}{20}{subsubsection.2.3.3.4}
-\contentsline {subsection}{\numberline {2.3.4}Descritores de Textura}{20}{subsection.2.3.4}
-\contentsline {subsubsection}{\numberline {2.3.4.1}Descritor de Textura Homog\IeC {\'e}nea}{20}{subsubsection.2.3.4.1}
+\contentsline {subsection}{\numberline {2.3.4}Descritores de Textura}{21}{subsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.4.1}Descritor de Textura Homog\IeC {\'e}nea}{21}{subsubsection.2.3.4.1}
 \contentsline {subsubsection}{\numberline {2.3.4.2}Descritor de Histograma de Borda}{21}{subsubsection.2.3.4.2}
 \contentsline {subsubsection}{\numberline {2.3.4.3}Descritor de Navega\IeC {\c c}\IeC {\~a}o Percetual}{21}{subsubsection.2.3.4.3}
 \contentsline {subsection}{\numberline {2.3.5}Descritores de Forma}{22}{subsection.2.3.5}
 \contentsline {subsubsection}{\numberline {2.3.5.1}Descritor de Forma Baseado em Regi\IeC {\~a}o}{22}{subsubsection.2.3.5.1}
-\contentsline {subsubsection}{\numberline {2.3.5.2}Descritor de Forma Baseado no Contorno}{22}{subsubsection.2.3.5.2}
+\contentsline {subsubsection}{\numberline {2.3.5.2}Descritor de Forma Baseado no Contorno}{23}{subsubsection.2.3.5.2}
 \contentsline {subsection}{\numberline {2.3.6}Descritores Locais}{23}{subsection.2.3.6}
-\contentsline {subsubsection}{\numberline {2.3.6.1}SIFT}{23}{subsubsection.2.3.6.1}
+\contentsline {subsubsection}{\numberline {2.3.6.1}SIFT}{24}{subsubsection.2.3.6.1}
 \contentsline {subsubsection}{\numberline {2.3.6.2}SURF}{27}{subsubsection.2.3.6.2}
 \contentsline {subsection}{\numberline {2.3.7}Descritores Baseado em Vocabul\IeC {\'a}rio Visual}{28}{subsection.2.3.7}
 \contentsline {chapter}{\numberline {3}M\IeC {\'o}dulo da Informa\IeC {\c c}\IeC {\~a}o Visual}{31}{chapter.3}
@@ -59,4 +59,4 @@
 \contentsline {section}{\numberline {5.1}Resumo do Trabalho Realizado}{49}{section.5.1}
 \contentsline {section}{\numberline {5.2}Trabalho Futuro}{50}{section.5.2}
 \contentsline {chapter}{\numberline {A}Exemplo objeto JSON de um tweet}{51}{appendix.A}
-\contentsline {chapter}{Refer\^{e}ncias}{57}{section*.36}
+\contentsline {chapter}{Refer\^{e}ncias}{57}{section*.37}
