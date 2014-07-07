@@ -286,7 +286,7 @@ Os objetivos do TweeProfiles foi o desenvolvimento de uma metodologia de Data Mi
 A ferramenta de visualização está desenhada para uma utilização dinâmica e intuitiva, direcionada para a representação dos perfis de uma forma compreensível e interativa. Esta apresenta vários widgets capazes de representar os padrões obtidos.
 O caso de estudo que o TweeProfiles aborda dados georeferenciados do Socialbus (antes designado como TwitterEcho). No entanto, esta ferramenta é adequada para tratar quaisquer mensagens georeferenciadas provenientes do Twitter.
 
-\subsection{Resultados ilustrativos}
+\subsection{Resultados ilustrativos} \label{subsec:tpresult}
 
 Através do TweeProfiles podemos visualizar \textit{clusters} nas suas diversas dimensões. Esta ferramenta apresenta três secções distintas para visualização e incluí ainda controlos para navegação e seleção de determinados parâmetros. Uma das secções é constituída por um mapa onde é possível visualizar geograficamente os \textit{clusters}, como podemos ver na Figura~\ref{fig:maptweep1}, em que são representados por círculo. Outra das secções é um gráfico que apresenta a distribuição temporal dos \textit{clusters}, onde é possível visualizar a data de início de fim de um determinado \textit{cluster}, como representado na Figura~\ref{fig:temptweep1}. 
 \begin{figure}[h]
@@ -350,8 +350,6 @@ Outra das combinações apresentadas, foi a distribuição igual por todas as di
 \label{fig:tweepex2}
 \end{figure}
 
-Como podemos ver, a ferramenta TweeProfiles permite uma grande variedade de combinações que produzem resultados que que podem variar no número e posição geográfica dos \textit{clusters} consoante a influência e peso das das dimensões em consideração.
-
 Por fim, na Figura~\ref{fig:tweepex3} é possível visualizar a secção que apresenta ao utilizador informação sobre um \textit{cluster} selecionado, o conteúdo desse \textit{cluster}, como por exemplos, as palavras mais relevantes, e o grafo com as ligações sociais. É possível ainda visualizar com mais detalhe de um determinado tweet, como o nome do utilizador, informação temporal e espacial.
 
 \begin{figure}[h]
@@ -363,7 +361,22 @@ Por fim, na Figura~\ref{fig:tweepex3} é possível visualizar a secção que apr
 
 \subsection{Prós e contras}
 
+Como vimos na Secção~\ref{subsec:tpresult}, a ferramenta TweeProfiles permite uma grande variedade de combinações que produzem resultados que podem variar no número e posição geográfica dos \textit{clusters} consoante a influência e peso e das dimensões em consideração. 
 
+Este projeto de dissertação não tem como objetivo melhorar O TweeProfiles, mas sim apresentar uma abordagem alternativa de visualização de análise de dados em redes sociais utilizando conteúdo diferente. Por este motivo, nesta secção somente abordamos os prós e contras relativamente à abordagem das dimensões utilizadas.
+
+Uma das vantagens da utilização do texto como dimensão de conteúdo, é o facto de no Twitter este se apresentar como a maior fonte de informação, pois os tweets na sua maioria apresentam texto. Mesmo adicionando a dimensão espacial, que implica a existência de uma referência geográfica contida na informação dos tweets, o número de tweets disponíveis continua a ser relativamente razoável para uma análise dos dados, tal como podemos confirmar em~\cite{Cunha2013}. Apesar disso, é possível verificar qu nos resultados apresentados existe muito conteúdo em forma de texto que apresenta informação muitas vezes com pouca relevância, como é o caso da partilha da sua localização através de outros serviços onde é utilizado um texto pré-definido pelo serviço utilizado, indicando apenas o local onde se encontra o utilizador, como podemos ver pela Figura~\ref{fig:tweepex4}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\linewidth]{./figures/tweeprofiles/extp7.png}
+\caption{Tweets pertencentes a um \textit{cluster} para a seguinte distribuição de pesos: Conteúdo 25\% + Espacial 25\% + Temporal 25\% + Social 25\%.~\textit{Retirada de}~\cite{Cunha2013}}
+\label{fig:tweepex4}
+\end{figure}
+
+O TweeProfiles revela ainda que a dimensão espacial, quando tida em consideração, tem um influência visivelmente interessante nos resultados quando apresentados no mapa. Já a dimensão temporal, não revelou apresentar uma grande influência como vimos no caso apresentado na Figura~\ref{fig:sfig3}, mas esta permite um controlo e visualização de informação interessante através do gráfico de tempo como representado na Figura~\ref{fig:temptweep1}. No caso da dimensão social, verifica-se que apresenta alguma influência na divisão dos \textit{clusters} mas a visualização da sua informação através do grafo, apresenta-se pobre e de difícil compreensão para o utilizador.
+
+Assim, concluí-se que a utilização das dimensões espaço-temporal fazem todo o sentido no desenvolvimento desta dissertação, sendo necessária a sua inclusão para a extensão do TweeProfiles. Já no caso do conteúdo de texto, este não será tido em conta de forma a ser analisado se existe uma mais valia em realizar uma análise em tweets através exclusivamente do conteúdo visual partilhado pelos utilizadores com as possíveis combinações com as dimensões temporal e espacial. A dimensão social, também não será incluída por esta não adicionar ainda não apresentar a informação de forma clara para um utilizador, sendo necessário um estudo mais aprofundado sobre esta temática, que não faz parte dos objetivos desta dissertação.
 
 % % % NOVA SECÇÃO % % %
 
@@ -519,7 +532,7 @@ As principais características deste descritor são~\cite{Bober2001}:
 \end{itemize}
 %(3D SD - 3-D Shape Descriptor)
 
-\subsection{Descritores Locais}
+\subsection{Descritores Locais} \label{subsec:desclocal}
 
 Um descritor local permite a localização das estruturas locais de uma imagem de forma repetitiva. Estas são codificadas de modo a que sejam invariantes a transformações das imagens, tais como a translação, rotação, mudanças de escala ou deformações. Assim, estes descritores podem ser utilizados para representar uma imagem e podem ser utilizados para diversos fins, tais como, reconhecimento de objetos, reconhecimento de cenas, perseguição de movimento, correspondência entre imagens ou mesmo obtenção de estruturas 3D de múltiplas imagens. 
 Para a extração das características deste descritor é necessário utilizar um processo com as seguintes etapas~\cite{Gauman2010}:
