@@ -5,6 +5,14 @@ Max Bramer.
 \newblock {\em {Principles of Data Mining}}.
 \newblock 2007.
 
+\bibitem{Cunha2013}
+TDS Cunha.
+\newblock {\em {TweeProfiles: detection of spatio-temporal patterns on
+  Twitter}}.
+\newblock Tese de doutoramento, Faculdade de Engeneharia da Universidade do
+  Porto, 2013.
+\newblock URL: \url{http://paginas.fe.up.pt/~ei08142/files/mieic\_en.pdf}.
+
 \bibitem{Wu2001}
 Peng Wu, YM~Ro, CS~Won, e Yanglim Choi.
 \newblock {Texture descriptors in MPEG-7}.
@@ -50,20 +58,13 @@ Google.
 \newblock
   \url{https://developers.google.com/chart/interactive/docs/gallery/timeline},
   2014.
+\newblock Acedido a 30-06-2014.
 
 \bibitem{Russell2011}
 Matthew~A Russell.
 \newblock {\em {Mining the Social Web}}, volume~54.
 \newblock 2011.
 \newblock doi:10.1081/E-ELIS3-120043522.
-
-\bibitem{Cunha2013}
-TDS Cunha.
-\newblock {\em {TweeProfiles: detection of spatio-temporal patterns on
-  Twitter}}.
-\newblock Tese de doutoramento, Faculdade de Engeneharia da Universidade do
-  Porto, 2013.
-\newblock URL: \url{http://paginas.fe.up.pt/~ei08142/files/mieic\_en.pdf}.
 
 \bibitem{Boanjak2012}
 M~Boanjak e Eduardo Oliveira.
@@ -207,11 +208,37 @@ Jan~Erik Solem.
 A.~Vedaldi e B.~Fulkerson.
 \newblock {VLFeat}: An open and portable library of computer vision algorithms.
 \newblock \url{http://www.vlfeat.org/}, 2008.
+\newblock Acedido a 30-06-2014.
+
+\bibitem{sqlite}
+SQLite Copyright.
+\newblock Sqlite.
+\newblock \url{http://www.sqlite.org}.
+\newblock Acedido a 07-07-2014.
+
+\bibitem{mysql}
+Oracle Copyright.
+\newblock Mysql.
+\newblock \url{http://www.mysql.com}.
+\newblock Acedido a 07-07-2014.
+
+\bibitem{postgresql}
+The PostgreSQL Global~Development Group.
+\newblock Postgresql.
+\newblock \url{http://www.postgresql.org}, 1996.
+\newblock Acedido a 07-07-2014.
+
+\bibitem{flask}
+Armin Ronacher.
+\newblock Flask, web development, one drop at a time.
+\newblock \url{http://flask.pocoo.org/}.
+\newblock Acedido a 08-07-2014.
 
 \bibitem{googlemapsapi}
 Google.
 \newblock Api javascript do google maps v3.
 \newblock \url{https://developers.google.com/maps/documentation/javascript/},
   2013.
+\newblock Acedido a 30-06-2014.
 
 \end{thebibliography}

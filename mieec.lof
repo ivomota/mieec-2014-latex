@@ -21,13 +21,13 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Exemplo de proje\IeC {\c c}\IeC {\~a}o de centroides ap\IeC {\'o}s tarefa de \textit {clustering} num espa\IeC {\c c}o a duas dimens\IeC {\~o}es.\relax }}{37}{figure.caption.26}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Estrutura de uma matriz de dist\IeC {\^a}ncias. \textit {Retirada de}~\cite {Han2006}\relax }}{38}{figure.caption.28}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitetura do sistema completo\relax }}{40}{figure.caption.29}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de tweets na dimens\IeC {\~a}o espacial\relax }}{42}{figure.caption.31}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Exemplo ilustrativo da ferramenta Timeline. \textit {Retirada de}~\cite {googletimeline}\relax }}{42}{figure.caption.32}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o da distribui espacial dos \textit {clusters} para o caso em que a distribui\IeC {\c c}\IeC {\~a}o dos pesos entre as tr\IeC {\^e}s dimens\IeC {\~o}es \IeC {\'e} igual\relax }}{43}{figure.caption.33}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o da distribui temporal dos \textit {clusters} para o caso em que a distribui\IeC {\c c}\IeC {\~a}o dos pesos entre as tr\IeC {\^e}s dimens\IeC {\~o}es \IeC {\'e} igual\relax }}{44}{figure.caption.34}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o completa da aplica\IeC {\c c}\IeC {\~a}o web com a visualiza\IeC {\c c}\IeC {\~a}o pelas v\IeC {\'a}rias dimens\IeC {\~o}es\relax }}{44}{figure.caption.35}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o completa da aplica\IeC {\c c}\IeC {\~a}o web com a visualiza\IeC {\c c}\IeC {\~a}o mais detalhada de uma das imagens\relax }}{45}{figure.caption.36}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o de um conjunto de imagens pertencentes a um \textit {Cluster} e em que foi atribu\IeC {\'\i }do o peso total apenas \IeC {\`a} dimens\IeC {\~a}o do conte\IeC {\'u}do visual\relax }}{46}{figure.caption.37}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitetura do sistema completo\relax }}{42}{figure.caption.29}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o de tweets na dimens\IeC {\~a}o espacial\relax }}{44}{figure.caption.30}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Exemplo ilustrativo da ferramenta Timeline. \textit {Retirada de}~\cite {googletimeline}\relax }}{45}{figure.caption.31}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o da distribui espacial dos \textit {clusters} para o caso em que a distribui\IeC {\c c}\IeC {\~a}o dos pesos entre as tr\IeC {\^e}s dimens\IeC {\~o}es \IeC {\'e} igual\relax }}{46}{figure.caption.32}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o da distribui temporal dos \textit {clusters} para o caso em que a distribui\IeC {\c c}\IeC {\~a}o dos pesos entre as tr\IeC {\^e}s dimens\IeC {\~o}es \IeC {\'e} igual\relax }}{46}{figure.caption.33}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o completa da aplica\IeC {\c c}\IeC {\~a}o web com a visualiza\IeC {\c c}\IeC {\~a}o pelas v\IeC {\'a}rias dimens\IeC {\~o}es\relax }}{46}{figure.caption.34}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o completa da aplica\IeC {\c c}\IeC {\~a}o web com a visualiza\IeC {\c c}\IeC {\~a}o mais detalhada de uma das imagens\relax }}{47}{figure.caption.35}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Exemplo ilustrativo da visualiza\IeC {\c c}\IeC {\~a}o de um conjunto de imagens pertencentes a um \textit {Cluster} e em que foi atribu\IeC {\'\i }do o peso total apenas \IeC {\`a} dimens\IeC {\~a}o do conte\IeC {\'u}do visual\relax }}{48}{figure.caption.36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
