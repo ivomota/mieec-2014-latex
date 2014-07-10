@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.16)  8 JUL 2014 15:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.16)  10 JUL 2014 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1536,118 +1536,94 @@ Package pdftex.def Info: ./figures/centroides.png used on input line 129.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [37 <./figures/centroides.png>]
+[37 <./figures/centroides.png>]
 <./figures/matrizdist.png, id=922, 706.64pt x 386.44376pt>
 File: ./figures/matrizdist.png Graphic file (type png)
 
 <use ./figures/matrizdist.png>
 Package pdftex.def Info: ./figures/matrizdist.png used on input line 167.
 (pdftex.def)             Requested size: 128.0387pt x 70.0168pt.
-) [38 <./figures/matrizdist.png>] [39]
+) [38 <./figures/matrizdist.png>]
 \openout2 = `chapter4.aux'.
 
-
-(./chapter4.tex [40
-
-
-
-]
+ (./chapter4.tex
 Cap\'{\i }tulo 4.
-<./figures/arquitetura_sistema.png, id=946, 746.79pt x 525.965pt>
+<./figures/arquitetura_sistema.png, id=939, 746.79pt x 525.965pt>
 File: ./figures/arquitetura_sistema.png Graphic file (type png)
 
 <use ./figures/arquitetura_sistema.png>
 Package pdftex.def Info: ./figures/arquitetura_sistema.png used on input line 1
-3.
+5.
 (pdftex.def)             Requested size: 426.79135pt x 300.58966pt.
+ [39
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 1184) has occurred while \output is active []
-
- [41]
-Overfull \hbox (10.40953pt too wide) in paragraph at lines 25--26
-[]\T1/ptm/m/n/10.95 Posteriormente foi en-tão re-co-lhida a in-for-ma-ção tem-p
-o-ral dos twe-ets. Esta in-for-ma-ção apresenta-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42 <./figures/arquitetura_sistema.png>]
-<./figures/olhopassarinho/map1.png, id=966, 1058.95625pt x 644.4075pt>
+] [40 <./figures/arquitetura_sistema.png>] <./figures/olhopassarinho/map1.png, 
+id=959, 1058.95625pt x 644.4075pt>
 File: ./figures/olhopassarinho/map1.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/map1.png>
-Package pdftex.def Info: ./figures/olhopassarinho/map1.png used on input line 7
-6.
+Package pdftex.def Info: ./figures/olhopassarinho/map1.png used on input line 8
+5.
 (pdftex.def)             Requested size: 426.79135pt x 259.71516pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figures/olhopassarinho/time_example.png, id=969, 912.40875pt x 158.5925pt>
+<./figures/olhopassarinho/time_example.png, id=962, 912.40875pt x 158.5925pt>
 File: ./figures/olhopassarinho/time_example.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/time_example.png>
 Package pdftex.def Info: ./figures/olhopassarinho/time_example.png used on inpu
-t line 85.
+t line 94.
 (pdftex.def)             Requested size: 426.79135pt x 74.18274pt.
 
+Underfull \vbox (badness 1852) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[43]
-Overfull \hbox (3.01794pt too wide) in paragraph at lines 96--97
+ [41]
+Overfull \hbox (3.01794pt too wide) in paragraph at lines 105--106
 []\T1/ptm/m/n/10.95 Nesta sec-ção se-rão apre-sen-ta-dos al-guns re-sul-ta-dos 
 ilus-tra-ti-vos vi-sí-veis atra-vés fer-ra-menta Olhó-
  []
 
-<./figures/olhopassarinho/map3.png, id=980, 679.53876pt x 442.65375pt>
+
+Underfull \vbox (badness 5847) has occurred while \output is active []
+
+ [42 <./figures/olhopassarinho/map1.png> <./figures/olhopassarinho/time_example
+.png>]
+<./figures/olhopassarinho/map3.png, id=978, 679.53876pt x 442.65375pt>
 File: ./figures/olhopassarinho/map3.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/map3.png>
 Package pdftex.def Info: ./figures/olhopassarinho/map3.png used on input line 1
-02.
+11.
 (pdftex.def)             Requested size: 256.07741pt x 166.80525pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<./figures/olhopassarinho/time2.png, id=983, 695.59875pt x 203.76125pt>
+<./figures/olhopassarinho/time2.png, id=981, 695.59875pt x 203.76125pt>
 File: ./figures/olhopassarinho/time2.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/time2.png>
 Package pdftex.def Info: ./figures/olhopassarinho/time2.png used on input line 
-113.
+122.
 (pdftex.def)             Requested size: 298.75264pt x 87.51302pt.
 
+Underfull \vbox (badness 1888) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[44 <./figures/olhopassarinho/map1.png>]
+ [43 <./figures/olhopassarinho/map3.png> <./figures/olhopassarinho/time2.png>]
 <./figures/olhopassarinho/exemplo_comp.png, id=992, 1203.49625pt x 836.12375pt>
 File: ./figures/olhopassarinho/exemplo_comp.png Graphic file (type png)
 <use ./figures/olhopassarinho/exemplo_comp.png>
 Package pdftex.def Info: ./figures/olhopassarinho/exemplo_comp.png used on inpu
-t line 122.
+t line 131.
 (pdftex.def)             Requested size: 341.43437pt x 237.21329pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 <./figures/olhopassarinho/exemplo_comp2.png, id=993, 1211.52625pt x 972.63374pt
 >
 File: ./figures/olhopassarinho/exemplo_comp2.png Graphic file (type png)
  <use ./figures/olhopassarinho/exemplo_comp2.png>
 Package pdftex.def Info: ./figures/olhopassarinho/exemplo_comp2.png used on inp
-ut line 129.
+ut line 138.
 (pdftex.def)             Requested size: 341.43437pt x 274.10168pt.
 
 
@@ -1657,17 +1633,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./figures/olhopassarinho/im1.png Graphic file (type png)
 
 <use ./figures/olhopassarinho/im1.png>
-Package pdftex.def Info: ./figures/olhopassarinho/im1.png used on input line 13
-6.
+Package pdftex.def Info: ./figures/olhopassarinho/im1.png used on input line 14
+5.
 (pdftex.def)             Requested size: 341.43437pt x 471.484pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [45 <./figures/olhopassarinho/time_example.png>] [46 <./figures/olhopassarinh
-o/map3.png> <./figures/olhopassarinho/time2.png> <./figures/olhopassarinho/exem
-plo_comp.png>] [47 <./figures/olhopassarinho/exemplo_comp2.png>] [48 <./figures
-/olhopassarinho/im1.png>]
+) [44 <./figures/olhopassarinho/exemplo_comp.png>] [45 <./figures/olhopassarinh
+o/exemplo_comp2.png>] [46 <./figures/olhopassarinho/im1.png>]
 \openout2 = `chapter5.aux'.
 
  (./chapter5.tex
@@ -1678,30 +1652,30 @@ Overfull \hbox (0.65411pt too wide) in paragraph at lines 7--8
 de dis-ser-ta-ção, fo-ram se-gui-das uma sequên-
  []
 
-[49
+[47
 
 
 
-]) [50]
+]) [48]
 \openout2 = `appendix1.aux'.
 
  (./appendix1.tex
 Anexo A.
-(./code/tweet_example.json [51
+(./code/tweet_example.json [49
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52]
+ [50]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
+ [51]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54]))
-[55] [56
+ [52]))
+[53] [54
 
 
 ] (./mieec.bbl
@@ -1713,7 +1687,7 @@ File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
 (Font)              scaled to size 10.40245pt on input line 14.
 
-[57
+[55
 
 ]
 Underfull \hbox (badness 1248) in paragraph at lines 105--112
@@ -1745,9 +1719,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--194
 aeza-[]yates / chap10 _ user _
  []
 
-[58])
+[56])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 201.
- [59]
+ [57]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 201.
  (./mieec.aux (./abstract.aux) (./acknows.aux) (./quote.aux)
 (./abbrevs.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
@@ -1764,9 +1738,9 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 201.
  ) 
 Here is how much of TeX's memory you used:
  21027 strings out of 493481
- 357090 string characters out of 3140965
- 672955 words of memory out of 3000000
- 23274 multiletter control sequences out of 15000+200000
+ 357100 string characters out of 3140965
+ 673063 words of memory out of 3000000
+ 23276 multiletter control sequences out of 15000+200000
  93760 words of font info for 119 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  63i,13n,76p,1826b,1954s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1782,10 +1756,10 @@ urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/
 utmbi8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
 cal/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mieec.pdf (77 pages, 4349890 bytes).
+Output written on mieec.pdf (75 pages, 4342365 bytes).
 PDF statistics:
- 1434 PDF objects out of 1440 (max. 8388607)
- 1257 compressed objects within 13 object streams
- 484 named destinations out of 1000 (max. 500000)
+ 1427 PDF objects out of 1440 (max. 8388607)
+ 1252 compressed objects within 13 object streams
+ 482 named destinations out of 1000 (max. 500000)
  563 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,7 +2,7 @@
 
 Neste capítulo será introduzido o módulo de informação visual desenvolvido, sendo apresentadas a estrutura e organização deste sistema. Como referido no capítulo~\ref{chap:intro}, este projeto tem como objetivo estender a ferramenta TweeProfiles descrita na secção~\ref{sec:tweep}, dando-lhe uma dimensão de conteúdo diferente à que possui. Em conjunto com a informação espacial e temporal, O conteúdo das imagens partilhadas em tweets passa a ser uma fonte de informação e não o texto. Para que isto seja realizável, foi necessário o desenvolvimento de um módulo que efetue a recolha os dados com a devida filtragem, extraia e processe a informação visual e armazene essa informação de modo a que fosse possível a sua integração com o TweeProfiles. 
 
-\section{Recolha dos Dados}
+\section{Recolha dos Dados}\label{sec:dados}
 
 O desenvolvimento deste módulo apenas era realizável com um conjunto de imagens partilhadas no serviço de microblogging Twitter, sendo fundamental a recolha dos dados necessários para esse processo, neste caso, os Tweets. Nesta secção é feita uma descrição do conjunto dos dados disponíveis, das filtragens que foram necessárias realizar e uma apresentação do conjunto de dados finais obtidos e utilizados no desenvolvimento deste projeto de dissertação.
 
@@ -156,7 +156,7 @@ Assim o próximo passo passou pelo armazenamento dos histogramas e a indexação
 \label{tab:schemadb}
 \end{table}
 
-\section{Matriz de Distâncias entre Imagens}
+\section{Matriz de Distâncias entre Imagens}\label{sec:matdist}
 
 Com o módulo descrito na secção anterior~\ref{sec:extract}, a informação que descreve cada uma das imagens armazenadas localmente está alojada e é acessível através da base de dados local criada. Esta informação está no formato de um histograma que descreve a imagem através de um vocabulário visual. Este histograma é um vetor de tamanho único e igual para todas imagens, o que permite uma fácil comparação entre eles, o que é equivalente a dizer que estes permitem calcular a distância entre eles. Como cada histograma está associado a uma imagem, calcular a distância entre dois histogramas equivale a calcular a distância entre duas imagens.
 
@@ -169,8 +169,8 @@ O TweeProfiles utiliza o algoritmo DBSCAN~\cite{Han2006} apresentado na secção
 \label{fig:matriz}
 \end{figure}
 
-Tendo existido algumas limitações a nível de \textit{hardware} para o calculo de uma matriz desta dimensões, optou-se por utilizar o mesmo procedimento utilizado no TweeProfiles~\cite{Cunha2013} e dividir os dados em três partes distintas. Esta divisão foi efetuada tendo em conta uma divisão temporal, isto é, foram em primeiro lugar ordenados os tweets por ordem cronológica e apenas posteriormente foi divido em três partes iguais de 1986 tweets cada conjunto. Após este processo foram então calculadas as três matrizes.
+Tendo existido algumas limitações de \textit{hardware}, mais especificamente da memória do computador, e do tempo de processamento devido ao acesso à base de dados local para obter aos histogramas descritores de cada imagem, optou-se por utilizar o mesmo procedimento utilizado no TweeProfiles~\cite{Cunha2013} e dividir os dados em três partes distintas, resultado em três subconjuntos de 1988 tweets cada. Esta divisão foi efetuada tendo em conta uma divisão temporal, isto é, foram ordenados todos os tweets por ordem cronológica.
  
-Para calcular as matrizes de distâncias utilizou-se o histograma descritor de cada imagem, calculando a distância entre histogramas através da função distância Euclidiana apresentada na secção~\ref{subsec:dist}.
+Para calcular as matrizes de distâncias para o conteúdo visual utilizou-se o histograma descritor de cada imagem, calculando a distância entre histogramas através da função distância Euclidiana apresentada na secção~\ref{subsec:dist}. Assim, resultaram três matrizes distância, cada uma com uma dimensão de $1988 x 1988$.
 
 Com as matrizes distâncias calculadas, estavam reunidas as condições para a integração do modelo no TweeProfiles. O próximo capítulo irá abordar da integração deste modelo com o TweeProfiles e o desenvolvimento da ferramenta Olhó-passarinho e os seus resultados ilustrativos.

@@ -48,15 +48,15 @@
 \contentsline {subsection}{\numberline {3.2.1}Extra\IeC {\c c}\IeC {\~a}o dos Pontos de Interesse e Descritores Locais}{34}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Cria\IeC {\c c}\IeC {\~a}o do Vocabul\IeC {\'a}rio Visual}{36}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Armazenamento da Informa\IeC {\c c}\IeC {\~a}o Visual}{36}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Matriz de Dist\IeC {\^a}ncias entre Imagens}{38}{section.3.3}
-\contentsline {chapter}{\numberline {4}Olh\IeC {\'o}-passarinho}{41}{chapter.4}
-\contentsline {section}{\numberline {4.1}Arquitetura do Sistema}{41}{section.4.1}
-\contentsline {section}{\numberline {4.2}Informa\IeC {\c c}\IeC {\~a}o Espa\IeC {\c c}o-Temporal}{42}{section.4.2}
-\contentsline {section}{\numberline {4.3}Clustering da Informa\IeC {\c c}\IeC {\~a}o Visual, Espacial e Temporal}{43}{section.4.3}
-\contentsline {section}{\numberline {4.4}Visualiza\IeC {\c c}\IeC {\~a}o}{43}{section.4.4}
-\contentsline {section}{\numberline {4.5}Resultados Ilustrativos}{44}{section.4.5}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es e Trabalho Futuro}{49}{chapter.5}
-\contentsline {section}{\numberline {5.1}Resumo do Trabalho Realizado}{49}{section.5.1}
-\contentsline {section}{\numberline {5.2}Trabalho Futuro}{50}{section.5.2}
-\contentsline {chapter}{\numberline {A}Exemplo objeto JSON de um tweet}{51}{appendix.A}
-\contentsline {chapter}{Refer\^{e}ncias}{57}{section*.37}
+\contentsline {section}{\numberline {3.3}Matriz de Dist\IeC {\^a}ncias entre Imagens}{37}{section.3.3}
+\contentsline {chapter}{\numberline {4}Olh\IeC {\'o}-passarinho}{39}{chapter.4}
+\contentsline {section}{\numberline {4.1}Arquitetura do Sistema}{39}{section.4.1}
+\contentsline {section}{\numberline {4.2}Informa\IeC {\c c}\IeC {\~a}o Espa\IeC {\c c}o-Temporal}{40}{section.4.2}
+\contentsline {section}{\numberline {4.3}Clustering da Informa\IeC {\c c}\IeC {\~a}o Visual, Espacial e Temporal}{41}{section.4.3}
+\contentsline {section}{\numberline {4.4}Visualiza\IeC {\c c}\IeC {\~a}o}{41}{section.4.4}
+\contentsline {section}{\numberline {4.5}Resultados Ilustrativos}{43}{section.4.5}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es e Trabalho Futuro}{47}{chapter.5}
+\contentsline {section}{\numberline {5.1}Resumo do Trabalho Realizado}{47}{section.5.1}
+\contentsline {section}{\numberline {5.2}Trabalho Futuro}{48}{section.5.2}
+\contentsline {chapter}{\numberline {A}Exemplo objeto JSON de um tweet}{49}{appendix.A}
+\contentsline {chapter}{Refer\^{e}ncias}{55}{section*.37}
