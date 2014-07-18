@@ -17,6 +17,11 @@ Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: myrefs.bib
+I was expecting a `,' or a `}'---line 447 of file myrefs.bib
+ :  
+ :  Howpublished = {\url{https://www.linkedin.com}},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--empty publisher in Bramer2007
 Warning--empty journal in Bueno2011
 Warning--empty publisher in Han2006
@@ -33,45 +38,45 @@ Warning--there's a number but no volume in Sivic2003
 Warning--there's a number but no volume in Juan2009
 Warning--empty publisher in Baeza-Yates1999
 Warning--empty journal in Solem2012
-You've used 39 entries,
+You've used 48 entries,
             2522 wiz_defined-function locations,
-            824 strings with 10387 characters,
-and the built_in function-call counts, 11959 in all, are:
-= -- 1213
-> -- 329
-< -- 7
-+ -- 109
-- -- 70
-* -- 424
-:= -- 1540
-add.period$ -- 138
-call.type$ -- 39
-change.case$ -- 29
+            867 strings with 11325 characters,
+and the built_in function-call counts, 14452 in all, are:
+= -- 1470
+> -- 383
+< -- 9
++ -- 129
+- -- 81
+* -- 467
+:= -- 1832
+add.period$ -- 172
+call.type$ -- 48
+change.case$ -- 38
 chr.to.int$ -- 0
-cite$ -- 55
-duplicate$ -- 394
-empty$ -- 1370
-format.name$ -- 70
-if$ -- 3447
+cite$ -- 64
+duplicate$ -- 472
+empty$ -- 1685
+format.name$ -- 81
+if$ -- 4205
 int.to.chr$ -- 0
-int.to.str$ -- 39
-missing$ -- 40
-newline$ -- 218
-num.names$ -- 39
-pop$ -- 399
+int.to.str$ -- 48
+missing$ -- 42
+newline$ -- 269
+num.names$ -- 47
+pop$ -- 503
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 954
+skip$ -- 1175
 stack$ -- 0
-substring$ -- 375
-swap$ -- 82
-text.length$ -- 7
+substring$ -- 421
+swap$ -- 109
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 16
-while$ -- 75
-width$ -- 41
-write$ -- 439
-(There were 16 warnings)
+while$ -- 87
+width$ -- 50
+write$ -- 539
+(There was 1 error message)

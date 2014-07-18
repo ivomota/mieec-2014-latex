@@ -60,11 +60,68 @@ Google.
   2014.
 \newblock Acedido a 30-06-2014.
 
+\bibitem{Pak2010}
+Alexander Pak e Patrick Paroubek.
+\newblock {Twitter as a Corpus for Sentiment Analysis and Opinion Mining.}
+\newblock {\em LREC}, p\'{a}ginas 1320--1326, 2010.
+\newblock URL:
+  \url{http://incc-tps.googlecode.com/svn/trunk/TPFinal/bibliografia/Pak and
+  Paroubek (2010). Twitter as a Corpus for Sentiment Analysis and Opinion
+  Mining.pdf}.
+
+\bibitem{twitter}
+Inc Twitter.
+\newblock Twitter.
+\newblock \url{https://twitter.com/}.
+\newblock Acedido a 16-07-2014.
+
+\bibitem{flickr}
+Inc Yahoo.
+\newblock Flickr.
+\newblock \url{https://www.flickr.com/}.
+\newblock Acedido a 16-07-2014.
+
+\bibitem{Li2008}
+Xirong Li, Cees~G.M. Snoek, e Marcel Worring.
+\newblock {Learning tag relevance by neighbor voting for social image
+  retrieval}.
+\newblock Em {\em Proceeding 1st ACM Int. Conf. Multimed. Inf. Retr. - MIR
+  '08}, p\'{a}gina 180, New York, New York, USA, Outubro 2008. ACM Press.
+\newblock URL: \url{http://dl.acm.org/citation.cfm?id=1460096.1460126},
+  doi:10.1145/1460096.1460126.
+
+\bibitem{instagram}
+Inc Facebook.
+\newblock Instagram.
+\newblock \url{http://instagram.com/}.
+\newblock Acedido a 16-07-2014.
+
+\bibitem{twitpic}
+Twitpic.
+\newblock \url{http://twitpic.com/}.
+\newblock Acedido a 16-07-2014.
+
+\bibitem{facebook}
+Inc Facebook.
+\newblock Facebook.
+\newblock \url{https://www.facebook.com/}.
+\newblock Acedido a 16-07-2014.
+
+\bibitem{linkedin}
+LinkedIn Corporation.
+\newblock Linkedin.
+
 \bibitem{Russell2011}
 Matthew~A Russell.
 \newblock {\em {Mining the Social Web}}, volume~54.
 \newblock 2011.
 \newblock doi:10.1081/E-ELIS3-120043522.
+
+\bibitem{mongodb}
+Inc MongoDB.
+\newblock Mongodb.
+\newblock \url{http://www.mongodb.org/}.
+\newblock Acedido a 16-07-2014.
 
 \bibitem{Boanjak2012}
 M~Boanjak e Eduardo Oliveira.

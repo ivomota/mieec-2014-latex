@@ -5,61 +5,53 @@ Neste capítulo é apresentado o estudo realizado, tendo em vista a aquisição 
 
 \section{Clustering} \label{sec:cluster}
 
-Extração de conhecimento em base de dados ou \textit{Data Mining} é um processo de exploração de grandes quantidades de dados que procura encontrar padrões "interessantes"~\citet{Han2006}. Trata-te assim de uma fusão de estatística aplicada, sistemas de lógica, inteligência artificial, \textit{Machine Learning} e gestão de base de dados~\citet{North2012}. Este processo é caracterizado por várias tarefas possíveis de ser aplicadas, dependendo do problema abordado, tais como~\citep{Fayyad1996}:
+Extração de conhecimento em base de dados ou \textit{data mining} é um processo de exploração de grandes quantidades de dados que procura encontrar padrões "interessantes"~\citet{Han2006}. Trata-te assim de uma fusão de estatística aplicada, sistemas de lógica, inteligência artificial, \textit{machine learning} e gestão de base de dados~\citet{North2012}. Este processo é caracterizado por várias tarefas possíveis de ser aplicadas, dependendo do problema abordado, tais como~\citep{Fayyad1996}:
 
 \begin{itemize}
 \item Deteção de anomalias (outliers/ alterações/ desvios) - Identifica registos de dados incomuns, podendo ser erros nos dados ou objetos interessantes que apresentam comportamento diferente dos restantes;
-\item Regras de associação - Procura relações entre variáveis que ocorram frequentemente;
-\item Classificação - É a tarefa de generalizar uma estrutura conhecida e aplicar a novos dados, sendo essencialmente utilizada em tarefas de previsão;
-\item Regressão - Tenta encontrar uma função que modela os dados com o mínimo de erro;
-\item Resumo - Trata-se da representação mais compacta do conjunto de dados, que pode incluir visualização e descrição através de um relatório,
+\item Regras de associação - Procura relações entre variáveis cujos valores ocorram frequentemente em conjunto;
+\item Classificação - É a tarefa de identificar padrões nas características de objetos que distingam entre os que pertencem a grupos pré-definidos diferentes, sendo essencialmente utilizada em tarefas de previsão;
+\item Regressão - Tenta encontrar padrões nas características de objetos que as relacionam com uma variável numérica;
+\item Resumo - Tenta procurar uma representação mais compacta do conjunto de dados, que pode incluir visualização e descrição através de um relatório,
 \item \textit{Clustering} - Tarefa de descobrir grupos em que os dados apresentam de alguma forma semelhanças, sem o uso de estruturas previamente conhecidas
 \end{itemize}
 
-Este projeto terá como uma das principais tarefas a realização \textit{clustering} sobre dados recolhidos e tratados de fotografias partilhadas no Twitter. Pode-se definir \textit{clustering} como "um processo de agrupamento de um conjunto de objetos de dados em vários grupos ou \textit{clusters}, de modo que os objetos dentro de um \textit{cluster} apresentem alta similaridade, mas que sejam muito diferentes de objetos de outros \textit{clusters}. Diferenças e semelhanças são avaliados com base nos valores de atributos que descrevem os objetos e muitas vezes envolvem medidas de distância"~\citet{Han2006}.
+Este projeto terá como uma das principais tarefas a realização \textit{clustering} sobre dados recolhidos e tratados de fotografias partilhadas no Twitter. Pode-se definir \textit{clustering} como "um processo de agrupamento de um conjunto de objetos de dados em vários grupos ou \textit{clusters}, de modo que os objetos dentro de um \textit{cluster} apresentem alta similaridade, mas que sejam muito diferentes de objetos de outros \textit{clusters}. Diferenças e semelhanças são avaliados com base nos valores de atributos que descrevem os objetos e muitas vezes envolvem medidas de distância"~\citet{Han2006}. A realização de \textit{clustering} é assim uma escolha lógica para a extração de padrões em dados e para o agrupamento de \textit{tweets} pela sua semelhança em conteúdo, neste caso as imagens, e com a integração de outras dimensões, como o tempo e espaço.
 
-A realização de \textit{clustering} é assim uma escolha lógica para a extração de padrões em dados não supervisionados e para o agrupamento de \textit{tweets} pela sua semelhança em conteúdo, neste caso as imagens, e com a integração de outras dimensões, como o tempo e espaço.
+O \textit{clustering} faz parte de um conjunto de técnicas aplicadas na aprendizagem não supervisionada. Enquanto que na aprendizagem supervisionada existe um conjunto de dados previamente analisados e rotulados que são usados para treinar um modelo capaz de encontrar relações entre os atributos desses dados com os rótulos respetivos, na aprendizagem não supervisionada, não são utilizados conjuntos de dados previamente rotulados. Assim, o processo de descoberta de padrões nos dados apenas tenta organizar as instâncias em grupos semelhantes~\citet{Liu2011}.
 
-O \textit{clustering} faz parte de um conjunto de técnicas aplicadas na aprendizagem não supervisionada. Enquanto que na aprendizagem supervisionada existe um conjunto de dados previamente analisados e rotulados que são usados para treinar um modelo capaz de encontrar relação entre os atributos desses dados com novos conjuntos de dados, na aprendizagem não supervisionada, não são utilizados conjuntos de dados previamente analisados e rotulados. Assim o processo de descoberta de padrões nos dados apenas tem em conta os dados presentes, tentando organizar as instâncias em grupos semelhantes~\citet{Liu2011}.
-
-Nesta secção serão apresentadas as principais características e técnicas para aplicação da tarefa de \textit{clustering}, tais como, \textit{clustering} por partição, \textit{clustering} hierárquico, \textit{clustering} baseado em densidade, \textit{clustering} baseado em grelhas, funções de distância para o cálculo da similaridade entre objetos e por fim, a avaliação de \textit{clusters}.
+Nesta secção serão apresentadas as principais características e técnicas para aplicação da tarefa de \textit{clustering}, tais como, \textit{clustering} por partição, \textit{clustering} hierárquico, \textit{clustering} baseado em densidade, \textit{clustering} baseado em grelhas, funções de distância para o cálculo da distância entre objetos.
 
 
 \subsection{Clustering por Partição} \label{subsec:parti}
 
-A utilização de métodos baseados em partições é a forma mais simples e elementar de realizar análise por \textit{clustering}, em que um conjunto de objetos é distribuído em vários grupos ou \textit{clusters} mais pequenos. É assumido que o número de \textit{clusters} é conhecido antes da realização da tarefa, sendo esse valor tomado como o ponto de partida para aplicação de métodos baseados em partição~\citet{Han2006}. 
+A utilização de métodos baseados em partições é a forma mais simples e elementar de realizar análise por \textit{clustering}. Nestes métodos em que um conjunto de objetos é distribuído em vários grupos ou \textit{clusters} mais pequenos. É assumido que o número de \textit{clusters} é conhecido antes da realização da tarefa, sendo esse valor tomado como o ponto de partida para aplicação de métodos baseados em partição~\citet{Han2006}. 
 
-O algoritmo \textit{k-means} é o melhor algoritmo de \textit{clustering} por partição e o mais utilizado devido à sua simplicidade e eficiência~\citet{Liu2011}. É apresentado como  sendo  um algoritmo de \textit{clustering} por partição, pois este divide o conjunto de dados em partições mais pequenas, formando assim os \textit{clusters}.
+O algoritmo \textit{k-means} é o algoritmo de \textit{clustering} por partição mais utilizado devido à sua simplicidade e eficiência~\citet{Liu2011}. Inicialmente é necessário que o utilizador indique o valor de \textit{k} e o algoritmo irá iterativamente dividir o conjunto de objetos em \textit{k clusters} diferentes, baseado em funções de distância~\citet{Liu2011} que são apresentadas na secção~\ref{subsec:dist}.
 
-Inicialmente é necessário que o utilizador indique o valor de \textit{k} e o algoritmo irá iterativamente dividir o conjunto de objetos em \textit{k-clusters} diferentes, baseado em funções de distância~\citet{Liu2011} que são apresentadas na secção~\ref{subsec:dist}.
-
-Cada \textit{cluster} apresenta um centroide que é o representante do grupo, sendo o valor médio de todos os objetos (instâncias) pertencentes ao \textit{cluster}. Este centroide é recalculado de forma iterativa até que seja atingido o critério de paragem. A convergência ou critério de paragem pode ser um dos seguintes enumerados:
+Cada \textit{cluster} apresenta um objeto que representa um grupo, sendo o valor médio de todos os objetos (instâncias) pertencentes ao \textit{cluster} e é normalmente designado por centroide. Este centroide é recalculado de forma iterativa até que seja atingido o critério de paragem. A convergência ou critério de paragem pode ser um dos seguintes enumerados:
 
 \begin{enumerate}
 \item Não ocorre (ou ocorre um valor mínimo) de alterações dos objetos para diferentes \textit{clusters}.
 \item Não ocorre (ou ocorre um valor mínimo) de alterações dos centroides.
 \item Diminuição mínima da \textbf{soma do erro quadrático} (SEQ),
-\end{enumerate}
-
 \begin{equation}
 SEQ = \sum_{j=1}^{k} \sum_{x \in C_{j} } dist(x, m_{j})^{2} ,
 \end{equation}
+em que \textit{k} é o número de \textit{clusters} pretendidos, $ C_{j} $ é i-ésimo \textit{cluster}, $ m_{j} $ é o centroide do \textit{cluster} $ C_{j} $ e $ dist(x, m_{j}) $ é a distância entre uma instância \textbf{x} e o centroide $ m_{j} $.
+\end{enumerate}
 
-onde \textit{k} é o número de \textit{clusters} pretendidos, $ C_{j} $ é i-ésimo \textit{cluster}, $ m_{j} $ é o centroide do \textit{cluster} $ C_{j} $ e $ dist(x, m_{j}) $ é a distância entre uma instância \textbf{x} e o centroide $ m_{j} $.
-
-Assim, "o algoritmo \textit{k-means} pode ser usado em qualquer aplicação com um conjunto de dados onde a média pode ser definida e calculada"~\citet{Liu2011}.
-
-No \textbf{espaço euclidiano}, centroide de um \textit{cluster} é calculado da seguinte forma:
-
+Assim, "o algoritmo \textit{k-means} pode ser usado em qualquer aplicação com um conjunto de dados onde a média pode ser definida e calculada"~\citet{Liu2011}. No espaço, o centroide de um \textit{cluster} é calculado da seguinte forma:
 \begin{equation}
 m_{j} =  \frac{1}{|C_{j}|} \sum_{x_{i} \in C_{j} }x_{i} ,
 \end{equation}
-
-onde $ |C_{j}| $ é o número de pontos (instâncias) no \textit{cluster} $ C_{j} $. A distância entre um ponto $ x_{i} $ a um centroide $ m_{j} $ é calculado da seguinte forma:
+onde $ |C_{j}| $ é o número de pontos (instâncias) no \textit{cluster} $ C_{j} $. A distância de um ponto $ x_{i} $ a um centroide $ m_{j} $ através de uma função de distância. A mais utilizada para este fim é a função distância Euclidiana, apresentada mais à frente na Secção~\ref{subsec:dist}. A equação~\ref{exemp:disteclid} representada da seguinte forma:
 
 \begin{equation}
-dist(x_{i}, m_{j}) = ||x_{i} - m_{j}|| =  \sqrt{(x_{i1} - m_{j1})^2 + (x_{i2} - m_{j2})^2 + ... + (x_{ir} - m_{jr})^2} .
+dist(x_{i}, m_{j}) = ||x_{i} - m_{j}|| =  \sqrt{(x_{i1} - m_{j1})^2 + (x_{i2} - m_{j2})^2 + ... + (x_{ir} - m_{jr})^2}
+\label{exemp:disteclid}
 \end{equation}
+
 
 O pseudo-código deste algoritmo é apresentado no algoritmo~\ref{kmeans}.
 % ESCREVER ALGORITMO
@@ -70,8 +62,8 @@ O pseudo-código deste algoritmo é apresentado no algoritmo~\ref{kmeans}.
 \Procedure{K-MEANS}{k: clusters, D: conjunto de dados}
 	\State {escolher k objetos de D como centroides dos clusters iniciais;} 
 	\Repeat 
-		\State {(re) atribuir cada objeto a ao cluster ao qual o objeto é o mais similar;} 
-		\State {actualizar o centroide do cluster;} 
+		\State {(re) atribuir cada objeto ao cluster ao qual o objeto tem menor distância;} 
+		\State {atualizar o centroide do cluster;} 
 	\Until{clusters sem alterações;}
 	\State \textbf{return} {conjunto de k clusters;}
 \EndProcedure 
@@ -82,12 +74,12 @@ O pseudo-código deste algoritmo é apresentado no algoritmo~\ref{kmeans}.
 
 \subsection{Clustering Hierárquico} \label{subsec:hierar}
 
-O \textit{clustering} hierárquico é outra abordagem importante na tarefa de \textit{clustering}. Os \textit{clusters} são criados sobre a forma de uma sequência em árvore (dendrograma). Os objetos (instâncias) encontram-se no fundo do diagrama, enquanto que o conjunto de todos os objetos encontra-se no topo do diagrama. Cada nó que se encontra no interior do diagrama possui nós filhos, sendo que cada nó representa um \textit{cluster}. Assim designam-se por \textit{clusters} irmãos, aqueles que derivam de um mesmo \textit{cluster}, isto é, do nó parente~\citet{Liu2011}. A Figura~\ref{fig:hierarquico} exemplifica a representação ilustrativa de um dendrograma onde o topo é representado o conjunto de todas as letras e o fim do cada letra individual. 
+O \textit{clustering} hierárquico é outra abordagem importante na tarefa de \textit{clustering}. Os \textit{clusters} são criados sobre a forma de uma sequência em árvore (dendrograma). Os objetos (instâncias) encontram-se no fundo do diagrama, enquanto que o conjunto de todos os objetos encontra-se no topo do diagrama. Cada nó que se encontra no interior do diagrama possui nós filhos, sendo que cada nó representa um \textit{cluster}. Assim designam-se por \textit{clusters} irmãos, aqueles que derivam de um mesmo \textit{cluster}, isto é, do nó pai~\citet{Liu2011}. A Figura~\ref{fig:hierarquico} exemplifica a representação de um dendrograma onde o topo é representado o conjunto de todas as letras e o fim do cada letra individual. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\linewidth]{./figures/hierarquico}
-\caption{Dendrograma ilustrativo da divisão entre nós do conjunto completo ao objeto individual no fundo~\citet{Bramer2007}}
+\caption{Dendrograma ilustrativo da divisão entre nós do conjunto completo, no topo, ao objeto individual, no fundo~\citet{Bramer2007}}
 \label{fig:hierarquico}
 \end{figure}
 
@@ -105,15 +97,17 @@ Ao contrário do algoritmo \textit{k-means}, que apenas calcula a distância ent
 \item[Método \textit{Single-Link}:] Neste método, a distância entre dois \textit{clusters} é determinada pela distância entre os dois objetos mais próximos (vizinhos mais próximo) pertencentes a \textit{clusters} diferentes.
 \item[Método \textit{Complete-Link}:] Neste método, a distância entre dois \textit{clusters} é determinada pela maior distância entre dois objetos (vizinhos mais distante).
 \item[Método Average-Link:] Este método tenta manter um compromisso entre a sensibilidade a \textit{outliers} do método \textit{Complete-Link} e a sensibilidade do método \textit{Single-Link} ao ruído existente nos dados. Para isso, é determinada a distância entre dois \textit{clusters} através da distância média entre todos os pares de objetos nos dois \textit{clusters}.
-\item[Método Ward:] Este método, tenta minimizar a variância entre dois \textit{clusters} unidos.
+\item[Método Ward:] Este método, tenta minimizar a variância dentro de um \textit{clusters}. Cada \textit{cluster} começa com um único ponto e recursivamente os \textit{cluster} vão sendo unidos. Este método procura que os \textit{clusters} pares a serem unidos para formarem um novo, sendo que estes devem-se encontrar a uma distância mínima e garantir um aumento mínimo da variância total do \textit{cluster} criado.  
 \end{description}
 
-Assim conclui-se que o \textit{clustering} hierárquico apresenta-se para determinados domínios, como bastante intuitivo para humanos, mas a interpretação dos resultados pode ser por vezes subjetiva. Outra característica interessante é o facto de, ao contrário do \textit{clustering} por partição, no \textit{clustering} hierárquico não ser necessário especificar logo à partida o número de \textit{clusters}. 
+Assim conclui-se que o \textit{clustering} hierárquico apresenta-se para determinados domínios, como bastante intuitivo, mas a interpretação dos resultados pode ser por vezes subjetiva. Outra característica interessante é o facto de, ao contrário do \textit{clustering} por partição, no \textit{clustering} hierárquico não ser necessário especificar logo à partida o número de \textit{clusters}. 
 
 \subsection{Clustering Baseado em Densidade} \label{subsec:dbscan} 
 
-Os métodos de ~\textit{clustering} por partição ou hierárquico estão preparados para encontrar \textit{clusters} que apresentam formas geométricas circulares, sendo ineficiente quando as formas destes grupos são por exemplo elípticas. Assim, para descobrir \textit{clusters} com formas arbitrárias, podem ser usados métodos baseados na densidade dos objetos~\cite{Han2006}. Um dos algoritmos mais conhecidos que utiliza este tipo de método é o DBSCAN (\textit{Density-Based Spatial Clustering of Applications with Noise}) que é capaz de encontrar \textit{clusters} através da análise da densidade e proximidade dos objetos pertencentes a um conjunto de dados. Para esta análise é necessário previamente atribuir um valor que definirá o raio da vizinhança considerada para cada objeto. Esse parâmetro é designado por $ \epsilon $ e terá de ser necessariamente maior que 0. Assim,  a $ \epsilon $-vizinhança de um objeto \textit{x} é o espaço dentro de um raio com valor $ \epsilon $, centrado em \textit{x}~\cite{Han2006}. Já para determinar a densidade de uma vizinhança, é utilizado o parâmetro \textit{MinPts} também previamente definido, que especifica o número mínimo de objetos vizinhos que um objeto necessita ter em seu redor, para ser considerado como objeto central.
-Os passos necessários para a implementação deste método são apresentados no Algoritmo~\ref{dbscan}
+Os métodos de ~\textit{clustering} por partição ou hierárquico estão preparados para encontrar \textit{clusters} que apresentam formas geométricas circulares, sendo ineficiente quando as formas destes grupos são, por exemplo, elípticas. Assim, para descobrir \textit{clusters} com formas arbitrárias, podem ser usados métodos baseados na densidade dos objetos~\cite{Han2006}. 
+
+Um dos algoritmos mais conhecidos que utiliza este tipo de método é o DBSCAN (\textit{Density-Based Spatial Clustering of Applications with Noise}) que é capaz de encontrar \textit{clusters} através da análise da densidade e proximidade dos objetos pertencentes a um conjunto de dados. Para esta análise é necessário previamente definir o raio da vizinhança considerada para cada objeto. Esse parâmetro é designado por $ \epsilon $ e terá de ser necessariamente maior que 0. Assim,  a $ \epsilon $-vizinhança de um objeto \textit{x} é o espaço dentro de um raio com valor $ \epsilon $, centrado em \textit{x}~\cite{Han2006}. Já para determinar a densidade de uma vizinhança, é utilizado o parâmetro \textit{MinPts} também previamente definido. Este parâmetro especifica o número mínimo de objetos vizinhos que um objeto necessita ter em seu redor, para ser considerado como centroide.
+Os passos necessários para a implementação deste método são apresentados no Algoritmo~\ref{dbscan}.
 
 \begin{algorithm}[ht]
 \caption{DBSCAN}\label{dbscan}
@@ -121,39 +115,41 @@ Os passos necessários para a implementação deste método são apresentados no
 \Procedure{DBSCAN}{\textit{MinPts}: limiar da vizinhança,  D: conjunto de dados, $ \varepsilon $ : raio  }
 	\State {Marcar todos os objetos como não selecionados;} 
 	\Repeat
-		\State {escolher aleatóriamente um objeto \textit{p} não selecionado;} 
-		\State {actualizar objeto \textit{p} como selecionado;} 
-		\If {o $ \varepsilon$-vizinhança de \textit{p} tem pelo menos \textit{MinPts} objetos}
-			\State {criar um novo \textit{cluster C} e adicionar objeto \textit{p} ao \textit{cluster C};}
-			\State {Seja N o conjunto de objetos na $\varepsilon$-vizinhança de \textit{p}; }
-			\For {cada ponto \textit{p'} em N}
-				\If {\textit{p'} não selecionado}
-					\State {Marcar \textit{p'} como selecionado}
-					\If {a $\varepsilon$-vizinhança de \textit{p'} tem pelo menos \textit{MinPts}}
+		\State {escolher um objeto \textit{x} não selecionado;} 
+		\State {actualizar objeto \textit{x} como selecionado;} 
+		\If {a $ \varepsilon$-vizinhança de \textit{x} tem pelo menos \textit{MinPts} objetos}
+			\State {criar um novo \textit{cluster C} e adicionar objeto \textit{x} ao \textit{cluster C};}
+			\State {Seja N o conjunto de objetos na $\varepsilon$-vizinhança de \textit{x}; }
+			\For {cada ponto \textit{x'} em N}
+				\If {\textit{x'} não selecionado}
+					\State {Marcar \textit{x'} como selecionado}
+					\If {a $\varepsilon$-vizinhança de \textit{x'} tem pelo menos \textit{MinPts}}
 						\State {adicionar ponto a N}
 					\EndIf
 				\EndIf
-				\If {\textit{p'} não pertence a nenhum cluster}
-					\State {adicionar \textit{p'} a \textit{C}}
+				\If {\textit{x'} não pertence a nenhum cluster}
+					\State {adicionar \textit{x'} a \textit{C}}
 				\EndIf
 			\EndFor
 			\State {\textbf{output} C;}
-		\Else { marcar \textit{p} como ruido}
+		\Else { marcar \textit{x} como \textit{outlier}}
 		\EndIf
 	\Until{todos os objetos selecionados;} 
 \EndProcedure 
 \end{algorithmic}
 \end{algorithm}
 
-Uma das grandes vantagens do \textit{clustering} baseado em densidade é que neste não é necessário uma prévia definição do número de \textit{clusters}, sendo apresentados os que encontrar consoante os dados que possui e os parâmetros definidos. 
+Apesar de no \textit{clustering} baseado em densidade ser necessário definir um raio e o número mínimo de objetos para a formação de um \textit{cluster}, este apresenta como principal vantagem o fato de não é necessário uma prévia definição do número de \textit{clusters}, sendo apresentados os que forem encontrados consoante os dados que possui e os parâmetros definidos. 
 
 % Notas: Falar talves do algoritmo OPTICS e DENCLUE
 
 \subsection{Clustering Baseado em Grelhas} %por completar
 
-Os métodos de \textit{clustering} discutidos até agora, apresentam algoritmos que se adaptam a distribuição dos dados no espaço. Em alternativa, o \textit{clustering} baseado em grelhas é orientado ao espaço, na medida em que divide o espaço em células independentemente da distribuição dos objetos de entrada. Este quantifica o espaço num número finito de células, que formam uma estrutura de grelhas sobre a qual são executadas as operações de \textit{clustering}. Este método apresenta como principal vantagem o tempo baixo de processamento, que normalmente é independente da quantidade de dados, no entanto, este depende do número de células em cada uma das dimensões no espaço quantizado~\cite{Han2006}.
+Os métodos de \textit{clustering} discutidos até agora, apresentam algoritmos que se adaptam a distribuição dos dados no espaço. Em alternativa, o \textit{clustering} baseado em grelhas é orientado ao espaço, na medida em que divide o espaço em células independentemente da distribuição dos objetos de entrada. Este quantifica o espaço num número finito de células, que formam uma estrutura de grelhas sobre a qual são executadas as operações de \textit{clustering}. Este método apresenta como principal vantagem o tempo baixo de processamento, que normalmente é independente da quantidade de dados. No entanto, depende do número de células em cada uma das dimensões no espaço~\cite{Han2006}.
 
-O algoritmo STING (\textit{Statistical Information Grid})~\citet{Wang1997} é um dos algoritmos utilizados para \textit{clustering} baseado em grelhas. Este divide o espaço em células retangulares, correspondente a diferentes resoluções que forma uma estrutura hierárquica, sendo a base o nível 1, os filhos o nível 2, e assim sucessivamente. Cada célula pertencente a um nível superior é dividida para formar células de menor dimensão no nível inferior seguinte. Assim, sabe-se que o nível mais baixo apresenta uma maior resolução. Isto permite que os \textit{clusters} sejam encontrados recorrendo a uma pesquisa de cima para baixo (\textit{clustering} por divisão, como explicado na secção~\ref{subsec:hierar}), passando por cada nível até atingir o mais baixo, retornando no fim as células mais relevantes para a consulta especificada. A informação estatística de cada célula é calculada e armazenada para o processamento de consultas futuras. Também é necessário ter em atenção que apenas é considerado para este algoritmo um espaço bidimensional. Um outro algoritmo com características semelhantes é o CLIQUE~\citet{Agrawal1998}, que "identifica \textit{clusters} densos em sub-espaços de máxima dimensão", isto é, são detetados todos os \textit{clusters} em todos sub-espaços existentes e em que um ponto pode pertencer a vários \textit{clusters} em sub-espaços diferentes.
+O algoritmo STING (\textit{Statistical Information Grid})~\citet{Wang1997} é um dos algoritmos utilizados para \textit{clustering} baseado em grelhas. Este divide o espaço em células retangulares, correspondente a diferentes resoluções que formam uma estrutura hierárquica. Cada célula pertencente a um nível mais perto do topo, é dividida para formar células de menor dimensão no nível seguinte. Assim, sabe-se que o nível mais baixo apresenta uma maior resolução. Isto permite que os \textit{clusters} sejam encontrados recorrendo a uma pesquisa de cima para baixo (\textit{clustering} por divisão, como explicado na secção~\ref{subsec:hierar}), passando por cada nível até atingir o mais baixo, retornando no fim as células mais relevantes para a consulta especificada. A informação estatística de cada célula é calculada e armazenada para o processamento de consultas futuras. Também é necessário ter em atenção que apenas é considerado para este algoritmo um espaço bidimensional. 
+
+Um outro algoritmo com características semelhantes é o CLIQUE~\citet{Agrawal1998}, que "identifica \textit{clusters} densos em sub-espaços de máxima dimensão". Isto é, são detetados todos os \textit{clusters} em todos sub-espaços existentes e em que um ponto pode pertencer a vários \textit{clusters} em sub-espaços diferentes.
 
 % Notas: Talvez falar mais do algoritmo CLIQUE
 
@@ -163,24 +159,20 @@ O algoritmo STING (\textit{Statistical Information Grid})~\citet{Wang1997} é um
 
 \subsection{Funções de Distância} \label{subsec:dist}
 
-As funções de distância ou similaridade têm um papel fulcral em todos os algoritmos de \textit{Clustering}. Existem inúmeras funções de distância usadas para diferentes tipos de atributos (ou variáveis)~\citet{Liu2011}. Em seguida serão apresentadas diferentes funções distância para diferentes atributos: numéricos, binários e nominal. Também serão apresentadas funções distância utilizadas para as dimensões temporal e de conteúdo. 
+As funções de distância têm um papel fulcral em todos os algoritmos de \textit{Clustering}. Existem inúmeras funções de distância usadas para diferentes tipos de atributos (ou variáveis)~\citet{Liu2011}. Em seguida serão apresentadas diferentes funções de distância para diferentes atributos: numéricos, binários e nominal. Também serão apresentadas funções de distância utilizadas para as dimensões temporal e de conteúdo. 
 
 \subsubsection{Atributos Numéricos} \label{subsubsec: attrnum}
 
-As funções de distância mais utilizadas para variáveis numéricas são a \textbf{Distância Euclidiana} e \textbf{Distância Manhattan}. É utilizado $ dist(x_{i}, x_{j}) $ para representar a distância entre duas instância de \textit{r} dimensões. Ambas as funções referidas anteriormente são casos especiais da função mais geral chamada \textbf{Distância Minkowski}~\citet{Liu2011}:
-
+As funções de distância mais utilizadas para variáveis numéricas são a \textbf{Distância Euclidiana} e \textbf{Distância Manhattan}. É utilizado $ dist(x_{i}, x_{j}) $ para representar a distância entre duas instância. Ambas as funções referidas anteriormente são casos especiais da função mais geral chamada \textbf{Distância Minkowski}~\citet{Liu2011}:
 \begin{equation}
 dist(x_{i}, x_{j}) = (|x_{i1} - x_{j1}|^h + |x_{i2} - x_{j2}|^h +...+ |x_{ir} - x_{jr}|^h)^\frac{1}{h},
 \label{eq:mink}
 \end{equation}
-onde \textit{h} é um inteiro positivo.
-
-Se \textit{h}=2, temos a \textbf{Distância Euclidiana},
+onde \textit{h} é um inteiro positivo. Se \textit{h}=2, temos a \textbf{Distância Euclidiana},
 \begin{equation} 
-dist(x_{i}, x_{j}) = \sqrt{(x_{i1} - x_{j1})^2 + (x_{i2} - x_{j2})^2 +...+ (x_{ir} - x_{jr})^2}.
+dist(x_{i}, x_{j}) = \sqrt{(x_{i1} - x_{j1})^2 + (x_{i2} - x_{j2})^2 +...+ (x_{ir} - x_{jr})^2},
 \label{eq: euclid}
 \end{equation}
-
 Se \textit{h}=1, temos a \textbf{Distância City-block (Manhattan)},
 \begin{equation}
 dist(x_{i}, x_{j}) = |x_{i1} - x_{j1}| + |x_{i2} - x_{j2}| +...+ |x_{ir} - x_{jr}|.
@@ -190,19 +182,19 @@ dist(x_{i}, x_{j}) = |x_{i1} - x_{j1}| + |x_{i2} - x_{j2}| +...+ |x_{ir} - x_{jr
 Também, não menos importantes, são outras funções distância apresentadas em seguida:
 
 \begin{description}
-\item[Distância Euclidiana Ponderada]: A ponderação é atribuída através de pesos dados pela importância que cada atributo representa relativamente a outros atributos.
+\item[Distância Euclidiana Ponderada]: A ponderação é atribuída através de pesos dados pela importância que cada atributo representa relativamente a outros atributos, representada por $w_{i}$:
 
 \begin{equation}
 dist(x_{i}, x_{j}) = \sqrt{w_{1}(x_{i1} - x_{j1})^2 + w_{2}(x_{i2} - x_{j2})^2 +...+ w_{r}(x_{ir} - x_{jr})^2}.
 \end{equation} 
 
-\item[Distância Euclidiana Quadrática]: Trata-se de uma alteração da função \textbf{Distância Euclidiana}, elevando a mesma ao quadrado, o que faz com que seja progressivamente atribuído peso maior a pontos dos dados que estejam mais afastados.
+\item[Distância Euclidiana Quadrática]: Trata-se de uma alteração da função \textbf{Distância Euclidiana}, elevando a mesma ao quadrado, o que faz com que seja progressivamente atribuído peso maior a pontos dos dados que estejam mais afastados:
 
 \begin{equation}
 dist(x_{i}, x_{j}) = (x_{i1} - x_{j1})^2 + (x_{i2} - x_{j2})^2 +...+ (x_{ir} - x_{jr})^2.
 \end{equation}
 
-\item[Distância Chebyshev]: Utilizada para casos em que há necessidade de definir dois pontos dos dados como diferentes, caso sejam diferentes em qualquer dimensão.
+\item[Distância Chebyshev]: Utilizada para casos em que há necessidade de definir dois pontos dos dados como diferentes, caso sejam diferentes em qualquer dimensão:
 
 \begin{equation}
 dist(x_{i}, x_{j}) = max(|x_{i1} - x_{j1}| + |x_{i2} - x_{j2}| +...+ |x_{ir} - x_{jr}|).
@@ -213,28 +205,30 @@ dist(x_{i}, x_{j}) = max(|x_{i1} - x_{j1}| + |x_{i2} - x_{j2}| +...+ |x_{ir} - x
 
 \subsubsection{Atributos Binários e Nominais}
 
-As funções apresentadas anteriormente apenas podem ser utilizadas com atributos do tipo numérico, assim serão necessárias funções de distância especificas para atributos do tipo binário e nominal.
+As funções apresentadas anteriormente apenas podem ser utilizadas com atributos do tipo numérico. Assim serão necessárias funções de distância especificas para atributos do tipo binário e nominal.
 
-Uma variável binária é aquela que apenas pode assumir dois estados ou valores, sendo normalmente representado pelo valor 0 e 1. Mas estes estados não apresentam um ordem definida. Por exemplo, no caso de uma lâmpada, esta pode assumir apenas dois estados, ligado ou desligado, ou o género de uma pessoa, masculino ou feminino. Estes exemplos apresentam dois valores diferentes mas que não possuem qualquer ordem. As funções distância existentes para atributos binários são baseadas na proporção, sendo que a melhor maneira de representar é através de uma matriz confusão~\citet{Liu2011}.
+Uma variável binária é aquela que apenas pode assumir dois estados ou valores, sendo normalmente representado pelo valor 0 e 1. Mas estes estados não apresentam um ordem definida. Por exemplo, no caso de uma lâmpada, esta pode assumir apenas dois estados, ligado ou desligado, ou o género de uma pessoa, masculino ou feminino. Estes exemplos apresentam dois valores diferentes mas que não possuem qualquer ordem. 
+
+Os atributos binários podem ser divididos em dois tipos  diferentes, os simétricos e os assimétricos, sendo em seguida apresentadas as funções de distância para ambos os casos~\citet{Liu2011}.
+
+Na Figura~\ref{fig:matriz_confusão} é representada uma matriz de confusão para uma melhor compreensão do cálculo da distância entre objetos com atributos binários.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\linewidth]{./figures/matriz_confusao}
-\caption{Matriz confusão de dois objetos com atributos binários}
+\caption{Matriz de confusão de dois objetos com atributos binários}
 \label{fig:matriz_confusão}
 \end{figure}
 
-Os atributos binários ainda podem ser divididos em dois tipos de atributos diferentes, os simétricos e os assimétricos, sendo em seguido apresentado as funções distância para ambos oa casos~\citet{Liu2011}.
-
 \begin{description}
-\item[Atributos simétricos: ] Um atributo é simétrico quando ambos os estados (0 ou 1) têm a mesma importância e o mesmo peso, tal como ocorre no exemplo dado anterior com o atributo género (masculino e feminino). Para este caso, a função distância mais utilizada é designada por \textit{simple matching distance}, que corresponde à proporção de incompatibilidade ou desacordo(equação~\ref{eq:symetric}).  
+\item[Atributos simétricos: ] Um atributo é simétrico quando ambos os estados (0 ou 1) têm a mesma importância e o mesmo peso, tal como ocorre no exemplo dado anteriormente com o atributo género (masculino e feminino). Para este caso, a função distância mais utilizada é designada por \textit{simple matching distance}, que corresponde à proporção de incompatibilidade ou desacordo:  
 
 \begin{equation}
  dist(x_{i}, x_{j}) =  \frac{b + c}{a + b + c + d}
  \label{eq:symetric}   
 \end{equation}
 
-\item[Atributos assimétricos: ] Um atributo é assimétrico se um dos estados apresenta maior importância ou valor do que o outro. Normalmente o estado mais valioso é o que ocorre com menor frequência. No nosso caso iremos considerar o estado 1 como o mais valioso. Assim, a função distância mais frequentemente utilizada para atributos assimétricos é a \textit{Jaccard distance}:
+\item[Atributos assimétricos: ] Um atributo é assimétrico se um dos estados apresenta maior importância do que o outro. Normalmente o estado mais valioso é o que ocorre com menor frequência. No nosso caso iremos considerar o estado 1 como o mais valioso. Assim, a função distância mais frequentemente utilizada para atributos assimétricos é a \textit{Jaccard distance}:
 
 \begin{equation}
  dist(x_{i}, x_{j}) =  \frac{b + c}{a + b + c}
@@ -243,7 +237,7 @@ Os atributos binários ainda podem ser divididos em dois tipos de atributos dife
 
 \end{description}
 
-No caso de atributos nominais com mais de dois estados ou valores, a função distância mais utilizada, é baseada na \textit{simple matching distance}. Dados dois objetos \textit{i} e \textit{j}, \textit{r} corresponde ao número total de atributos e o \textit{q} ao número de valores que são mutuamente correspondidos entre os objetos \textit{i} e \textit{j}:
+No caso de atributos nominais com mais de dois estados ou valores, a função de distância mais utilizada, é baseada na \textit{simple matching distance}. Dados dois objetos \textit{i} e \textit{j}, \textit{r} corresponde ao número total de atributos e o \textit{q} ao número de valores que são mutuamente correspondidos entre os objetos $x{i} e x_{j}$:
 
 \begin{equation}
  dist(x_{i}, x_{j}) =  \frac{r + q}{r}
@@ -275,38 +269,39 @@ onde $ R $ representa o raio da Terra e que determina as unidades do resultado r
 
 \section{TweeProfiles} \label{sec:tweep}
 
-Esta dissertação pretende dar continuidade e um trabalho designado por TweeProfiles~\cite{Cunha2013}. O TweetProfiles é uma ferramenta de análise de dados recolhidos no Twitter e visualização \textit{clusters} em várias dimensões, tais como, espacial, temporal, de conteúdo (o texto dos tweets) e social. Esta secção faz um breve introdução e descrição sobre esta ferramenta.
+Esta dissertação pretende dar continuidade e um trabalho designado por TweeProfiles~\cite{Cunha2013}. O TweeProfiles é uma ferramenta que identifica perfis de tweets envolvendo múltiplos tipos de informação: espacial, temporal, textual e social. Esta secção faz uma breve introdução e descrição sobre esta ferramenta.
 
 \subsection{Descrição e objetivos}
 
-O TweeProfiles aborda o problema de identificar perfis de tweets envolvendo múltiplos tipos de informação: espacial, temporal, social e de conteúdo. A informação espacial, trata-se da informação de localização das mensagens de texto partilhadas no Twitter, a temporal é relativa à data de publicação do tweet, a social às ligações entre os utilizadores, e por fim o conteúdo que neste caso é relativo ao texto contido em cada tweet. 
+O TweeProfiles aborda o problema de identificar perfis de tweets envolvendo múltiplos tipos de informação: espacial, temporal, social e de conteúdo. A informação espacial, trata-se da informação de localização das mensagens de texto partilhadas no Twitter; a temporal é relativa à data de publicação do tweet; a social às ligações entre os utilizadores, fim o conteúdo que no trabalho original é relativo apenas ao texto contido em cada tweet. 
 
-Os objetivos do TweeProfiles foi o desenvolvimento de uma metodologia de Data Mining que identificasse perfis de tweets que combinem de forma flexíveis as várias dimensões consideradas, a criação de uma ferramenta de visualização para representar os resultados obtidos e a sua aplicação a um caso de estudo na twittosfera portuguesa.
+Os objetivos do TweeProfiles foram o desenvolvimento de uma metodologia de \textit{data mining} que identificasse perfis de tweets que combinem de forma flexível as várias dimensões consideradas, a criação de uma ferramenta de visualização para representar os resultados obtidos e a sua aplicação a um caso de estudo na \textit{twitosfera} portuguesa.
  
 A ferramenta de visualização está desenhada para uma utilização dinâmica e intuitiva, direcionada para a representação dos perfis de uma forma compreensível e interativa. Esta apresenta vários widgets capazes de representar os padrões obtidos.
-O caso de estudo que o TweeProfiles aborda dados georeferenciados do Socialbus (antes designado como TwitterEcho). No entanto, esta ferramenta é adequada para tratar quaisquer mensagens georeferenciadas provenientes do Twitter.
+O caso de estudo que o TweeProfiles usa dados georeferenciados do Socialbus (antes designado como TwitterEcho~\cite{Boanjak2012}). No entanto, esta ferramenta é adequada para tratar quaisquer mensagens georeferenciadas provenientes do Twitter.
 
 \subsection{Resultados ilustrativos} \label{subsec:tpresult}
 
-Através do TweeProfiles podemos visualizar \textit{clusters} nas suas diversas dimensões. Esta ferramenta apresenta três secções distintas para visualização e incluí ainda controlos para navegação e seleção de determinados parâmetros. Uma das secções é constituída por um mapa onde é possível visualizar geograficamente os \textit{clusters}, como podemos ver na Figura~\ref{fig:maptweep1}, em que são representados por círculo. Outra das secções é um gráfico que apresenta a distribuição temporal dos \textit{clusters}, onde é possível visualizar a data de início de fim de um determinado \textit{cluster}, como representado na Figura~\ref{fig:temptweep1}. 
+Através do TweeProfiles podemos visualizar \textit{clusters} nas suas diversas dimensões. Esta ferramenta apresenta três secções distintas para visualização e inclui ainda controlos para navegação e seleção de determinados parâmetros. Uma das secções é constituída por um mapa onde é possível visualizar geograficamente os \textit{clusters}, como podemos ver na Figura~\ref{fig:maptweep1}, em que são representados por círculo. Outra das secções é um gráfico que apresenta a distribuição temporal dos \textit{clusters}, onde é possível visualizar a data de início e a data de fim de um determinado \textit{cluster}, isto é, visualizar o intervalo de tempo entre a data do primeiro tweet partilhado e o último, contidos no mesmo \textit{cluster}.
+%, como representado na Figura~\ref{fig:temptweep1}. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\linewidth]{./figures/tweeprofiles/maptweep1}
 \caption{Exemplo ilustrativo da distribuição espacial dos \textit{clusters} calculada apenas com a consideração da dimensão espacial. \textit{Retirada de}~\cite{Cunha2013}}
 \label{fig:maptweep1}
 \end{figure}
-Por fim, é nos apresentada uma secção onde é possível visualizar informação mais especifica sobre os \textit{clusters}, onde é incluído a informação relativa às dimensões de conteúdo e social com a representação das palavras mais utilizadas e as ligações entre utilizadores respetivamente nesse \textit{clusters}. No caso dos controlos, estes permitem selecionar um dos três intervalos de tempo existentes e o os pesos para cada uma das dimensões, que podem assumir valores entre 0\% e 100\% com incrementos de 25\%. Cada dimensão pode assumir como peso assim um dos seguintes valores percentuais: \{0, 25, 50, 75, 100\}, sendo que a soma dos pesos das diferentes dimensões deve ser igual a 1. 
+Por fim, é-nos apresentada uma secção onde é possível visualizar informação mais específica sobre os \textit{clusters}, incluindo a informação relativa às dimensões de conteúdo e social com a representação das palavras mais utilizadas e as ligações entre utilizadores respetivamente nesse \textit{clusters}. Os controlos permitem selecionar um dos três intervalos de tempo existentes e o os pesos para cada uma das dimensões, que podem assumir valores entre 0\% e 100\% com incrementos de 25\%. Cada dimensão pode assumir como peso assim um dos seguintes valores percentuais: \{0, 25, 50, 75, 100\}, sendo que a soma dos pesos das diferentes dimensões deve ser igual a 1. 
 
-Em seguida são apresentados alguns resultados ilustrativos obtidos através da ferramenta TweeProfiles, e que demonstram o seu funcionamento global. Este resultados serão baseados apenas nos apresentados por Tiago Cunha~\cite{Cunha2013}, sendo ilustrados resultados de \textit{clusters} em Portugal para diferentes combinações possíveis. 
+Em seguida são apresentados alguns resultados ilustrativos obtidos através da ferramenta TweeProfiles, e que demonstram o seu funcionamento global. Este resultados serão baseados apenas nos apresentados por Tiago Cunha~\cite{Cunha2013}, sendo ilustrados resultados de \textit{clusters} em Portugal para diferentes combinações de importância das dimensões possíveis. 
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.9\linewidth]{./figures/tweeprofiles/tempexample1}
-\caption{Exemplo ilustrativo da distribuição temporal de um \textit{cluster}. \textit{Retirada de}~\cite{Cunha2013}}
-\label{fig:temptweep1}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.9\linewidth]{./figures/tweeprofiles/tempexample1}
+%\caption{Exemplo ilustrativo da distribuição temporal de um \textit{cluster}. \textit{Retirada de}~\cite{Cunha2013}}
+%\label{fig:temptweep1}
+%\end{figure}
 
-Na Figura~\ref{fig:tweepex1} são apresentadas quatro combinações entre a dimensão do conteúdo e as restantes, exceto no primeiro caso~\ref{fig:sfig1} onde podemos ver um \textit{cluster} em Portugal apenas tendo em consideração a dimensão do conteúdo. Já no caso da Figura~\ref{fig:sfig2} o peso é distribuído da mesma forma entre o conteúdo e a dimensão espacial, resultando em dois \textit{clusters}. Na Figura~\ref{fig:sfig3}, tal como no caso anterior, é distribuído o peso de igual forma entre o conteúdo, e neste caso a dimensão temporal. O resultado obtidos no caso de Portugal, assemelha-se ao do primeiro caso da Figura~\ref{fig:sfig1}. Por fim, temos o caso da Figura~\ref{fig:sfig4} onde o peso é de 50\% para o conteúdo e 50\% para a dimensão social, tendo resultado para o caso de Portugal, dois \textit{cluster}. 
+Na Figura~\ref{fig:tweepex1} são apresentadas quatro combinações entre a dimensão do conteúdo e as restantes, exceto no primeiro caso (Figura~\ref{fig:sfig1}) onde podemos ver um \textit{cluster} em Portugal apenas tendo em consideração a dimensão do conteúdo. Já no caso da Figura~\ref{fig:sfig2} o peso é distribuído da mesma forma entre o conteúdo e a dimensão espacial, resultando em dois \textit{clusters}. Na Figura~\ref{fig:sfig3}, tal como no caso anterior, é distribuído o peso de igual forma entre o conteúdo, e neste caso a dimensão temporal. O resultado obtidos no caso de Portugal, assemelha-se ao do primeiro caso da Figura~\ref{fig:sfig1}. Por fim, temos o caso da Figura~\ref{fig:sfig4} onde o peso é de 50\% para o conteúdo e 50\% para a dimensão social, tendo resultado para o caso de Portugal, dois \textit{clusters}. 
 
 \begin{figure}[h]
 \centering
@@ -315,7 +310,7 @@ Na Figura~\ref{fig:tweepex1} são apresentadas quatro combinações entre a dime
   \includegraphics[width=0.98\linewidth]{./figures/tweeprofiles/extp1}
   \caption{\textit{Clusters} em Portugal: Conteúdo 100\%}
   \label{fig:sfig1}
-\end{subfigure}%
+\end{subfigure}
 \quad
 \begin{subfigure}[b]{.2\textwidth}
   \centering
@@ -341,7 +336,7 @@ Na Figura~\ref{fig:tweepex1} são apresentadas quatro combinações entre a dime
 \label{fig:tweepex1}
 \end{figure}
 
-Outra das combinações apresentadas, foi a distribuição igual por todas as dimensões. Este caso é apresentado na Figura~\ref{fig:tweepex2} onde todas as dimensões possuem o peso de 25\% cada. Neste caso foram obtidos três \textit{cluster} em Portugal.
+Outra das combinações apresentadas, foi a distribuição igual por todas as dimensões. Este caso é apresentado na Figura~\ref{fig:tweepex2} onde todas as dimensões possuem o peso de 25\% cada. Neste caso foram obtidos três \textit{clusters} em Portugal.
 
 \begin{figure}[h]
 \centering
@@ -350,7 +345,7 @@ Outra das combinações apresentadas, foi a distribuição igual por todas as di
 \label{fig:tweepex2}
 \end{figure}
 
-Por fim, na Figura~\ref{fig:tweepex3} é possível visualizar a secção que apresenta ao utilizador informação sobre um \textit{cluster} selecionado, o conteúdo desse \textit{cluster}, como por exemplos, as palavras mais relevantes, e o grafo com as ligações sociais. É possível ainda visualizar com mais detalhe de um determinado tweet, como o nome do utilizador, informação temporal e espacial.
+Por fim, na Figura~\ref{fig:tweepex3} é possível visualizar a secção que apresenta ao utilizador informação sobre um \textit{cluster} selecionado, o conteúdo típico desse \textit{cluster}, ou seja, as palavras mais frequentes, e o grafo com as ligações sociais. É possível ainda visualizar um determinado tweet com mais detalhe, como o nome do utilizador, informação temporal e espacial.
 
 \begin{figure}[h]
 \centering
@@ -361,22 +356,26 @@ Por fim, na Figura~\ref{fig:tweepex3} é possível visualizar a secção que apr
 
 \subsection{Prós e contras}
 
-Como vimos na Secção~\ref{subsec:tpresult}, a ferramenta TweeProfiles permite uma grande variedade de combinações que produzem resultados que podem variar no número e posição geográfica dos \textit{clusters} consoante a influência e peso e das dimensões em consideração. 
+Como vimos na Secção~\ref{subsec:tpresult}, a ferramenta TweeProfiles permite uma grande variedade de combinações que produzem resultados que podem variar no número e posição geográfica dos \textit{clusters} consoante a influência e peso das dimensões em consideração. 
 
-Este projeto de dissertação não tem como objetivo melhorar O TweeProfiles, mas sim apresentar uma abordagem alternativa de visualização de análise de dados em redes sociais utilizando conteúdo diferente. Por este motivo, nesta secção somente abordamos os prós e contras relativamente à abordagem das dimensões utilizadas.
+Este projeto de dissertação não tem como objetivo melhorar o TweeProfiles, mas sim apresentar uma abordagem alternativa de visualização de análise de dados em redes sociais utilizando conteúdo diferente. Por este motivo, nesta secção somente abordamos os prós e contras relativamente à abordagem das dimensões utilizadas.
 
-Uma das vantagens da utilização do texto como dimensão de conteúdo, é o facto de no Twitter este se apresentar como a maior fonte de informação, pois os tweets na sua maioria apresentam texto. Mesmo adicionando a dimensão espacial, que implica a existência de uma referência geográfica contida na informação dos tweets, o número de tweets disponíveis continua a ser relativamente razoável para uma análise dos dados, tal como podemos confirmar em~\cite{Cunha2013}. Apesar disso, é possível verificar qu nos resultados apresentados existe muito conteúdo em forma de texto que apresenta informação muitas vezes com pouca relevância, como é o caso da partilha da sua localização através de outros serviços onde é utilizado um texto pré-definido pelo serviço utilizado, indicando apenas o local onde se encontra o utilizador, como podemos ver pela Figura~\ref{fig:tweepex4}.
+Uma das vantagens da utilização do texto como dimensão de conteúdo, é o facto de no Twitter este se apresentar como a maior fonte de informação, pois os tweets na sua maioria apresentam texto. Mesmo adicionando a dimensão espacial, que implica a existência de uma referência geográfica contida na informação dos tweets, o número de tweets disponíveis continua a ser suficiente para uma análise dos dados~\cite{Cunha2013}. Apesar disso, é possível verificar que nos resultados apresentados existe muito conteúdo em forma de texto que apresenta informação muitas vezes com pouca relevância. Um exemplo é o caso da partilha da localização através de outros serviços onde é utilizado um texto pré-definido pelo serviço utilizado, indicando apenas o local onde se encontra o utilizador, como podemos ver pela Figura~\ref{fig:tweepex4}.
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
 \includegraphics[width=1.0\linewidth]{./figures/tweeprofiles/extp7.png}
 \caption{Tweets pertencentes a um \textit{cluster} para a seguinte distribuição de pesos: Conteúdo 25\% + Espacial 25\% + Temporal 25\% + Social 25\%.~\textit{Retirada de}~\cite{Cunha2013}}
 \label{fig:tweepex4}
 \end{figure}
 
-O TweeProfiles revela ainda que a dimensão espacial, quando tida em consideração, tem um influência visivelmente interessante nos resultados quando apresentados no mapa. Já a dimensão temporal, não revelou apresentar uma grande influência como vimos no caso apresentado na Figura~\ref{fig:sfig3}, mas esta permite um controlo e visualização de informação interessante através do gráfico de tempo como representado na Figura~\ref{fig:temptweep1}. No caso da dimensão social, verifica-se que apresenta alguma influência na divisão dos \textit{clusters} mas a visualização da sua informação através do grafo, apresenta-se pobre e de difícil compreensão para o utilizador.
+O TweeProfiles revela ainda que a dimensão espacial, quando tida em consideração, tem um influência interessante nos resultados apresentados no mapa. Já a dimensão temporal não revelou apresentar uma grande influência (Figura~\ref{fig:sfig3}), mas permite um controlo e visualização de informação através do gráfico temporal. No caso da dimensão social, verifica-se que esta apresenta alguma influência na divisão dos \textit{clusters} mas a visualização da sua informação através do grafo, apresenta-se pobre e de difícil compreensão para o utilizador.
 
-Assim, concluí-se que a utilização das dimensões espaço-temporal fazem todo o sentido no desenvolvimento desta dissertação, sendo necessária a sua inclusão para a extensão do TweeProfiles. Já no caso do conteúdo de texto, este não será tido em conta de forma a ser analisado se existe uma mais valia em realizar uma análise em tweets através exclusivamente do conteúdo visual partilhado pelos utilizadores com as possíveis combinações com as dimensões temporal e espacial. A dimensão social, também não será incluída por esta não adicionar ainda não apresentar a informação de forma clara para um utilizador, sendo necessário um estudo mais aprofundado sobre esta temática, que não faz parte dos objetivos desta dissertação.
+Conforme dito anteriormente (Capítulo~\ref{chap:intro}), o objetivo deste projeto é estender o TweeProfiles para identificar padrões também nas imagens publicadas nos tweets, para além das dimensões já analisadas. Assim, na próxima secção, são apresentadas abordagens para a representação de informação visual, que servirá de base a este projeto.
+% De forma a dar continuidade ao projeto desenvolvido e apresentar uma alternativa de conjugação de dimensões para a descoberta de padrões em tweets, nesta dissertação serão utilizadas da mesma forma, as dimensões espaço-temporal, e será substituído o conteúdo textual pelo visual. No caso da dimensão social, esta não será incluída por não apresentar a informação de forma clara para um utilizador, sendo necessário um estudo mais aprofundado sobre esta temática, que não faz parte dos objetivos desta dissertação.
+  
+
+%Assim, conclui-se que a utilização das dimensões espaço-temporal fazem todo o sentido no desenvolvimento desta dissertação. No caso do conteúdo textual será substituído pelo conteúdo visual. A dimensão social, também não será incluída por esta não apresentar a informação de forma clara para um utilizador, sendo necessário um estudo mais aprofundado sobre esta temática, que não faz parte dos objetivos desta dissertação.
 
 % % % NOVA SECÇÃO % % %
 
@@ -384,21 +383,21 @@ Assim, concluí-se que a utilização das dimensões espaço-temporal fazem todo
 
 Na secção~\ref{sec:cluster} foi apresentado o conceito e características da tarefa de \textit{clustering} de uma forma geral. Nesta secção serão expostas formas de representar imagens como dados. 
 
-Como o objetivo desta dissertação passa por a realização da tarefa de \textit{clusterng}, utilizando como dados as imagens partilhadas no serviço Twitter, é necessário utilizar formas eficientes para descrever cada imagem de uma forma compacta e de forma a que seja descrito o conteúdo geral das imagens. É importante salientar que a tarefa de \textit{clustering} em imagem é muitas vezes associada à técnica de segmentação de imagem~\citet{Forsyth2011}, em que se pretende distinguir objetos individuais, não sendo este o objetivo deste projeto de dissertação. Pretende-se sim que para tarefa de \textit{clustering} o objeto representativo de uma imagem descreva esta pelo seu conjunto, tal como referido anteriormente. 
+Como o objetivo desta dissertação passa por a realização da tarefa de \textit{clustering}, utilizando como dados as imagens partilhadas no serviço Twitter, é necessário utilizar formas eficientes para descrever cada imagem de uma forma compacta e de forma a que seja descrito o conteúdo geral das imagens. É importante salientar que a tarefa de \textit{clustering} em imagens é muitas vezes associada à técnica de segmentação em imagem~\citet{Forsyth2011}, em que se pretende distinguir objetos individuais, não sendo este o objetivo deste projeto de dissertação. Pretende-se sim que para a tarefa de \textit{clustering} o objeto representativo de uma imagem descreva esta pelo seu conjunto, tal como referido anteriormente. 
 
 \subsection{Representação Matricial} \label{subsec:matrix}
 
-Uma imagem pode ser vista como um objeto (ou instância), sendo computacionalmente representada como uma matriz (um vetor bi-dimensional) de pixels. A matriz de pixels descreve assim a imagem como N x M \textit{m}-bit pixels, onde N corresponde ao número de pontos ao longo do eixo horizontal, M o número de pontos ao longo do eixo vertical e \textit{m} o número de bits por pixel que controla os níveis de brilho. Com \textit{m} bits temos uma gama de valores para o brilho de $ 2^m $, que varia entre 0 e $ 2^m - 1 $. Assim se o valor de \textit{m} for 8, os valores de brilho de cada pixel de uma imagem podem variar entre 0 e 255, que normalmente correspondem ao preto e branco respetivamente, sendo que os valores intermédios correspondem ao tons de cinza~\citet{Nixon2002}.
+Uma imagem pode ser vista como um objeto (ou instância), sendo computacionalmente representada como uma matriz (um vetor bi-dimensional) de píxeis. A matriz de píxeis descreve assim a imagem como N x M \textit{m}-bit píxeis, onde N corresponde ao número de pontos ao longo do eixo horizontal, M o número de pontos ao longo do eixo vertical e \textit{m} o número de bits por píxel que controla os níveis de brilho. Com \textit{m} bits temos uma gama de valores para o brilho de $ 2^m $, que varia entre 0 e $ 2^m - 1 $. Assim se o valor de \textit{m} for 8, os valores de brilho de cada píxel de uma imagem podem variar entre 0 e 255, que normalmente correspondem ao preto e branco respetivamente, sendo que os valores intermédios correspondem ao tons de cinza~\citet{Nixon2002}.
 
-No caso de imagens a cores, o principio é idêntico, no entanto ao invés de se usar apenas um plano, as imagens a cores são representadas por 3 componentes de intensidade, designado por modelo \textit{RGB}, a que corresponde respetivamente às cores vermelho (Red), verde (Green) e azul (Blue). Para além deste esquema de cores, também existe outros como o CMYK composto pelas componentes de cor, azul turquesa, magenta, amarelo e preto. Usando qualquer esquema de cores, existem 2 métodos principais para representar a cor do pixel. No primeiro método é utilizado um valor inteiro para cada pixel, sendo esse valor como um índice para uma tabela, também conhecida como palete da imagem, com a correspondência à intensidade de cada componente de cor. Este método tem como vantagem o facto de ser eficiente na utilização da memória, pois apenas é guardado um plano da imagem (os índices) e a palete (tabela). Por outro lado, tem como desvantagem o facto de normalmente ser usado um conjunto reduzido de cores o que provoca uma redução da qualidade da imagem. Já o segundo método consiste na utilização de vários planos da imagem para armazenar a componente de cor de cada pixel. Este representa a imagem com mais precisão pois considera muito mais cores. O formato mais usual é 8 bits para cada uma das 3 componentes, no caso do RGB. Assim, são utilizados 24 bits para representar a cor de cada pixel, o que permite que uma imagem possa conter mais de 16 milhões de cores simultaneamente. Como era de esperar, isto envolve um custo grande na utilização de memória, que mesmo apresentando-se como uma desvantagem, com a constante redução do custo das memórias esta passou ser uma boa alternativa à apresentada anteriormente~\citet{Nixon2002}.
+No caso de imagens a cores, o principio é idêntico, no entanto ao invés de se usar apenas um plano, as imagens a cores são representadas por 3 componentes de intensidade, designado por modelo RGB (\textit{Red Green Blue}), a que corresponde respetivamente as cores vermelho (Red), verde (Green) e azul (Blue). Para além deste esquema de cores, também existem outros como o CMYK composto pelas componentes de cor, azul turquesa, magenta, amarelo e preto. Para qualquer esquema de cores, existem 2 métodos principais para representar a cor do píxel. No primeiro método é utilizado um valor inteiro para cada píxel, sendo esse valor como um índice para uma tabela, também conhecida como palete da imagem, com a correspondência à intensidade de cada componente de cor. Este método tem como vantagem o facto de ser eficiente na utilização da memória, pois apenas é guardado um plano da imagem (os índices) e a palete (tabela). Por outro lado, tem como desvantagem o facto de normalmente ser usado um conjunto reduzido de cores o que provoca uma redução da qualidade da imagem. Já o segundo método consiste na utilização de vários planos da imagem para armazenar a componente de cor de cada píxel. Este representa a imagem com mais precisão pois considera muito mais cores. O formato mais usual é 8 bits para cada uma das 3 componentes, no caso do RGB. Assim, são utilizados 24 bits para representar a cor de cada píxel, o que permite que uma imagem possa conter mais de 16 milhões de cores simultaneamente. Como era de esperar, isto envolve um custo grande na utilização de memória~\citet{Nixon2002}.
 
 %ver melhor esta conclusão
-Em suma, a representação matricial é uma forma fácil de representar uma imagem, mas ao contrário dos objetivos desta dissertação, não consegue fazê-lo de uma forma compacta, sendo necessária a existência de grandes quantidades de memória devido à sua dimensionalidade. Assim, esta não se apresenta como uma boa solução para o a extração da informação das imagens.
+Em suma, a representação matricial é uma forma fácil de representar uma imagem, mas ao contrário dos objetivos desta dissertação, não consegue fazê-lo de uma forma compacta, sendo necessária a existência de grandes quantidades de memória devido à sua dimensionalidade. Para além disso, este apresenta uma grande sensibilidade ao ruído por dar a mesma relevância a todos os píxeis da imagem. Assim, esta não se apresenta como uma boa solução para a extração da informação das imagens.
 
 \subsection{Histogramas} \label{subsec:hist}
 
-Outras das formas de representar a informação de uma imagem é através de um histograma. Um histograma de uma imagem apresenta a frequência de ocorrência de níveis individuais de brilho, representado através um gráfico que mostra o número de pixels da imagens com um determinado nível de brilho. No caso de pixels representados por 8-bit, o brilho vai variar de 0 (preto) até 255 (branco)~\citet{Nixon2002}. Também pode ser apresentado informação de cor sobre uma imagem através de um histograma, sendo para isso necessário apresentar 3 histogramas diferenciados, um para cada componente de cor, no caso do esquema RGB.
-A figura~\ref{fig:lenahist} apresenta um exemplo de um histograma de uma imagem com tons cinza, onde são representados o número de pixeis para cada nível diferente de cinzento.
+Outras das formas de representar a informação de uma imagem é através de um histograma. Um histograma de uma imagem apresenta a frequência de ocorrência de níveis individuais de brilho, representado através um gráfico que mostra o número de píxeis da imagens com um determinado nível de brilho. No caso de píxeis representados por 8-bits, o brilho vai variar de 0 (preto) até 255 (branco)~\citet{Nixon2002}. Também pode ser apresentada informação de cor sobre uma imagem através de um histograma, sendo para isso necessário apresentar 3 histogramas diferenciados, um para cada componente de cor, no caso do esquema RGB.
+A figura~\ref{fig:lenahist} apresenta um exemplo de um histograma de uma imagem com tons cinza, onde são representados o número de píxeis para cada nível diferente de cinzento.
 
 \begin{figure}[h]
 \centering
@@ -409,16 +408,17 @@ A figura~\ref{fig:lenahist} apresenta um exemplo de um histograma de uma imagem 
 
 \subsection{Descritores de Cor}
 
-A cor apresenta-se como um importante atributo da imagem para o olho humano e processamento por computador. Nesta secção são apresentados vários descritores de cor, utilizados para extração de informação e reconhecimento de similaridade em imagens. Por exemplo, o histograma de cores, referido na secção~\ref{subsec:hist}, é um dos descritores de cor mais utilizados para caracterizar a distribuição da cor de uma imagem, mas apresenta uma baixa eficiência. Assim, em seguida é apresentado descritores de cor considerados pelo MPEG-7~\cite{Manjunath2001, Christopoulos2000, Cieplinski2001, Ite-vil}, que apresentam eficiência superior aos histogramas de cor.
+A cor apresenta-se como um importante atributo da imagem para o olho humano e processamento por computador. Nesta secção são apresentados vários descritores de cor considerados pelo MPEG-7~\cite{Manjunath2001, Christopoulos2000, Cieplinski2001, Ite-vil}, e utilizados para extração de informação e reconhecimento de similaridade em imagens.  cor 
 
+%Por exemplo, o histograma de cores, referido anteriormente, é um dos descritores de cor mais utilizados para caracterizar a distribuição da cor de uma imagem, mas apresenta uma baixa eficiência. Assim, em seguida é apresentado descritores de cor considerados pelo MPEG-7~\cite{Manjunath2001, Christopoulos2000, Cieplinski2001, Ite-vil}, que apresentam eficiência superior aos histogramas de cor.
 
 \subsubsection{Espaços de Cor} \label{subsubsec:space}
 
-Nesta secção é apresentado os vários descritores de espaços de cor especificado no MPEG-7~\cite{Ite-vil}. Existe uma vasta seleção de espaços de cores, tais como, RGB, YCbCr, HSV, HMMS, Monocromático e Matriz linear de transformação com referência a RGB. Estes são usados por outro descritor de cor, mais especificamente, o descritor de dominância de cor que será falado posteriormente. É utilizado também, um sinalizador para indicar a referência a uma cor primária e de mapeamento de um valor de referência do branco padrão. 
+Existe uma vasta seleção de espaços de cores, tais como, RGB, YCbCr, HSV, HMMS, Monocromático e Matriz linear de transformação com referência a RGB. %Estes são usados por outro descritor de cor, mais especificamente, o descritor de dominância de cor que será falado posteriormente. É utilizado também, um sinalizador para indicar a referência a uma cor primária e de mapeamento de um valor de referência do branco padrão. 
 
-Em espaços de cor, as componentes de cor são definidas como entidades de valor continuo, sendo que podem ser representadas por valores discretos através de uma quantização uniforme, em que é especificado um número de níveis de quantização para cada componente de cor no espaço de cor. A única exceção é o espaço de cor HMMD.
+%Em espaços de cor, as componentes de cor são definidas como entidades de valor continuo. Podem ser representadas por valores discretos através de uma quantização uniforme, em que é especificado um número de níveis de quantização para cada componente de cor no espaço de cor. A única exceção é o espaço de cor HMMD.
 
-O espaço de cor RGB é um dos modelos referidos mais utilizados, que apresenta três componentes distintas, vermelho, verde e azul, tal como foi referido no secção~\ref{subsec:matrix}. Neste modelo é utilizado a combinação das 3 cores primárias para representar as diferentes cores. O modelo YCbCr provém do padrão MPEG-1/2/4~\cite{Ite-vil} e é definido pela transformação linear do espaço de cor RGB como demonstrado na equação~\ref{eq:ycbcr}:
+O espaço de cor RGB é um dos modelos referidos mais utilizados, que apresenta três componentes distintas, vermelho, verde e azul, tal como foi referido na Secção~\ref{subsec:matrix}. Neste modelo é utilizada a combinação das 3 cores primárias para representar as diferentes cores. O modelo YCbCr provém do padrão MPEG-1/2/4~\cite{Ite-vil} e é definido pela transformação linear do espaço de cor RGB como demonstrado na equação~\ref{eq:ycbcr}:
 
 \begin{eqnarray}
 && Y = 0.299\times R + 0.587\times G + 0.114\times B\nonumber\\
@@ -426,11 +426,11 @@ O espaço de cor RGB é um dos modelos referidos mais utilizados, que apresenta 
 && Cr = 0.500\times R - 0.419\times G - 0.081\times B \label{eq:ycbcr}
 \end{eqnarray} 
 
-Para o espaço de cor Monocromático, é usado apenas a componente Y do modelo YCbCr. 
+No caso do espaço de cor Monocromático, é usado apenas a componente Y do modelo YCbCr. 
 
-O espaço de cor HSV apresenta uma especificação mais complexa, tendo sido desenvolvido para fornecer uma representação mais intuitiva e para se aproximar mais do sistema visual humano. A transformação do modelo RGB para o HSV não é linear, mas é reversível~\cite{Manjunath2001}. Uma das componentes é a matiz (H - \textit{Hue}), que representa a componente de cor espectral dominante na sua forma mais pura, como o verde, amarelo, azul e vermelho. Ao ser adicionado branco à cor, esta sofre uma alteração, sendo que, adicionando mais branco, menos saturada se torna a cor. A saturação (S - \textit{Saturation}) é precisamente outra das componentes deste modelo. Por fim, o valor (V - \textit{Value}) corresponde ao brilho de cor.
+O espaço de cor HSV (\textit{Hue Saturation Value}) apresenta uma especificação mais complexa, tendo sido desenvolvido para fornecer uma representação mais intuitiva e para se aproximar mais do sistema visual humano. A transformação do modelo RGB para o HSV não é linear, mas é reversível~\cite{Manjunath2001}. Uma das componentes é a matiz (H - \textit{Hue}), que representa a componente de cor espectral dominante na sua forma mais pura, como o verde, amarelo, azul e vermelho. Ao ser adicionado branco à cor, esta sofre uma alteração e torna-se menos saturada. A saturação (S - \textit{Saturation}) é precisamente outra das componentes deste modelo. Por fim, o valor (V - \textit{Value}) corresponde ao brilho de cor.
 
-O espaço de cor HMMD (\textit{Hue-Max-Min-Diff})~\cite{Manjunath2001, Ite-vil} é mais recente, que é caracterizado pela componente matiz, tal como o modelo HSV, pelo \textit{max} e \textit{min}, que são respetivamente o máximo e mínimo entre os valores R, G e B. Para descrever este modelo, também é utilizado a componente \textit{Diff}, que corresponde à diferença entre o \textit{max} e \textit{min}. Para representar este espaço de cor, apenas é necessário três dos quatro componentes referidos anteriormente, como por exemplo, {\textit{Hue, Max, Min}} ou {\textit{Hue, Diff, Sum}}, onde \textit{Sum} pode ser definida pela equação~\ref{eq:sum}.
+O espaço de cor HMMD (\textit{Hue-Max-Min-Diff})~\cite{Manjunath2001, Ite-vil} é mais recente. É caracterizado pela componente matiz, tal como o modelo HSV, pelo \textit{max} e \textit{min}, que são respetivamente o máximo e mínimo entre os valores R, G e B. Para descrever este modelo, também é utilizada a componente \textit{Diff}, que corresponde à diferença entre o \textit{max} e \textit{min}. Para representar este espaço de cor, apenas são necessárias três das quatro componentes referidas anteriormente, como por exemplo, {\textit{Hue, Max, Min}} ou {\textit{Hue, Diff, Sum}}, onde \textit{Sum} pode ser definida pela equação~\ref{eq:sum}.
 
 \begin{equation}
 Sum = \frac{Max + Min}{2}
@@ -439,31 +439,31 @@ Sum = \frac{Max + Min}{2}
 
 \subsubsection{Cor Dominante}
 
-O descritor de cor dominante fornece uma representação compacta das cores de uma imagem ou da região da imagem. Este apresenta a distribuição das cores mais representativas na imagem. Ao contrário do descritor de cor por histograma, na especificação do descritor de cor dominante, as cores mais representativas são calculadas a partir de cada imagem, em vez de ser fixado no espaço de cor, permitindo assim, uma representação das cores mais exata e compacta, presentes numa região de interesse.
+O descritor de cor dominante fornece uma representação compacta das cores de uma imagem ou da região da imagem. Este apresenta a distribuição das cores mais representativas na imagem. Ao contrário do descritor de cor por histograma, na especificação do descritor de cor dominante, as cores mais representativas são calculadas a partir de cada imagem, em vez de ser fixado no espaço de cor, permitindo assim, uma representação das cores presentes numa região de interesse mais exata e compacta.
 
-O descritor de cor dominante pode ser definido como,
+O descritor de cor dominante pode ser definido como:
 \[ F = {{c_{i}, p_{i}, v_{i}},s}, (i=1,2,...,N) \]
-onde N é o número de cores dominantes. Cada valor $ c_{i} $ da cor dominante é um vetor de valores das componentes do espaço de cor correspondente (por exemplo, um vetor de 3 dimensões no espaço de cor RGB). O valor $ p_{i} $ é a fração de pixels na imagem ou região da imagem (normalizado para um valor entre 0 e 1) que corresponde à cor $ c_{i} $, sendo $  \sum_i p_{i} = 1 $. O opcional $ v_{i} $ descreve a variação dos valores de cor dos pixels em um \textit{cluster} em torno da cor representativa correspondente. Por fim, a coerência espacial $ s $ é um único número  representa a homogeneidade espacial global das cores predominantes na imagem~\cite{Ite-vil}.
+onde N é o número de cores dominantes. Cada valor $ c_{i} $ da cor dominante é um vetor de valores das componentes do espaço de cor correspondente (por exemplo, um vetor de 3 dimensões no espaço de cor RGB). O valor $ p_{i} $ é a fração de píxeis na imagem ou região da imagem (normalizado para um valor entre 0 e 1) que corresponde à cor $ c_{i} $, sendo $  \sum_i p_{i} = 1 $. Já $ v_{i} $ descreve a variação dos valores de cor dos píxeis contidos num grupo, em torno da cor representativa correspondente. Por fim, a coerência espacial $ s $ é um único número que representa a homogeneidade espacial global das cores predominantes na imagem~\cite{Ite-vil}.
 
 \subsubsection{Cor Escalável}
 
-O descritor de cor escalável, pode ser interpretado como um esquema de codificação base que recorre à transformada de Haar, que é aplicada aos valores do histograma de cor no espaço de cor HSV (referido na secção~\ref{subsubsec:space}). De uma forma mais específica, o descritor de cor escalável, extrai, normaliza e mapeia de forma não linear os valores do histograma, numa representação inteira a 4-bit, dando assim mais relevância a valores mais pequenos. A transformada de Haar, é assim aplicada aos valores inteiros a 4-bit através das barras do histograma. 
+O descritor de cor escalável, pode ser interpretado como um esquema de codificação base, que recorre à transformada de Haar e aplica à aos valores do histograma de cor no espaço de cor HSV (referido na secção~\ref{subsubsec:space}). De uma forma mais específica, o descritor de cor escalável extrai, normaliza e mapeia de forma não linear os valores do histograma, numa representação inteira a 4-bit, dando assim mais relevância a valores mais pequenos. A transformada de Haar, é assim aplicada aos valores inteiros a 4-bit através das barras do histograma. 
 
-A extração do descritor é realizada com computação de um histograma de cor com 256 níveis no espaço de cor de HSV com a componente matiz (H) quantificada a 16 níveis, e a saturação (S) e o valor (V) quantificado cada um para 4 níveis~\cite{Christopoulos2000}. 
+A extração do descritor é realizada com computação de um histograma de cor com 256 níveis no espaço de cor de HSV com a componente matiz (H) quantificada a 16 níveis, e a saturação (S) e o valor (V) quantificados para 4 níveis~\cite{Christopoulos2000}. 
 
-A aplicação típica do descritor é na a busca de similaridade numa base de dados com conteúdo multimédia e pesquisa em enormes base de dados. 
+Este descritor é tipicamente utilizado na busca de similaridade numa base de dados com conteúdo multimédia e pesquisa em enormes base de dados. 
 
 %\subsubsection{Grupo de \textit{Frames} / Grupo de Imagens}
 %
 %O descritor de cor Grupo de Frames / Grupo de Imagens (GoF/GOP) é sobretudo utilizado para a representação conjunta de cores para várias imagens ou várias \textit{frames} de um segmento de vídeo, contíguas ou não contíguas. Este baseia-se em histogramas, que capturam de forma confiável o conteúdo da cor de várias imagens ou \textit{frames} de vídeo. Normalmente para um grupo de \textit{frames} ou imagens, é selecionado uma frame chave ou imagem chave, que representará as características relacionadas com o grupo. Os métodos são altamente dependentes da qualidade da seleção da amostra representativa, o que pode levar a resultados pouco fiáveis caso não seja bem executada~\cite{Ite-vil}.
 %
-%A estrutura do descritor GoF / GoP é idêntica à do cor escalável, com a exceção do campo agregação, que especifica como os pixels da cor de diferentes imagens/\textit{frames} foram combinadas antes da extração do histograma de cor. Os valores possíveis são média, mediana e cruzamento. 
+%A estrutura do descritor GoF / GoP é idêntica à do cor escalável, com a exceção do campo agregação, que especifica como os  da cor de diferentes imagens/\textit{frames} foram combinadas antes da extração do histograma de cor. Os valores possíveis são média, mediana e cruzamento. 
 %
 %Uma das aplicações deste descritor, é a pesquisa em conjuntos grandes de imagens, para encontrar \textit{clusters} de imagens semelhantes através da cor, em que é utilizado a interseção de histogramas como medida de similaridade da cor. A interseção de histogramas é obtido calculando o valor mínimo de cada barra de cor do histograma ao longo das \textit{frames}/imagens e atribui esse valor às barras de cor do histograma resultante. A interseção encontra as cores mínimas comuns nas \textit{frames}/imagens, e portanto, pode ser utilizado em aplicações que requerem a deteção de um elevado grau de correlação da cor~\cite{Christopoulos2000}. 
 
 \subsubsection{Estrutura de Cor}
 
-Este descritor é uma generalização do histograma de cores, que apresenta algumas características espaciais da distribuição de cores numa imagem. Este tem a particularidade de, para além de apresentar o conteúdo da cor de forma semelhante a um histograma de cor, também apresentar informações sobre a estrutura de uma imagem, sendo esta a característica diferenciadora deste descritor de cor. Em vez de considerar cada pixel separadamente, o descritor recorre a uma estrutura de 8x8 pexels que desliza sobre a imagem. Ao contrário do histograma de cor, este descritor consegue distinguir duas imagens em que uma determinada cor está presente em quantidades iguais, mas que apresenta uma estrutura num dos grupos de pixels 8x8 com uma cor diferente nas duas imagens. Os valores de cores são representadas no espaço de cor HMMD com cone duplo, sendo o espaço quantificado de maneira não uniforme em 32, 64, 128 ou 256 níveis. 
+Este descritor é uma generalização do histograma de cores, que apresenta algumas características espaciais da distribuição de cores numa imagem. Tem a particularidade de, para além de apresentar o conteúdo da cor de forma semelhante a um histograma de cor, também apresentar informações sobre a estrutura de uma imagem, sendo esta a característica diferenciadora deste descritor de cor. Em vez de considerar cada píxel separadamente, o descritor recorre a uma estrutura de 8x8 píxeis que desliza sobre a imagem. Ao contrário do histograma de cor, este descritor consegue distinguir duas imagens em que uma determinada cor está presente em quantidades iguais, mas que apresenta uma estrutura num dos grupos de  8x8 com uma cor diferente nas duas imagens. Os valores de cores são representadas no espaço de cor HMMD, sendo o espaço quantificado de maneira não uniforme em 32, 64, 128 ou 256 níveis. 
 Cada valor de amplitude de um nível é representado por um código de 8 bits. Este descritor apresenta um bom desempenho na tarefa de recuperação de imagens baseado na similaridade~\cite{Modi2008}.
 
 %\subsubsection{Disposição de Cor}
@@ -476,14 +476,18 @@ A textura das imagens é uma característica visual importante, que tem muitas a
 
 \subsubsection{Descritor de Textura Homogénea}
 
-O descritor de textura homogénea (HTD - \textit{Homogeneous Texture Descriptor}) descreve a distribuição estatística da textura de uma imagem. Existem neste descritor 62 interfaces de recurso, sendo 2 no domínio espacial e 60 no domínio das frequências. No domínio espacial, é extraído a média e o desvio padrão de uma imagem. No domínio das frequências, o espaço é dividido em 30 canais, sendo calculado o valor energético e o valor do desvio de energia da resposta do filtro Gabor em cada canal~\cite{Wu2001, Shao2009}. Este desenho baseia-se no facto de a resposta do córtex visual possuir banda limitada e do facto do cérebro decompor o espectro em bandas na frequência espacial~\cite{Wu2001}.
+O descritor de textura homogénea (HTD - \textit{Homogeneous Texture Descriptor}) descreve a distribuição estatística da textura de uma imagem. Uma imagem pode ser considerada como um mosaico de texturas homogéneas, de forma que estas características de textura associadas com as diferentes regiões da imagem possam ser utilizadas para indexar os dados da imagem.
+
+Este descritor fornece uma representação quantitativa utilizando 62 números, sendo 2 no domínio espacial e 60 no domínio das frequências. No domínio espacial, é extraída a média e o desvio padrão de uma imagem. No caso do domínio das frequências, o espaço é este dividido em 30 canais~\cite{Wu2001, Shao2009}. %Este desenho baseia-se no facto de a resposta do córtex visual possuir banda limitada e do facto do cérebro decompor o espectro em bandas na frequência espacial~\cite{Wu2001}.
 O descritor de textura homogénea é essencialmente utilizado em aplicações de recuperação de imagens por similaridade. 
+
+% % %falar
 
 \subsubsection{Descritor de Histograma de Borda}
 
-O descritor de histograma de borda (EHD - \textit{Edge Histogram Descriptor}) apresenta-se sobre a forma de um histograma de 80 níveis, que representa a distribuição de borda local de uma imagem. Este descreve as bordas em cada sub-imagem. Estas sub-imagens são obtidas através da divisão da imagem numa grelha 4x4 como pode ser visto na Figura~\ref{fig:ehd}. Existem 5 tipos de classificação diferentes das bordas de cada sub-imagem, sendo elas: vertical, horizontal, 45-graus, 135-graus e não direcional~\cite{Wu2001}. 
+O descritor de histograma de borda EHD (\textit{Edge Histogram Descriptor}) apresenta-se sobre a forma de um histograma de 80 níveis, que representa a distribuição de borda local de uma imagem. Este descreve as bordas em cada sub-imagem. Estas sub-imagens são obtidas através da divisão da imagem numa grelha 4x4 como pode ser visto na Figura~\ref{fig:ehd}. Existem 5 tipos de classificação diferentes das bordas de cada sub-imagem, sendo elas: vertical, horizontal, 45-graus, 135-graus e não direcional~\cite{Wu2001}. 
 
-Este descritor é utilizado na recuperação de imagens, como por exemplo, imagens naturais ou de esboço, devido à sua textura homogénea. É também suportado por este descritor, a pesquisa baseada em blocos de imagem.  
+Este descritor é utilizado na recuperação de imagens, como por exemplo, imagens naturais ou de esboço, devido à sua textura homogénea. %É também suportado por este descritor, a pesquisa baseada em blocos de imagem.  
 
 \begin{figure}
 \centering
@@ -501,7 +505,7 @@ O descritor de navegação percetual (HTD - \textit{Perceptual Browsing Descript
 O descritores de forma são dos descritores mais poderosos no reconhecimento de objetos. Isto deve-se ao facto de os seres humanos serem exímios no reconhecimento de objetos característicos exclusivamente através da suas formas, provando que a forma muitas vezes possui informação semântica~\cite{Bober2001}.  
 
 \subsubsection{Descritor de Forma Baseado em Região}
-O descritor de forma baseado em região (RSD - \textit{Region-based Shape Descriptor})~\cite{Bober2001} apresenta a distribuição de um pixel dentro de uma região de um objeto em 2 dimensões. Este permite a descrição de objetos simples, com ou sem buracos (figura~\ref{fig:shape1}), mas também permite a descrição de objetos mais complexos, que contém múltiplas regiões sem ligação.
+O descritor de forma baseado em região (RSD - \textit{Region-based Shape Descriptor})~\cite{Bober2001} apresenta a distribuição de um píxel dentro de uma região de um objeto em 2 dimensões. Este permite a descrição de objetos simples, com ou sem buracos (figura~\ref{fig:shape1}), mas também permite a descrição de objetos mais complexos, que contém múltiplas regiões sem ligação.
 
 \begin{figure}[h]
 \centering
@@ -597,18 +601,18 @@ $ k = 2^{\left(1/s \right)} $
 
 onde s é o número de intervalos entre imagens obtidas por \textit{DoG} e $ D(x, y, \sigma) $ corresponde à primeira imagem e $ D(x, y, 2\sigma) $ à última de todo o conjunto de imagens geradas. Também deverão ser assim obtidas $s + 3$ imagens na pilha de imagens filtradas para cada oitava. Cada oitava contém as imagens de Diferença Gaussiana, sendo as que ficam entre as escalas superiores e inferiores designadas de intervalo. 
 
-Por fim é realizado o processo de deteção de extremos, onde um pixel é comparado com os seus oito vizinhos na imagem atual e com os nove pixeis vizinhos das imagens de escalas adjacentes, numa região de 3x3. A figura~\ref{fig:siftdog2} ilustra este processo.  
+Por fim é realizado o processo de deteção de extremos, onde um píxel é comparado com os seus oito vizinhos na imagem atual e com os nove  vizinhos das imagens de escalas adjacentes, numa região de 3x3. A figura~\ref{fig:siftdog2} ilustra este processo.  
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\linewidth]{./figures/sift_dog2.png}
-\caption{Ilustração do processo de deteção de máximos e mínimos das imagens de Diferença Gaussiana. O pixel candidato está marcado com X e os vizinhos com um circulo. \textit{Retirada de}~\cite{Lowe2004}}
+\caption{Ilustração do processo de deteção de máximos e mínimos das imagens de Diferença Gaussiana. O píxel candidato está marcado com X e os vizinhos com um circulo. \textit{Retirada de}~\cite{Lowe2004}}
 \label{fig:siftdog2}
 \end{figure}
 
 O próximo processo passa pela localização dos ponto chave.
 
-\item \textbf{Localização de pontos chave}: quando detetado um extremo, esse ponto é considerado um candidato a ponto chave ou ponto de interesse. Este ponto foi encontrado através da comparação de um pixel com os seus vizinhos como referido anteriormente. sendo necessário realizar um cálculo de ajuste detalhado da localização e escala gaussiana de cada um destes pontos. É utilizada então a série de Taylor para obter uma localização mais exata dos extremos, sendo rejeitado caso a intensidade de um extremo seja inferior a um limiar previamente definido. 
+\item \textbf{Localização de pontos chave}: quando detetado um extremo, esse ponto é considerado um candidato a ponto chave ou ponto de interesse. Este ponto foi encontrado através da comparação de um píxel com os seus vizinhos como referido anteriormente. sendo necessário realizar um cálculo de ajuste detalhado da localização e escala gaussiana de cada um destes pontos. É utilizada então a série de Taylor para obter uma localização mais exata dos extremos, sendo rejeitado caso a intensidade de um extremo seja inferior a um limiar previamente definido. 
 
 Como DoG tem uma boa resposta a arestas e como estas fazem com que os pontos sejam instáveis com ruído, estes necessitam de ser removidos. É assim através da utilização de uma matriz Hessiana 2x2 possível calcular as curvaturas principais. Caso o rácio seja superior a um limiar previamente definido, o ponto é considerado uma aresta e assim o ponto chave é descartado.
 
@@ -628,7 +632,7 @@ m(x,y) = \sqrt{\left ( \left ( L(x+1, y) - L(x-1, y) \right )^2 + \left ( L(x, y
 \theta (x, y) = tan^{-1}\left ( \frac{\left ( L(x, y+1) - L(x, y-1) \right )}{\left ( L(x+1, y) - L(x-1, y) \right )} \right )
 \end{equation}
 
-Assim, é criado um histograma das orientações para pixeis numa região em redor do pontos chave, em que de todas as orientações obtidas para um ponto, apenas o maior pico e aquelas acima de 80\% do valor desse pico é que são utilizadas para definir a orientação de cada ponto chave.
+Assim, é criado um histograma das orientações para uma região em redor do pontos chave, em que de todas as orientações obtidas para um ponto, apenas o maior pico e aquelas acima de 80\% do valor desse pico é que são utilizadas para definir a orientação de cada ponto chave.
 
 Por fim, é possível a construção dos descritores para os pontos chave definidos como o ponto a seguir apresenta.
 
@@ -649,7 +653,7 @@ O algoritmo SIFT é regularmente utilizado em reconhecimento de objetos ou cenas
 
 Outro algoritmo importante de extração de descritores locais é o SURF (\textit{Speeded Up Robust Features}). Este é baseado no SIFT apresentado na secção~\ref{subsubsec:sift} e também é utilizado, por exemplo, em reconhecimento de objetos ou mesmo na reconstrução 3D. Segundo os autores~\cite{Bay2006} o SURF é mais rápido (cerca de dez vezes) e robusto do que o SIFT, sendo que, segundo a comparação realizada em~\cite{Juan2009} comprovou-se que o SIFT é mais lento e não muito bom a mudanças de iluminação, mas apresenta melhores resultados a variações de rotação, mudanças de escala e transformações na imagem.
 
-Este usa a técnica da imagem integral, onde cada pixel de uma imagem recebe um valor igual à soma dos pixeis da sua esquerda e acima, incluindo o próprio. Este também utiliza um filtro Haar em formato de caixa numa sub-região 4x4 em redor de um ponto de interesse, como se pode ver na Figura~\ref{fig:surf}, tornando o processo computacionalmente eficiente. Isto é realizado calculando a soma das respostas dos filtros e a soma do modulo das respostas dos filtros nas direções horizontal e vertical, gerando assim 4 valores por cada sub-região. Logo, o SURF retorna um vetor de 64 dimensões, metade do retornado pelo algoritmo SIFT.
+Este usa a técnica da imagem integral, onde cada píxel de uma imagem recebe um valor igual à soma dos píxeis da sua esquerda e acima, incluindo o próprio. Este também utiliza um filtro Haar em formato de caixa numa sub-região 4x4 em redor de um ponto de interesse, como se pode ver na Figura~\ref{fig:surf}, tornando o processo computacionalmente eficiente. Isto é realizado calculando a soma das respostas dos filtros e a soma do modulo das respostas dos filtros nas direções horizontal e vertical, gerando assim 4 valores por cada sub-região. Logo, o SURF retorna um vetor de 64 dimensões, metade do retornado pelo algoritmo SIFT.
 
 \begin{figure}[h]
 \centering
@@ -658,7 +662,7 @@ Este usa a técnica da imagem integral, onde cada pixel de uma imagem recebe um 
 \label{fig:surf}
 \end{figure}
 
-%Para além destes dois algoritmos ainda existem outros menos utilizados como o GLOH (\textit{Gradient Location and Orientation Histogram}) e o HOG (\textit{Histogram of Oriented Gradients})~\cite{Dalal2005}.
+%Para além destes dois algoritmos ainda existem outros menos utilizados como o FAST, ORB, BRIEF.... e o HOG (\textit{Histogram of Oriented Gradients})~\cite{Dalal2005}.
 
 %Na próxima secção e apresentado
 

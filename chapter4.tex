@@ -30,26 +30,45 @@ Posteriormente foi então recolhida a informação temporal dos tweets, sendo qu
 
 Para o cálculo da distância entre datas foi utilizada a função distância Euclidiana, que se pode resumir ao módulo da diferença entre o tempo de dois tweets.
 
-Como resultado, obteve-se para cada dimensão três matrizes de 1988 x 1988 cada.
+Como resultado, obteve-se para cada dimensão três matrizes de 1988 x 1988. Cada uma das dessas três matrizes de cada dimensão representa um subconjunto dos dados e consequentemente um intervalo de tempo. Neste caso cada subconjunto temporalmente é representado da seguinte forma:
+
+\begin{description}
+\item[Subconjunto 1]
+\item Início: 13:01:46 do dia 17 de Junho de 2013 
+\item Fim: 03:14:05 do dia 18 de Junho de 2013
+
+\item[Subconjunto 2]
+\item Início: 03:14:15 do dia 18 de Junho de 2013 
+\item Fim: 00:40:08 do dia 19 de Junho de 2013
+
+\item[Subconjunto 3]
+\item Início: 00:40:29 do dia 19 de Junho de 2013 
+\item Fim: 23:06:54 do dia 19 de Junho de 2013
+\end{description}
 
 %\textbf{Nota:} Devo colocar mais informação estatística sobre os dados?
 
 \section{Clustering da Informação Visual, Espacial e Temporal} \label{sec:finalclustering}
 
-A tarefa de \textit{clustering} é o ultimo passo para a obtenção dos resultados finais. Este é o processo que engloba os dados resultantes de todo o processamento da informação tratada e discutida anteriormente.
+A tarefa de \textit{clustering} é o último passo para a obtenção dos resultados finais. Este é o processo que engloba os dados resultantes de todo o processamento da informação tratada e discutida anteriormente.
 
 Para a tarefa de \textit{clustering} optou-se pela utilização do algoritmo implementado no TweeProfiles~\cite{Cunha2013}, o DBSCAN. Este apresenta algumas vantagens na utilização de dados recolhidos de redes sociais, pois não necessita de uma predefinição do número de \textit{clusters} que se pretende obter, sendo este definido através da distribuição em densidade dos objetos, como referido na Secção~\ref{subsec:dbscan}.
 
-Mas antes de fornecer os dados, neste caso as matrizes já calculadas com as distâncias entre tweets para as dimensões temporal, espacial e de conteúdo visual, foi necessário realizar a normalização das distâncias através da equação~\ref{eq:norm}.
+Antes de utilizares os dados para a tarefa de \textit{clustering}, neste caso as matrizes já calculadas com as distâncias entre tweets para as dimensões temporal, espacial e de conteúdo visual, foi necessário realizar a normalização das distâncias através da função normalização mínimo-máximo apresentada na equação~\ref{eq:norm}
 
 \begin{equation}
-X' = \frac{X - \mu }{\sigma }
+x' = \frac{x - x_{min} }{x_{max} - x_{min} }
 \label{eq:norm}
 \end{equation}
 
-Após a normalização, 
+Em que $ X_{max} $ é o valor máximo presente na matriz e $ X_{min} $ o valor mínimo. Neste caso o valor mínimo será sempre 0, que equivale à distância de um objeto a si mesmo. Assim a equação simplificada é apresentada na equação~\ref{eq:norm1}
 
-realizou-se a combinação entre as matrizes, com atribuição de vários pesos a cada matriz, de forma a que a soma dos diferentes pesos fosse igual a 1. Para isso optou-se por dividir os pesos em fator de 0.333, em que os valores de cada matriz podem assumir os pesos: 0, 0.333, 0.666, 1.
+\begin{equation}
+x' = \frac{x}{x_{max}}
+\label{eq:norm1}
+\end{equation}
+
+Após a normalização, realizou-se a combinação entre as matrizes, com atribuição de vários pesos a cada matriz, de forma a que a soma dos diferentes pesos fosse igual a 1. Para isso optou-se por dividir os pesos em fator de 0.333, em que os valores de cada matriz podem assumir os pesos: 0, 0.333, 0.666, 1.
 
 %A tabela~\ref{tab:pesos} apresenta as diferentes combinações possíveis de pesos para as diferentes dimensões
 %
@@ -74,7 +93,7 @@ realizou-se a combinação entre as matrizes, com atribuição de vários pesos 
 %\label{tab:pesos}
 %\end{table}
 
-\section{Visualização}
+\section{Visualização} \label{sec:visu}
 
 A aplicação web desenvolvida é a responsável pela visualização dos resultados obtidos pela tarefa de \textit{clustering}. Esta apresenta três secções principais de visualização dos \textit{clusters} pelas diferentes dimensões utilizadas. 
 
@@ -104,51 +123,108 @@ A aplicação apresenta também os controlos para escolher o subconjunto que se 
 
 Nesta secção serão apresentados alguns resultados ilustrativos visíveis através ferramenta Olhó-passarinho. Neste relatório não é possível apresentar todos os resultados devido ao número de diferentes possíveis combinações. 
 
-A Figura~\ref{fig:map3} mostra um exemplo da visualização da distribuição dos \textit{clusters} no espaço geográfico. Este exemplo é relativo a uma divisão igual dos pesos entre as três dimensões, espacial, temporal e as fotografias, tendo cada uma um peso de 33.33\% nos resultados dos \textit{clusters}.
+A Figura~\ref{fig:map31} um exemplo da visualização da distribuição dos \textit{clusters} no espaço geográfico onde é atribuída 100\% do peso a dimensão espacial. Podemos ver que foram gerados sete \textit{clusters} e que existe uma clara divisão espacial entre eles. Podemos localizar um \textit{cluster} na Europa mais sobre a zona do Reino Unido, dois na Ásia em que um situa-se sobre países junto do Golfo do Pérsico e outro sobre o Japão, um na Austrália, dois na América do Norte mais especificamente sobre o Oeste e o Este dos Estados Unidos da América e por último na América do Sul, sendo o \textit{cluster} de com maior dimensão relativamente aos outros e localiza-se sobre o Brasil.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/olhopassarinho/map31}
+\caption{Distribuição dos \textit{clusters} no mapa calculado exclusivamente através da dimensão espacial}
+\label{fig:map31}
+\end{figure}
+
+A dimensão dos círculos que representam os \textit{clusters} é proporcional ao número de tweets presentes nesse mesmo \textit{clusters}, isto é, quanto maior o número de tweets maior é a respetiva circunferência.
+
+Já no caso em que é atribuído 100\% do peso apenas à dimensão temporal obtemos apenas um \textit{cluster} como percetível pela Figura~\ref{fig:map32}. Este \textit{cluster} encontra-se sobre o Brasil, devido a densidade de tweets. A obtenção de apenas um \textit{cluster} deve-se ao fato de os tweets se encontrem na sua maioria em intervalos de tempo muito curtos e num espaço de tempo por sí só muito reduzido, como podemos ver na Figura~\ref{fig:time11}, em que temos um duração de menos de 24 horas.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/olhopassarinho/map32}
+\caption{Projeção do \textit{Clusters} no mapa calculado exclusivamente através da dimensão temporal}
+\label{fig:map32}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9\linewidth]{./figures/olhopassarinho/time11}
+\caption{Projeção do \textit{Clusters} no tempo calculado exclusivamente através da dimensão temporal}
+\label{fig:time11}
+\end{figure}
+
+Para o caso da atribuição de 100\% do peso apenas ao conteúdo visual, o resultado ilustrativo no mapa é apresentado da Figura~\ref{fig:map33}. Para esta caso temos a representação de 3 \textit{clusters}, estando espacial sobrepostos. Estes estão localizados sobre o Brasil e apresentam tamanhos distintos, proporcionais ao número de tweets.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\linewidth]{./figures/olhopassarinho/map33}
+\caption{Projeção do \textit{Clusters} no mapa calculado exclusivamente através do conteúdo visual}
+\label{fig:map33}
+\end{figure}
+
+Como referido na Secção~\ref{sec:visu}, o Olhó-passarinho permite a visualização do conteúdo visual dos \textit{clusters}. A Figura~\ref{subfig:im01} apresenta a visualização de uma amostra de imagens pertencentes a um \textit{cluster}. Neste caso o \textit{cluster} é o mais pequeno representado na Figura~\ref{fig:map33} e contém apenas 9 imagens, o número mínimo definido para a criação de um \textit{cluster}. É visível que, apesar de as imagens apresentarem cores diferentes, elas apresentam o mesmo conteúdo visual, uma bandeira do Brasil e uma citação de uma pessoa com o nome de Federico Devito. Este pormenor pode ser visualizado nas Figuras~\ref{subfig:im02} e \ref{subfig:im02}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.6\linewidth]{./figures/olhopassarinho/map3}
-\caption{Exemplo ilustrativo da visualização da distribui espacial dos \textit{clusters} para o caso em que a distribuição dos pesos entre as três dimensões é igual}
-\label{fig:map3}
+	\begin{subfigure}[b]{0.32\textwidth}
+	\centering
+	\includegraphics[width=0.95\linewidth]{./figures/olhopassarinho/c2_ex1_im100_1718}
+	\caption{Visualização de uma amostra de imagens do um \textit{cluster} }
+	\label{subfig:im01}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.32\textwidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{./figures/olhopassarinho/c2_ex2_im100_1718}
+	\caption{ Visualização de uma de imagens do \textit{cluster} }
+	\label{subfig:im02}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.32\textwidth}
+	\centering
+	\includegraphics[width=0.85\linewidth]{./figures/olhopassarinho/c2_ex3_im100_1718}
+	\caption{ Visualização de uma de imagens do \textit{cluster} }
+	\label{subfig:im03}
+	\end{subfigure}
+\caption{Exemplo da visualização do conteúdo visual de um \textit{cluster} calculado com 100\% do peso para a dimensão das imagens}
+\label{fig:im00}
 \end{figure}
 
-A dimensão dos círculos que representam os \textit{clusters} é proporcional ao número de tweets presentes nesse mesmo \textit{clusters} isto é, quanto maior o número de tweets maior é a respetiva circunferência.
+% ------
 
-Já Figura~\ref{fig:time2} apresenta a distribuição dos cinco diferentes \textit{clusters} da mesma situação anterior, sendo possível visualizar a existência de \textit{clusters} com uma margem de maior duração, enquanto outros como o caso do \textit{Clusters 3} que apresenta uma duração de menos de 4 horas. A distribuição no tempo do conjunto de tweets utilizados para este exemplo, como podemos ver na Figura~\ref{fig:time2}, é de aproximadamente 24 horas, em que teve início no dia 17 de Junho de 2013 e terminou no dia 18 de Junho de 2013.
+O exemplo apresentado em seguida mostra-nos o resultado da combinação entre dimensões com atribuição do mesmo peso a cada uma delas. Assim cada dimensão presenta um peso de 33.33\%. A na Figura~\ref{fig:map4} ilustra a distribuição dos \textit{clusters} no espaço. Por outro lado Figura~\ref{fig:temp4} mostra a distribuição dos mesmo \textit{clusters}, mas nesta caso no tempo.
+\vspace{2mm}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=1\linewidth]{./figures/olhopassarinho/map_ex1_im33_e33_t33_1819}
+\caption{Projeção dos \textit{Clusters} no mapa com peso atribuído a cada dimensão de 33.33\%}
+\label{fig:map4}
+\end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\linewidth]{./figures/olhopassarinho/time2}
-\caption{Exemplo ilustrativo da visualização da distribui temporal dos \textit{clusters} para o caso em que a distribuição dos pesos entre as três dimensões é igual}
-\label{fig:time2}
+\includegraphics[width=1\linewidth]{./figures/olhopassarinho/temp_ex1_im33_e33_t33_1819}
+\caption{Projeção dos \textit{Clusters} no tempo com peso atribuído a cada dimensão de 33.33\%}
+\label{fig:temp4}
 \end{figure}
 
-A Figura~\ref{fig:exemplocomp} traz-nos uma perspetiva global da aplicação web, mostrando mais detalhe sobre um dos \textit{clusters}, neste caso o \textit{Cluster 2}. Na Figura~\ref{fig:exemplocomp} é possível a visualização de nove imagens aleatórias do \textit{Cluster 2}. Já no caso da Figura~\ref{fig:exemplocomp2}, é apresentado a visualização mais pormenorizada de uma das imagens, com a indicação do nome do autor do tweet e a mensagem associada à imagem partilhada pelo mesmo. Também é possível aceder ao tweet original.
+No mapa podemos ver a identificação do \textit{Cluster} 3 localizado na Austrália e o \textit{Cluster} 4 no Reino Unido. O visualização de uma amostra do seu conteúdo pode ser visualizado na Figura~\ref{fig:im40}. Aqui podemos notar que o conteúdo visual em ambos os \textit{clusters} são muito semelhantes, sendo assim percetível neste caso a influência das dimensões espaço-temporal. 
 
-\begin{figure}[h]
+\begin{figure}[t!]
 \centering
-\includegraphics[width=0.8\linewidth]{./figures/olhopassarinho/exemplo_comp}
-\caption{Exemplo ilustrativo da visualização completa da aplicação web com a visualização pelas várias dimensões}
-\label{fig:exemplocomp}
+	\begin{subfigure}[b]{0.45\textwidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{./figures/olhopassarinho/c3_ex1_im33_e33_t33_1819}
+	\caption{Visualização de uma amostra de imagens do \textit{cluster} 3}
+	\label{subfig:im41}
+	\end{subfigure}
+	~
+	\begin{subfigure}[b]{0.45\textwidth}
+	\centering
+	\includegraphics[width=0.9\linewidth]{./figures/olhopassarinho/c4_ex1_im33_e33_t33_1819}
+	\caption{ Visualização de uma amostra de imagens do \textit{cluster} 4 }
+	\label{subfig:im42}
+	\end{subfigure}
+\caption{Exemplo da visualização do conteúdo visual de dois \textit{clusters} calculados com 33.33\% do peso para cada uma das dimensão}
+\label{fig:im40}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\linewidth]{./figures/olhopassarinho/exemplo_comp2}
-\caption{Exemplo ilustrativo da visualização completa da aplicação web com a visualização mais detalhada de uma das imagens}
-\label{fig:exemplocomp2}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\linewidth]{./figures/olhopassarinho/im1}
-\caption{Exemplo ilustrativo da visualização de um conjunto de imagens pertencentes a um \textit{Cluster} e em que foi atribuído o peso total apenas à dimensão do conteúdo visual}
-\label{fig:ims}
-\end{figure}
-
-É interessante salientar que no exemplo ilustrado na Figura~\ref{fig:exemplocomp} existe uma semelhança geral entre as nove imagens, sendo isto possível, devido a combinação das três dimensões, tendo sido agrupado tweets com semelhança nas imagens, mas também no espaço e tempo.
-
-
-Outro exemplo interessante, é quando a atribuição do peso de 100\% apenas para a dimensão do conteúdo visual. A Figura~\ref{fig:ims} demonstra um exemplo desses, e como é visível, o \textit{cluster} possuí pelo menos nove imagens muito semelhantes, que apesar de não fazerem parte de um evento que inclua pessoas, este permitiu encontrar a partilha de várias partilhas de um mesmo texto por várias pessoas através de uma imagem. Este resultado também vem demonstrar que o modelo responsável pela extração da informação visual apresentou um bom desempenho, tal como era o esperado.
-
+Os exemplos escolhidos para apresentar os resultados ilustrativos pretendem demonstrar as diferentes potencialidades da ferramenta, focando principalmente nas várias combinações possíveis de ser realizadas e na visualização dos resultados dessas mesmo combinações. Para além destas combinações existe ainda a possibilidade de escolher um dos três diferentes intervalos de tempo que correspondem a cada um dos subconjuntos de dados previamente criados.
