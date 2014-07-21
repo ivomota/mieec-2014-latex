@@ -17,12 +17,13 @@ Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: myrefs.bib
-I was expecting a `,' or a `}'---line 447 of file myrefs.bib
+I was expecting a `,' or a `}'---line 476 of file myrefs.bib
  :  
  :  Howpublished = {\url{https://www.linkedin.com}},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty publisher in Bramer2007
+Warning--there's a number but no volume in Sivic2003
 Warning--empty journal in Bueno2011
 Warning--empty publisher in Han2006
 Warning--empty publisher in Russell2011
@@ -34,49 +35,47 @@ Warning--empty journal in Ite-vil
 Warning--empty year in Ite-vil
 Warning--empty journal in Modi2008
 Warning--there's a number but no volume in Shao2009
-Warning--there's a number but no volume in Sivic2003
 Warning--there's a number but no volume in Juan2009
-Warning--empty publisher in Baeza-Yates1999
 Warning--empty journal in Solem2012
-You've used 48 entries,
+You've used 50 entries,
             2522 wiz_defined-function locations,
-            867 strings with 11325 characters,
-and the built_in function-call counts, 14452 in all, are:
-= -- 1470
-> -- 383
-< -- 9
-+ -- 129
-- -- 81
-* -- 467
-:= -- 1832
-add.period$ -- 172
-call.type$ -- 48
-change.case$ -- 38
+            882 strings with 11846 characters,
+and the built_in function-call counts, 15310 in all, are:
+= -- 1566
+> -- 413
+< -- 10
++ -- 138
+- -- 88
+* -- 507
+:= -- 1942
+add.period$ -- 180
+call.type$ -- 50
+change.case$ -- 41
 chr.to.int$ -- 0
-cite$ -- 64
-duplicate$ -- 472
-empty$ -- 1685
-format.name$ -- 81
-if$ -- 4205
+cite$ -- 65
+duplicate$ -- 502
+empty$ -- 1766
+format.name$ -- 88
+if$ -- 4447
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 42
-newline$ -- 269
-num.names$ -- 47
-pop$ -- 503
+int.to.str$ -- 50
+missing$ -- 43
+newline$ -- 281
+num.names$ -- 49
+pop$ -- 518
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1175
+skip$ -- 1247
 stack$ -- 0
-substring$ -- 421
-swap$ -- 109
-text.length$ -- 9
+substring$ -- 461
+swap$ -- 122
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 16
-while$ -- 87
-width$ -- 50
-write$ -- 539
+warning$ -- 15
+while$ -- 92
+width$ -- 52
+write$ -- 566
 (There was 1 error message)

@@ -1,7 +1,16 @@
 \appendix
-\chapter{Exemplo objeto JSON de um tweet} \label{ap1}
+\chapter{Tabela da Base de Dados para Seleção de Tweets} \label{ap1}
 
 
-\lstinputlisting[language=Python]{./code/tweet_example.json}
+\begin{lstlisting}[language=SQL]
+create table if not exists IMAGENS ( 
+	id integer PRIMARY KEY AUTOINCREMENT, 
+	id_tweet text, 
+	servico text, 
+	url text, 
+	tipo text, 
+	retweet text 
+); 
+\end{lstlisting}
 
 

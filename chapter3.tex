@@ -1,6 +1,6 @@
-\chapter{Módulo da Informação Visual} \label{chap:chap3}
+\chapter{Olhó-passarinho: Módulo do Conteúdo Visual} \label{chap:chap3}
 
-Neste capítulo será introduzido o módulo de informação visual desenvolvido, sendo apresentadas a estrutura e organização deste sistema. Como referido no capítulo~\ref{chap:intro}, este projeto tem como objetivo estender a ferramenta TweeProfiles descrita na secção~\ref{sec:tweep}, dando-lhe uma dimensão de conteúdo diferente à que possui. Em conjunto com a informação espacial e temporal, O conteúdo das imagens partilhadas em tweets passa a ser uma fonte de informação e não o texto. Para que isto seja realizável, foi necessário o desenvolvimento de um módulo que efetue a recolha os dados com a devida filtragem, extraia e processe a informação visual e armazene essa informação de modo a que fosse possível a sua integração com o TweeProfiles. 
+Neste capítulo será introduzido o módulo de informação visual desenvolvido, sendo apresentadas a estrutura e organização deste sistema. Como referido no capítulo~\ref{chap:intro}, este projeto tem como objetivo estender a ferramenta TweeProfiles descrita na secção~\ref{sec:tweep}, dando-lhe uma dimensão de conteúdo diferente à que possui. Em conjunto com a informação espacial e temporal, o conteúdo das imagens partilhadas em tweets passa também a ser uma fonte de informação. Para que isto seja realizável, foi necessário o desenvolvimento de um módulo que efetue a recolha os dados com a devida filtragem, extraia e processe a informação visual e armazene essa informação de modo a que fosse possível a sua integração com o TweeProfiles. 
 
 \section{Recolha dos Dados}\label{sec:dados}
 
@@ -8,7 +8,9 @@ O desenvolvimento deste módulo apenas era realizável com um conjunto de imagen
 
 \subsection{Descrição dos Dados}
 
-O primeiro passo para a realização deste projeto de dissertação foi a recolha dos dados necessários. Estes dados foram recolhidos através de uma base de dados MongoDB previamente criada usando a plataforma Socialbus, anteriormente designada por TwitterEcho~\cite{Boanjak2012}. Este dados são estruturados sobre a forma de objetos JSON e possuem informação relativa a cada tweet. Estes objetos encontram-se todos num só documento MongoDB que se caracteriza pelas características apresentadas na Tabela~\ref{tab:nbrtweets}
+O primeiro passo para a realização deste projeto de dissertação foi a recolha dos dados necessários. Estes dados foram recolhidos através de uma base de dados MongoDB previamente criada usando a plataforma Socialbus, anteriormente designada por TwitterEcho~\cite{Boanjak2012}. Este dados são estruturados sobre a forma de objetos JSON~\cite{json} e possuem informação relativa a cada tweet. O JSON é um formato de notação, utilizado para armazenamento e transferência de dados na Internet. Este é o formato utilizado pela base de dados MongoDB. %Estes objetos encontram-se todos num só documento MongoDB que se caracteriza pelas características apresentadas na Tabela~\ref{tab:nbrtweets}.
+
+A Tabela~\ref{tab:nbrtweets} apresenta informação relativamente ao número total de tweets que a base de dados contêm e o total destes tweets que possuem informação visual. Para além disso, ainda são apresentados o número de tweets com informação visual que provém de alguns serviços externos.
 
 \vspace{5 mm}
 \begin{table}[h]
@@ -21,60 +23,79 @@ Nº Tweets & \multicolumn{1}{r|}{1704273} & 86349      & \multicolumn{1}{c|}{202
 \caption{Descrição em números do total de tweets com indicação, nos que contém URL para imagem, do número de tweets por serviço de partilha de imagem}
 \label{tab:nbrtweets}
 \end{table}
-\vspace{5 mm}
 
-Estes tweets foram recolhidos entre o dia 17 e 19 de Junho de 2013 com conteúdo partilhado somente contendo texto escrito em português do Brasil, filtrados pela ferramenta Socialbus~\cite{Boanjak2012} já referida anteriormente. Estas datas coincidiram com um evento ocorrido no Brasil, mais especificamente, as manifestações do ano passado do povo brasileiro contra o seu governo. Este foi um dos motivos da escolha desta base de dados, pois apresentava tweets que poderiam ser interessante para encontrar padrões ou eventos através das imagens partilhadas pelos brasileiros nas ruas, aliadas sempre às dimensões espaço-temporais. 
+%Estes tweets foram recolhidos entre o dia 17 e 19 de Junho de 2013 com conteúdo partilhado somente contendo texto escrito em português do Brasil, filtrados pela ferramenta Socialbus~\cite{Boanjak2012} já referida anteriormente. Estas datas coincidiram com um evento ocorrido no Brasil, mais especificamente, as manifestações do ano passado do povo brasileiro contra o seu governo. Este foi um dos motivos da escolha desta base de dados, pois apresentava tweets que poderiam ser interessante para encontrar padrões ou eventos através das imagens partilhadas pelos brasileiros nas ruas, aliadas sempre às dimensões espaço-temporais. 
 
 \subsection{Filtragem dos Dados}
 
-Após estar definido o conjunto de dados a utilizar, foi necessário realizar uma filtragem dos dados de modo a apresentarem a informação necessária para a realização deste projeto. O primeiro passo desta filtragem foi recolher todos os tweets que contivessem no seu objeto um URL para uma imagem, sendo que esse URL teria de pertencer a um dos seguintes serviços: 
+Em primeiro lugar, foi necessário realizar uma filtragem dos dados de modo a apresentarem a informação necessária para a realização deste projeto. O primeiro passo desta filtragem foi recolher todos os tweets que contivessem no seu objeto um URL (\textit{Uniform Resource Locator}) para uma imagem, sendo que esse URL teria de pertencer a um dos seguintes serviços: 
 
 \begin{itemize}
 \item Twitter
 \item TwitPic
 \item Instagram
 \end{itemize}
-O URL teria que ser válido, isto é, foi feita uma verificação prévia se a imagem estaria ainda disponível através do endereço existente.
+O URL teria que ser válido. Isto é, foi feita uma verificação prévia se a imagem estaria ainda disponível através do endereço existente.
 
-Para ser mais fácil posteriormente uma seleção mais cuidadosa dos tweets foi criada uma base de dados local (SQLite) com a seguinte tabela:
+Para ser mais fácil posteriormente uma seleção mais cuidadosa dos tweets foi criada uma base de dados local (SQLite) com uma tabela (Anexo~\ref{ap1}), contendo os seguintes atributos:
 
-\begin{lstlisting}[language=SQL]
-create table if not exists IMAGENS ( 
-	id integer PRIMARY KEY AUTOINCREMENT, 
-	id_tweet text, 
-	servico text, 
-	url text, 
-	tipo text, 
-	retweet text 
-); 
-\end{lstlisting}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{id}        & Id da linha da tabela.                                 \\ \hline
+\textbf{id\_tweet} & Id do tweet na base de dados Mongodb.                  \\ \hline
+\textbf{servico}   & Nome do serviço de alojamento da imagem.               \\ \hline
+\textbf{url}       & Endereço url para a imagem fonte.                      \\ \hline
+\textbf{tipo}      & Identifica se a imagem pertence a um tweet ou retweet. \\ \hline
+\textbf{retweet}   & Caso a imagem pertença a um retweet e este seja o primeiro da base de dados, \\ & assume o valor "primeiro", caso contrário, assume o valor NULL.                     \\ \hline
+\end{tabular}
+\caption{Atributos da tabela da base de dados para filtragem dos tweets.}
+\end{table}
 
-Em que se descreve cada coluna da seguinte forma:
+%\begin{lstlisting}[language=SQL]
+%create table if not exists IMAGENS ( 
+%	id integer PRIMARY KEY AUTOINCREMENT, 
+%	id_tweet text, 
+%	servico text, 
+%	url text, 
+%	tipo text, 
+%	retweet text 
+%); 
+%\end{lstlisting}
 
-\begin{description}
-\item[id] - id da linha da tabela;
-\item[id\_tweet] - id do tweet na base de dados Mongodb;
-\item[servico] - nome do serviço de alojamento da imagem;
-\item[url] - endereço url para a imagem fonte;
-\item[tipo] - este atributo identifica se a imagem pertence a um tweet ou retweet;
-\item[retweet] - caso a imagem pertença a um retweet, este atributo pode assumir o valor "primeiro" no caso de ser o primeiro retweet, do tweet original, na base de dados MongoDB, ou caso contrário, assume o valor NULL.
-\end{description}
+%Isto permitiu realizar de uma forma rápida alguns teste no \textit{download} de algumas imagens pelos diferentes serviços, para além de permitir fazer uma seleção fácil e rápida de tweets, retweets ou por exemplo, do primeiro retweet no caso de existir vários retweets de um determinado tweet. 
 
-Isto permitiu realizar de uma forma rápida alguns teste no \textit{download} de algumas imagens pelos diferentes serviços, para além de permitir fazer uma seleção fácil e rápida de tweets, retweets ou por exemplo, do primeiro retweet no caso de existir vários retweets de um determinado tweet. 
-
-Após a criação desta base de dados, ficou decidido selecionar todos os objetos da base de dados MongoDB do tipo tweet em que o seu serviço fosse o Instagram. Esta decisão deveu-se ao facto dos retweets se referirem a imagens já existentes ocorrendo duplicação de dados. No caso da escolha do Instagram, este deveu-se ao facto de apresentar um número superior de imagens relativamente aos outros serviços, visto que ao se excluir os retweets o número de imagens dos restantes serviços passou a um valor pouco significativo.
+Após a criação desta base de dados, foi decidido selecionar todos os objetos da base de dados do tipo tweet e em que o seu serviço fosse o Instagram. Esta decisão deveu-se ao facto dos retweets se referirem a imagens já existentes e, portanto, a sua recolha iria provocar duplicação de dados. No caso da escolha do Instagram, este deveu-se ao facto de apresentar um número superior de imagens relativamente aos outros serviços.
 
 Para além destes critérios é importante salientar que foi necessário selecionar apenas os dados com georreferenciação. 
 
 \subsection{Conjunto de Dados Final}
 
-Por fim armazenou-se um ficheiro JSON com todos os dados que serão utilizados e foi realizado o \textit{download} de todas as imagens relativas a cada tweet e armazenadas localmente em formato JPEG, que se apresentava como formato de origem das imagens descarregadas. 
+Por fim armazenou-se um ficheiro JSON com todos os dados que serão utilizados e foi realizado o \textit{download} de todas as imagens relativas a cada tweet e armazenadas localmente em formato JPEG, que que era o formato de origem das imagens descarregadas. 
 
-Relativamente aos objetos de cada tweet presentes no ficheiro JSON, optou-se por não armazenar todas as instâncias para reduzir o tamanho do ficheiro, tendo sido apenas incluídas as representadas no seguinte exemplo de um objeto de um tweet:
+Relativamente aos objetos de cada tweet presentes no ficheiro JSON, optou-se por não armazenar tudo para reduzir o tamanho do ficheiro, tendo sido apenas incluídos os elementos de um objeto de um tweet descritos na Tabela~\ref{tab:elemtweet}.
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{\_id: \$oid}                  & Identificador do objeto                         \\ \hline
+\textbf{coordinates: coordinates}     & Coordenadas da localização da partilha do tweet \\ \hline
+\textbf{created\_at}                  & Data da partilha do tweet.                      \\ \hline
+\textbf{entities: urls: display\_url} & Endereço url para a imagem fonte                \\ \hline
+\textbf{id\_str}                      & Identificador do tweet em formato de texto      \\ \hline
+\textbf{text}                         & Mensagem do tweet                               \\ \hline
+\textbf{user: id\_str}                & Identificador do utilizador                     \\ \hline
+\textbf{user: name}                   & Nome do utilizador                              \\ \hline
+\end{tabular}
+\caption{Elementos contidos no objeto com a informação de um tweet.}
+\label{tab:elemtweet}
+\end{table}
 
+O formato de um objeto relativo a um tweet é ilustrado em seguida:
 \lstinputlisting[language=Python]{./code/tweets_instagram_exemple.json}
 
-No caso das imagens armazenadas, de modo a que fosse associada cada uma das imagens ao seu respetivo tweet, foi atribuído o campo \textit{id\_str} presente no objeto JSON ao nome do ficheiro de imagem JPEG. Assim ao utilizar uma das imagens, para saber a que tweet pertence apenas é necessário procurar o objeto JSON que possua o atributo \textit{id\_str} igual ao nome do ficheiro da imagem.
+No caso das imagens armazenadas, foi atribuído o campo \textit{id\_str} presente no objeto JSON ao nome do ficheiro de imagem JPEG de modo a que fosse associada cada uma das imagens ao seu respetivo tweet. Assim ao utilizar uma das imagens, apenas é necessário procurar o objeto JSON que possua o atributo \textit{id\_str} igual ao nome do ficheiro da imagem para saber a que tweet pertence.
 
 Recolhidos todos os identificadores dos tweets pertencentes ao serviço Instagram que apenas fossem do tipo tweet e que os respetivos tweets apresentassem a informação de geolocalização no campo \textit{coordinates}, avançou-se com o processo de \textit{download} de todas as imagens, tendo sido efetuado com sucesso o \textit{download} de 5964 imagens em 7195 possíveis.
 
@@ -82,7 +103,7 @@ Em suma, o conjunto de dados final utilizado para o desenvolvimento deste projet
 
 \section{Extração, Processamento e Armazenamento da Informação Visual} \label{sec:extract}
 
-O passo seguinte no desenvolvimento do módulo da informação visual foi a implementação de um sistema capaz de extrair, processar e armazenar a informação visual através das imagens armazenadas localmente. Para o desenvolvimento deste modulo foi utilizada a linguagem Python, pela sua capacidade de integração de diferentes bibliotecas desde manipulação de estruturas de dados, até mesmo a bibliotecas de manipulação e processamento de imagem. Para a concretização do modelo foram tidos como linhas guia, o processo desenvolvimento de uma ferramenta de pesquisa de imagens apresentado em~\cite{Solem2012}. A arquitetura deste módulo desenvolvido é apresentada na Figura~\ref{fig:infovisual}.
+O passo seguinte no desenvolvimento do módulo da informação visual foi a implementação de um sistema capaz de extrair, processar e armazenar a informação visual das imagens armazenadas localmente. Para o desenvolvimento deste módulo foi utilizada a linguagem Python, pela sua capacidade de integração de diferentes bibliotecas desde manipulação de estruturas de dados, até mesmo a bibliotecas de manipulação e processamento de imagem. Para a concretização do modelo foram tidos como linhas guia, o processo desenvolvimento de uma ferramenta de pesquisa de imagens disponibilizado por~\cite{Solem2012}. A arquitetura deste módulo é apresentada na Figura~\ref{fig:infovisual}.
 
 \begin{figure}[h]
 \centering
@@ -96,10 +117,11 @@ Em seguida é apresentada uma subsecção com a descrição para cada sub-módul
 
 \subsection{Extração dos Pontos de Interesse e Descritores Locais}
 
-O primeiro passo no desenvolvimento deste módulo passou pela extração da informação visual. Esta informação visual deveria representar uma imagem eficientemente e de forma a possibilitar a criação de um vocabulário visual. Uma das formas possíveis e apresentadas na secção~\ref{sec:represent} é a utilização de um descritor local. Neste caso foi utilizado o descritor SIFT~\cite{Lowe1999, Lowe2004}, pois como referido na secção~\ref{subsec:desclocal}, apesar de ser mais lento e menos eficiente a mudanças de iluminação, este apresenta melhores resultados a variações de rotação, mudanças de escala e transformações na imagem. Para além disso, foi utilizada a ferramenta e biblioteca \textit{open source} VLFeat~\cite{vedaldi08vlfeat} que integra alguns dos algoritmos mais utilizados em visão computacional, e que inclui o algoritmo SIFT. Este, apesar de não possuir uma biblioteca para Python, permite a sua utilização através da linha de comandos.
+O primeiro passo no desenvolvimento deste módulo passou pela extração da informação visual. Esta informação visual deveria representar uma imagem eficientemente e de forma a possibilitar a criação de um vocabulário visual. Uma das formas possíveis e apresentadas na secção~\ref{sec:represent} é a utilização de um descritor local. Neste caso foi utilizado o descritor SIFT~\cite{Lowe1999, Lowe2004}, pois como referido na secção~\ref{subsec:desclocal}, apesar de ser mais lento e menos resistente a mudanças de iluminação, este apresenta melhores resultados a variações de rotação, mudanças de escala e transformações na imagem. Para além disso, foi utilizada a ferramenta e biblioteca \textit{open source} VLFeat~\cite{vedaldi08vlfeat} que integra alguns dos algoritmos mais utilizados em visão computacional, e que inclui o algoritmo SIFT. Este, apesar de não possuir uma biblioteca para Python, permite a sua utilização através da linha de comandos.
 
-Para o conjunto de imagens existentes foi necessário criar uma cópia de cada imagem em escalas de cinzento e em formato \textit{.pgm} para ser utilizada pelo VLFeat. Utilizando assim estas imagens, o VLFeat armazena num ficheiro com o formato \textit{.sift} os pontos de interesse e os descritores de uma imagem, sendo necessário criar um ficheiro para cada imagem. Nesses ficheiros os dados são armazenados em formato ASCII. 
-A informação armazenada apresenta-se da seguinte forma 
+Para o conjunto de imagens existentes foi necessário criar uma cópia de cada imagem em escalas de cinzento e em formato \textit{.pgm} para ser utilizada pelo VLFeat. Isto deve-se ao fato de o descritor SIFT não utilizar a cor das imagens, sendo mais eficiente para a extração dos descritores locais a utilização da imagem com tons cinzas. 
+
+Utilizando assim estas imagens, o VLFeat armazena num ficheiro com o formato \textit{.sift} os pontos de interesse e os descritores de uma imagem, sendo necessário criar um ficheiro para cada imagem. Nesses ficheiros os dados são armazenados em formato ASCII, onde cada linha contêm as coordenadas, escala e ângulo de rotação para cada ponto de interesse, nos primeiros 4 valores respetivamente, correspondendo os restantes ao vetor descritor de tamanho 128 como referido na Secção~\ref{subsec:desclocal}. Em seguida é apresentado um exemplo ilustrativo desta informação armazenada:
 
 \begin{lstlisting}
 318.861 7.48227 1.12001 1.68523 0 0 0 1 0 0 0 0 0 11 16 0 ...
@@ -113,16 +135,19 @@ A informação armazenada apresenta-se da seguinte forma
 ... ...
 \end{lstlisting}
 
-onde cada linha contêm as coordenadas, escala e ângulo de rotação para cada ponto de interesse, nos primeiros 4 valores respetivamente, correspondendo os restantes ao vetor descritor de tamanho 128 como referido na secção~\ref{subsec:desclocal}. Como o objetivo era utilizar as imagens originais, foram eliminadas as imagens temporárias com o formato \textit{.pgm}. O passo seguinte passou pelo desenvolvimento do submodelo responsável pela criação do vocabulário visual, que é apresentado na subsecção seguinte.
+Como o objetivo era utilizar as imagens originais, foram eliminadas as imagens temporárias com o formato \textit{.pgm}. O passo seguinte passou pelo desenvolvimento do submodelo responsável pela criação do vocabulário visual, que é apresentado na subsecção seguinte.
 
 \subsection{Criação do Vocabulário Visual}
 
 Este módulo é o responsável pela criação do vocabulário visual. Para a sua concretização foi necessário utilizar os ficheiros de extensão \textit{.sift} reproduzidos através da ferramenta VLFeat~\cite{vedaldi08vlfeat} no módulo anterior. 
 %Os passos seguintes basearam-se nos descritos em~\cite{Solem2012}. 
 
-As palavras visuais não são nada mais do que um conjunto de vetores de características de imagens. Assim um vocabulário visual é o conjunto destas palavras visuais. Como cada imagem possui muitos descritores locais, sendo que muitos podem ser semelhantes, é necessário agrupar todos os descritores de um conjunto de imagens e detetar aqueles que possam representar um conjunto de descritores semelhantes, e assim formar várias palavra visual, sendo uma palavra visual um centroide de um grupo.
+As palavras visuais não são nada mais do que um conjunto de vetores de características de imagens. Assim um vocabulário visual é o conjunto destas palavras visuais. Como cada imagem possui muitos descritores locais, sendo que muitos podem ser semelhantes, é necessário agrupar todos os descritores de um conjunto de imagens e detetar aqueles que possam representar um conjunto de descritores semelhantes. Cada \textit{cluster} corresponde a uma palavra visual, sendo a palavra visual respetiva definida pelo seu
+centroide.%, e assim formar várias palavra visual, sendo uma palavra visual um centroide de um grupo.
 
-Para criar um vocabulário visual foi então necessário utilizar um algoritmo de \textit{clustering} por partição, tendo sido escolhido o \textit{k-means} por ser um dos mais utilizados e eficiente, como foi referido na secção~\ref{subsec:parti}. O algoritmo foi aplicado aos descritores de um subconjunto de imagens aleatoriamente selecionadas do conjunto de imagens armazenadas localmente. Neste caso foi utilizado aproximadamente 8\% das imagens para não comprometer o tempo de processamento. Como este algoritmo implica a pré definição do número de \textit{clusters}, foi atribuído a \textit{k} o valor 1000. Isto significa que são gerados cerca de 1000 \textit{clusters}, ou seja, o nosso vocabulário visual possuirá cerca de 1000 palavras visuais.
+Para criar um vocabulário visual foi então necessário utilizar um algoritmo de \textit{clustering}. Foi escolhido um algoritmo de \textit{clustering} por partição, em particular o \textit{k-means} por ser um dos mais utilizados e eficiente, como foi referido na secção~\ref{subsec:parti}. O algoritmo foi aplicado aos descritores de um subconjunto de imagens aleatoriamente selecionadas do conjunto de imagens armazenadas localmente. Neste caso foi utilizado aproximadamente 8\% das imagens para não comprometer o tempo de processamento. Foi atribuído a \textit{k} o valor 1000, de forma a serem gerados cerca de 1000 \textit{clusters}. Isso significa que o vocabulário visual possuirá cerca de 1000 palavras visuais.
+
+%Como este algoritmo implica a pré definição do número de \textit{clusters}, foi atribuído a \textit{k} o valor 1000. Isto significa que são gerados cerca de 1000 \textit{clusters}, ou seja, o nosso vocabulário visual possuirá cerca de 1000 palavras visuais.
 
 \begin{figure}
 \centering
@@ -135,11 +160,11 @@ Para utilizar este vocabulário visual é necessário armazená-lo e indexar cad
 
 \subsection{Armazenamento da Informação Visual}
 
-Com o vocabulário visual criado foi necessário armazenar esta informação e indexar cada palavra visual as imagens, de modo a que seja possível a comparação entre imagens diferentes. Para armazenar este vocabulário desenvolveu-se o módulo que execute esta tarefa, sendo que, foi necessário seguir alguns passos tais como, a criação de um histograma descritor do vocabulário visual de cada imagem e criação de uma base de dados com a informação necessária para a utilização do histograma descritor de cada imagem.
+Com o vocabulário visual criado foi necessário armazenar esta informação e indexar cada palavra visual às imagens, de modo a que seja possível a comparação entre imagens diferentes. Para armazenar este vocabulário desenvolveu-se o módulo que execute esta tarefa, sendo que, foi necessário seguir alguns passos tais como, a criação de um histograma descritor do vocabulário visual de cada imagem e de uma base de dados com a informação necessária para a utilização do histograma descritor de cada imagem.
 
-A criação do histograma foi o primeiro passo do desenvolvimento deste sub-módulo, em que foi utilizado o vocabulário disponibilizado através do sub-módulo apresentado anteriormente. Como o vocabulário é constituído por vetores descritores que representam cada uma das palavras visuais, para a criação do histograma para cada imagem foi necessário utilizar novamente os ficheiros com os descritores locais SIFT de cada imagem e assim projetar no espaço cada ponto-chave, de modo a ser atribuído a cada um destes a sua palavra visual, sendo esta a que se encontrar à menor distância. Foi então possível após este processo criar um histograma, utilizando  com a contagem das palavras visuais em cada imagem.
+A criação do histograma foi o primeiro passo do desenvolvimento deste sub-módulo, em que foi utilizado o vocabulário disponibilizado através do sub-módulo apresentado anteriormente. Como o vocabulário é constituído por vetores descritores que representam cada uma das palavras visuais, para a criação do histograma para cada imagem foi necessário utilizar novamente os ficheiros com os descritores locais SIFT de cada imagem e assim projetar no espaço cada ponto-chave, de modo a ser atribuído a cada um destes a sua palavra visual, sendo esta a que se encontrar à menor distância. Foi então possível após este processo criar um histograma, baseado na contagem das palavras visuais em cada imagem.
 
-Assim o próximo passo passou pelo armazenamento dos histogramas e a indexação a sua respetiva imagem. Como todo este módulo foi operado em modo \textit{offline}, optou-se pela utilização de uma base de dados local SQLite~\cite{sqlite}. Esta funciona de modo semelhante a uma base de dados MySQL~\cite{mysql} ou PostgreSQL~\cite{postgresql}, sendo que pode ser desenvolvida e acedida sem recurso a um servidor. Para a sua concretização foi criado um esquema simples apenas com três tabelas como ilustrado na Tabela~\ref{tab:schemadb}. A tabela \textit{imlist} contém o nome de todas as imagens através do atributo \textit{filename}, a tabela \textit{imwords} contém índice das palavras visuais através do atributo \textit{wordid}, a identificação do vocabulário com o atributo \textit{vocname} e o índice das imagens em que as palavras visuais aparecem com o atributo \textit{wordid}. Por fim, a tabela \textit{imhistograms} contém o histograma de palavras visuais completo para cada imagem com o atributo \textit{histogram}.
+Assim o próximo passo passou pelo armazenamento dos histogramas e a indexação a sua respetiva imagem. Como todo este módulo foi executado em modo \textit{offline}, optou-se pela utilização de uma base de dados local SQLite~\cite{sqlite}. Esta funciona de modo semelhante a uma base de dados MySQL~\cite{mysql} ou PostgreSQL~\cite{postgresql}, sendo que pode ser desenvolvida e acedida sem recurso a um servidor. Esta é normalmente utilizada apenas para desenvolvimento, como é o caso deste projeto de dissertação. Para a sua concretização foi criado um esquema simples apenas com três tabelas como ilustrado na Tabela~\ref{tab:schemadb}. A tabela \textit{imlist} contém o nome de todas as imagens através do atributo \textit{filename}, a tabela \textit{imwords} contém índice das palavras visuais através do atributo \textit{wordid}, a identificação do vocabulário com o atributo \textit{vocname} e o índice das imagens em que as palavras visuais aparecem com o atributo \textit{wordid}. Por fim, a tabela \textit{imhistograms} contém o histograma de palavras visuais completo para cada imagem com o atributo \textit{histogram}. Este atributo é associado então a vetor que descreve a respetiva imagem associada, tal como um histograma, em que cada bin possui a frequência de uma determinada palavra visual. 
 
 %\vspace{2 mm}
 \begin{table}[h]
@@ -158,9 +183,9 @@ Assim o próximo passo passou pelo armazenamento dos histogramas e a indexação
 
 \section{Matriz de Distâncias entre Imagens}\label{sec:matdist}
 
-Com o módulo descrito na secção anterior~\ref{sec:extract}, a informação que descreve cada uma das imagens armazenadas localmente está alojada e é acessível através da base de dados local criada. Esta informação está no formato de um histograma que descreve a imagem através de um vocabulário visual. Este histograma é um vetor de tamanho único e igual para todas imagens, o que permite uma fácil comparação entre eles, o que é equivalente a se dizer que estes permitem calcular a distância entre eles. Como cada histograma está associado a uma imagem, calcular a distância entre dois histogramas equivale a calcular a distância entre duas imagens.
+Com o módulo descrito na secção anterior~\ref{sec:extract}, a informação que descreve cada uma das imagens armazenadas localmente está alojada e é acessível através da base de dados local criada. Esta informação está no formato de um histograma que descreve a imagem através de um vocabulário visual. Este histograma é um vetor de tamanho único e igual para todas imagens, o que permite uma fácil comparação entre eles. Ou seja, permite calcular facilmente a distância entre eles. Como cada histograma está associado a uma imagem, calcular a distância entre dois histogramas equivale a calcular a distância entre duas imagens.
 
-O TweeProfiles utiliza o algoritmo DBSCAN~\cite{Han2006} apresentado na secção~\ref{subsec:dbscan} para realizar a tarefa de \textit{clustering} relativamente ao conteúdo e às dimensões espacial e temporal. O \textit{clustering} baseado em densidades, neste caso mais concreto, com o recurso ao algoritmo DBSCAN, pode utilizar uma matriz distância entre objetos para realizar a tarefa de \textit{clustering}, sendo que retorna um número indefinido de \textit{clusters} dependentes dos dados. A matriz distância trata-se apenas de uma matriz NxN em que N é o número total de objetos. No nosso caso, os objetos são as imagens e portanto o valor de N é igual a 5964. A Figura~\ref{fig:matriz} apresenta a estrutura de uma matriz distância, em que 0 é a distância de um objeto a ele mesmo.
+O TweeProfiles utiliza o algoritmo DBSCAN~\cite{Han2006} apresentado na secção~\ref{subsec:dbscan} para realizar a tarefa de \textit{clustering} relativamente ao conteúdo e às dimensões espacial e temporal. O \textit{clustering} baseado em densidades, neste caso mais concreto, com o recurso ao algoritmo DBSCAN, pode utilizar uma matriz de distâncias entre objetos para realizar a tarefa de \textit{clustering}, sendo que retorna um número não fixado previamente de \textit{clusters} dependentes dos dados. A matriz de distâncias trata-se apenas de uma matriz $ N x N $ em que N é o número total de objetos. A Figura~\ref{fig:matriz} apresenta a estrutura de uma matriz distância, em que 0 é a distância de um objeto a ele mesmo.
 
 \begin{figure}[h]
 \centering
@@ -171,6 +196,6 @@ O TweeProfiles utiliza o algoritmo DBSCAN~\cite{Han2006} apresentado na secção
 
 Tendo existido algumas limitações de \textit{hardware}, mais especificamente da memória do computador, e do tempo de processamento devido ao acesso à base de dados local para obter aos histogramas descritores de cada imagem, optou-se por utilizar o mesmo procedimento utilizado no TweeProfiles~\cite{Cunha2013} e dividir os dados em três partes distintas, resultado em três subconjuntos de 1988 tweets cada. Esta divisão foi efetuada tendo em conta uma divisão temporal, isto é, foi garantido que todos tweets estavam ordenados por ordem cronológica.
  
-Para calcular as matrizes de distâncias para o conteúdo visual utilizou-se o histograma descritor de cada imagem, calculando a distância entre histogramas através da função distância Euclidiana apresentada na secção~\ref{subsec:dist}. Assim, resultaram três matrizes distância, cada uma com uma dimensão de $1988 x 1988$.
+Para calcular as matrizes de distâncias para o conteúdo visual utilizou-se o histograma descritor de cada imagem, calculando a distância entre histogramas através da função de distância Euclidiana apresentada na secção~\ref{subsec:dist}. Assim, resultaram três matrizes distância, cada uma com uma dimensão de $1988 x 1988$.
 
 Com as matrizes distâncias calculadas, estavam reunidas as condições para a integração do modelo no TweeProfiles. O próximo capítulo irá abordar da integração deste modelo com o TweeProfiles e o desenvolvimento da ferramenta Olhó-passarinho e os seus resultados ilustrativos.

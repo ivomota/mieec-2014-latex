@@ -31,32 +31,34 @@
 \contentsline {subsection}{\numberline {2.3.4}Descritores de Textura}{21}{subsection.2.3.4}
 \contentsline {subsubsection}{\numberline {2.3.4.1}Descritor de Textura Homog\IeC {\'e}nea}{21}{subsubsection.2.3.4.1}
 \contentsline {subsubsection}{\numberline {2.3.4.2}Descritor de Histograma de Borda}{22}{subsubsection.2.3.4.2}
-\contentsline {subsubsection}{\numberline {2.3.4.3}Descritor de Navega\IeC {\c c}\IeC {\~a}o Percetual}{22}{subsubsection.2.3.4.3}
 \contentsline {subsection}{\numberline {2.3.5}Descritores de Forma}{22}{subsection.2.3.5}
-\contentsline {subsubsection}{\numberline {2.3.5.1}Descritor de Forma Baseado em Regi\IeC {\~a}o}{23}{subsubsection.2.3.5.1}
-\contentsline {subsubsection}{\numberline {2.3.5.2}Descritor de Forma Baseado no Contorno}{23}{subsubsection.2.3.5.2}
-\contentsline {subsection}{\numberline {2.3.6}Descritores Locais}{24}{subsection.2.3.6}
-\contentsline {subsubsection}{\numberline {2.3.6.1}SIFT}{24}{subsubsection.2.3.6.1}
+\contentsline {subsubsection}{\numberline {2.3.5.1}Descritor de Forma Baseado em Regi\IeC {\~a}o}{22}{subsubsection.2.3.5.1}
+\contentsline {subsubsection}{\numberline {2.3.5.2}Descritor de Forma Baseado no Contorno}{22}{subsubsection.2.3.5.2}
+\contentsline {subsection}{\numberline {2.3.6}Descritores Locais}{23}{subsection.2.3.6}
+\contentsline {subsubsection}{\numberline {2.3.6.1}SIFT}{23}{subsubsection.2.3.6.1}
 \contentsline {subsubsection}{\numberline {2.3.6.2}SURF}{27}{subsubsection.2.3.6.2}
-\contentsline {subsection}{\numberline {2.3.7}Descritores Baseado em Vocabul\IeC {\'a}rio Visual}{28}{subsection.2.3.7}
-\contentsline {chapter}{\numberline {3}M\IeC {\'o}dulo da Informa\IeC {\c c}\IeC {\~a}o Visual}{31}{chapter.3}
+\contentsline {subsection}{\numberline {2.3.7}Descritores Locais Bin\IeC {\'a}rios}{27}{subsection.2.3.7}
+\contentsline {subsection}{\numberline {2.3.8}Descritores Baseado em Vocabul\IeC {\'a}rio Visual}{28}{subsection.2.3.8}
+\contentsline {chapter}{\numberline {3}Olh\IeC {\'o}-passarinho: M\IeC {\'o}dulo do Conte\IeC {\'u}do Visual}{31}{chapter.3}
 \contentsline {section}{\numberline {3.1}Recolha dos Dados}{31}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Descri\IeC {\c c}\IeC {\~a}o dos Dados}{31}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Filtragem dos Dados}{32}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Conjunto de Dados Final}{33}{subsection.3.1.3}
 \contentsline {section}{\numberline {3.2}Extra\IeC {\c c}\IeC {\~a}o, Processamento e Armazenamento da Informa\IeC {\c c}\IeC {\~a}o Visual}{34}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Extra\IeC {\c c}\IeC {\~a}o dos Pontos de Interesse e Descritores Locais}{34}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Extra\IeC {\c c}\IeC {\~a}o dos Pontos de Interesse e Descritores Locais}{35}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Cria\IeC {\c c}\IeC {\~a}o do Vocabul\IeC {\'a}rio Visual}{36}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Armazenamento da Informa\IeC {\c c}\IeC {\~a}o Visual}{36}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Matriz de Dist\IeC {\^a}ncias entre Imagens}{37}{section.3.3}
-\contentsline {chapter}{\numberline {4}Olh\IeC {\'o}-passarinho}{39}{chapter.4}
+\contentsline {subsection}{\numberline {3.2.3}Armazenamento da Informa\IeC {\c c}\IeC {\~a}o Visual}{37}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Matriz de Dist\IeC {\^a}ncias entre Imagens}{38}{section.3.3}
+\contentsline {chapter}{\numberline {4}Olh\IeC {\'o}-passarinho: Aplica\IeC {\c c}\IeC {\~a}o Web}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}Arquitetura do Sistema}{39}{section.4.1}
 \contentsline {section}{\numberline {4.2}Informa\IeC {\c c}\IeC {\~a}o Espa\IeC {\c c}o-Temporal}{40}{section.4.2}
 \contentsline {section}{\numberline {4.3}Clustering da Informa\IeC {\c c}\IeC {\~a}o Visual, Espacial e Temporal}{41}{section.4.3}
-\contentsline {section}{\numberline {4.4}Visualiza\IeC {\c c}\IeC {\~a}o}{42}{section.4.4}
+\contentsline {section}{\numberline {4.4}Visualiza\IeC {\c c}\IeC {\~a}o}{41}{section.4.4}
 \contentsline {section}{\numberline {4.5}Resultados Ilustrativos}{43}{section.4.5}
+\contentsline {section}{\numberline {4.6}Sum\IeC {\'a}rio}{46}{section.4.6}
 \contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es e Trabalho Futuro}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}Resumo}{49}{section.5.1}
 \contentsline {section}{\numberline {5.2}Discus\IeC {\~a}o e trabalho futuro}{50}{section.5.2}
-\contentsline {chapter}{\numberline {A}Exemplo objeto JSON de um tweet}{53}{appendix.A}
-\contentsline {chapter}{Refer\^{e}ncias}{59}{section*.39}
+\contentsline {chapter}{\numberline {A}Tabela da Base de Dados para Sele\IeC {\c c}\IeC {\~a}o de Tweets}{53}{appendix.A}
+\contentsline {chapter}{\numberline {A}Exemplo objeto JSON de um tweet}{55}{appendix.A}
+\contentsline {chapter}{Refer\^{e}ncias}{61}{section*.43}

@@ -26,25 +26,28 @@
 \BOOKMARK [2][-]{subsection.2.3.4}{2.3.4 Descritores de Textura}{section.2.3}% 26
 \BOOKMARK [2][-]{subsection.2.3.5}{2.3.5 Descritores de Forma}{section.2.3}% 27
 \BOOKMARK [2][-]{subsection.2.3.6}{2.3.6 Descritores Locais}{section.2.3}% 28
-\BOOKMARK [2][-]{subsection.2.3.7}{2.3.7 Descritores Baseado em Vocabul\341rio Visual}{section.2.3}% 29
-\BOOKMARK [0][-]{chapter.3}{3 M\363dulo da Informa\347\343o Visual}{}% 30
-\BOOKMARK [1][-]{section.3.1}{3.1 Recolha dos Dados}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Descri\347\343o dos Dados}{section.3.1}% 32
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Filtragem dos Dados}{section.3.1}% 33
-\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Conjunto de Dados Final}{section.3.1}% 34
-\BOOKMARK [1][-]{section.3.2}{3.2 Extra\347\343o, Processamento e Armazenamento da Informa\347\343o Visual}{chapter.3}% 35
-\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Extra\347\343o dos Pontos de Interesse e Descritores Locais}{section.3.2}% 36
-\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Cria\347\343o do Vocabul\341rio Visual}{section.3.2}% 37
-\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Armazenamento da Informa\347\343o Visual}{section.3.2}% 38
-\BOOKMARK [1][-]{section.3.3}{3.3 Matriz de Dist\342ncias entre Imagens}{chapter.3}% 39
-\BOOKMARK [0][-]{chapter.4}{4 Olh\363-passarinho}{}% 40
-\BOOKMARK [1][-]{section.4.1}{4.1 Arquitetura do Sistema}{chapter.4}% 41
-\BOOKMARK [1][-]{section.4.2}{4.2 Informa\347\343o Espa\347o-Temporal}{chapter.4}% 42
-\BOOKMARK [1][-]{section.4.3}{4.3 Clustering da Informa\347\343o Visual, Espacial e Temporal}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.4}{4.4 Visualiza\347\343o}{chapter.4}% 44
-\BOOKMARK [1][-]{section.4.5}{4.5 Resultados Ilustrativos}{chapter.4}% 45
-\BOOKMARK [0][-]{chapter.5}{5 Conclus\365es e Trabalho Futuro}{}% 46
-\BOOKMARK [1][-]{section.5.1}{5.1 Resumo}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.2}{5.2 Discus\343o e trabalho futuro}{chapter.5}% 48
-\BOOKMARK [0][-]{appendix.A}{A Exemplo objeto JSON de um tweet}{}% 49
-\BOOKMARK [0][-]{section*.39}{Refer\352ncias}{}% 50
+\BOOKMARK [2][-]{subsection.2.3.7}{2.3.7 Descritores Locais Bin\341rios}{section.2.3}% 29
+\BOOKMARK [2][-]{subsection.2.3.8}{2.3.8 Descritores Baseado em Vocabul\341rio Visual}{section.2.3}% 30
+\BOOKMARK [0][-]{chapter.3}{3 Olh\363-passarinho: M\363dulo do Conte\372do Visual}{}% 31
+\BOOKMARK [1][-]{section.3.1}{3.1 Recolha dos Dados}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Descri\347\343o dos Dados}{section.3.1}% 33
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Filtragem dos Dados}{section.3.1}% 34
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Conjunto de Dados Final}{section.3.1}% 35
+\BOOKMARK [1][-]{section.3.2}{3.2 Extra\347\343o, Processamento e Armazenamento da Informa\347\343o Visual}{chapter.3}% 36
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Extra\347\343o dos Pontos de Interesse e Descritores Locais}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Cria\347\343o do Vocabul\341rio Visual}{section.3.2}% 38
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Armazenamento da Informa\347\343o Visual}{section.3.2}% 39
+\BOOKMARK [1][-]{section.3.3}{3.3 Matriz de Dist\342ncias entre Imagens}{chapter.3}% 40
+\BOOKMARK [0][-]{chapter.4}{4 Olh\363-passarinho: Aplica\347\343o Web}{}% 41
+\BOOKMARK [1][-]{section.4.1}{4.1 Arquitetura do Sistema}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.2}{4.2 Informa\347\343o Espa\347o-Temporal}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.3}{4.3 Clustering da Informa\347\343o Visual, Espacial e Temporal}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.4}{4.4 Visualiza\347\343o}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.5}{4.5 Resultados Ilustrativos}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.6}{4.6 Sum\341rio}{chapter.4}% 47
+\BOOKMARK [0][-]{chapter.5}{5 Conclus\365es e Trabalho Futuro}{}% 48
+\BOOKMARK [1][-]{section.5.1}{5.1 Resumo}{chapter.5}% 49
+\BOOKMARK [1][-]{section.5.2}{5.2 Discus\343o e trabalho futuro}{chapter.5}% 50
+\BOOKMARK [0][-]{appendix.A}{A Tabela da Base de Dados para Sele\347\343o de Tweets}{}% 51
+\BOOKMARK [0][-]{appendix.A}{A Exemplo objeto JSON de um tweet}{}% 52
+\BOOKMARK [0][-]{section*.43}{Refer\352ncias}{}% 53

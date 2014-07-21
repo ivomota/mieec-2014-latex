@@ -39,6 +39,12 @@ Herbert Bay, Tinne Tuytelaars, e Luc~Van Gool.
 \newblock {\em Comput. Vision–ECCV 2006}, 2006.
 \newblock URL: \url{http://link.springer.com/chapter/10.1007/11744023\_32}.
 
+\bibitem{Sivic2003}
+Josef Sivic e Andrew Zisserman.
+\newblock {Video Google: A text retrieval approach to object matching in
+  videos}.
+\newblock {\em Comput. Vision, 2003. Proceedings. \ldots}, (Iccv):2--9, 2003.
+
 \bibitem{Bueno2011}
 LM~Bueno.
 \newblock {An\'{a}lise de descritores locais de imagens no contexto de
@@ -223,12 +229,6 @@ D.G. Lowe.
   \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=790410},
   doi:10.1109/ICCV.1999.790410.
 
-\bibitem{Sivic2003}
-Josef Sivic e Andrew Zisserman.
-\newblock {Video Google: A text retrieval approach to object matching in
-  videos}.
-\newblock {\em Comput. Vision, 2003. Proceedings. \ldots}, (Iccv):2--9, 2003.
-
 \bibitem{Sivic2006}
 Josef Sivic e Andrew Zisserman.
 \newblock {Video Google: Efficient visual search of videos}.
@@ -242,12 +242,29 @@ Luo Juan e O~Gwun.
 \newblock URL:
   \url{http://www.cscjournals.org/csc/manuscript/Journals/IJIP/volume3/Issue4/IJIP-51.pdf}.
 
-\bibitem{Baeza-Yates1999}
-R~Baeza-Yates e B~Ribeiro-Neto.
-\newblock {\em {Modern information retrieval}}.
-\newblock 1999.
+\bibitem{Calonder2010}
+Michael Calonder, Vincent Lepetit, Christoph Strecha, e Pascal Fua.
+\newblock {Brief: Binary robust independent elementary features}.
+\newblock {\em Comput. Vision–ECCV 2010}, 2010.
 \newblock URL:
-  \url{ftp://mail.im.tku.edu.tw/seke/slide/baeza-yates/chap10\_user\_interfaces\_and\_visualization-modern\_ir.pdf}.
+  \url{http://link.springer.com/chapter/10.1007/978-3-642-15561-1\_56}.
+
+\bibitem{Rublee2011}
+Ethan Rublee e Vincent Rabaud.
+\newblock {ORB: an efficient alternative to SIFT or SURF}.
+\newblock {\em Comput. Vis. (ICCV \ldots}, p\'{a}ginas 2564--2571, Novembro
+  2011.
+\newblock URL:
+  \url{http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6126544
+  http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=6126544},
+  doi:10.1109/ICCV.2011.6126544.
+
+\bibitem{Alahi2012}
+Alexandre Alahi, Raphael Ortiz, e Pierre Vandergheynst.
+\newblock {Freak: Fast retina keypoint}.
+\newblock {\em Comput. Vis. \ldots}, 2012.
+\newblock URL:
+  \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=6247715}.
 
 \bibitem{Nister2006}
 D.~Nister e H.~Stewenius.

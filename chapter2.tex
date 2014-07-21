@@ -478,7 +478,7 @@ A textura das imagens é uma característica visual importante, que tem muitas a
 
 O descritor de textura homogénea (HTD - \textit{Homogeneous Texture Descriptor}) descreve a distribuição estatística da textura de uma imagem. Uma imagem pode ser considerada como um mosaico de texturas homogéneas, de forma que estas características de textura associadas com as diferentes regiões da imagem possam ser utilizadas para indexar os dados da imagem.
 
-Este descritor fornece uma representação quantitativa utilizando 62 números, sendo 2 no domínio espacial e 60 no domínio das frequências. No domínio espacial, é extraída a média e o desvio padrão de uma imagem. No caso do domínio das frequências, o espaço é este dividido em 30 canais~\cite{Wu2001, Shao2009}. %Este desenho baseia-se no facto de a resposta do córtex visual possuir banda limitada e do facto do cérebro decompor o espectro em bandas na frequência espacial~\cite{Wu2001}.
+Este descritor fornece uma representação quantitativa utilizando 62 valores, sendo 2 no domínio espacial e 60 no domínio das frequências. Este tenta aproximar-se ao modo de funcionamento do cérebro humano, mais precisamente ao córtex visual~\cite{Wu2001, Shao2009}.%Este desenho baseia-se no facto de a resposta do córtex visual possuir banda limitada e do facto do cérebro decompor o espectro em bandas na frequência espacial~\cite{Wu2001}.
 O descritor de textura homogénea é essencialmente utilizado em aplicações de recuperação de imagens por similaridade. 
 
 % % %falar
@@ -489,23 +489,24 @@ O descritor de histograma de borda EHD (\textit{Edge Histogram Descriptor}) apre
 
 Este descritor é utilizado na recuperação de imagens, como por exemplo, imagens naturais ou de esboço, devido à sua textura homogénea. %É também suportado por este descritor, a pesquisa baseada em blocos de imagem.  
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{./figures/ehd}
 \caption{Sub-imagem e bloco de imagem. \textit{Retirada de}~\cite{Wu2001}}
 \label{fig:ehd}
 \end{figure}
 
-\subsubsection{Descritor de Navegação Percetual}
-
-O descritor de navegação percetual (HTD - \textit{Perceptual Browsing Descriptor}) foi projetado para navegação em base de dados, mas principalmente para quando essa navegação necessita de recursos com sentido percetual~\cite{Wu2001}. Este descritor é bastante compacto, que requer apenas 12 bits (máximo) para caracterizar regularidade (2 bits), direcionamento (3 bits x 2) e grosseirismo (2 bits x 2) da textura de uma imagem. A regularidade de uma textura pode apresentar valores numa escala entre 0 e 3, em que 0 indica uma textura irregular ou aleatória e 3 indica um padrão com direção e grosseirismo bem definidos. O direcionamento de uma textura é quantizada em 6 valores, variando de 0 a 150 em degraus de 30. Por fim, o grosseirismo de uma textura está relacionado com a escala e resolução de uma imagem. É quantizado em 4 níveis de 0 a 3, sendo 0 para um grão fino e 3 para uma textura grosseira. Estes valores têm uma relação com a divisão do espaço de frequência usado no cálculo do descritor de textura homogénea (HTD)~\cite{Manjunath2001}
+%\subsubsection{Descritor de Navegação Percetual}
+%
+%O descritor de navegação percetual (HTD - \textit{Perceptual Browsing Descriptor}) foi projetado para navegação em base de dados, mas principalmente para quando essa navegação necessita de recursos com sentido percetual~\cite{Wu2001}. Este descritor é bastante compacto, que requer apenas 12 bits (máximo) para caracterizar regularidade (2 bits), direcionamento (3 bits x 2) e grosseirismo (2 bits x 2) da textura de uma imagem. A regularidade de uma textura pode apresentar valores numa escala entre 0 e 3, em que 0 indica uma textura irregular ou aleatória e 3 indica um padrão com direção e grosseirismo bem definidos. O direcionamento de uma textura é quantizada em 6 valores, variando de 0 a 150 em degraus de 30. Por fim, o grosseirismo de uma textura está relacionado com a escala e resolução de uma imagem. É quantizado em 4 níveis de 0 a 3, sendo 0 para um grão fino e 3 para uma textura grosseira. Estes valores têm uma relação com a divisão do espaço de frequência usado no cálculo do descritor de textura homogénea (HTD)~\cite{Manjunath2001}
 
 \subsection{Descritores de Forma}
 
-O descritores de forma são dos descritores mais poderosos no reconhecimento de objetos. Isto deve-se ao facto de os seres humanos serem exímios no reconhecimento de objetos característicos exclusivamente através da suas formas, provando que a forma muitas vezes possui informação semântica~\cite{Bober2001}.  
+Os descritores de forma são dos descritores mais poderosos no reconhecimento de objetos. Isto deve-se ao facto de os seres humanos serem exímios no reconhecimento de objetos característicos exclusivamente através da suas formas, provando que a forma muitas vezes possui informação semântica~\cite{Bober2001}.  
 
 \subsubsection{Descritor de Forma Baseado em Região}
-O descritor de forma baseado em região (RSD - \textit{Region-based Shape Descriptor})~\cite{Bober2001} apresenta a distribuição de um píxel dentro de uma região de um objeto em 2 dimensões. Este permite a descrição de objetos simples, com ou sem buracos (figura~\ref{fig:shape1}), mas também permite a descrição de objetos mais complexos, que contém múltiplas regiões sem ligação.
+
+O descritor de forma baseado em região (RSD - \textit{Region-based Shape Descriptor}) permite a descrição de objetos simples através da sua forma, com ou sem buracos (figura~\ref{fig:shape1}) ou de objetos mais complexos que contém múltiplas regiões sem ligação~\cite{Bober2001}. Assim, este descritor oferece uma forma compacta e eficiente de descrever imagens com várias regiões disjuntas. Este é essencialmente utilizado na deteção de objetos.
 
 \begin{figure}[h]
 \centering
@@ -514,26 +515,26 @@ O descritor de forma baseado em região (RSD - \textit{Region-based Shape Descri
 \label{fig:shape1}
 \end{figure}
 
-As principais características deste descritor são~\cite{Bober2001}:
-
-\begin{itemize}
-\item Fornece uma forma compacta e eficiente de descrever várias regiões disjuntas;
-\item Quando, no processo de segmentação de um objeto, ocorrem sub-regiões sem ligação, o objeto ainda pode ser recuperado, desde que a informação de quais as regiões que foram divididas seja mantida e usada na extração do descritor;
-\item Apresenta uma boa robustez à segmentação de ruído.
-\end{itemize}
+%As principais características deste descritor são~\cite{Bober2001}:
+%
+%\begin{itemize}
+%\item Fornece uma forma compacta e eficiente de descrever várias regiões disjuntas;
+%\item 
+%\item Quando, no processo de segmentação de um objeto, ocorrem sub-regiões sem ligação, o objeto ainda pode ser recuperado, desde que a informação de quais as regiões que foram divididas seja mantida e usada na extração do descritor;
+%\end{itemize}
 
 \subsubsection{Descritor de Forma Baseado no Contorno}
 
-O descritor de forma baseado no contorno (CSD - \textit{Contour-based Shape Descriptor})~\cite{Bober2001} fundamenta-se na representação da curvatura espaço-escala (CSS - \textit{Curvature Scale-Space}) do contorno. O contorno é uma propriedade importante na identificação de objetos semanticamente semelhantes. É também bastante eficiente em aplicações onde a forma de objetos são muito variáveis, ou quando por exemplo, existem deformações de perspetiva. Esta apresenta um boa eficiência mesmo perante a existência de ruído nos contornos. 
+O descritor de forma baseado no contorno (CSD - \textit{Contour-based Shape Descriptor}) utiliza esta propriedade para descrever uma imagem. O contorno é uma propriedade importante para identificação de objetos semanticamente semelhantes. Este consegue distinguir objetos que apresentem formas semelhantes mas que a forma do seu contorno apresenta propriedades bem diferenciadoras como por exemplo, deformações de perspetiva. Esta apresenta um boa eficiência mesmo perante a existência de ruído nos contornos~\cite{Bober2001}. 
 
-As principais características deste descritor são~\cite{Bober2001}: 
-
-\begin{itemize}
-\item Consegue distinguir objetos que apresentem formas semelhantes mas que a forma do contorno apresenta propriedades bem diferenciadoras;
-\item Tem a capacidade de encontrar formas que são semanticamente similar para os seres humanos, mesmo quando existe uma significativa variabilidade intra-classe;
-\item É eficiente mesmo em casos de deformações não rígidas;
-\item É eficiente mesmo em casos de distorções do contorno devido a variações de perspetiva, sendo uma situação muito comum em imagens e vídeo.
-\end{itemize}
+%As principais características deste descritor são~\cite{Bober2001}: 
+%
+%\begin{itemize}
+%\item Consegue distinguir objetos que apresentem formas semelhantes mas que a forma do contorno apresenta propriedades bem diferenciadoras;
+%\item Tem a capacidade de encontrar formas que são semanticamente similar para os seres humanos, mesmo quando existe uma significativa variabilidade intra-classe;
+%\item É eficiente mesmo em casos de deformações não rígidas;
+%\item É eficiente mesmo em casos de distorções do contorno devido a variações de perspetiva, sendo uma situação muito comum em imagens e vídeo.
+%\end{itemize}
 %(3D SD - 3-D Shape Descriptor)
 
 \subsection{Descritores Locais} \label{subsec:desclocal}
@@ -557,51 +558,63 @@ O descritor SIFT (\textit{Scale-Invariant Feature Transform})~\cite{Lowe1999, Lo
 Este descritor apresenta como característica interessante o facto de compartilhar uma série de propriedades em comum com as respostas dos neurónios do lobo temporal na visão dos primatas. Os pontos-chave SIFT derivados de uma imagem são usados na indexação numa abordagem de vizinho mais próximo, para encontrar objetos candidatos.
 % O modelo recorre a uma votação pela transformada Hough e a uma estimativa final pelo método dos mínimos quadrados. Quando 3 pontos chave estiverem em acordo, pode se afirmar que existe uma forte possibilidade da presença de um objeto.
 
-Como foi indicado anteriormente, são necessários levar a cargo uma lista de etapas bem definidas para obtenção de descritores locais, sendo que as etapas para o descritor SIFT as seguintes:
+Como foi indicado anteriormente, é necessário levar a cargo uma lista de etapas bem definidas para obtenção de descritores locais. As etapas para o descritor SIFT são as seguintes:
 
 \begin{enumerate}
-\item \textbf{Deteção de extremos}:  A deteção de extremos (máximos e mínimos) é conseguida através da procura realizada em várias escalas e localizações, de modo a serem extraídos pontos de interesse invariáveis à escala e rotação, através da diferença de filtros gaussianos. Estes pontos de interesse ou pontos chave correspondem a estes extremos para várias escalas. 
-Um filtro gaussiano passa baixo é dado pela convolução entre uma imagem \textit{I} e a função \textit{G}:
+\item \textbf{Deteção de extremos}:  A deteção de extremos (máximos e mínimos) é conseguida através da procura realizada em várias escalas e localizações, de modo a serem extraídos pontos de interesse invariáveis à escala e rotação, através da diferença de filtros Gaussianos. Estes extremos detetados quando são máximos, dão origem ao que se designa por pontos chave ou pontos de interesse da imagem.  %Estes pontos de interesse ou pontos chave correspondem a estes extremos para várias escalas. 
 
+A equação~\ref{eq:imgaus} corresponde convolução entre a imagem \textit{I} e o filtro Gaussiano passa baixo representado pela função \textit{G} que dá origem a uma imagem filtrada \textit{L}.
 \begin{equation}
 L\left ( x, y, \sigma  \right ) = G\left ( x, y, \sigma  \right ) * I\left ( x, y \right )
+\label{eq:imgaus}
 \end{equation}
-
-onde ,
+A função G é descrita pela equação~\ref{eq:gauss}:
 \begin{equation}
-G\left ( x, y, \sigma  \right ) = \frac{1}{2\pi \sigma^2} e^\frac{-\left ( x^2 + y^2 \right )}{2\sigma^2} 
+G\left ( x, y, \sigma  \right ) = \frac{1}{2\pi \sigma^2} e^\frac{-\left ( x^2 + y^2 \right )}{2\sigma^2}
+\label{eq:gauss} 
 \end{equation}
+em que o filtro varia à escala através do parâmetro $ \sigma $.
 
-em que o o filtro varia à escala através do parâmetro $ \sigma $
+%No caso do filtro de diferença Gaussianas \textit{DoG} (\textit{"Diference of Gaussians"}) descrito na equação~\ref{eq:dog}, este é dado pela diferença entre as imagens filtradas em escalas diferentes mas próximas, separadas por uma constante \textit{k} e pode ser definida como:
+%
+%\begin{equation}
+%DoG\left ( x, y, \sigma  \right ) = G\left ( x, y, k\sigma  \right ) * G\left ( x, y, \sigma \right )
+%\label{eq:dog}
+%\end{equation}
+%
+%Assim, a convolução de uma imagem \textit{I} com o filtro \textit{DoG} é dado por:
 
-A função \textit{DoG} (\textit{"Diference of Gaussian"}) é dada pela diferença entre as imagens filtradas em escalas próximas separadas por uma constante \textit{k} e pode ser definida como:
-
-\begin{equation}
-DoG\left ( x, y, \sigma  \right ) = G\left ( x, y, k\sigma  \right ) * G\left ( x, y, \sigma \right )
-\end{equation}
-
-Assim, a convolução de uma imagem \textit{I} com o filtro \textit{DoG} é dado por:
+Para a deteção de extremos é necessário a aplicação numa imagem de um filtro de diferença de Gaussianos \textit{DoG} (\textit{"Diference of Gaussians"}) em escalas adjacentes. Isto corresponde à diferença entre uma imagem filtrada por dois filtros Gaussianos iguais mas com escalas diferentes $ \sigma $ e $ k\sigma$, como descrito na equação~\ref{eq:resdog}.
 
 \begin{equation}
 D\left ( x, y, \sigma  \right ) = \left (  G\left ( x, y, k\sigma  \right ) - G\left ( x, y, \sigma \right ) \right )* I\left ( x, y \right ) = L\left ( x, y, k\sigma  \right ) - L\left ( x, y, \sigma  \right )
+\label{eq:resdog}
 \end{equation}
 
-que corresponde à diferença entre as imagens filtradas pelo filtro gaussiano em escalas $ \sigma $ e $ k\sigma $. Este filtro provoca uma perda de nitidez nas imagens (efeito desfoque) e torna-se assim capaz de detetar variações de intensidade nas imagens, como por exemplo, nos contornos. A Figura~\ref{fig:siftdog} mostra como é realizado o processo de obtenção das Diferenças Gaussianas e consequente formação das oitavas. 
+Este filtro \textit{DoG} aplicado a uma imagem provoca uma perda de nitidez (efeito desfoque) e torna-se assim capaz de detetar variações de intensidade nas imagens, como por exemplo, nos contornos. A Figura~\ref{fig:siftdog} ilustra este processo de obtenção da diferença de Gaussianos. % e consequente formação das oitavas. 
 
 \begin{figure}[h]
 \centering
+%\begin{subfigure}[b]{.5\textwidth}
 \includegraphics[width=0.7\linewidth]{./figures/sift_dog.jpg}
-\caption{ Construção das Diferenças Gaussianas e formação de oitavas \textit{Retirada de}~\cite{Lowe2004} .}
+\caption{ Esquematização da obtenção da diferenças de Gaussianos e respetiva. \textit{Retirada de}~\cite{Lowe2004} .}
 \label{fig:siftdog}
+%\end{sufigure}
+%~
+%\begin{subfigure}[b]{.5\textwidth}
+%\includegraphics[width=0.7\linewidth]{./figures/sift_dog.jpg}
+%\caption{ Construção das Diferenças Gaussianas e formação de oitavas \textit{Retirada de}~\cite{Lowe2004} .}
+%\label{subfig:}
+%\end{subfigure}
 \end{figure}
 
 Segundo Lowe~\cite{Lowe2004}  é necessário atingir a escala $ 2\sigma $ para ser possível a construção de um descritor local invariável à escala, logo
 
 $ k = 2^{\left(1/s \right)} $
 
-onde s é o número de intervalos entre imagens obtidas por \textit{DoG} e $ D(x, y, \sigma) $ corresponde à primeira imagem e $ D(x, y, 2\sigma) $ à última de todo o conjunto de imagens geradas. Também deverão ser assim obtidas $s + 3$ imagens na pilha de imagens filtradas para cada oitava. Cada oitava contém as imagens de Diferença Gaussiana, sendo as que ficam entre as escalas superiores e inferiores designadas de intervalo. 
+onde \textit{s} é o número de intervalos entre imagens obtidas por \textit{DoG} e $ D(x, y, \sigma) $ corresponde à primeira imagem e $ D(x, y, 2\sigma) $ à última de todo o conjunto de imagens geradas. Também deverão ser assim obtidas $s + 3$ imagens na pilha de imagens filtradas para cada oitava. Cada oitava contém as imagens de Diferença Gaussiana, sendo as que ficam entre as escalas superiores e inferiores designadas de intervalo. 
 
-Por fim é realizado o processo de deteção de extremos, onde um píxel é comparado com os seus oito vizinhos na imagem atual e com os nove  vizinhos das imagens de escalas adjacentes, numa região de 3x3. A figura~\ref{fig:siftdog2} ilustra este processo.  
+Por fim é realizado o processo de deteção de extremos, onde um píxel é comparado com os seus oito vizinhos na imagem atual e com os nove vizinhos das imagens de escalas adjacentes, numa região de 3x3. A figura~\ref{fig:siftdog2} ilustra este processo. 
 
 \begin{figure}[h]
 \centering
@@ -609,14 +622,15 @@ Por fim é realizado o processo de deteção de extremos, onde um píxel é comp
 \caption{Ilustração do processo de deteção de máximos e mínimos das imagens de Diferença Gaussiana. O píxel candidato está marcado com X e os vizinhos com um circulo. \textit{Retirada de}~\cite{Lowe2004}}
 \label{fig:siftdog2}
 \end{figure}
+%Se esse píxel corresponde a um máximo local é selecionado como candidato a pontos de interesse. Em seguida, são descartados, dentre os candidatos, pontos em arestas e em regiões de pouco contraste da imagem.
 
-O próximo processo passa pela localização dos ponto chave.
+O próximo passo passa pela localização dos ponto chave.
 
-\item \textbf{Localização de pontos chave}: quando detetado um extremo, esse ponto é considerado um candidato a ponto chave ou ponto de interesse. Este ponto foi encontrado através da comparação de um píxel com os seus vizinhos como referido anteriormente. sendo necessário realizar um cálculo de ajuste detalhado da localização e escala gaussiana de cada um destes pontos. É utilizada então a série de Taylor para obter uma localização mais exata dos extremos, sendo rejeitado caso a intensidade de um extremo seja inferior a um limiar previamente definido. 
+\item \textbf{Localização de pontos chave}: quando detetado um extremo, esse ponto é considerado um candidato a ponto chave ou ponto de interesse. Este ponto foi encontrado através da comparação de um píxel com os seus vizinhos como referido anteriormente. É utilizada então a série de Taylor para obter uma localização mais exata dos extremos, sendo rejeitado caso a intensidade de um extremo seja inferior a um limiar previamente definido. 
 
-Como DoG tem uma boa resposta a arestas e como estas fazem com que os pontos sejam instáveis com ruído, estes necessitam de ser removidos. É assim através da utilização de uma matriz Hessiana 2x2 possível calcular as curvaturas principais. Caso o rácio seja superior a um limiar previamente definido, o ponto é considerado uma aresta e assim o ponto chave é descartado.
+Como DoG tem uma boa resposta a arestas e como estas fazem com que os pontos sejam instáveis com ruído, estes necessitam de ser removidos. É assim através da utilização de uma matriz Hessiana 2x2, é possível calcular as curvaturas principais. Caso o rácio seja superior a um limiar previamente definido, o ponto é considerado uma aresta e assim o ponto chave é descartado.
 
-Após a remoção de todos os pontos considerados não sendo de interesse, fica-se com todos os pontos chave, sendo necessário a atribuição das suas orientações. 
+Após a remoção de todos os pontos considerados como não sendo de interesse, fica-se com todos os pontos chave, sendo necessário a atribuição das suas orientações. 
 
 \item \textbf{Atribuição da orientação dos descritores}: este processo tem como principal finalidade possibilitar a representação de um descritor em relação a sua orientação, permitindo assim que este seja invariante a rotações. Para realizar esta tarefa é utilizada a escala Gaussiana $ \sigma $ para a escolha da imagem filtrada \textit{L} com a escala mais próxima e com a oitava referente ao ponto avaliado, tornando assim invariante também à escala.
 
@@ -632,7 +646,7 @@ m(x,y) = \sqrt{\left ( \left ( L(x+1, y) - L(x-1, y) \right )^2 + \left ( L(x, y
 \theta (x, y) = tan^{-1}\left ( \frac{\left ( L(x, y+1) - L(x, y-1) \right )}{\left ( L(x+1, y) - L(x-1, y) \right )} \right )
 \end{equation}
 
-Assim, é criado um histograma das orientações para uma região em redor do pontos chave, em que de todas as orientações obtidas para um ponto, apenas o maior pico e aquelas acima de 80\% do valor desse pico é que são utilizadas para definir a orientação de cada ponto chave.
+Assim, é criado um histograma das orientações para uma região em redor do pontos chave, em que, de todas as orientações obtidas para um ponto, apenas o maior pico e aquelas acima de 80\% do valor desse pico é que são utilizadas para definir a orientação de cada ponto chave.
 
 Por fim, é possível a construção dos descritores para os pontos chave definidos como o ponto a seguir apresenta.
 
@@ -651,16 +665,30 @@ O algoritmo SIFT é regularmente utilizado em reconhecimento de objetos ou cenas
 %% SURF %% 
 \subsubsection{SURF} \label{subsubsec:surf}
 
-Outro algoritmo importante de extração de descritores locais é o SURF (\textit{Speeded Up Robust Features}). Este é baseado no SIFT apresentado na secção~\ref{subsubsec:sift} e também é utilizado, por exemplo, em reconhecimento de objetos ou mesmo na reconstrução 3D. Segundo os autores~\cite{Bay2006} o SURF é mais rápido (cerca de dez vezes) e robusto do que o SIFT, sendo que, segundo a comparação realizada em~\cite{Juan2009} comprovou-se que o SIFT é mais lento e não muito bom a mudanças de iluminação, mas apresenta melhores resultados a variações de rotação, mudanças de escala e transformações na imagem.
+Outro algoritmo importante de extração de descritores locais é o SURF (\textit{Speeded Up Robust Features}). Este é baseado no SIFT apresentado na secção~\ref{subsubsec:sift} e também é utilizado, por exemplo, em reconhecimento de objetos ou mesmo na reconstrução 3D. Segundo os autores~\cite{Bay2006}, o descritor SURF é mais rápido (cerca de dez vezes) e robusto do que o SIFT, sendo que, segundo a comparação realizada em~\cite{Juan2009} comprovou-se que o SIFT é mais lento e não muito bom a mudanças de iluminação, mas apresenta melhores resultados a variações de rotação, mudanças de escala e transformações na imagem.
 
-Este usa a técnica da imagem integral, onde cada píxel de uma imagem recebe um valor igual à soma dos píxeis da sua esquerda e acima, incluindo o próprio. Este também utiliza um filtro Haar em formato de caixa numa sub-região 4x4 em redor de um ponto de interesse, como se pode ver na Figura~\ref{fig:surf}, tornando o processo computacionalmente eficiente. Isto é realizado calculando a soma das respostas dos filtros e a soma do modulo das respostas dos filtros nas direções horizontal e vertical, gerando assim 4 valores por cada sub-região. Logo, o SURF retorna um vetor de 64 dimensões, metade do retornado pelo algoritmo SIFT.
+Este usa a técnica da imagem integral, onde cada píxel de uma imagem recebe um valor igual à soma dos píxeis da sua esquerda e acima, incluindo o próprio. Este também utiliza um filtro Haar em formato de caixa numa sub-região 4x4 em redor de um ponto de interesse, como se pode ver na Figura~\ref{fig:surf}, tornando o processo computacionalmente eficiente. Isto é realizado calculando a soma das respostas dos filtros e a soma do módulo das respostas dos filtros nas direções horizontal e vertical, gerando assim 4 valores por cada sub-região. Logo, o SURF retorna um vetor de 64 dimensões, metade do retornado pelo algoritmo SIFT.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{./figures/surf}
-\caption{ (a) Filtros Gaussianos de segunda ordem nas direções yy e xy; (b) aproximação por filtros de caixa; (c) filtros de Haar; As regiões a cinzento têm valor igual a zero. \textit{Retirada de}~\cite{Bay2006}.}
+\caption{ (a) Filtros Gaussianos de segunda ordem nas direções yy e xy; (b) aproximação por filtros de caixa; (c) filtros de Haar; As regiões a cinzento têm valor igual a zero. \textit{Retirada de}~\cite{Bay2006}}
 \label{fig:surf}
 \end{figure}
+
+\subsection{Descritores Locais Binários}
+
+Os descritores SIFT e SURF são uns dos mais utilizados e conhecidos, mas existem um conjunto de descritores locais mais recentes que se caracterizam por serem descritores locais binários. Em seguida são apresentados alguns exemplos deste tipo:
+
+\begin{description}
+\item[BRIEF:] É um descritor local binário que não possui um mecanismo elaborado de extração de características nem de compensação de orientação como o SIFT ou o SURF, sendo um descritor de elevado desempenho. Este utiliza a informação de um único píxel de uma região, sendo necessário a utilização de um filtro Gaussiano para reduzir a sensibilidade ao ruído. Uma característica dos descritores binários é a seleção pares de pontos (píxels) de uma região para a criação do descritor. Este seleção feita de uma forma aleatória no caso deste descritor. Quando comparados dois pontos, é atribuído o valor 1 quando a intensidade do primeiro ponto é superior ao do segundo, caso contrário, é atribuído o valor 0. O descritor é assim um vetor com informação binária.~\cite{Calonder2010}.
+
+\item[ORB:] Este é também um descritor binário muito semelhante ao BRIEF, tendo como principais características diferenciadoras o fato de possuir um mecanismo de compensação de orientação que o torna invariante à rotação e de aprendizagem na seleção dos pares de pontos de interesse.~\cite{Rublee2011}.
+
+\item[FREAK] Este é o mais complexo relativamente aos dois anteriores. Este utiliza da mesma forma que ORB um mecanismo de aprendizagem para seleção dos pares de pontos. A sua principal caracteristica é o fato de utilizar uma distribuição de pontos numa região de uma forma semelhante à retina ocular, em que existe uma maior densidade de pontos na zona central de uma região~\cite{Alahi2012}.
+ 
+\end{description}
+
 
 %Para além destes dois algoritmos ainda existem outros menos utilizados como o FAST, ORB, BRIEF.... e o HOG (\textit{Histogram of Oriented Gradients})~\cite{Dalal2005}.
 
@@ -668,32 +696,33 @@ Este usa a técnica da imagem integral, onde cada píxel de uma imagem recebe um
 
 \subsection{Descritores Baseado em Vocabulário Visual}\label{subsec: vocab}
 
-No reconhecimento de documentos de texto é utilizado o conceito de vocabulário, sendo muitas vezes designado por \textit{BoW} (\textit{Bag Of Words}) que em português significa, saco de palavras, onde existe um conjunto de palavras armazenadas pré definidas. Um texto é assim caracterizado, através da análise das palavras que possui, sendo contabilizado a frequência de palavras que estejam simultaneamente no texto e no \textit{bag of words}, que assim atribuem um significado ao texto. É também utilizado uma lista de palavras que não acrescentam significado a expressões tais como, "o" ou "um", entre outras, que são removidas do texto durante a análise para não influenciarem os resultados. Um sistema de extração de informação de texto apresenta um número padrão de etapas~\cite{Baeza-Yates1999}. 
+No reconhecimento de documentos de texto é utilizado o conceito de vocabulário. Esta representação é muitas vezes designada por \textit{BoW} (\textit{Bag Of Words}) que em português significa, saco de palavras, onde existe um conjunto pré-definido de palavras armazenadas. 
 
-Recentemente esta técnica foi adotada em aplicações de extração de informação visual, como por exemplo é nos mostrado em~\cite{Sivic2003, Sivic2006}. Os autores recorrem a descritores locais invariantes a escala e rotação, para criar um vocabulário visual. A utilização de descritores locais como o SIFT, referido na secção~\ref{subsubsec:sift}, permite a extração de pontos de interesse nas imagens, invariantes a rotação e mudanças de escalas.
+Um texto é assim caracterizado, através da análise das palavras que possui. Para isso são contabilizadas as palavras que estejam simultaneamente no texto e no \textit{BoW}. Isto permite o acesso um vetor de tamanho fixo que descreve um texto através da frequência das palavras definidas no \textit{BoW}. 
+%É também utilizado uma lista de palavras que não acrescentam significado a expressões tais como, "o" ou "um", entre outras, que são removidas do texto durante a análise para não influenciarem os resultados. Um sistema de extração de informação de texto apresenta um número padrão de etapas~\cite{Baeza-Yates1999}. 
 
-Quando efetuado este processo repetidamente com um grande conjunto de imagens, é possível criar \textit{clusters} de regiões de imagens muito semelhantes entre si, como se pode ver na Figura~\ref{fig:visualword}. Todas estas regiões são candidatas a palavras visuais, sendo selecionada a que representa melhor esse \textit{cluster}, isto é, é selecionado o centroide desse conjunto de regiões semelhantes entre si, recorrendo ao algoritmo \textit{k-means} referido na secção~\ref{subsec:parti}. Esse centroide passa então a ser considerado uma palavra visual e é adicionado a um vocabulário com outras palavras visuais.
+Recentemente esta técnica foi adotada em aplicações de extração de informação visual, como por exemplo, é mostrado em~\cite{Sivic2003, Sivic2006}. Os autores recorrem a descritores locais invariantes a escala e rotação, para criar um vocabulário visual. A utilização de descritores locais como o SIFT, referido na secção~\ref{subsubsec:sift}, permite a extração de pontos de interesse nas imagens, invariantes a rotação e mudanças de escalas.
+
+Quando efetuado este processo repetidamente com um grande conjunto de imagens, é possível criar \textit{clusters} de regiões de imagens muito semelhantes entre si, como se pode ver na Figura~\ref{fig:visualword}. Todas estas regiões são candidatas a palavras visuais, sendo selecionada a que representa melhor esse \textit{cluster}. Isto é, é selecionado o centroide desse conjunto de regiões semelhantes entre si, recorrendo ao algoritmo \textit{k-means} referido na secção~\ref{subsec:parti}. Esse centroide passa então a ser considerado uma palavra visual e é adicionado a um vocabulário com outras palavras visuais.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\linewidth]{./figures/visual_word_1}
+\caption{Representação de um \textit{cluster} de pontos de interesse semelhantes de imagens distintas. \textit{Retirada de}~\cite{Sivic2003}}
 \label{fig:visualword}
 \end{figure}
 
 Por fim é necessária a realização de uma indexação de cada palavra visual às imagens, sendo utilizado um vetor para cada imagem que indica, o número de vezes em que uma determinada palavra visual se repete numa imagem. Neste caso o vetor funciona como em \textit{text mining}, em que existe a contagem da frequência de palavras que ocorrem num determinado documento.
 
-Outro processo possível para indexação do conteúdo visual ou texto, é atribuição de um peso ou ponderação para cada palavra visual numa determinada imagem. Aqui é utilizado a ponderação padrão conhecida como tf-idf ('\textit{term frequency-inverse document frequecy}')~\cite{Sivic2003}. 
-
-Considerando um vetor com \textit{k} palavras visuais $Vd = (t_{1},...,t_{i},...,t_{k})$, em que a ponderação de cada palavra é dada pela equação~\ref{eq:peso}
+Outro processo possível para indexação do conteúdo visual ou texto, é atribuição de um peso ou ponderação para cada palavra visual numa determinada imagem. Aqui é utilizada a ponderação padrão conhecida como tf-idf ('\textit{term frequency-inverse document frequecy}')~\cite{Sivic2003}. Considerando um vetor com \textit{k} palavras visuais $Vd = (t_{1},...,t_{i},...,t_{k})$, em que a ponderação de cada palavra é dada por:
 
 \begin{equation}
 t_{i} = \frac{n_{id}}{n_{d}}log\frac{N}{n_{i}}
 \label{eq:peso}
 \end{equation}
+onde $n_{id}$ é o numero de ocorrências da palavra \textit{i} num documento \textit{d}, $n_{d}$ o número total de palavras no documento \textit{d}, $n_{i}$ é o numero de ocorrências da palavra \textit{i} em todos documentos e \textit{N} é o número de documentos existentes. 
 
-onde $n_{id}$ é o numero de ocorrências da palavra \textit{i} num documento \textit{d}, $n_{d}$ o número total de palavras no documento \textit{d}, $n_{i}$ é o numero de ocorrências da palavra \textit{i} em todos documentos e \textit{N} é o numero de documentos existentes. 
-
-Conclui-se assim que este descritor permite a identificação de imagens semelhante ou reconhecimento de objetos, através da comparação dos vetores de cada imagem, com a informação relativa ao vocabulário posteriormente criado. Este demonstra ser bastante eficiente, e segundo Nistér e Stewénius~\cite{Nister2006} é possível escalar este processo para enormes quantidades de imagens sem perda de performance utilizando para isso um vocabulário em forma de árvore, isto é, com a hierarquização das palavras visuais de um vocabulário visual, recorrendo para isso ao \textit{clustering} hierárquico.
+Conclui-se assim que este descritor permite a identificação de imagens semelhante ou reconhecimento de objetos, através da comparação dos vetores de cada imagem, com a informação relativa ao vocabulário posteriormente criado. Este demonstra ser bastante eficiente. Para além disso, segundo Nistér e Stewénius~\cite{Nister2006}, é possível escalar este processo para enormes quantidades de imagens sem perda de performance. Para isso, um vocabulário em forma de árvore, isto é, com a hierarquização das palavras visuais de um vocabulário visual, obtido com \textit{clustering} hierárquico descrito na Secção~\ref{subsec:hierar}.
 
 %Para a criação deste vocabulário visual, as regiões selecionadas podem ter em conta dois tipos diferentes de pontos de vista visual~\cite{Sivic2003, Sivic2006}. Um é designado por \textit{Shape Adapted} (SA), em que a forma adaptada sobre um ponto de interesse é elíptica. Este envolve um método iterativo para determinar o centro, escala e forma da elipse. O segundo, é designado por \textit{Maximally Stable} (MS), que tem como característica o facto de as regiões selecionadas serem as que a área é aproximadamente estacionária entanto o limiar de intensidade varia. Assim, as regiões SA tendem a centrar-se nos cantos e as regiões MS correspondem a formas de alto contraste em relação ao seu redor, como pode ser visualizado nos exemplos da figura~\ref{fig:visual_word}.
 %
